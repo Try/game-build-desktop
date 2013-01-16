@@ -1,0 +1,1057 @@
+<?xml version="1.0" ?>
+<data>
+
+  <class name = "land.grass" >
+    <view src="grass"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.grass2" >
+    <view src="grass2"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.grass3" >
+    <view src="grass3"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.grass4" >
+    <view src="grass4"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.grass5" >
+    <view src="grass5"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.grass6" >
+    <view src="grass6"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.rock" >
+    <view src="ground_rock"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.cliff" >
+    <view src="cliff"
+          specular = "0.3"/>
+  </class>
+
+  <class name = "land.sand" >
+    <view src="sand"
+          specular = "0.1"/>
+  </class>
+
+  <class name = "land.snow" >
+    <view src="snow"
+          specular = "0.5"/>
+  </class>
+
+  <class name = "land.snow2" >
+    <view src="snow2"
+          specular = "0.4"/>
+  </class>
+
+  <class name = "land.snow_grass" >
+    <view src="snow_grass"
+          specular = "0.4"/>
+  </class>
+
+  <class name = "land.rock_snow" >
+    <view src="rock_snow"
+          specular = "0.4"/>
+  </class>
+
+  <class name = "land.rock1" >
+    <view src="lrock1"
+          specular = "0.2"/>
+  </class>
+
+  <class name = "land.rock2" >
+    <view src="lrock"
+          specular = "0.2"/>
+  </class>
+
+  <class name = "land.temple" >
+    <view src="temple"
+          specular = "0.2"/>
+  </class>
+
+  <class name = "land.ground" >
+    <view src="ground"
+          specular = "0.01"/>
+  </class>
+
+  <class name = "land.brick" >
+    <view src="brick"
+          specular = "0.01"/>
+  </class>
+
+  <class name = "land.brick1" >
+    <view src="brick1"
+          specular = "0.01"/>
+  </class>
+
+  <class name = "land.brick2" >
+    <view src="brick2"
+          specular = "0.01"/>
+  </class>
+
+  <class name = "land.lava" >
+    <view src="lava" specular = "0.0" >
+      <material add = "glow"   />
+    </view>
+  </class>
+
+  <class name = "hud/move" >
+    <view src="hud/move" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "transparent_no_zw"  />
+    </view>
+  </class>
+
+  <class name = "hud/atack" >
+    <view src="hud/atack" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "transparent_no_zw"  />
+      <material add = "glow"  />
+    </view>
+  </class>
+
+  <class name = "bullets/pike" >
+    <view src="bullets/pike" size = "0.05" >
+    </view>
+  </class>
+
+  <class name = "bullets/fire" >
+    <view src="bullets/fire" size = "0.05" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "add"  />
+    </view>
+  </class>
+
+  <class name = "bullets/fire_large" >
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+
+    <view src="bullets/fire" size = "0.09" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "add"  />
+    </view>
+  </class>
+
+  <class name = "pointlight" >
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "water" >
+    <view src="water"
+          specular = "30" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "water"/>
+    </view>
+  </class>
+
+
+  <class name = "worker" >
+    <view src="worker" size = "0.1" physic = "sphere" diameter = "0.1"
+          modelAlign = "CCi"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+    <speed rotate = "15" move="48" />
+
+    <property gold      = "50" />
+    <property lim       = "1"  />
+    <property buildTime = "260" />
+
+    <atack range = "0" damage = "5" delay = "30"/>
+
+    <beavior add = "move"/>
+    <beavior add = "worker"/>
+    <beavior add = "builder"/>
+
+    <commands>
+      <page num = "0" >
+        <button action = "page" taget="1" x = "0" y = "3" hotkey = "b"/>
+      </page>
+
+      <page num = "1" >
+        <button action = "build" taget="castle" x = "0" y = "0" hotkey = "c"/>
+        <button action = "build" taget="house"  x = "0" y = "1" hotkey = "e"/>
+
+        <button action = "build" taget="barracks"  x = "1" y = "0"
+                hotkey = "b"/>
+
+        <button action = "build" taget="forge"  x = "2" y = "0"
+                hotkey = "f"/>
+
+        <button action = "build" taget="tower"  x = "2" y = "1"
+                hotkey = "t"/>
+
+        <button action = "build" taget="stone_cyrcle"  x = "3" y = "0"
+                hotkey = "s"/>
+
+        <button action = "build" taget="adanos_cram"  x = "4" y = "0"
+                hotkey = "a"/>
+
+        <button action = "build" taget="fire_cram"  x = "4" y = "1"
+                hotkey = "r"/>
+
+        <button action = "build" taget="magic_tower"  x = "4" y = "2"
+                hotkey = "m"/>
+
+        <button action = "page"  taget="0" x = "4" y = "3"
+                icon   = "gui/icon/cancel"  hotkey = "x" />
+      </page>
+
+    </commands>
+
+  </class>
+
+  <class name = "pikeman" >
+    <view src="pikeman" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+  </class>
+
+  <class name = "chevalier" >
+    <view src="chevalier" size = "0.15" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCC" >
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+  </class>
+
+  <class name = "balista" >
+    <view src="balista" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "200" />
+    <property lim       = "4"  />
+    <property buildTime = "500" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "8" move="44" />
+
+    <atack range = "10" damage = "15" delay = "40" bullet = "bullets/pike" />
+  </class>
+
+  <class name = "gelion" >
+    <view src="gelion" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "2"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "20" move="110" />
+
+    <atack range = "6" damage = "10" delay = "10" bullet="bullets/fire_large" />
+    <property maxHp = "40" />
+  </class>
+
+  <class name = "hummer" >
+    <view src="hummer" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+  </class>
+
+  <class name = "fire_mage" >
+    <view src="fmage" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "200" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "5" damage = "15" delay = "40" bullet="bullets/fire" />
+  </class>
+
+  <class name = "incvisitor" >
+    <view src="incvisitor" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "200" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "25" delay = "20"/>
+  </class>
+
+  <class name = "golem" >
+    <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCi" >
+      <material add = "glow"/>
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "300" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="56" />
+
+    <atack range = "1" damage = "10" delay = "20" bullet=""/>
+  </class>
+
+  <class name = "golem_t" >
+    <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCi" >
+      <material del = "phong"     />
+      <material add = "displace"/>
+      <material add = "glow"/>
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "5" move="56" />
+
+    <atack range = "0" damage = "10" delay = "20"/>
+  </class>
+
+  <class name = "golem_f" >
+    <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCi" >
+      <material del = "phong"     />
+      <material add = "displace"/>
+      <material add = "glow"/>
+    </view>
+    <view src="fire" size = "1" isParticle = "true" >
+      <material del = "phong"      />
+      <material del = "shadow_cast"      />
+      <material add = "add"       />
+    </view>
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "5" move="64" />
+
+    <atack range = "0" damage = "10" delay = "20"/>
+  </class>
+
+
+  <class name = "castle" >
+    <view src="castle" size = "0.035" physic = "box" boxSize = "1.1" >
+    </view>
+
+    <beavior add = "building" />
+    <beavior add = "recruter" />
+    <beavior add = "warehouse"/>
+    <property size      = "6"    />
+    <property limInc    = "11"   />
+
+    <property gold      = "400"  />
+    <property buildTime = "1000" />
+    <property maxHp     = "1000" />
+
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="worker" x = "0" y = "0" hotkey = "e" />
+      </page>
+    </commands>
+  </class>
+
+  <class name = "barracks" >
+    <view src="barracks" size = "0.035" physic = "box" boxSize = "0.31"
+          modelAlign = "CCi" >
+    </view>
+
+    <beavior add = "building" />
+    <beavior add = "recruter" />
+    <property size = "4" />
+    <property gold      = "150" />
+    <property buildTime = "500" />
+
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="pikeman" x = "0" y = "0" hotkey = "e" />
+        <button action = "buy" taget="hummer"  x = "1" y = "0" hotkey = "h" />
+        <button action = "buy" taget="gelion"  x = "2" y = "0" hotkey = "g" />
+        <button action = "buy" taget="balista" x = "3" y = "0" hotkey = "b" />
+      </page>
+    </commands>
+  </class>
+
+  <class name = "house" >
+    <view src="house" size = "0.35" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property limInc    = "10"  />
+    <property buildTime = "300" />
+
+    <beavior add = "building" />
+    <property size = "2" />
+  </class>
+
+  <class name = "house1" >
+    <view src="house1" size = "0.0006" physic = "box" boxSize = "0.21"
+          modelAlign = "CCC"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property limInc    = "10"  />
+    <property buildTime = "300" />
+
+    <beavior add = "building" />
+    <property size = "3" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tower" >
+    <view src="tower" size = "0.35" physic = "box"
+          boxSizeX = "0.21" boxSizeY = "0.21" boxSizeZ = "0.5"
+          modelAlign = "CCi"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "150" />
+    <property buildTime = "500" />
+    <property maxHp     = "150" />
+
+    <beavior add = "building" />
+    <beavior add = "warrior" />
+    <speed rotate = "0" move="0" />
+
+    <atack range = "8" damage = "15" delay = "40"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "forge" >
+    <view src="forge" size = "0.035" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property buildTime = "400" />
+
+    <beavior add = "building" />
+    <property size = "4" />
+  </class>
+
+  <class name = "stone_cyrcle" >
+    <view src="stone_cyrcle" size = "0.035" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+      <material add = "glow"       />
+    </view>
+
+    <beavior add = "recruter" />
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="golem" x = "0" y = "0" hotkey = "g" />
+      </page>
+    </commands>
+
+    <property gold      = "100" />
+    <property buildTime = "400" />
+
+    <beavior add = "building" />
+    <property size = "4" />
+  </class>
+
+  <class name = "adanos_cram" >
+    <view src="adanos_cram" size = "0.035" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <beavior add = "recruter" />
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="fire_mage" x = "0" y = "0" hotkey = "m" />
+      </page>
+    </commands>
+
+    <property gold      = "100" />
+    <property buildTime = "700" />
+
+    <beavior add = "building" />
+    <property size = "2" />
+  </class>
+
+  <class name = "fire_cram" >
+    <view src="fire_cram" size = "0.035" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <beavior add = "recruter" />
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="fire_mage"  x = "0" y = "0" hotkey = "f" />
+        <button action = "buy" taget="incvisitor" x = "0" y = "0" hotkey = "i" />
+      </page>
+    </commands>
+
+    <property gold      = "100" />
+    <property buildTime = "700" />
+
+    <beavior add = "building" />
+    <property size = "4" />
+  </class>
+
+  <class name = "magic_tower" >
+    <view src="magic_tower" size = "0.02" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <beavior add = "recruter" />
+    <commands>
+      <page num = "0" >
+        <button action = "buy" taget="golem" x = "0" y = "0" hotkey = "g" />
+      </page>
+    </commands>
+
+    <property gold      = "100" />
+    <property buildTime = "800" />
+
+    <beavior add = "building" />
+    <property size = "2" />
+  </class>
+
+
+  <class name = "selection.green" >
+    <view src = "quad" size = "0.1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "add" />
+    </view>
+  </class>
+
+  <class name = "selection.over" >
+    <view src = "hud/selection.over" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+  <class name = "selection.moveTo" >
+    <view src = "hud/selection.moveTo" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+  <class name = "selection.atkTo" >
+    <view src = "hud/selection.atkTo" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+  <class name = "tree0" >
+    <view src="tree0" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "3" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tree1" >
+    <view src="tree1" size = "0.05"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view src="tree1.bark" size = "0.05"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "4" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tree2" >
+    <view src="tree2" size = "0.04"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "4" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tree3" >
+    <view src="tree3" size = "0.04"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "4" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "rock0" >
+    <view src="rock0" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+    <view_size min = "0.5" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "rock1" >
+    <view src="rock1" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "4" />
+  </class>
+
+  <class name = "rock2" >
+    <view src="rock2" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "rock3" >
+    <view src="rock3" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "rock4" >
+    <view src="rock4" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "rock5" >
+    <view src="rock5" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "6" />
+  </class>
+
+  <class name = "rock6" >
+    <view src="rock6" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.5" max = "2.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "rock7" >
+    <view src="rock7" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "4" />
+  </class>
+
+  <class name = "rock8" >
+    <view src="rock8" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "rock9" >
+    <view src="rock9" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "rock10" >
+    <view src="rock10" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "grass0" >
+    <view src="grass0" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "crystal" >
+    <view src="crystal" sizeX = "0.151" sizeY = "0.151" sizeZ = "0.135"
+          physic = "box"  boxSize = "0.1"
+          randRotate = "true" >
+      <material del = "phong"   />
+      <material add = "displace"/>
+      <material add = "glow"    />
+      <material add = "add"     />
+    </view>
+
+    <property isBackground = "1" />
+    <beavior add = "building"/>
+    <beavior add = "resource"/>
+    <property size = "1" />
+  </class>
+
+  <class name = "crystal.green" >
+    <view src="crystal.green" size = "0.3"
+          physic = "box"  boxSize = "0.1" >
+          <material del = "phong"   />
+          <material add = "displace"/>
+          <material add = "glow"    />
+          <material add = "add"     />
+    </view>
+
+    <property isBackground = "1" />
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "crystal.red" >
+    <view src="crystal.red" size = "0.3"
+          physic = "box"  boxSize = "0.1" >
+          <material del = "phong"   />
+          <material add = "displace"/>
+          <material add = "glow"    />
+          <material add = "add"     />
+    </view>
+
+    <property isBackground = "1" />
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "farn0" >
+    <view src="farn0" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "farn1" >
+    <view src="farn1" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "blush0" >
+    <view src="blush0" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "blush1" >
+    <view src="blush1" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "blush2" >
+    <view src="blush2" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+
+  <class name = "ycube" >
+    <view src="ycube" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0" >
+      <material del = "phong"      />
+      <material del = "shadow_cast"  />
+      <material add = "glow"       />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "flag" >
+    <view src="flag" size = "0.06"
+          modelAlign = "CCi"
+          specular = "0" >
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "fire" >
+    <view src="fire" size = "1" isParticle = "true" >
+      <material del = "phong"      />
+      <material del = "shadow_cast"      />
+      <material add = "add"       />
+    </view>
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "smoke" >
+    <view src="smoke" size = "1" isParticle = "true" >
+      <material del = "phong"          />
+      <material add = "transparent_no_zw"    />
+    </view>
+    <property isBackground = "1" />
+  </class>  
+
+  <class name = "palms" >
+    <view src="palms" size = "0.017" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+      <material del = "phong"     />
+      <material add = "displace"/>
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "frog" >
+    <view src="frog" size = "0.05" modelAlign = "CCC" >
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "barrel" >
+    <view src="barrel" size = "0.05" modelAlign = "CCC" >
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "pyramid" >
+    <view src="pyramid" size = "0.15" modelAlign = "CCC" >
+    </view>
+    <property isBackground = "1" />
+    <beavior add = "building"/>
+    <property size = "10" />
+  </class>
+
+  <class name = "snake" >
+    <view src="snake" size = "0.05" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+  </class>
+
+</data>
