@@ -13,11 +13,16 @@
            name = "gui/noTexture"  />           
   <texture file = "./data/textures/gui/test.bmp"
            name = "gui/test"  />
+  <texture file = "./data/textures/fogTest.png"
+           name = "fog_test"  />
 
 
   <texture file = "./data/textures/glow/blue.png"  name="glow/blue"  />
   <texture file = "./data/textures/util/blue.png"  name="util/blue"  />
   <texture file = "./data/textures/glow/red.png"   name="glow/red"  />
+  <sound   file = "./data/sound/hammer0.aif"       name="hammer0"  />
+
+  <sound   file = "./data/sound/click.wav"       name="click"  />
 
 
   <texture file = "./data/textures/util/moveAnim.png"
@@ -135,6 +140,7 @@
            name="bullets/fire/glow" />
   <model   file = "./data/models/bullets/pike.mx"
            name="bullets/fire/model" />
+  <sound   file = "./data/sound/fire_ball.wav" name="fire_ball" />
 
   <texture file = "./data/textures/golem/glow.png" name="golem/glow"  />
   <texture file = "./data/textures/golem/tex.png"  name="golem/diff"  />

@@ -25,6 +25,12 @@
 
   <shader vs = "./data/sh/main_material.vert"
           fs = "./data/sh/main_material.frag"
+          name = "fog_of_war">
+    <define diffuseTexture = "" />
+  </shader>
+
+  <shader vs = "./data/sh/main_material.vert"
+          fs = "./data/sh/main_material.frag"
           name = "terrain_minor_main_material">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -74,6 +80,11 @@
   <shader vs = "./data/sh/postProcess.vert"
           fs = "./data/sh/avatar_final.frag"
           name = "avatar_final" >
+  </shader>
+
+  <shader vs = "./data/sh/postProcess.vert"
+          fs = "./data/sh/aceptFog.frag"
+          name = "aceptFog" >
   </shader>
 
   <shader vs = "./data/sh/postProcess.vert"

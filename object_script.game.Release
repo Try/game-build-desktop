@@ -93,4 +93,6 @@ INPUT(
 ./release\bytearrayserialize.o
 ./release\mutex.o
 ./release\progressbar.o
+./release\warfogmaterial.o
+./release\sound.o
 );

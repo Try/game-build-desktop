@@ -9,18 +9,13 @@ struct FS_Output {
 
 FS_Output main( FS_Input input,
                 uniform sampler2DRect scene,
-                uniform sampler2DRect bloom,
-                uniform sampler2DRect  glow,
+                uniform sampler2DRect   fog,
                 uniform float2 dTexCoord ) {
     FS_Output ret;
 
     float2 c = input.texcoord0;
 
-    ret.final = texRECT( scene, c ) +
-                texRECT( bloom, c )*0.5 +
-                texRECT( glow,  c )*5.0;
-
-    //ret.final *= texRECT( fog, c );
+    ret.final = texRECT( scene, c )*texRECT( fog, c );
 
     return ret;
     }
