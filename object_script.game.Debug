@@ -95,4 +95,5 @@ INPUT(
 ./debug\progressbar.o
 ./debug\warfogmaterial.o
 ./debug\sound.o
+./debug\bonusbehavior.o
 );

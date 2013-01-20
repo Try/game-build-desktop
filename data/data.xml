@@ -24,6 +24,12 @@
 
   <sound   file = "./data/sound/click.wav"       name="click"  />
 
+  <model   file = "./data/models/items/hill.mx"      name="hill/model"  />
+  <texture file = "./data/textures/crystals/green.png"
+           name="hill/glow" />
+  <texture file = "./data/textures/items/hill_diff.png"
+           name="hill/diff" />
+
 
   <texture file = "./data/textures/util/moveAnim.png"
            name="hud/move/diff"  />
@@ -182,6 +188,15 @@
   <texture file = "./data/textures/sm.png"   name="incvisitor/sm"  />
   <model   file = "./data/models/incvisitor.mx"
            name="incvisitor/model" />
+  <sound   file = "./data/sound/attack-sword-001.wav"
+           name="attack-sword-001"  />
+
+  <model   file = "./data/models/fire_element.mx"
+           name="fire_element/model"  />
+  <texture file = "./data/textures/particles/fmono.png"
+           name="fire_element/diff" />
+  <texture file = "./data/textures/particles/fire2.png"
+           name="fire_element/glow" />
 
   <texture file = "./data/textures/util/cride.png" name="quad/diff"  />
   <model   file = "./data/models/util/quad.mx"     name="quad/model" />
@@ -358,5 +373,8 @@
   <texture file = "./data/textures/rocks/0.png"   name="palms/diff" />
 
   <model   file = "./data/models/extra/snake.mx"      name="snake/model"  />
-  <texture file = "./data/textures/envi/barrel.jpg"   name="snake/diff" />
+  <texture file = "./data/textures/particles/fmono.png"
+           name="snake/diff" />
+  <texture file = "./data/textures/particles/fire.png"
+           name="snake/glow" />
 </data>

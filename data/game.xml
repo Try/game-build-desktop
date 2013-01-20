@@ -349,6 +349,7 @@
     <property gold      = "200" />
     <property lim       = "1"  />
     <property buildTime = "350" />
+    <property maxHp = "200" />
 
     <beavior add = "move"    />
     <beavior add = "warrior" />
@@ -372,6 +373,30 @@
     <speed rotate = "5" move="56" />
 
     <atack range = "1" damage = "10" delay = "20" bullet=""/>
+  </class>
+
+  <class name = "fire_element" >
+    <view src="fire_element" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+      <material del = "phong"     />
+      <material add = "add"     />
+      <material add = "glow"  />
+    </view>
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "300" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="56" />
+
+    <atack range = "5" damage = "10" delay = "20" bullet="bullets/fire_large"/>
   </class>
 
   <class name = "golem_t" >
@@ -978,6 +1003,21 @@
   </class>
 
 
+  <class name = "bonus" >
+    <view src="hill" size = "0.02"
+          modelAlign = "CCi"
+          specular = "0" >
+      <material del = "phong"      />
+      <material add = "add"        />
+      <material add = "glow"       />
+    </view>
+
+    <beavior add = "bonus"/>
+
+    <property invincible   = "1"  />
+    <property visionRange  = "16"  />
+  </class>
+
   <class name = "ycube" >
     <view src="ycube" size = "0.08"
           modelAlign = "CCi"
@@ -986,6 +1026,7 @@
       <material del = "shadow_cast"  />
       <material add = "glow"       />
     </view>
+
     <property isBackground = "1" />
   </class>
 
@@ -1049,8 +1090,11 @@
   </class>
 
   <class name = "snake" >
-    <view src="snake" size = "0.05" physic = "sphere" diameter = "0.4"
+    <view src="snake" size = "0.2" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
+      <material del = "phong"     />
+      <material add = "add"     />
+      <material add = "glow"  />
     </view>
   </class>
 

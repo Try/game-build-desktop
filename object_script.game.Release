@@ -95,4 +95,5 @@ INPUT(
 ./release\progressbar.o
 ./release\warfogmaterial.o
 ./release\sound.o
+./release\bonusbehavior.o
 );
