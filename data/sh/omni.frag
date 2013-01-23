@@ -1,7 +1,7 @@
 struct FS_Input {
   float4 position  : POSITION;
   float2 texcoord0 : TEXCOORD0;
-  float2 cenPos    : TEXCOORD1;
+  float3 cenPos    : TEXCOORD1;
 
   float3 pos       : TEXCOORD2;
   float3 lpos      : TEXCOORD3;
@@ -11,17 +11,24 @@ struct FS_Output {
   float4 color    : COLOR0;
   };
 
-float DepthToLinearZ(float dVal)
-{
-  float near = 0.1, far = 100.0;
-  return (far*near) / (far-(dVal*(far-near)));
-}
+float zAt( uniform sampler2D shadowMap,
+           uniform float4x4 shMatrix,
+           float3 p ){
+  float4 tmpP = mul( shMatrix, float4(p, 1) );
+  float3 position = tmpP.xyz/tmpP.w;
+  position.xy     = (position.xy+1)*0.5;
+  position.y      = 1-position.y;
+
+  return tex2D(shadowMap, position.xy).r;
+  }
 
 FS_Output main( FS_Input input,
                 uniform float4x4 invMatrix,
                 uniform sampler2DRect texture,
                 uniform sampler2DRect albedo,
                 uniform sampler2DRect normals,
+                uniform sampler2D     shadowMap,
+                uniform float4x4      shMatrix,
                 uniform float2 dTexCoord
                 ) {
     FS_Output ret;
@@ -30,19 +37,26 @@ FS_Output main( FS_Input input,
     float2 tc0 = input.texcoord0 + dTexCoord;
     float  z0  = texRECT( texture, tc0 ).r;
 
-    //float3 position = normalize( input.pos )*DepthToLinearZ(z0);
     float3 position = input.pos;
     position.z = z0;
     float4 tmpP = mul( invMatrix, float4(position, 1) );
     position = tmpP.xyz/tmpP.w;
 
-    float2 diff = input.cenPos - tc0 + dTexCoord;
-    float zdiff = texRECT( texture, input.cenPos + dTexCoord ).r - z0;
+    float3 positionC = input.cenPos;
+    tmpP = mul( invMatrix, float4(positionC, 1) );
+    positionC = tmpP.xyz/tmpP.w;
 
+    float3 diff = positionC - position;
+    float zdiff = 0;//texRECT( texture, input.cenPos + dTexCoord ).r - z0;
+
+    float zCen = zAt(shadowMap, shMatrix, positionC );
     for( int i=0; i<21; ++i ){
-      float localZ = texRECT( texture, tc0+diff*i/20.0 ).r;
-      val -= max(0, -500*( localZ - (z0 + zdiff*i/20.0)) );
+      float localZ = zAt( shadowMap, shMatrix, position+diff*i/30.0 );
+      val -= max(0, -25*( localZ - zCen ) );
       }
+
+    //ret.color = float4(length(diff));//zAt(shadowMap, shMatrix, position );
+    //return ret;
 
     val = clamp(val, 0, 1);
     //ret.color = texRECT( albedo, tc0 )*float4(val, val, val, 1);

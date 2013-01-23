@@ -163,6 +163,24 @@
     <property isBackground = "1" />
   </class>
 
+  <class name = "pointlight2" >
+    <view src="sphere" size = "2" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "pointlight3" >
+    <view src="sphere" size = "3" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
   <class name = "water" >
     <view src="water"
           specular = "30" >

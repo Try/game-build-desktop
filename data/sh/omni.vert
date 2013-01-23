@@ -7,7 +7,7 @@ struct VS_Input {
 struct FS_Input {
   float4 position  : POSITION;
   float2 texcoord0 : TEXCOORD0;
-  float2 cenPos    : TEXCOORD1;
+  float3 cenPos    : TEXCOORD1;
 
   float3 pos       : TEXCOORD2;
   float3 lpos      : TEXCOORD3;
@@ -24,17 +24,23 @@ FS_Input main( VS_Input IN,
     //sc.z = min(sc.z, 1.0);
 
     OUT.position = sc;
-    OUT.pos      = sc;
-    OUT.lpos     = float4(-disp, 1);//mul( mvpMatrix, float4(0,0,0, 1) );
+    OUT.position /= OUT.position.w;
+    OUT.position.z = min(OUT.position.z,0.99);
+    OUT.pos      = sc.xyz;
+    OUT.lpos     = float3(-disp);//mul( mvpMatrix, float4(0,0,0, 1) );
 
     float2 tc = (sc.xy + float2(1.0))*0.5;
     tc.y = 1.0-tc.y;
     OUT.texcoord0  = tc;
-
+/*
     float4 cpos = mul( mvpMatrix, float4(cenPos, 1) );
     tc = (cpos.xy/cpos.w+float2(1.0))*0.5;
     tc.y = 1.0-tc.y;
-    OUT.cenPos = tc;
+    OUT.cenPos = tc;*/
+
+    float4 cpos = mul( mvpMatrix, float4(cenPos, 1) );
+    cpos /= cpos.w;
+    OUT.cenPos = cpos.xyz;
 
     return OUT;
     }
