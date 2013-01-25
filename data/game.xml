@@ -931,6 +931,8 @@
     <property isBackground = "1" />
     <property invincible   = "1"  />
 
+    <property mouseHint = "$(gold)" />
+
     <beavior add = "building"/>
     <beavior add = "resource"/>
     <property size = "1" />
@@ -1035,6 +1037,7 @@
     </view>
 
     <beavior add = "bonus"/>
+    <property mouseHint = "$(heal_rune)" />
 
     <property invincible   = "1"  />
     <property visionRange  = "16"  />
