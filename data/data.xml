@@ -13,9 +13,6 @@
            name = "gui/noTexture"  />           
   <texture file = "./data/textures/gui/test.bmp"
            name = "gui/test"  />
-  <texture file = "./data/textures/fogTest.png"
-           name = "fog_test"  />
-
 
   <texture file = "./data/textures/glow/blue.png"  name="glow/blue"  />
   <texture file = "./data/textures/util/blue.png"  name="util/blue"  />
@@ -157,9 +154,13 @@
   <texture file = "./data/textures/sm.png"   name="worker/sm"    />
   <model   file = "./data/models/worker.mx"  name="worker/model" />
 
-  <texture file = "./data/textures/t.png"    name="pikeman/diff"  />
+  <texture file = "./data/textures/units/pikeman.png"
+           name="pikeman/diff"  />
+  <texture file = "./data/textures/units/pikemann.png"
+           name="pikeman/norm"  />
   <texture file = "./data/textures/sm.png"   name="pikeman/sm"  />
-  <model   file = "./data/models/pikeman.mx" name="pikeman/model" />
+  <model   file = "./data/models/units/pikeman.mx"
+           name="pikeman/model" />
 
   <texture file = "./data/textures/units/chevalier.png"
            name="chevalier/diff"  />

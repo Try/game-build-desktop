@@ -96,4 +96,7 @@ INPUT(
 ./debug\warfogmaterial.o
 ./debug\sound.o
 ./debug\bonusbehavior.o
+./debug\wayfindrequest.o
+./debug\lang.o
+./debug\hintsys.o
 );

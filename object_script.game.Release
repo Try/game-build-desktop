@@ -96,4 +96,7 @@ INPUT(
 ./release\warfogmaterial.o
 ./release\sound.o
 ./release\bonusbehavior.o
+./release\wayfindrequest.o
+./release\lang.o
+./release\hintsys.o
 );

@@ -7,6 +7,9 @@
   <pixmap  src = "./data/textures/gui/bar.png"
            name = "gui/bar"  />
 
+  <pixmap  src = "./data/textures/gui/hintFrame.png"
+           name = "gui/hintFrame"  />
+
   <pixmap  src = "./data/textures/gui/paper.png"
            name = "gui/background"  />
 

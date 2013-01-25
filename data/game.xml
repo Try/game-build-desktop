@@ -249,8 +249,8 @@
   </class>
 
   <class name = "pikeman" >
-    <view src="pikeman" size = "0.018" physic = "sphere" diameter = "0.2"
-          modelAlign = "CCi" >
+    <view src="pikeman" size = "0.2" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
     </view>
@@ -267,8 +267,10 @@
   </class>
 
   <class name = "chevalier" >
-    <view src="chevalier" size = "0.15" physic = "sphere" diameter = "0.2"
+    <view src="chevalier" size = "0.2" physic = "sphere" diameter = "0.2"
           modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
     </view>
 
     <property gold      = "100" />
@@ -317,7 +319,7 @@
     <property size = "2" />
     <speed rotate = "20" move="110" />
 
-    <atack range = "6" damage = "10" delay = "10" bullet="bullets/fire_large" />
+    <atack range = "6" damage = "6" delay = "10" bullet="bullets/fire_large" />
     <property maxHp = "40" />
   </class>
 
@@ -927,6 +929,8 @@
     </view>
 
     <property isBackground = "1" />
+    <property invincible   = "1"  />
+
     <beavior add = "building"/>
     <beavior add = "resource"/>
     <property size = "1" />
@@ -1110,9 +1114,6 @@
   <class name = "snake" >
     <view src="snake" size = "0.2" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
-      <material del = "phong"     />
-      <material add = "add"     />
-      <material add = "glow"  />
     </view>
   </class>
 

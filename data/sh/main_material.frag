@@ -185,6 +185,9 @@ FS_Output main( FS_Input input
 
 #ifdef teamColor
     diffuse.rgb += tmColor*(1.0-diffuse.a);
+    if( diffuse.a==0 )
+      discard;
+
 #endif
 
     ret.accum = diffuse;
