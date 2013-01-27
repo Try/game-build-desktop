@@ -23,6 +23,10 @@
            name = "gui/icon/atack"  />
 
 
+  <pixmap  src  = "./data/icons/items/shield.png"
+           name = "gui/item/shield"  />
+
+
   <pixmap  src  = "./data/icons/worker.png"
            name = "gui/icon/worker"  />
 

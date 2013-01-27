@@ -181,9 +181,13 @@
   <texture file = "./data/textures/sm.png"   name="hummer/sm"  />
   <model   file = "./data/models/hummer.mx"  name="hummer/model" />
 
-  <texture file = "./data/textures/t.png"    name="fmage/diff"  />
+  <texture file = "./data/textures/units/fire_mage.png"
+           name="fmage/diff"  />
+  <texture file = "./data/textures/units/fire_magen.png"
+           name="fmage/norm"  />
   <texture file = "./data/textures/sm.png"   name="fmage/sm"  />
-  <model   file = "./data/models/mage.mx"    name="fmage/model" />
+  <model   file = "./data/models/units/fire_mage.mx"
+           name="fmage/model" />
 
   <texture file = "./data/textures/t.png"    name="incvisitor/diff"  />
   <texture file = "./data/textures/sm.png"   name="incvisitor/sm"  />

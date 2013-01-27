@@ -99,4 +99,6 @@ INPUT(
 ./debug\wayfindrequest.o
 ./debug\lang.o
 ./debug\hintsys.o
+./debug\scenario.o
+./debug\scenariomission1.o
 );

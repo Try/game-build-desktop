@@ -99,4 +99,6 @@ INPUT(
 ./release\wayfindrequest.o
 ./release\lang.o
 ./release\hintsys.o
+./release\scenario.o
+./release\scenariomission1.o
 );

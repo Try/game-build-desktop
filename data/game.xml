@@ -342,8 +342,8 @@
   </class>
 
   <class name = "fire_mage" >
-    <view src="fmage" size = "0.018" physic = "sphere" diameter = "0.2"
-          modelAlign = "CCi" >
+    <view src="fmage" size = "0.22" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
     </view>
