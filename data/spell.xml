@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<data>
+
+  <spell name = "blink" >
+    <property coolDown = "300"/>
+    <property manaCost = "0" />
+  </spell>
+
+  <spell name = "fire_strike" >
+    <property coolDown = "2000"/>
+    <property manaCost = "0" />
+  </spell>
+
+</data>

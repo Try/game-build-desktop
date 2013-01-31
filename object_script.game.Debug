@@ -101,4 +101,6 @@ INPUT(
 ./debug\hintsys.o
 ./debug\scenario.o
 ./debug\scenariomission1.o
+./debug\ability.o
+./debug\spell.o
 );

@@ -1,5 +1,10 @@
 <?xml version="1.0" ?>
 <data>
+  <pixmap  src  = "./data/icons/actions/fire_strike.png"
+           name = "gui/icon/fire_strike"  />
+  <pixmap  src  = "./data/icons/actions/blink.png"
+           name = "gui/icon/blink"  />
+
   <pixmap  src  = "./data/icons/pointlight.png"
            name = "gui/icon/pointlight"  />
 

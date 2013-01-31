@@ -101,4 +101,6 @@ INPUT(
 ./release\hintsys.o
 ./release\scenario.o
 ./release\scenariomission1.o
+./release\ability.o
+./release\spell.o
 );

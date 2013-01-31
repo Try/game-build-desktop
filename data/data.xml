@@ -35,6 +35,13 @@
   <model   file = "./data/models/util/quad.mx"
            name="hud/move/model" />
 
+  <texture file = "./data/textures/util/blinkAnim.png"
+           name="hud/blink/diff"  />
+  <texture file = "./data/textures/util/blinkAnimGlow.png"
+           name="hud/blink/glow"  />
+  <model   file = "./data/models/util/quad.mx"
+           name="hud/blink/model" />
+
   <texture file = "./data/textures/util/atkAnim.png"
            name="hud/atack/diff"  />
   <texture file = "./data/textures/util/atkAnimGlow.png"
@@ -203,6 +210,20 @@
   <texture file = "./data/textures/particles/fire2.png"
            name="fire_element/glow" />
 
+  <model   file = "./data/models/units/bear.mx"
+           name="bear/model"  />
+  <texture file = "./data/textures/units/bear.png"
+           name="bear/diff" />
+  <texture file = "./data/textures/units/bearn.png"
+           name="bear/norm" />
+
+  <model   file = "./data/models/units/bear.mx"
+           name="polarbear/model"  />
+  <texture file = "./data/textures/units/polarbear.png"
+           name="polarbear/diff" />
+  <texture file = "./data/textures/units/bearn.png"
+           name="polarbear/norm" />
+
   <texture file = "./data/textures/util/cride.png" name="quad/diff"  />
   <model   file = "./data/models/util/quad.mx"     name="quad/model" />
 
@@ -223,6 +244,10 @@
   <texture file = "./data/textures/trees/3.png"          name="tree3/diff" />
   <texture file = "./data/textures/trees/0n.png"         name="tree3/norm" />
   <model   file = "./data/models/trees/2.mx"             name="tree3/model" />
+
+  <texture file = "./data/textures/trees/4.png"          name="tree4/diff" />
+  <texture file = "./data/textures/trees/4n.png"         name="tree4/norm" />
+  <model   file = "./data/models/trees/4.mx"             name="tree4/model" />
 
   <texture file = "./data/textures/gray.png"             name="castle/diff" />
   <model   file = "./data/models/buildings/castle.mx"    name="castle/model" />

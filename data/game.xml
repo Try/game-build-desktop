@@ -1,129 +1,9 @@
 <?xml version="1.0" ?>
 <data>
 
-  <class name = "land.grass" >
-    <view src="grass"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.grass2" >
-    <view src="grass2"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.grass3" >
-    <view src="grass3"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.grass4" >
-    <view src="grass4"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.grass5" >
-    <view src="grass5"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.grass6" >
-    <view src="grass6"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.rock" >
-    <view src="ground_rock"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.cliff" >
-    <view src="cliff"
-          specular = "0.3"/>
-  </class>
-
-  <class name = "land.sand" >
-    <view src="sand"
-          specular = "0.1"/>
-  </class>
-
-  <class name = "land.snow" >
-    <view src="snow"
-          specular = "0.5"/>
-  </class>
-
-  <class name = "land.snow2" >
-    <view src="snow2"
-          specular = "0.4"/>
-  </class>
-
-  <class name = "land.snow_grass" >
-    <view src="snow_grass"
-          specular = "0.4"/>
-  </class>
-
-  <class name = "land.rock_snow" >
-    <view src="rock_snow"
-          specular = "0.4"/>
-  </class>
-
-  <class name = "land.rock1" >
-    <view src="lrock1"
-          specular = "0.2"/>
-  </class>
-
-  <class name = "land.rock2" >
-    <view src="lrock"
-          specular = "0.2"/>
-  </class>
-
-  <class name = "land.temple" >
-    <view src="temple"
-          specular = "0.2"/>
-  </class>
-
-  <class name = "land.ground" >
-    <view src="ground"
-          specular = "0.01"/>
-  </class>
-
-  <class name = "land.brick" >
-    <view src="brick"
-          specular = "0.01"/>
-  </class>
-
-  <class name = "land.brick1" >
-    <view src="brick1"
-          specular = "0.01"/>
-  </class>
-
-  <class name = "land.brick2" >
-    <view src="brick2"
-          specular = "0.01"/>
-  </class>
-
-  <class name = "land.lava" >
-    <view src="lava" specular = "0.0" >
-      <material add = "glow"   />
-    </view>
-  </class>
-
-  <class name = "hud/move" >
-    <view src="hud/move" size = "0.1" >
-      <material del = "shadow_cast"  />
-      <material del = "phong"   />
-      <material add = "glow"  />
-      <material add = "transparent_no_zw"  />
-    </view>
-  </class>
-
-  <class name = "hud/atack" >
-    <view src="hud/atack" size = "0.1" >
-      <material del = "shadow_cast"  />
-      <material del = "phong"   />
-      <material add = "transparent_no_zw"  />
-      <material add = "glow"  />
-    </view>
-  </class>
+  <module file = "./data/land.xml" />
+  <module file = "./data/spell.xml" />
+  <module file = "./data/hud.xml" />
 
   <class name = "bullets/pike" >
     <view src="bullets/pike" size = "0.05" >
@@ -140,7 +20,7 @@
   </class>
 
   <class name = "bullets/fire_large" >
-    <view src="sphere" size = "1" >
+    <view src="sphere" size = "1.5" >
       <material del = "phong"   />
       <material del = "shadow_cast"  />
       <material add = "omni"  />
@@ -249,7 +129,8 @@
   </class>
 
   <class name = "pikeman" >
-    <view src="pikeman" size = "0.2" physic = "sphere" diameter = "0.2"
+    <view src="pikeman" size = "0.2" physic = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
@@ -267,7 +148,8 @@
   </class>
 
   <class name = "chevalier" >
-    <view src="chevalier" size = "0.2" physic = "sphere" diameter = "0.2"
+    <view src="chevalier" size = "0.2"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
@@ -342,11 +224,27 @@
   </class>
 
   <class name = "fire_mage" >
-    <view src="fmage" size = "0.22" physic = "sphere" diameter = "0.2"
+    <view src="fmage" size = "0.22"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
     </view>
+
+    <commands>
+      <page num = "0" >
+        <button action = "castToGround"
+                taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
+                icon = "gui/icon/fire_strike"
+                hint   = "$(fire_strike)" />
+
+        <button action = "castToGround"
+                taget="blink" x = "1" y = "3" hotkey = "b"
+                icon = "gui/icon/blink"
+                hint = "$(blink)" />
+      </page>
+    </commands>
 
     <property gold      = "200" />
     <property lim       = "1"  />
@@ -357,11 +255,14 @@
     <speed rotate = "10" move="56" />
 
     <atack range = "5" damage = "15" delay = "40" bullet="bullets/fire" />
+
+    <ability name = "blink" />
+    <ability name = "fire_strike"   />
   </class>
 
   <class name = "incvisitor" >
-    <view src="incvisitor" size = "0.018" physic = "sphere" diameter = "0.2"
-          modelAlign = "CCi" >
+    <view src="chevalier" size = "0.2" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
     </view>
@@ -417,6 +318,38 @@
     <speed rotate = "5" move="56" />
 
     <atack range = "5" damage = "10" delay = "20" bullet="bullets/fire_large"/>
+  </class>
+
+  <class name = "bear" >
+    <view src="bear" size = "0.075" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "500" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "2" damage = "30" delay = "30" />
+  </class>
+
+  <class name = "polarbear" >
+    <view src="polarbear" size = "0.075" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "500" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "2" damage = "30" delay = "30" />
   </class>
 
   <class name = "golem_t" >
@@ -672,33 +605,6 @@
     </view>
   </class>
 
-  <class name = "selection.over" >
-    <view src = "hud/selection.over" size = "0.1"
-          specular = "0.0" >
-      <material del = "phong"   />
-      <material del = "shadow_cast"   />
-      <material add = "transparent_no_zw" />
-    </view>
-  </class>
-
-  <class name = "selection.moveTo" >
-    <view src = "hud/selection.moveTo" size = "0.1"
-          specular = "0.0" >
-      <material del = "phong"   />
-      <material del = "shadow_cast"   />
-      <material add = "transparent_no_zw" />
-    </view>
-  </class>
-
-  <class name = "selection.atkTo" >
-    <view src = "hud/selection.atkTo" size = "0.1"
-          specular = "0.0" >
-      <material del = "phong"   />
-      <material del = "shadow_cast"   />
-      <material add = "transparent_no_zw" />
-    </view>
-  </class>
-
   <class name = "tree0" >
     <view src="tree0" size = "0.08"
           physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
@@ -761,6 +667,21 @@
 
     <beavior add = "building"/>
     <property size = "4" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tree4" >
+    <view src="tree4" size = "0.03"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "1" />
     <property isBackground = "1" />
   </class>
 

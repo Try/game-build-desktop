@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<data>
+
+  <class name = "hud/blink" >
+    <view src="hud/blink" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "add"  />
+    </view>
+
+    <view src="sphere" size = "0.4" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+  </class>
+
+  <class name = "hud/take" >
+    <view src="hud/move" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "transparent_no_zw"  />
+    </view>
+
+    <view src="sphere" size = "1.4" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+  </class>
+
+  <class name = "hud/move" >
+    <view src="hud/move" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "transparent_no_zw"  />
+    </view>
+  </class>
+
+  <class name = "hud/atack" >
+    <view src="hud/atack" size = "0.1" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "transparent_no_zw"  />
+      <material add = "glow"  />
+    </view>
+  </class>
+
+
+  <class name = "selection.over" >
+    <view src = "hud/selection.over" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+  <class name = "selection.moveTo" >
+    <view src = "hud/selection.moveTo" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+  <class name = "selection.atkTo" >
+    <view src = "hud/selection.atkTo" size = "0.1"
+          specular = "0.0" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"   />
+      <material add = "transparent_no_zw" />
+    </view>
+  </class>
+
+</data>

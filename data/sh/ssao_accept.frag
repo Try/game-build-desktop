@@ -23,7 +23,7 @@ FS_Output main( FS_Input input,
 
 
     //float3 cl = 1.0-ao;//*texRECT( diff,  c ).rgb*0.3;//*lightAblimient;
-    //ret.final = float4( cl, 1.0);
+    //ret.final = texRECT( ssao,  c );
 
     return ret;
     }
