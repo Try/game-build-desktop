@@ -168,9 +168,14 @@ FS_Output main( FS_Input input
       waterDepth = clamp(waterDepth, 0, 1 );
       }
 
+    //diffuse = tex2D( texture, float2( min(1,0.25*waterDepth),0) )*input.color;
+
     diffuse = tex2D( texture, input.texcoord0+
-                              waterDepth*dWaterCoord*input.waterDepth.xy )*
-              input.color;
+                              waterDepth*dWaterCoord*input.waterDepth.xy );
+    diffuse.rg *= max( 1-waterDepth*0.07,         0.1 );
+    diffuse.a   = min( diffuse.a+waterDepth*0.09,   1 );
+    diffuse *= input.color;
+
     float frsn = fresnel( dot( normal, -view ), 1.6330 );
     { float3 cl = tex2D( envMap, input.texcoord0 ).rgb;
 

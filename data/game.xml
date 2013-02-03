@@ -11,7 +11,7 @@
   </class>
 
   <class name = "bullets/fire" >
-    <view src="bullets/fire" size = "0.05" >
+    <view src="bullets/fire" size = "0.015" >
       <material del = "shadow_cast"  />
       <material del = "phong"   />
       <material add = "glow"  />
@@ -26,7 +26,7 @@
       <material add = "omni"  />
     </view>
 
-    <view src="bullets/fire" size = "0.09" >
+    <view src="bullets/fire" size = "0.03" >
       <material del = "shadow_cast"  />
       <material del = "phong"   />
       <material add = "glow"  />
@@ -261,7 +261,9 @@
   </class>
 
   <class name = "incvisitor" >
-    <view src="chevalier" size = "0.2" physic = "sphere" diameter = "0.2"
+    <view src="chevalier" size = "0.2"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "unit"       />
@@ -321,7 +323,9 @@
   </class>
 
   <class name = "bear" >
-    <view src="bear" size = "0.075" physic = "sphere" diameter = "0.4"
+    <view src="bear" size = "0.075"
+          physic   = "box"
+          boxSizeX = "0.3" boxSizeY = "0.3" boxSizeZ = "0.15"
           modelAlign = "CCC" >
     </view>
 
@@ -338,6 +342,23 @@
 
   <class name = "polarbear" >
     <view src="polarbear" size = "0.075" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "500" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "2" damage = "30" delay = "30" />
+  </class>
+
+  <class name = "skeleton_mage" >
+    <view src="skeleton_mage" size = "0.015"
+          physic = "sphere" diameter = "0.04"
           modelAlign = "CCC" >
     </view>
 
@@ -1036,7 +1057,7 @@
   </class>
 
   <class name = "snake" >
-    <view src="snake" size = "0.2" physic = "sphere" diameter = "0.4"
+    <view src="snake" size = "0.02" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
     </view>
   </class>

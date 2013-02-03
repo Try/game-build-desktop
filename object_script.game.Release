@@ -103,4 +103,6 @@ INPUT(
 ./release\scenariomission1.o
 ./release\ability.o
 ./release\spell.o
+./release\richtext.o
+./release\model_mx.o
 );

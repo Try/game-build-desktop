@@ -1,5 +1,11 @@
 <?xml version="1.0" ?>
 <data>
+  <model   file = "./data/models/extra/snake.mx"      name="snake/model"  />
+  <texture file = "./data/textures/particles/fmono.png"
+           name="snake/diff" />
+  <texture file = "./data/textures/particles/fire.png"
+           name="snake/glow" />
+
   <module file = "./data/shaders.xml" />
   <module file = "./data/pixmaps.xml" />
   <module file = "./data/icons.xml" />
@@ -144,11 +150,11 @@
   <model   file = "./data/models/bullets/pike.mx"
            name="bullets/pike/model" />
 
-  <texture file = "./data/textures/particles/fire.png"
+  <texture file = "./data/textures/particles/fball.png"
            name="bullets/fire/diff" />
   <texture file = "./data/textures/particles/fire.png"
            name="bullets/fire/glow" />
-  <model   file = "./data/models/bullets/pike.mx"
+  <model   file = "./data/models/bullets/fball.mx"
            name="bullets/fire/model" />
   <sound   file = "./data/sound/fire_ball.wav" name="fire_ball" />
 
@@ -216,6 +222,13 @@
            name="bear/diff" />
   <texture file = "./data/textures/units/bearn.png"
            name="bear/norm" />
+
+  <model   file = "./data/models/units/skeleton_mage.mx"
+           name="skeleton_mage/model"  />
+  <texture file = "./data/textures/units/bear.png"
+           name="skeleton_mage/diff" />
+  <texture file = "./data/textures/units/bearn.png"
+           name="skeleton_mage/norm" />
 
   <model   file = "./data/models/units/bear.mx"
            name="polarbear/model"  />
@@ -402,9 +415,4 @@
   <model   file = "./data/models/extra/palms.mx"  name="palms/model"  />
   <texture file = "./data/textures/rocks/0.png"   name="palms/diff" />
 
-  <model   file = "./data/models/extra/snake.mx"      name="snake/model"  />
-  <texture file = "./data/textures/particles/fmono.png"
-           name="snake/diff" />
-  <texture file = "./data/textures/particles/fire.png"
-           name="snake/glow" />
 </data>

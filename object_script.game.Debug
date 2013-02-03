@@ -103,4 +103,6 @@ INPUT(
 ./debug\scenariomission1.o
 ./debug\ability.o
 ./debug\spell.o
+./debug\richtext.o
+./debug\model_mx.o
 );
