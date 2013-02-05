@@ -1,6 +1,11 @@
 <?xml version="1.0" ?>
 <data>
 
+  <class name = "land.white" >
+    <view src="white"
+          specular = "0.0"/>
+  </class>
+
   <class name = "land.grass" >
     <view src="grass"
           specular = "0.1"/>

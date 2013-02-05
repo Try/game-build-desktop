@@ -195,6 +195,7 @@ FS_Output main( FS_Input input
 
 #endif
 
+    float4 albedo = diffuse;
     ret.accum = diffuse;
 	
 #ifdef lambert
@@ -276,7 +277,7 @@ FS_Output main( FS_Input input
     //ret.accum = float4(l,l,l, 1.0);
 
 #ifdef gbuffer
-    ret.diffuse     = diffuse;
+    ret.diffuse     = albedo;
     //ret.accum.xyz = normal;
     //ret.diffuse.xyz = normal;
 

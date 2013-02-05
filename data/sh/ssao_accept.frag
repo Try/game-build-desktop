@@ -17,6 +17,7 @@ FS_Output main( FS_Input input,
     float2 c = input.texcoord0;
 
     float ao = 1.0-texRECT( ssao,  c ).r;//max( 1.0-texRECT( ssao,  c ).r*4, 0 );
+    ao = min(ao, 0.5);
 
     ret.final = texRECT( scene, c ) -
                 ao*texRECT( diff,  c )*float4(lightAblimient, 0.0);

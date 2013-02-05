@@ -283,7 +283,7 @@
 
   <class name = "golem" >
     <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
-          modelAlign = "CCi" >
+          modelAlign = "CCC" >
       <material add = "glow"/>
     </view>
 
@@ -366,7 +366,7 @@
     <beavior add = "warrior" />
     <property size = "2" />
 
-    <property maxHp = "500" />
+    <property maxHp = "10" />
     <property buildTime = "400" />
     <speed rotate = "5" move="60" />
 
@@ -375,7 +375,7 @@
 
   <class name = "golem_t" >
     <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
-          modelAlign = "CCi" >
+          modelAlign = "CCC" >
       <material del = "phong"     />
       <material add = "displace"/>
       <material add = "glow"/>
@@ -389,9 +389,30 @@
     <atack range = "0" damage = "10" delay = "20"/>
   </class>
 
+  <class name = "incvisitor_t" >
+    <view src="chevalier" size = "0.2"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "displace"/>
+    </view>
+
+    <property gold      = "200" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+    <property maxHp = "200" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "25" delay = "20"/>
+  </class>
+
   <class name = "golem_f" >
     <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
-          modelAlign = "CCi" >
+          modelAlign = "CCC" >
       <material del = "phong"     />
       <material add = "displace"/>
       <material add = "glow"/>
@@ -979,11 +1000,29 @@
     </view>
 
     <beavior add = "bonus"/>
-    <property mouseHint = "$(heal_rune)" />
+    <property key = "bonusAnim" val="rotate" />
+    <property key = "bonusType" val="hill" />
+    <property mouseHint = "$(heal_rune)"   />
+
+    <property invincible   = "1"  />
+    <property visionRange  = "16"  />
+  </class>  
+
+  <class name = "chest" >
+    <view src="chest" size = "0.0175"
+          modelAlign = "CCC"
+          specular = "0" >
+      <material add = "glow"       />
+    </view>
+
+    <beavior add = "bonus"/>
+    <property mouseHint = "$(gold)" />
+    <property key = "bonusType" val="event" />
 
     <property invincible   = "1"  />
     <property visionRange  = "16"  />
   </class>
+
 
   <class name = "ycube" >
     <view src="ycube" size = "0.08"

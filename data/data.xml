@@ -73,6 +73,8 @@
   <texture file = "./data/textures/land/grass1.png"  name="grass/diff"  />
   <texture file = "./data/textures/land/grass1n.png" name="grass/norm"  />
 
+  <texture file = "./data/textures/w.png"  name="white/diff"  />
+
   <texture file = "./data/textures/land/grass2.png"  name="grass2/diff"  />
   <texture file = "./data/textures/land/grass2n.png" name="grass2/norm"  />
 
@@ -400,6 +402,10 @@
   <texture file = "./data/textures/particles/smoke.png"  name="smoke/diff"  />
   <texture file = "./data/textures/particles/smoken.png" name="smoke/norm"  />
 
+  <model   file = "./data/models/items/chest.mx"      name="chest/model" />
+  <texture file = "./data/textures/items/chest.png"   name="chest/diff"  />
+  <texture file = "./data/textures/items/chestn.png"  name="chest/norm"  />
+  <texture file = "./data/textures/items/chestg.png"  name="chest/glow"  />
 
   <model   file = "./data/models/envi/frog.mx"      name="frog/model" />
   <texture file = "./data/textures/envi/frog.png"   name="frog/diff"  />
