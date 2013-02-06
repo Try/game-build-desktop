@@ -160,6 +160,14 @@
            name="bullets/fire/model" />
   <sound   file = "./data/sound/fire_ball.wav" name="fire_ball" />
 
+  <texture file = "./data/textures/crystals/blue.png"
+           name="bullets/dark_ball/diff" />
+  <texture file = "./data/textures/crystals/blue.png"
+           name="bullets/dark_ball/glow" />
+  <model   file = "./data/models/bullets/fball.mx"
+           name="bullets/dark_ball/model" />
+  <sound   file = "./data/sound/fire_ball.wav" name="fire_ball" />
+
   <texture file = "./data/textures/golem/glow.png" name="golem/glow"  />
   <texture file = "./data/textures/golem/tex.png"  name="golem/diff"  />
   <texture file = "./data/textures/golem/n.png"    name="golem/norm"  />
@@ -181,6 +189,8 @@
            name="chevalier/diff"  />
   <texture file = "./data/textures/units/chevaliern.png"
            name="chevalier/norm"  />
+  <texture file = "./data/textures/crystals/blue.png"
+           name="chevalier/glow"  />
   <texture file = "./data/textures/sm.png"              name="chevalier/sm"  />
   <model   file = "./data/models/units/chevalier.mx"    name="chevalier/model" />
 
@@ -227,7 +237,7 @@
 
   <model   file = "./data/models/units/skeleton_mage.mx"
            name="skeleton_mage/model"  />
-  <texture file = "./data/textures/units/bear.png"
+  <texture file = "./data/textures/crystals/blue.png"
            name="skeleton_mage/diff" />
   <texture file = "./data/textures/units/bearn.png"
            name="skeleton_mage/norm" />
@@ -314,6 +324,10 @@
   <texture file = "./data/textures/crystals/blue.png"    name="crystal/diff" />
   <texture file = "./data/textures/crystals/glow.png"    name="crystal/glow" />
   <model   file = "./data/models/crystal2.mx"            name="crystal/model" />
+
+  <texture file = "./data/textures/crystals/blue.png"    name="ore_sparks/diff" />
+  <texture file = "./data/textures/crystals/glow.png"    name="ore_sparks/glow" />
+  <model   file = "./data/models/envi/ore_sparks.mx"     name="ore_sparks/model" />
 
   <texture file = "./data/textures/crystals/green.png"   name="crystal.green/diff" />
   <texture file = "./data/textures/crystals/green.png"   name="crystal.green/glow" />
@@ -417,6 +431,9 @@
   <model   file = "./data/models/envi/pyramid.mx"      name="pyramid/model" />
   <texture file = "./data/textures/envi/pyramid.jpg"   name="pyramid/diff"  />
   <texture file = "./data/textures/envi/pyramidn.png"  name="pyramid/norm"  />
+
+  <model   file = "./data/models/envi/racoon.mx"      name="racoon/model" />
+  <texture file = "./data/textures/envi/racoon.jpg"  name="racoon/diff"  />
 
   <model   file = "./data/models/extra/palms.mx"  name="palms/model"  />
   <texture file = "./data/textures/rocks/0.png"   name="palms/diff" />

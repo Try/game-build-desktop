@@ -10,6 +10,9 @@
   <pixmap  src = "./data/textures/gui/hintFrame.png"
            name = "gui/hintFrame"  />
 
+  <pixmap  src = "./data/textures/gui/ckBoxFrame.png"
+           name = "gui/ckBoxFrame"  />
+
   <pixmap  src = "./data/textures/gui/paper.png"
            name = "gui/background"  />
 

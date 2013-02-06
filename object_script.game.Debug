@@ -105,4 +105,5 @@ INPUT(
 ./debug\spell.o
 ./debug\richtext.o
 ./debug\model_mx.o
+./debug\missiontargets.o
 );

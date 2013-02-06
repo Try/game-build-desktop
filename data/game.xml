@@ -34,6 +34,15 @@
     </view>
   </class>
 
+  <class name = "bullets/dark_ball" >
+    <view src="bullets/dark_ball" size = "0.03" >
+      <material del = "shadow_cast"  />
+      <material del = "phong"   />
+      <material add = "glow"  />
+      <material add = "add"  />
+    </view>
+  </class>
+
   <class name = "pointlight" >
     <view src="sphere" size = "1" >
       <material del = "phong"   />
@@ -311,6 +320,15 @@
       <material add = "omni"  />
     </view>
 
+    <commands>
+      <page num = "0" >
+        <button action = "castToGround"
+                taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
+                icon = "gui/icon/fire_strike"
+                hint   = "$(fire_strike)" />
+      </page>
+    </commands>
+
     <beavior add = "move"/>
     <beavior add = "warrior" />
     <property size = "2" />
@@ -320,6 +338,7 @@
     <speed rotate = "5" move="56" />
 
     <atack range = "5" damage = "10" delay = "20" bullet="bullets/fire_large"/>
+    <ability name = "fire_strike"   />
   </class>
 
   <class name = "bear" >
@@ -366,11 +385,11 @@
     <beavior add = "warrior" />
     <property size = "2" />
 
-    <property maxHp = "10" />
+    <property maxHp = "250" />
     <property buildTime = "400" />
     <speed rotate = "5" move="60" />
 
-    <atack range = "2" damage = "30" delay = "30" />
+    <atack range = "6" damage = "5" delay = "30" bullet="bullets/dark_ball" />
   </class>
 
   <class name = "golem_t" >
@@ -384,18 +403,22 @@
     <beavior add = "move"/>
     <beavior add = "warrior" />
     <property size = "2" />
+
+    <property maxHp = "400" />
+    <property buildTime = "400" />
     <speed rotate = "5" move="56" />
 
-    <atack range = "0" damage = "10" delay = "20"/>
+    <atack range = "1" damage = "10" delay = "20" bullet=""/>
   </class>
 
   <class name = "incvisitor_t" >
-    <view src="chevalier" size = "0.2"
+    <view src="chevalier" size = "0.3"
           physic   = "box"
           boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
       <material del = "phong"      />
       <material add = "displace"/>
+      <material add = "glow"/>
     </view>
 
     <property gold      = "200" />
@@ -901,6 +924,17 @@
     <property size = "1" />
   </class>
 
+  <class name = "ore_sparks" >
+    <view src="ore_sparks" size = "0.04"
+          physic = "sphere" diameter = "0.5"
+          randRotate = "true" >
+      <material del = "phong"   />
+      <material add = "displace"/>
+      <material add = "glow"    />
+      <material add = "add"     />
+    </view>
+  </class>
+
   <class name = "crystal.green" >
     <view src="crystal.green" size = "0.3"
           physic = "box"  boxSize = "0.1" >
@@ -1016,11 +1050,25 @@
     </view>
 
     <beavior add = "bonus"/>
-    <property mouseHint = "$(gold)" />
+    <property mouseHint = "$(arto_ore)" />
     <property key = "bonusType" val="event" />
 
     <property invincible   = "1"  />
     <property visionRange  = "16"  />
+  </class>
+
+  <class name = "chest_small" >
+    <view src="chest"
+          sizeX = "0.01" sizeY = "0.0175" sizeZ = "0.0175"
+          modelAlign = "CCC"
+          specular = "0" >
+    </view>
+
+    <beavior add = "bonus"/>
+    <property mouseHint = "$(small_chest)" />
+    <property key = "bonusType" val="event" />
+
+    <property invincible   = "1"  />
   </class>
 
 
@@ -1093,6 +1141,14 @@
     <property isBackground = "1" />
     <beavior add = "building"/>
     <property size = "10" />
+  </class>
+
+  <class name = "racoon" >
+    <view src="racoon" size = "0.15" modelAlign = "CCC" >
+    </view>
+    <property isBackground = "1" />
+    <beavior add = "building"/>
+    <property size = "0" />
   </class>
 
   <class name = "snake" >

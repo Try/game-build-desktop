@@ -50,6 +50,12 @@
   <pixmap  src  = "./data/icons/golem.png"
            name = "gui/icon/golem"  />
 
+  <pixmap  src  = "./data/icons/golem.png"
+           name = "gui/icon/golem_t"  />
+
+  <pixmap  src  = "./data/icons/fire_element.png"
+           name = "gui/icon/fire_element"  />
+
   <pixmap  src  = "./data/icons/mage.png"
            name = "gui/icon/fire_mage"  />
 
@@ -61,6 +67,9 @@
 
   <pixmap  src  = "./data/icons/golem.png"
            name = "gui/icon/golem_f"  />
+
+  <pixmap  src  = "./data/icons/bear.png"
+           name = "gui/icon/bear"  />
 
   <pixmap  src  = "./data/icons/castle.png"
            name = "gui/icon/castle"  />
