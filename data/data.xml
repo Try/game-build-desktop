@@ -1,8 +1,10 @@
 <?xml version="1.0" ?>
 <data>
   <model   file = "./data/models/extra/snake.mx"      name="snake/model"  />
-  <texture file = "./data/textures/particles/fmono.png"
+  <texture file = "./data/textures/envi/pyramid.jpg"
            name="snake/diff" />
+  <texture file = "./data/textures/envi/pyramidn.png"
+           name="snake/norm" />
   <texture file = "./data/textures/particles/fire.png"
            name="snake/glow" />
 
@@ -293,6 +295,18 @@
   <texture file = "./data/textures/buildings/tower.png"  name="tower/diff" />
   <texture file = "./data/textures/buildings/towern.png" name="tower/norm" />
   <model   file = "./data/models/buildings/tower.mx"     name="tower/model" />
+
+  <model   file = "./data/models/extra/tower0.mx"      name="tower0/model"  />
+  <texture file = "./data/textures/envi/pyramid.jpg"
+           name="tower0/diff" />
+  <texture file = "./data/textures/envi/pyramidn.png"
+           name="tower0/norm" />
+
+  <model   file = "./data/models/extra/wall.mx"      name="wall/model"  />
+  <texture file = "./data/textures/envi/pyramid.jpg"
+           name="wall/diff" />
+  <texture file = "./data/textures/envi/pyramidn.png"
+           name="wall/norm" />
 
   <texture file = "./data/textures/gray.png"            name="forge/diff" />
   <model   file = "./data/models/buildings/forge.mx"    name="forge/model" />

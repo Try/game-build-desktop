@@ -106,4 +106,5 @@ INPUT(
 ./debug\richtext.o
 ./debug\model_mx.o
 ./debug\missiontargets.o
+./debug\deatmachscenarion.o
 );
