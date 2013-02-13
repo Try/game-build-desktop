@@ -72,73 +72,73 @@
   <model   file = "./data/models/util/quad.mx"
            name="hud/selection.atkTo/model" />
 
-  <texture file = "./data/textures/land/grass1.png"  name="grass/diff"  />
+  <texture_with_avg file = "./data/textures/land/grass1.png"  name="grass/diff"  />
   <texture file = "./data/textures/land/grass1n.png" name="grass/norm"  />
 
-  <texture file = "./data/textures/w.png"  name="white/diff"  />
+  <texture_with_avg file = "./data/textures/w.png"  name="white/diff"  />
 
-  <texture file = "./data/textures/land/grass2.png"  name="grass2/diff"  />
+  <texture_with_avg file = "./data/textures/land/grass2.png"  name="grass2/diff"  />
   <texture file = "./data/textures/land/grass2n.png" name="grass2/norm"  />
 
-  <texture file = "./data/textures/land/grass3.png"  name="grass3/diff"  />
-  <texture file = "./data/textures/land/grass3n.png" name="grass3/norm"  />
+  <texture_with_avg file = "./data/textures/land/grass3.png"  name="grass3/diff"  />
+  <texture          file = "./data/textures/land/grass3n.png" name="grass3/norm"  />
 
-  <texture file = "./data/textures/land/grass4.png"  name="grass4/diff"  />
-  <texture file = "./data/textures/land/grass4n.png" name="grass4/norm"  />
+  <texture_with_avg file = "./data/textures/land/grass4.png"  name="grass4/diff"  />
+  <texture          file = "./data/textures/land/grass4n.png" name="grass4/norm"  />
 
-  <texture file = "./data/textures/land/grass5.png"  name="grass5/diff"  />
-  <texture file = "./data/textures/land/grass5n.png" name="grass5/norm"  />
+  <texture_with_avg file = "./data/textures/land/grass5.png"  name="grass5/diff"  />
+  <texture          file = "./data/textures/land/grass5n.png" name="grass5/norm"  />
 
-  <texture file = "./data/textures/land/grass6.png"  name="grass6/diff"  />
+  <texture_with_avg file = "./data/textures/land/grass6.png"  name="grass6/diff"  />
   <texture file = "./data/textures/land/grass6n.png" name="grass6/norm"  />
 
-  <texture file = "./data/textures/land/ground_rock.png"
-           name="ground_rock/diff"  />
-  <texture file = "./data/textures/land/ground_rockn.png"
-           name="ground_rock/norm"  />
+  <texture_with_avg file = "./data/textures/land/ground_rock.png"
+                    name="ground_rock/diff"  />
+  <texture_with_avg file = "./data/textures/land/ground_rockn.png"
+                    name="ground_rock/norm"  />
 
-  <texture file = "./data/textures/land/sand.png"   name="sand/diff"  />
+  <texture_with_avg file = "./data/textures/land/sand.png"   name="sand/diff"  />
   <texture file = "./data/textures/land/sandn.png"  name="sand/norm"  />
 
-  <texture file = "./data/textures/land/snow.png"   name="snow/diff"  />
-  <texture file = "./data/textures/land/snown.png"  name="snow/norm"  />
+  <texture_with_avg file = "./data/textures/land/snow.png"   name="snow/diff"  />
+  <texture          file = "./data/textures/land/snown.png"  name="snow/norm"  />
 
-  <texture file = "./data/textures/land/snow2.png"  name="snow2/diff"  />
-  <texture file = "./data/textures/land/snow2n.png" name="snow2/norm"  />
+  <texture_with_avg file = "./data/textures/land/snow2.png"  name="snow2/diff"  />
+  <texture          file = "./data/textures/land/snow2n.png" name="snow2/norm"  />
 
-  <texture file = "./data/textures/land/snow_grass.png"
-           name="snow_grass/diff"  />
+  <texture_with_avg file = "./data/textures/land/snow_grass.png"
+                    name="snow_grass/diff"  />
   <texture file = "./data/textures/land/snow_grassn.png"
            name="snow_grass/norm"  />
 
-  <texture file = "./data/textures/land/rock_snow.png"  name="rock_snow/diff"  />
+  <texture_with_avg file = "./data/textures/land/rock_snow.png"  name="rock_snow/diff"  />
   <texture file = "./data/textures/land/rock_snown.png" name="rock_snow/norm"  />
 
-  <texture file = "./data/textures/land/rock.png"   name="lrock/diff"  />
+  <texture_with_avg file = "./data/textures/land/rock.png"   name="lrock/diff"  />
   <texture file = "./data/textures/land/rockn.png"  name="lrock/norm"  />
 
-  <texture file = "./data/textures/land/rock1.png"  name="lrock1/diff"  />
+  <texture_with_avg file = "./data/textures/land/rock1.png"  name="lrock1/diff"  />
   <texture file = "./data/textures/land/rock1n.png" name="lrock1/norm"  />
 
-  <texture file = "./data/textures/land/cliff.png"  name="cliff/diff"  />
+  <texture_with_avg file = "./data/textures/land/cliff.png"  name="cliff/diff"  />
   <texture file = "./data/textures/land/cliffn.png" name="cliff/norm"  />
 
-  <texture file = "./data/textures/land/temple.png"  name="temple/diff"  />
+  <texture_with_avg file = "./data/textures/land/temple.png"  name="temple/diff"  />
   <texture file = "./data/textures/land/templen.png" name="temple/norm"  />
 
-  <texture file = "./data/textures/land/ground.png"  name="ground/diff"  />
+  <texture_with_avg file = "./data/textures/land/ground.png"  name="ground/diff"  />
   <texture file = "./data/textures/land/groundn.png" name="ground/norm"  />
 
-  <texture file = "./data/textures/land/brick0.jpg"  name="brick/diff"  />
+  <texture_with_avg file = "./data/textures/land/brick0.jpg"  name="brick/diff"  />
   <texture file = "./data/textures/land/brick0n.png" name="brick/norm"  />
 
-  <texture file = "./data/textures/land/brick1.png"  name="brick1/diff"  />
+  <texture_with_avg file = "./data/textures/land/brick1.png"  name="brick1/diff"  />
   <texture file = "./data/textures/land/brick1n.png" name="brick1/norm"  />
 
-  <texture file = "./data/textures/land/brick2.jpg"  name="brick2/diff"  />
+  <texture_with_avg file = "./data/textures/land/brick2.jpg"  name="brick2/diff"  />
   <texture file = "./data/textures/land/brick2n.png" name="brick2/norm"  />
 
-  <texture file = "./data/textures/land/lava.png"   name="lava/diff"  />
+  <texture_with_avg file = "./data/textures/land/lava.png"   name="lava/diff"  />
   <texture file = "./data/textures/land/lavan.png"  name="lava/norm"  />
   <texture file = "./data/textures/land/lava_glow.png"   name="lava/glow"  />
 
@@ -429,6 +429,8 @@
 
   <texture file = "./data/textures/particles/smoke.png"  name="smoke/diff"  />
   <texture file = "./data/textures/particles/smoken.png" name="smoke/norm"  />
+
+  <texture file = "./data/textures/particles/snow.png"  name="snowflake/diff"  />
 
   <model   file = "./data/models/items/chest.mx"      name="chest/model" />
   <texture file = "./data/textures/items/chest.png"   name="chest/diff"  />

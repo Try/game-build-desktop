@@ -23,10 +23,11 @@ FS_Input main( VS_Input IN,
     sc /= sc.w;
     //sc.z = min(sc.z, 1.0);
 
-    OUT.position = sc;
-    OUT.position /= OUT.position.w;
-    OUT.position.z = min(OUT.position.z,0.99);
-    OUT.pos      = sc.xyz;
+    OUT.position   = sc;
+    //OUT.position.z = 0.1;//max(sc.z, 0.1);
+    OUT.position.w = 1;
+
+    OUT.pos      = OUT.position.xyz;
     OUT.lpos     = float3(-disp);//mul( mvpMatrix, float4(0,0,0, 1) );
 
     float2 tc = (sc.xy + float2(1.0))*0.5;

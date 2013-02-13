@@ -71,7 +71,7 @@ FS_Output main( FS_Input input,
     val = val*1.0/(0.5 + 0.1*l + 0.5*l*l )*(1.0-l);
 
     //ret.color = float4( l, l, l, 1.0-l );
-    ret.color = lamb*texRECT( albedo, tc0 )*float4(val, val, val, 1)*float4(0.6, 0.4, 0.6, 1.0);
+    ret.color   = lamb*texRECT( albedo, tc0 )*float4(val, val, val, 1)*float4(0.6, 0.4, 0.6, 1.0);
     ret.color.a = length( ret.color.rgb );
     //ret.color = float4(n,1);
 

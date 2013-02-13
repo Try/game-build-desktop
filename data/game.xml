@@ -2,6 +2,7 @@
 <data>
 
   <module file = "./data/land.xml" />
+  <module file = "./data/particle.xml" />
   <module file = "./data/spell.xml" />
   <module file = "./data/hud.xml" />
 
@@ -452,7 +453,7 @@
       <material add = "displace"/>
       <material add = "glow"/>
     </view>
-    <view src="fire" size = "1" isParticle = "true" >
+    <view src="fire" size = "1" isParticle = "fire" >
       <material del = "phong"      />
       <material del = "shadow_cast"      />
       <material add = "add"       />
@@ -1137,28 +1138,6 @@
     </view>
     <property isBackground = "1" />
   </class>
-
-  <class name = "fire" >
-    <view src="fire" size = "1" isParticle = "true" >
-      <material del = "phong"      />
-      <material del = "shadow_cast"      />
-      <material add = "add"       />
-    </view>
-    <view src="sphere" size = "1" >
-      <material del = "phong"   />
-      <material del = "shadow_cast"  />
-      <material add = "omni"  />
-    </view>
-    <property isBackground = "1" />
-  </class>
-
-  <class name = "smoke" >
-    <view src="smoke" size = "1" isParticle = "true" >
-      <material del = "phong"          />
-      <material add = "transparent_no_zw"    />
-    </view>
-    <property isBackground = "1" />
-  </class>  
 
   <class name = "palms" >
     <view src="palms" size = "0.017" physic = "sphere" diameter = "0.4"

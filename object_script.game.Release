@@ -107,4 +107,5 @@ INPUT(
 ./release\model_mx.o
 ./release\missiontargets.o
 ./release\deatmachscenarion.o
+./release\particlesystemdeclaration.o
 );

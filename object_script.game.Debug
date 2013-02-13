@@ -107,4 +107,5 @@ INPUT(
 ./debug\model_mx.o
 ./debug\missiontargets.o
 ./debug\deatmachscenarion.o
+./debug\particlesystemdeclaration.o
 );

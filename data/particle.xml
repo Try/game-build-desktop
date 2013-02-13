@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<data>
+
+  <particle name = "fire" >
+    <init>
+      <min x = "-0.05" y = "-0.05" size="0.06"/>
+      <max x =  "0.05" y =  "0.05" size="0.09"/>
+    </init>
+
+    <velocity>
+      <min z = "0.015" size="-0.001"/>
+      <max z = "0.015" size="-0.001"/>
+    </velocity>
+
+    <density value = "-2"/>
+  </particle>
+
+  <class name = "fire" >
+    <view src="fire" size = "1" isParticle = "fire" >
+      <material del = "phong"      />
+      <material del = "shadow_cast"      />
+      <material add = "add"       />
+    </view>
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <particle name = "fire1" >
+    <init>
+      <min x = "-0.05" y = "-0.05" z="0.1" size="0.01"/>
+      <max x =  "0.05" y =  "0.05" z="0.1" size="0.03"/>
+    </init>
+
+    <velocity>
+      <min size="-0.0005"/>
+      <max size="-0.0005"/>
+    </velocity>
+
+    <density value = "3"/>
+  </particle>
+
+  <class name = "fire1" >
+    <view src="fire" size = "1" isParticle = "fire1" >
+      <material del = "phong"      />
+      <material del = "shadow_cast"      />
+      <material add = "add"       />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+
+  <particle name = "smoke" >
+    <init>
+      <min size="0.05" a = "0.5"/>
+      <max size="0.05" a = "0.5"/>
+    </init>
+
+    <velocity>
+      <min x = "0.005"  y = "0.005"  z = "0.015" size="0.001" a="-0.005"/>
+      <max x = "-0.005" y = "-0.005" z = "0.015" size="0.001" a="-0.006"/>
+    </velocity>
+
+    <density value = "-6"/>
+  </particle>
+
+  <class name = "smoke" >
+    <view src="smoke" size = "1" isParticle = "smoke" >
+      <material del = "phong"          />
+      <material add = "transparent_no_zw"    />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+  <particle name = "snowflake" >
+    <init>
+      <min x = "-0.5" y = "-0.5" z="2.5" size="0.005"/>
+      <max x =  "0.5" y =  "0.5" z="2.5" size="0.015"/>
+    </init>
+
+    <velocity>
+      <min x = "-0.005"  y = "-0.005" z="-0.02" a="-0.005" />
+      <max x = "-0.005"  y = "-0.005" z="-0.02" a="-0.005" />
+    </velocity>
+
+    <density value = "3"/>
+  </particle>
+
+  <class name = "snowflake" >
+    <view src="snowflake" size = "1" isParticle = "snowflake" >
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+</data>
