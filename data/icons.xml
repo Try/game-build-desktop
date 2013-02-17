@@ -8,6 +8,8 @@
   <pixmap  src  = "./data/icons/pointlight.png"
            name = "gui/icon/pointlight"  />
 
+  <pixmap  src  = "./data/icons/actions/build.png"
+           name = "gui/icon/build"  />
   <pixmap  src  = "./data/icons/actions/cancel.png"
            name = "gui/icon/cancel"  />
 

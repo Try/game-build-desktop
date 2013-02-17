@@ -6,9 +6,20 @@
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert  = "" />
+    <define lighting = "" />
     <define shadows  = "" />
     <define gbuffer  = "" />
     <define specular = "" />
+  </shader>
+
+  <shader vs = "./data/sh/main_material.vert"
+          fs = "./data/sh/main_material.frag"
+          name = "grass_material">
+    <define diffuseTexture = "" />
+    <define lighting = "" />
+    <define specular  = "" />
+    <define shadows  = "" />
+    <define gbuffer  = "" />
   </shader>
 
   <shader vs = "./data/sh/main_material.vert"
@@ -17,6 +28,7 @@
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert   = "" />
+    <define lighting = "" />
     <define shadows   = "" />
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -35,6 +47,7 @@
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert   = "" />
+    <define lighting = "" />
     <define shadows   = "" />
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -45,7 +58,8 @@
   <shader vs = "./data/sh/main_material.vert"
           fs = "./data/sh/main_material.frag"
           name = "displace" >
-    <define displace = "" />
+    <define displace    = "" />
+    <define bumpMapping = "" />
   </shader>
 
   <shader vs = "./data/sh/main_material.vert"
@@ -54,6 +68,7 @@
     <define diffuseTexture = "" />
     <define displace = "" />
     <define lambert  = "" />
+    <define lighting = "" />
     <define shadows  = "" />
     <define water = "" />
     <define specular = "" />

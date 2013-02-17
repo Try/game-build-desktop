@@ -108,4 +108,5 @@ INPUT(
 ./release\missiontargets.o
 ./release\deatmachscenarion.o
 ./release\particlesystemdeclaration.o
+./release\grassmaterial.o
 );

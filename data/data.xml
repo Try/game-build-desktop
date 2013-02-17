@@ -276,8 +276,9 @@
   <texture file = "./data/textures/trees/4n.png"         name="tree4/norm" />
   <model   file = "./data/models/trees/4.mx"             name="tree4/model" />
 
-  <texture file = "./data/textures/gray.png"             name="castle/diff" />
-  <model   file = "./data/models/buildings/castle.mx"    name="castle/model" />
+  <texture file = "./data/textures/buildings/castle.png"  name="castle/diff" />
+  <texture file = "./data/textures/buildings/castlen.png" name="castle/norm" />
+  <model   file = "./data/models/buildings/castle.mx"     name="castle/model" />
 
   <texture file = "./data/textures/gray.png"             name="barracks/diff" />
   <model   file = "./data/models/buildings/barracks.mx"  name="barracks/model" />

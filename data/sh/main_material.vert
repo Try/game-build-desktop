@@ -28,10 +28,9 @@ struct FS_Input {
 
 #ifdef displace
   float3 screenPos     : TEXCOORD4;
-  float3 sspaceNormal  : TEXCOORD5;
 #endif
 #ifdef water
-  float4 waterDepth : TEXCOORD6;
+  float4 waterDepth : TEXCOORD5;
 #endif
     };
 
@@ -63,7 +62,7 @@ FS_Input main( VS_Input IN,
     float4x4 m = objectMatrix;
 
     OUT.position   = mul( mvpMatrix, v );
-    OUT.bnormal    = mul( mvpMatrix, float4( IN.bnormal.x,
+    OUT.bnormal    = mul( m, float4( IN.bnormal.x,
                                              IN.bnormal.y,
                                              IN.bnormal.z,
                                              0.0f ) );
@@ -75,8 +74,6 @@ FS_Input main( VS_Input IN,
 #endif
 
 #ifdef displace
-    float4 nt      = mul( mvpMatrix, n );
-    OUT.sspaceNormal.xyz = nt.xyz/nt.w;
     OUT.screenPos  = OUT.position/OUT.position.w;	
 #endif
 

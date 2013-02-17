@@ -492,6 +492,8 @@
         <button action = "buy" taget="worker" x = "0" y = "0" hotkey = "e" />
       </page>
     </commands>
+
+    <property deathAnim = "physic" />
   </class>
 
   <class name = "barracks" >
@@ -943,11 +945,14 @@
   </class>
 
   <class name = "grass0" >
-    <view src="grass0" size = "0.08"
-          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+    <view src="grass0" size = "0.04"
           modelAlign = "CCi"
           specular = "0"
-          randRotate = "true" />
+          randRotate = "true" >
+      <material del = "phong"   />
+      <material add = "grass"/>
+    </view>
+
     <property isBackground = "1" />
   </class>
 

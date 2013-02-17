@@ -17,10 +17,9 @@ struct FS_Input {
 
 #ifdef displace
   float3 screenPos     : TEXCOORD4;
-  float3 sspaceNormal  : TEXCOORD5;
 #endif
 #ifdef water
-  float4 waterDepth : TEXCOORD6;
+  float4 waterDepth : TEXCOORD5;
 #endif
     };
 
@@ -100,6 +99,56 @@ float3 computeNormal( in FS_Input input, sampler2D nMap ){
 #endif
   }
 
+float computeWaterDepth( float3    screenPos,
+                         float4    objPosition,
+                         float4x4  invMatrix,
+                         sampler2D sceneDepth,
+                         float2 dTexCoord ){
+  float2 tx = screenPos.xy;
+  tx = 0.5*(tx+float2(1.0));
+  tx.y = 1.0-tx.y;
+
+  tx += dTexCoord*0.5;
+
+  float4 pos = float4(screenPos.xyz, 1);
+  pos.z = tex2D( sceneDepth, tx ).r;
+  pos = mul(invMatrix, pos);
+  pos /= pos.w;
+  pos = (pos-objPosition);
+
+  float waterDepth = 1.5*length(pos);
+  waterDepth = clamp(waterDepth, 0, 1 );
+
+  return waterDepth;
+  }
+
+float computeLambert( float3 normal,
+                      float3 lightDirection,
+                      sampler2D shadowMap,
+                      float4 shPosition ){
+    float l = 1;
+#ifdef lambert
+  #ifndef water
+    l = -dot( normal, lightDirection );
+  #else
+    l = max(0, (-dot( normal, lightDirection )+0.5)/1.5);
+    // l = mix(l, 1.0, frsn); // wtf?
+  #endif
+    l = clamp(l, 0, 1);
+#endif//lambert
+
+#  ifdef shadows
+    float4 smPos = shPosition;
+      #ifdef water
+      smPos.xy += 15*normal.xy/1024.0;
+      #endif
+    float smValue = shadowMapValue( shadowMap, smPos );
+    l = min( smValue, l );
+#  endif//shadows
+
+  return l;
+  }
+
 FS_Output main( FS_Input input
 #ifdef diffuseTexture
                 ,uniform sampler2D texture
@@ -110,7 +159,7 @@ FS_Output main( FS_Input input
 #ifdef shadows
                 ,uniform sampler2D shadowMap
 #endif
-#ifdef lambert
+#ifdef lighting
                 ,uniform float3 lightDirection
                 ,uniform float3 lightColor
                 ,uniform float3 lightAblimient
@@ -119,6 +168,7 @@ FS_Output main( FS_Input input
                 ,uniform sampler2D scene
                 ,uniform sampler2D sceneDepth
                 ,uniform float2 dTexCoord
+                ,uniform float4x4 mvpMatrix
 #endif
 #ifdef water
                 ,uniform float2 dWaterCoord
@@ -133,12 +183,22 @@ FS_Output main( FS_Input input
 #ifdef teamColor
                 ,uniform float3 tmColor
 #endif
+#ifdef perlnFade
+                ,uniform sampler2D noise2DTex
+                ,uniform float     noiseRef
+#endif
                 ) {
     FS_Output ret;
     float lambertVal = 1;
 
+#ifdef perlnFade
+    float n = tex2D( noise2DTex, input.texcoord0 ).r;
+    if( n<noiseRef )
+      discard;
+#endif
+
 #ifdef water
-	float3 normal  = tex2D( normalMap, input.texcoord0+dWaterCoord*input.waterDepth.xy  ).rgb*2-float3(1.0);
+    float3 normal  = tex2D( normalMap, input.texcoord0+dWaterCoord*input.waterDepth.xy  ).rgb*2-float3(1.0);
 #else
 #  ifdef bumpMapping
     float3 normal  = computeNormal(input, normalMap);
@@ -150,31 +210,18 @@ FS_Output main( FS_Input input
     
 #ifdef diffuseTexture
 	#ifdef water
-    float waterDepth;
-    {
-      float2 tx = input.screenPos.xy;
-      tx = 0.5*(tx+float2(1.0));
-      tx.y = 1.0-tx.y;
-
-      tx += dTexCoord*0.5;
-
-      float4 pos = float4(input.screenPos.xyz, 1);
-      pos.z = tex2D( sceneDepth, tx ).r;
-      pos = mul(invMatrix, pos);
-      pos /= pos.w;
-      pos = (pos-input.objPosition);
-
-      waterDepth = 1.5*length(pos);
-      waterDepth = clamp(waterDepth, 0, 1 );
-      }
-
-    //diffuse = tex2D( texture, float2( min(1,0.25*waterDepth),0) )*input.color;
+    float waterDepth = computeWaterDepth( input.screenPos,
+                                          input.objPosition,
+                                          invMatrix,
+                                          sceneDepth,
+                                          dTexCoord );
 
     diffuse = tex2D( texture, input.texcoord0+
                               waterDepth*dWaterCoord*input.waterDepth.xy );
-    diffuse.rg *= max( 1-waterDepth*0.07,         0.1 );
-    diffuse.a   = min( diffuse.a+waterDepth*0.09,   1 );
-    diffuse *= input.color;
+    diffuse.r *= max( 1-waterDepth*0.08,         0.0 );
+    diffuse.g *= max( 1-waterDepth*0.04,         0.1 );
+    diffuse.a  = min( diffuse.a+waterDepth*0.09,   1 );
+    diffuse   *= input.color;
 
     float frsn = fresnel( dot( normal, -view ), 1.6330 );
     { float3 cl = tex2D( envMap, input.texcoord0 ).rgb;
@@ -192,43 +239,38 @@ FS_Output main( FS_Input input
     diffuse.rgb += tmColor*(1.0-diffuse.a);
     if( diffuse.a==0 )
       discard;
-
 #endif
 
     float4 albedo = diffuse;
     ret.accum = diffuse;
-	
-#ifdef lambert
-    {
-	#ifndef water
-    float l = -dot( normal, lightDirection );
-	#else
-    float l = -dot( (normal+float3(1))*0.5, lightDirection );
-    l = mix(l, 1.0, frsn);
-	#endif
-	
-#  ifdef shadows
-    float4 smPos = input.shPosition;
-    #ifdef water
-    smPos.xy += 15*normal.xy/1024.0;
-	#endif
-    float smValue = shadowMapValue( shadowMap, smPos );
-    l = min( smValue, l );
-#  endif//shadows
-    l = clamp(l, 0, 1);
-    lambertVal = l;
-    diffuse.rgb *= float4( ( lightColor*l + lightAblimient ), 1 );
-    //ret.accum.a = diffuse.a;
-	}
-#endif//lambert
+
+#ifdef shadows
+    lambertVal = computeLambert( normal,
+                                 lightDirection,
+                                 shadowMap,
+                                 input.shPosition );
+#else
+#ifdef lighting
+    lambertVal = computeLambert( normal,
+                                 lightDirection,
+                                 shadowMap,
+                                 float4(0.0) );
+#endif
+#endif
+
+#ifdef lighting
+    diffuse.rgb *= float4( ( lightColor*lambertVal + lightAblimient ), 1 );
+#endif
 
 #ifdef displace
     {
     float2 tx = input.screenPos.xy;
     float sz  = input.screenPos.z;
-    float3 ssnormal = normalize(input.sspaceNormal.xyz);
+
+    float4 nt       = mul( mvpMatrix, float4(normal, 0) );
+    float3 ssnormal = normalize(nt.xyz/nt.w);
 	#ifdef water
-    ssnormal = normal;
+    //ssnormal = normal;
     ssnormal.xy *= -1*pow( waterDepth, 2 );
 	#endif
 
@@ -240,16 +282,12 @@ FS_Output main( FS_Input input
                            tex2D( scene, tx.xy ), 0.2 );
 	
 	#ifndef water
-    refColor += 0.5*float4(0,0.5,1,0)*pow( 1.0-dot(ssnormal, float3(0,0,1) ), 8 );
+    refColor += 0.5*float4(0,0.5,1,0)*pow( 1.0-abs(ssnormal.z), 8 );
   #else
     refColor = mix( refColor, diffuse, diffuse.a*waterDepth );
-    //refColor = mix( refColor, diffuse, diffuse.a*input.waterDepth.z );
 	#endif
         
  #  ifdef water
-   //  l = tex2D( sceneDepth, tx.xy ).r;
-    //float dz = (tex2D( sceneDepth, tx.xy ).r-input.screenPos.z)*1000;
-    //refColor  = float4(dz);//float4( l,l,l, 1);
     ret.accum = refColor;
     diffuse   = refColor;
  #  else
