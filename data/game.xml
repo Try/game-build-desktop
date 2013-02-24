@@ -945,11 +945,12 @@
   </class>
 
   <class name = "grass0" >
-    <view src="grass0" size = "0.04"
-          modelAlign = "CCi"
+    <view src="grass0" size = "0.06"
+          modelAlign = "CCC"
           specular = "0"
           randRotate = "true" >
       <material del = "phong"   />
+      <material del = "shadow_cast"   />
       <material add = "grass"/>
     </view>
 
@@ -1175,7 +1176,11 @@
 
   <class name = "racoon" >
     <view src="racoon" size = "0.15" modelAlign = "CCC" >
+      <material del = "phong"       />
+      <material del = "shadow_cast" />
+      <material add = "transparent" />
     </view>
+
     <property isBackground = "1" />
     <beavior add = "building"/>
     <property size = "0" />

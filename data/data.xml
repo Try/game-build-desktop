@@ -92,6 +92,9 @@
   <texture_with_avg file = "./data/textures/land/grass6.png"  name="grass6/diff"  />
   <texture file = "./data/textures/land/grass6n.png" name="grass6/norm"  />
 
+  <texture_with_avg file = "./data/textures/land/grass7.png"  name="grass7/diff"  />
+  <texture file = "./data/textures/land/grass7n.png" name="grass7/norm"  />
+
   <texture_with_avg file = "./data/textures/land/ground_rock.png"
                     name="ground_rock/diff"  />
   <texture_with_avg file = "./data/textures/land/ground_rockn.png"
@@ -431,6 +434,8 @@
   <texture file = "./data/textures/particles/smoke.png"  name="smoke/diff"  />
   <texture file = "./data/textures/particles/smoken.png" name="smoke/norm"  />
 
+  <texture file = "./data/textures/particles/ylight.png" name="ylight/diff"  />
+
   <texture file = "./data/textures/particles/snow.png"  name="snowflake/diff"  />
 
   <model   file = "./data/models/items/chest.mx"      name="chest/model" />
@@ -450,7 +455,7 @@
   <texture file = "./data/textures/envi/pyramidn.png"  name="pyramid/norm"  />
 
   <model   file = "./data/models/envi/racoon.mx"      name="racoon/model" />
-  <texture file = "./data/textures/envi/racoon.jpg"  name="racoon/diff"  />
+  <texture file = "./data/textures/envi/racoon.png"  name="racoon/diff"  />
 
   <model   file = "./data/models/extra/palms.mx"  name="palms/model"  />
   <texture file = "./data/textures/rocks/0.png"   name="palms/diff" />

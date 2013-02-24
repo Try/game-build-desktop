@@ -149,6 +149,13 @@ float computeLambert( float3 normal,
   return l;
   }
 
+float3 computeLightColor( sampler2D shadowMap,
+                          uniform sampler2D shadowMapCl,
+                          float3 shPosition ){
+  float2 smC = shPosition.xy*0.5+float2( 0.5 );
+  return tex2D( shadowMapCl, smC ).rgb;
+  }
+
 FS_Output main( FS_Input input
 #ifdef diffuseTexture
                 ,uniform sampler2D texture
@@ -156,9 +163,14 @@ FS_Output main( FS_Input input
 #ifdef bumpMapping
                 ,uniform sampler2D normalMap
 #endif
+
 #ifdef shadows
                 ,uniform sampler2D shadowMap
 #endif
+#ifdef shadowsColored
+                ,uniform sampler2D shadowMapCl
+#endif
+
 #ifdef lighting
                 ,uniform float3 lightDirection
                 ,uniform float3 lightColor
@@ -189,7 +201,7 @@ FS_Output main( FS_Input input
 #endif
                 ) {
     FS_Output ret;
-    float lambertVal = 1;
+    float3 lambertVal = float3(1);
 
 #ifdef perlnFade
     float n = tex2D( noise2DTex, input.texcoord0 ).r;
@@ -220,7 +232,7 @@ FS_Output main( FS_Input input
                               waterDepth*dWaterCoord*input.waterDepth.xy );
     diffuse.r *= max( 1-waterDepth*0.08,         0.0 );
     diffuse.g *= max( 1-waterDepth*0.04,         0.1 );
-    diffuse.a  = min( diffuse.a+waterDepth*0.09,   1 );
+    diffuse.a  = min( diffuse.a+waterDepth*0.05,   1 );
     diffuse   *= input.color;
 
     float frsn = fresnel( dot( normal, -view ), 1.6330 );
@@ -259,7 +271,16 @@ FS_Output main( FS_Input input
 #endif
 
 #ifdef lighting
+
+#ifdef shadowsColored
+    diffuse.rgb *= float4( ( computeLightColor( shadowMap,
+                                                shadowMapCl,
+                                                input.shPosition )*lambertVal
+                             + lightAblimient ), 1 );
+#else
     diffuse.rgb *= float4( ( lightColor*lambertVal + lightAblimient ), 1 );
+#endif
+
 #endif
 
 #ifdef displace
@@ -313,6 +334,10 @@ FS_Output main( FS_Input input
 #   endif
 #endif
     //ret.accum = float4(l,l,l, 1.0);
+
+#ifdef multiplay_alpha
+    //ret.accum.rgb *= (1-ret.accum.a);
+#endif
 
 #ifdef gbuffer
     ret.diffuse     = albedo;

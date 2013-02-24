@@ -15,16 +15,12 @@ INPUT(
 ./release\guipass.o
 ./release\maingui.o
 ./release\paintergui.o
-./release\displacematerial.o
-./release\glowmaterial.o
 ./release\math.o
-./release\transparentmaterial.o
 ./release\scroolbar.o
 ./release\button.o
 ./release\panel.o
 ./release\randomgen.o
 ./release\scroolwidget.o
-./release\addmaterial.o
 ./release\game.o
 ./release\behavior.o
 ./release\abstractbehavior.o
@@ -35,7 +31,6 @@ INPUT(
 ./release\buildingbehavior.o
 ./release\player.o
 ./release\serialize.o
-./release\watermaterial.o
 ./release\resourcebehavior.o
 ./release\workerbehavior.o
 ./release\weakworldptr.o
@@ -46,12 +41,10 @@ INPUT(
 ./release\builderbehavior.o
 ./release\inputhook.o
 ./release\incompletebuilding.o
-./release\mainmaterial.o
 ./release\warriorbehavior.o
 ./release\overlaywidget.o
 ./release\centralwidget.o
 ./release\listbox.o
-./release\omnimaterial.o
 ./release\font.o
 ./release\formbuilder.o
 ./release\propertyeditor.o
@@ -65,7 +58,6 @@ INPUT(
 ./release\unitlist.o
 ./release\bullet.o
 ./release\gameobjectview.o
-./release\blushmaterial.o
 ./release\nativesavedialog.o
 ./release\gameserializer.o
 ./release\ui_loaddialog.o
@@ -79,7 +71,6 @@ INPUT(
 ./release\particlesystemengine.o
 ./release\tabwidget.o
 ./release\editterrainpanel.o
-./release\terrainminormaterial.o
 ./release\spatialindex.o
 ./release\hudanim.o
 ./release\terrainchunk.o
@@ -93,7 +84,6 @@ INPUT(
 ./release\bytearrayserialize.o
 ./release\mutex.o
 ./release\progressbar.o
-./release\warfogmaterial.o
 ./release\sound.o
 ./release\bonusbehavior.o
 ./release\wayfindrequest.o
@@ -108,5 +98,6 @@ INPUT(
 ./release\missiontargets.o
 ./release\deatmachscenarion.o
 ./release\particlesystemdeclaration.o
-./release\grassmaterial.o
+./release\material.o
+./release\scene.o
 );

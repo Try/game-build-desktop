@@ -7,9 +7,41 @@
     <define bumpMapping    = "" />
     <define lambert  = "" />
     <define lighting = "" />
-    <define shadows  = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
     <define gbuffer  = "" />
     <define specular = "" />
+  </shader>
+
+  <shader vs = "./data/sh/main_material.vert"
+          fs = "./data/sh/main_material.frag"
+          name = "transparent_material">
+    <define diffuseTexture = "" />
+    <define bumpMapping    = "" />
+    <define lambert  = "" />
+    <define lighting = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
+    <define specular = "" />
+  </shader>
+
+  <shader vs = "./data/sh/main_material.vert"
+          fs = "./data/sh/main_material.frag"
+          name = "transparent_material_shadow">
+    <define diffuseTexture = "" />
+    <define bumpMapping    = "" />
+    <define lambert  = "" />
+    <define lighting = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
+    <define specular        = "" />
+    <define multiplay_alpha = "" />
   </shader>
 
   <shader vs = "./data/sh/main_material.vert"
@@ -18,7 +50,10 @@
     <define diffuseTexture = "" />
     <define lighting = "" />
     <define specular  = "" />
-    <define shadows  = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
     <define gbuffer  = "" />
   </shader>
 
@@ -29,7 +64,10 @@
     <define bumpMapping    = "" />
     <define lambert   = "" />
     <define lighting = "" />
-    <define shadows   = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
     <define gbuffer   = "" />
     <define specular  = "" />
     <define teamColor = "" />
@@ -48,7 +86,10 @@
     <define bumpMapping    = "" />
     <define lambert   = "" />
     <define lighting = "" />
-    <define shadows   = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
     <define gbuffer   = "" />
     <define specular  = "" />
     <define teamColor = "" />
@@ -69,7 +110,10 @@
     <define displace = "" />
     <define lambert  = "" />
     <define lighting = "" />
-    <define shadows  = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
     <define water = "" />
     <define specular = "" />
   </shader>

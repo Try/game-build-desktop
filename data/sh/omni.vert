@@ -14,8 +14,7 @@ struct FS_Input {
   };
 
 FS_Input main( VS_Input IN,
-               uniform float4x4 mvpMatrix,
-               uniform float3   cenPos
+               uniform float4x4 mvpMatrix
                ) {
     FS_Input OUT;
     float3 disp = float3(0,0,0.25);
@@ -39,7 +38,7 @@ FS_Input main( VS_Input IN,
     tc.y = 1.0-tc.y;
     OUT.cenPos = tc;*/
 
-    float4 cpos = mul( mvpMatrix, float4(cenPos, 1) );
+    float4 cpos = mul( mvpMatrix, float4(0,0,0, 1) );
     cpos /= cpos.w;
     OUT.cenPos = cpos.xyz;
 

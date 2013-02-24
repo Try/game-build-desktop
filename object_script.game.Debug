@@ -15,16 +15,12 @@ INPUT(
 ./debug\guipass.o
 ./debug\maingui.o
 ./debug\paintergui.o
-./debug\displacematerial.o
-./debug\glowmaterial.o
 ./debug\math.o
-./debug\transparentmaterial.o
 ./debug\scroolbar.o
 ./debug\button.o
 ./debug\panel.o
 ./debug\randomgen.o
 ./debug\scroolwidget.o
-./debug\addmaterial.o
 ./debug\game.o
 ./debug\behavior.o
 ./debug\abstractbehavior.o
@@ -35,7 +31,6 @@ INPUT(
 ./debug\buildingbehavior.o
 ./debug\player.o
 ./debug\serialize.o
-./debug\watermaterial.o
 ./debug\resourcebehavior.o
 ./debug\workerbehavior.o
 ./debug\weakworldptr.o
@@ -46,12 +41,10 @@ INPUT(
 ./debug\builderbehavior.o
 ./debug\inputhook.o
 ./debug\incompletebuilding.o
-./debug\mainmaterial.o
 ./debug\warriorbehavior.o
 ./debug\overlaywidget.o
 ./debug\centralwidget.o
 ./debug\listbox.o
-./debug\omnimaterial.o
 ./debug\font.o
 ./debug\formbuilder.o
 ./debug\propertyeditor.o
@@ -65,7 +58,6 @@ INPUT(
 ./debug\unitlist.o
 ./debug\bullet.o
 ./debug\gameobjectview.o
-./debug\blushmaterial.o
 ./debug\nativesavedialog.o
 ./debug\gameserializer.o
 ./debug\ui_loaddialog.o
@@ -79,7 +71,6 @@ INPUT(
 ./debug\particlesystemengine.o
 ./debug\tabwidget.o
 ./debug\editterrainpanel.o
-./debug\terrainminormaterial.o
 ./debug\spatialindex.o
 ./debug\hudanim.o
 ./debug\terrainchunk.o
@@ -93,7 +84,6 @@ INPUT(
 ./debug\bytearrayserialize.o
 ./debug\mutex.o
 ./debug\progressbar.o
-./debug\warfogmaterial.o
 ./debug\sound.o
 ./debug\bonusbehavior.o
 ./debug\wayfindrequest.o
@@ -108,5 +98,6 @@ INPUT(
 ./debug\missiontargets.o
 ./debug\deatmachscenarion.o
 ./debug\particlesystemdeclaration.o
-./debug\grassmaterial.o
+./debug\material.o
+./debug\scene.o
 );

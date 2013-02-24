@@ -70,6 +70,7 @@
   <class name = "smoke" >
     <view src="smoke" size = "1" isParticle = "smoke" >
       <material del = "phong"          />
+      <material del = "shadow_cast"    />
       <material add = "transparent_no_zw"    />
     </view>
     <property isBackground = "1" />
@@ -91,6 +92,57 @@
 
   <class name = "snowflake" >
     <view src="snowflake" size = "1" isParticle = "snowflake" >
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+
+  <particle name = "smoke1" >
+    <init>
+      <min x = "-0.5" y = "-0.5" z="-0.5" size="0.005" a = "0.5"/>
+      <max x =  "0.5" y =  "0.5" z= "0.5" size="0.01"  a = "0.5"/>
+    </init>
+
+    <velocity>
+      <min x = "0.0"  y = "0.0"  z =  "0.0" size="0.001" a="-0.002"/>
+      <max x = "-0.0" y = "-0.0" z = "-0.0" size="0.001" a="-0.003"/>
+    </velocity>
+
+    <density value = "-6"/>
+  </particle>
+
+  <class name = "smoke1" >
+    <view src="smoke" size = "1" isParticle = "smoke1" >
+      <material del = "phong"          />
+      <material del = "shadow_cast"    />
+      <material add = "transparent_no_zw"    />
+    </view>
+    <property isBackground = "1" />
+  </class>
+
+
+  <particle name = "ylight" >
+    <init>
+      <min x = "-0.1" y = "-0.1" z="0"    size="0.005" a = "1"/>
+      <max x =  "0.1" y =  "0.1" z= "0.2" size="0.005" a = "1"/>
+    </init>
+
+    <velocity>
+      <min x = "0" y = "0.0075" z =  "0.0" size="0.002"
+           r="-0.03" g="-0.03" b="-0.03" a="-0.02"/>
+
+      <max x = "0" y = "0.0075" z = "-0.0" size="0.002"
+           r="-0.03" g="-0.03" b="-0.03" a="-0.02"/>
+    </velocity>
+
+    <density value = "-15"/>
+  </particle>
+
+  <class name = "ylight" >
+    <view src="ylight" size = "1" isParticle = "ylight" >
+      <material del = "phong"          />
+      <material del = "shadow_cast"    />
+      <material add = "add"    />
     </view>
     <property isBackground = "1" />
   </class>
