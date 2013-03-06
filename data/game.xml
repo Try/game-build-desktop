@@ -82,8 +82,8 @@
 
 
   <class name = "worker" >
-    <view src="worker" size = "0.1" physic = "sphere" diameter = "0.1"
-          modelAlign = "CCi"
+    <view src="worker" size = "0.2" physic = "sphere" diameter = "0.1"
+          modelAlign = "CCC"
           specular = "0.5" >
       <material del = "phong"      />
       <material add = "unit"       />
@@ -99,6 +99,7 @@
     <beavior add = "worker"/>
     <beavior add = "builder"/>
     <speed rotate = "15" move="48" />
+    <property deathAnim = "physic" />
 
     <commands>
       <page num = "0" >
@@ -444,6 +445,7 @@
     <speed rotate = "10" move="56" />
 
     <atack range = "0" damage = "25" delay = "20"/>
+    <property deathAnim = "physic" />
   </class>
 
   <class name = "golem_f" >
@@ -692,6 +694,21 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+
+    <beavior add = "building"/>
+    <property size = "3" />
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "tree0_dbg" >
+    <view src="tree0" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"     />
+      <material add = "add"       />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 

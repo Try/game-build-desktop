@@ -20,7 +20,13 @@ FS_Output main( FS_Input input,
                 texRECT( bloom, c )*0.5 +
                 texRECT( glow,  c )*5.0;
 
-    //ret.final *= texRECT( fog, c );
+    /*
+    const float exposure = 21;
+    float3 texColor = ret.final.rgb;
+
+    float3 retColor = float3( 1.0 ) - exp( -exposure * texColor.rgb );
+    ret.final = float4(retColor,1);
+    */
 
     return ret;
     }

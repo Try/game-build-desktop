@@ -178,9 +178,9 @@
   <texture file = "./data/textures/golem/n.png"    name="golem/norm"  />
   <model   file = "./data/models/golem.mx"         name="golem/model" />
 
-  <texture file = "./data/textures/t.png"    name="worker/diff"  />
-  <texture file = "./data/textures/sm.png"   name="worker/sm"    />
-  <model   file = "./data/models/worker.mx"  name="worker/model" />
+  <texture file = "./data/textures/units/worker.png" name="worker/diff"  />
+  <texture file = "./data/textures/sm.png"           name="worker/sm"    />
+  <model   file = "./data/models/worker.mx"          name="worker/model" />
 
   <texture file = "./data/textures/units/pikeman.png"
            name="pikeman/diff"  />
