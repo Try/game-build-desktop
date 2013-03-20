@@ -1,3 +1,18 @@
+#ifdef opengl
+
+uniform sampler2D scene;
+uniform sampler2D bloom;
+uniform sampler2D glow;
+
+varying vec2 tc;
+
+void main() {
+  gl_FragColor = texture2D( scene, tc ) +
+                 texture2D( bloom, tc )*0.5 +
+                 texture2D( glow,  tc )*0.0;//5.0;
+  }
+  
+#else
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -10,8 +25,7 @@ struct FS_Output {
 FS_Output main( FS_Input input,
                 uniform sampler2DRect scene,
                 uniform sampler2DRect bloom,
-                uniform sampler2DRect  glow,
-                uniform float2 dTexCoord ) {
+                uniform sampler2DRect  glow ) {
     FS_Output ret;
 
     float2 c = input.texcoord0;
@@ -30,3 +44,4 @@ FS_Output main( FS_Input input,
 
     return ret;
     }
+#endif

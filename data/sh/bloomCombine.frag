@@ -1,3 +1,17 @@
+#ifdef opengl
+uniform sampler2D b0;
+uniform sampler2D b1;
+uniform sampler2D b2;
+
+varying vec2 tc;
+
+void main() {
+  gl_FragColor = (texture2D( b0, tc )*2.0 +
+                  texture2D( b1, tc )*1.0 +
+                  texture2D( b2, tc )*1.0)/4.0;
+  }
+
+#else
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -18,3 +32,4 @@ FS_Output main( FS_Input input,
                  texRECT( b2, input.texcoord0 )*1)/4.0;
     return ret;
     }
+#endif

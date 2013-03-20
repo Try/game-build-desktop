@@ -1,3 +1,28 @@
+#ifdef opengl
+
+uniform vec2 blurCoord;
+uniform sampler2D texture;
+
+varying vec2 tc;
+
+void main() {
+  vec2 c = tc;
+  vec4 sum = vec4(0.0);
+
+  sum += texture2D(texture, c - 4.0*blurCoord ) * 0.05;
+  sum += texture2D(texture, c - 3.0*blurCoord ) * 0.09;
+  sum += texture2D(texture, c - 2.0*blurCoord ) * 0.12;
+  sum += texture2D(texture, c -     blurCoord ) * 0.15;
+  sum += texture2D(texture, c                 ) * 0.16;
+  sum += texture2D(texture, c +     blurCoord ) * 0.15;
+  sum += texture2D(texture, c + 2.0*blurCoord ) * 0.12;
+  sum += texture2D(texture, c + 3.0*blurCoord ) * 0.09;
+  sum += texture2D(texture, c + 4.0*blurCoord ) * 0.05;
+
+  gl_FragColor = sum;
+  }
+  
+#else
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -9,23 +34,24 @@ struct FS_Output {
 
 FS_Output main( FS_Input input,
                 uniform sampler2DRect texture,
-                uniform float2 dTexCoord ) {
+                uniform float2 blurCoord ) {
     FS_Output ret;
 
     float2 c = input.texcoord0;
     float4 sum = float4(0.0);
 
-    sum += texRECT(texture, c - 4.0*dTexCoord ) * 0.05;
-    sum += texRECT(texture, c - 3.0*dTexCoord ) * 0.09;
-    sum += texRECT(texture, c - 2.0*dTexCoord ) * 0.12;
-    sum += texRECT(texture, c -     dTexCoord ) * 0.15;
+    sum += texRECT(texture, c - 4.0*blurCoord ) * 0.05;
+    sum += texRECT(texture, c - 3.0*blurCoord ) * 0.09;
+    sum += texRECT(texture, c - 2.0*blurCoord ) * 0.12;
+    sum += texRECT(texture, c -     blurCoord ) * 0.15;
     sum += texRECT(texture, c                 ) * 0.16;
-    sum += texRECT(texture, c +     dTexCoord ) * 0.15;
-    sum += texRECT(texture, c + 2.0*dTexCoord ) * 0.12;
-    sum += texRECT(texture, c + 3.0*dTexCoord ) * 0.09;
-    sum += texRECT(texture, c + 4.0*dTexCoord ) * 0.05;
+    sum += texRECT(texture, c +     blurCoord ) * 0.15;
+    sum += texRECT(texture, c + 2.0*blurCoord ) * 0.12;
+    sum += texRECT(texture, c + 3.0*blurCoord ) * 0.09;
+    sum += texRECT(texture, c + 4.0*blurCoord ) * 0.05;
 
     ret.final = sum;
 
     return ret;
     }
+#endif

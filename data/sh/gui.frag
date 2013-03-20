@@ -1,3 +1,15 @@
+#ifdef opengl
+
+varying vec4 cl;
+varying vec2 tc;
+
+uniform sampler2D texture;
+
+void main() {
+  gl_FragColor = texture2D(texture, tc)*cl;
+  }
+  
+#else
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -17,3 +29,4 @@ FS_Output main( FS_Input input,
 
     return ret;
     }
+#endif

@@ -1,5 +1,35 @@
 <?xml version="1.0" ?>
 <data>
+  <shader vs = "./data/sh/postProcess.vert"
+          fs = "./data/sh/final.frag"
+          name = "final">
+  </shader>
+
+  <shader vs = "./data/sh/postProcess.vert"
+          fs = "./data/sh/bloomCombine.frag"
+          name = "bloomCombine">
+  </shader>
+
+  <shader vs = "./data/sh/postProcess.vert"
+          fs = "./data/sh/brightPass.frag"
+          name = "brightPass">
+  </shader>
+
+  <shader vs = "./data/sh/postProcess.vert"
+          fs = "./data/sh/gauss.frag"
+          name = "gauss">
+  </shader>
+
+  <shader vs = "./data/sh/blitShader.vert"
+          fs = "./data/sh/blitShader.frag"
+          name = "blt">
+  </shader>
+
+  <shader vs = "./data/sh/gui.vert"
+          fs = "./data/sh/gui.frag"
+          name = "gui">
+  </shader>
+
   <shader vs = "./data/sh/main_material.vert"
           fs = "./data/sh/main_material.frag"
           name = "main_material">

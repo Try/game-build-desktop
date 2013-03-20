@@ -1,3 +1,24 @@
+#ifdef opengl
+
+uniform sampler2D texture;
+
+varying vec2 tc;
+
+void main() {
+  vec4 cl = texture2D( texture, tc );
+  float lum = 0.2126*cl.r+ 0.7152*cl.g + 0.0722*cl.b;
+  
+  if( lum < 0.6 ){
+    lum = 0.6*pow(lum/0.6, 4.0);
+    cl.rgb *= lum;
+    cl = vec4(0.0);
+    }
+	
+  gl_FragColor = cl;
+  }
+  
+#else
+
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -17,9 +38,11 @@ FS_Output main( FS_Input input,
 
     if( lum < 0.6 ){
       lum = 0.6*pow(lum/0.6, 4);
-      ret.final *= lum;
+      ret.final.rgb *= lum;
       //ret.final = float4(0,0,0,1);
       }
 
     return ret;
     }
+
+#endif
