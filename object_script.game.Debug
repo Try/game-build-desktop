@@ -100,4 +100,8 @@ INPUT(
 ./debug\particlesystemdeclaration.o
 ./debug\material.o
 ./debug\scene.o
+./debug\time.o
+./debug\stlconf.o
+./debug\jniBind.o
+./debug\ifstream.o
 );

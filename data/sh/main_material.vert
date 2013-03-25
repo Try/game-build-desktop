@@ -1,3 +1,44 @@
+#ifdef opengl
+attribute vec3 Position;
+attribute vec2 TexCoord;
+attribute vec3 Normal;
+attribute vec4 Color;
+attribute vec4 Binormal;
+#ifdef water
+attribute float Depth;
+attribute vec2  TexCoord1;
+#endif
+
+varying vec2 tc;
+varying vec3 normal;
+varying vec4 cl;
+
+#ifdef shadows
+varying vec3 shPos;
+#endif
+
+uniform mat4 mvpMatrix;
+#ifdef shadows
+uniform mat4 shadowMatrix;
+#endif
+
+void main() {
+  tc = TexCoord;
+  cl = Color;
+
+  vec4 p = mvpMatrix*vec4( Position, 1.0 );
+  normal = normalize(mvpMatrix*vec4( Normal.x, Normal.y, Normal.z, 0.0 )).xyz;
+  normal.z *= -1.0;
+  
+#ifdef shadows
+  vec4 _shPos = shadowMatrix*vec4( Position, 1.0 );
+  shPos = _shPos.xyz/_shPos.w;
+#endif
+  
+  gl_Position = vec4(p.x, -p.y, p.z, p.w); 
+  }
+  
+#else
 struct VS_Input {
     float3 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -51,21 +92,21 @@ FS_Input main( VS_Input IN,
     float4 v = float4( IN.position.x,
                        IN.position.y,
                        IN.position.z,
-                       1.0f  );
+                       1.0  );
     //v.xyz += 4*normalize(mvpMatrix._m00_m01_m02);
 
     float4 n = float4( IN.normal.x,
                        IN.normal.y,
                        IN.normal.z,
-                       0.0f );
+                       0.0 );
 
     float4x4 m = objectMatrix;
 
     OUT.position   = mul( mvpMatrix, v );
     OUT.bnormal    = mul( m, float4( IN.bnormal.x,
-                                             IN.bnormal.y,
-                                             IN.bnormal.z,
-                                             0.0f ) );
+                                     IN.bnormal.y,
+                                     IN.bnormal.z,
+                                     0.0 ) );
     //OUT.bnormal = IN.bnormal;
 
 #ifdef shadows
@@ -87,3 +128,5 @@ FS_Input main( VS_Input IN,
 	
     return OUT;
     }
+    
+#endif

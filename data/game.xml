@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <data>
 
-  <module file = "./data/land.xml" />
-  <module file = "./data/particle.xml" />
-  <module file = "./data/spell.xml" />
-  <module file = "./data/hud.xml" />
+  <module file = "data/land.xml" />
+  <module file = "data/particle.xml" />
+  <module file = "data/spell.xml" />
+  <module file = "data/hud.xml" />
 
   <class name = "bullets/pike" >
     <view src="bullets/pike" size = "0.05" >

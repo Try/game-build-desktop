@@ -1,3 +1,85 @@
+#ifdef opengl
+
+#ifdef diffuseTexture
+  uniform sampler2D texture;
+#endif
+#ifdef bumpMapping
+  uniform sampler2D normalMap;
+#endif
+
+#ifdef shadows
+  uniform sampler2D shadowMap;
+#endif
+
+#ifdef shadowsColored
+  uniform sampler2D shadowMapCl;
+#endif
+
+#ifdef lighting
+  uniform vec3 lightDirection;
+  uniform vec3 lightColor;
+  uniform vec3 lightAblimient;
+#endif
+
+#ifdef displace
+  uniform sampler2D scene;
+  uniform sampler2D sceneDepth;
+  uniform vec4 dTexCoord;
+  uniform mat4 mvpMatrix;
+#endif
+#ifdef water
+  uniform vec2      dWaterCoord;
+  uniform mat4      invMatrix;
+  uniform sampler2D normalMap;
+  uniform sampler2D envMap;
+#endif
+#ifdef specular
+  uniform float  specularFactor;
+  uniform vec3 view;
+#endif
+#ifdef teamColor
+  uniform vec3 tmColor;
+#endif
+#ifdef perlnFade
+  uniform sampler2D noise2DTex;
+  uniform float     noiseRef;
+#endif
+
+varying vec2 tc;
+varying vec3 normal;
+varying vec4 cl;
+#ifdef shadows
+varying vec3 shPos;
+#endif
+
+void main() { 
+#ifdef diffuseTexture
+  vec4 diff = cl*texture2D(texture, tc);
+#else
+  vec4 diff = cl;
+#endif
+  //if( diff.a<0.5 )
+    //discard;
+    
+  float l = 1.0;
+#ifdef lighting
+  l = max( dot( -normalize(normal), lightDirection), 0.0 );
+#endif
+
+#ifdef shadows
+  vec4 sh = texture2D( shadowMap, (shPos.xy+vec2(1.0))*0.5 );
+  l = min(l, 1.0 - clamp( (shPos.z-sh.z)*75.0, 0.0, 1.0 ));
+#endif
+
+#ifdef lighting
+  diff.rgb *= (l*lightColor + lightAblimient);
+#endif
+
+  gl_FragColor = diff;
+  //gl_FragData[0] = vec4(1.0);//vec4(diff.rgb, 1.0);
+  }
+  
+#else
 struct FS_Input {
   float4 position  : POSITION;
   float4 color     : COLOR;
@@ -357,3 +439,4 @@ FS_Output main( FS_Input input
 
     return ret;
     }
+#endif

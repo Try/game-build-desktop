@@ -1,37 +1,42 @@
 <?xml version="1.0" ?>
 <data>
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/final.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/final.frag"
           name = "final">
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/bloomCombine.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/bloomCombine.frag"
           name = "bloomCombine">
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/brightPass.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/brightPass.frag"
           name = "brightPass">
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/gauss.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/gauss.frag"
           name = "gauss">
   </shader>
 
-  <shader vs = "./data/sh/blitShader.vert"
-          fs = "./data/sh/blitShader.frag"
+  <shader vs = "data/sh/blitShader.vert"
+          fs = "data/sh/blitShader.frag"
           name = "blt">
   </shader>
 
-  <shader vs = "./data/sh/gui.vert"
-          fs = "./data/sh/gui.frag"
+  <shader vs = "data/sh/gui.vert"
+          fs = "data/sh/gui.frag"
           name = "gui">
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/shadow_map.vert"
+          fs = "data/sh/shadow_map.frag"
+          name = "shadow_map">
+  </shader>
+
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "main_material">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -45,8 +50,8 @@
     <define specular = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "transparent_material">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -59,8 +64,8 @@
     <define specular = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "transparent_material_shadow">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -74,8 +79,8 @@
     <define multiplay_alpha = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "grass_material">
     <define diffuseTexture = "" />
     <define lighting = "" />
@@ -87,8 +92,8 @@
     <define gbuffer  = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "unit_main_material">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -103,14 +108,14 @@
     <define teamColor = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "fog_of_war">
     <define diffuseTexture = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "terrain_minor_main_material">
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
@@ -126,15 +131,15 @@
     <define terrain   = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "displace" >
     <define displace    = "" />
     <define bumpMapping = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "water" >
     <define diffuseTexture = "" />
     <define displace = "" />
@@ -148,47 +153,73 @@
     <define specular = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "blend_add" >
     <define diffuseTexture = "" />
   </shader>
 
-  <shader vs = "./data/sh/main_material.vert"
-          fs = "./data/sh/main_material.frag"
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "glow" >
     <define diffuseTexture = "" />
     <define glow = "" />
   </shader>
 
-  <shader vs = "./data/sh/omni.vert"
-          fs = "./data/sh/omni.frag"
+  <shader vs = "data/sh/omni.vert"
+          fs = "data/sh/omni.frag"
           name = "omni" >
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/avatar_final.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/avatar_final.frag"
           name = "avatar_final" >
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/volumetricLight.frag"
+  <shader vs = "data/sh/htonorm.vert"
+          fs = "data/sh/htonorm.frag"
+          name = "htonorm" >
+  </shader>
+
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/ssao_macro.frag"
+          name = "ssao_macro" >
+  </shader>
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/ssao_detail.frag"
+          name = "ssao_detail" >
+  </shader>
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/ssao_accept.frag"
+          name = "ssao_accept" >
+  </shader>
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/gi_accept.frag"
+          name = "gi_accept" >
+  </shader>
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/volumetricLight.frag"
           name = "volumetricLight" >
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/aceptFog.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/aceptFog.frag"
           name = "aceptFog" >
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/gauss_gb.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/gauss_gb.frag"
           name = "gauss_gb" >
     <define NON_COMOPUTE_MACRO = "ret.final.r = base.r" />
   </shader>
 
-  <shader vs = "./data/sh/postProcess.vert"
-          fs = "./data/sh/gauss_gb.frag"
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/gauss_gb.frag"
           name = "gauss_b" >
     <define NON_COMOPUTE_MACRO = "ret.final.rg = base.rg" />
   </shader>
