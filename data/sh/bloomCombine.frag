@@ -6,9 +6,15 @@ uniform sampler2D b2;
 varying vec2 tc;
 
 void main() {
-  gl_FragColor = (texture2D( b0, tc )*2.0 +
-                  texture2D( b1, tc )*1.0 +
-                  texture2D( b2, tc )*1.0)/4.0;
+  vec4 re = (texture2D( b0, tc )*2.0 +
+             texture2D( b1, tc )*1.0 +
+             texture2D( b2, tc )*1.0);///4.0;
+  
+#ifdef oes_render  
+  gl_FragColor = re/2.0;
+#else
+  gl_FragColor = re/4.0;
+#endif
   }
 
 #else

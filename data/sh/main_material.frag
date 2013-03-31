@@ -46,10 +46,26 @@
 #endif
 
 varying vec2 tc;
-varying vec3 normal;
+varying vec3 normal, bnormal;
 varying vec4 cl;
 #ifdef shadows
 varying vec3 shPos;
+#endif
+
+#ifdef bumpMapping
+vec3 norm(){
+  vec3 n = -normalize( normal);
+  vec3 b = -normalize(bnormal);
+  vec3 t = cross(n,b);
+  
+  vec3 x = texture2D(normalMap, tc).xyz*2.0-vec3(1.0);
+  
+  return x.x*b + x.y*t + x.z*n;
+  }
+#else
+vec3 norm(){
+  return -normalize(normal);
+  }
 #endif
 
 void main() { 
@@ -58,12 +74,16 @@ void main() {
 #else
   vec4 diff = cl;
 #endif
-  //if( diff.a<0.5 )
-    //discard;
+
+#ifdef alpha_test
+  gl_FragColor = diff;
+  if( diff.a<=0.5 )
+    discard;
+#endif
     
   float l = 1.0;
 #ifdef lighting
-  l = max( dot( -normalize(normal), lightDirection), 0.0 );
+  l = max( dot( norm(), lightDirection), 0.0 );
 #endif
 
 #ifdef shadows

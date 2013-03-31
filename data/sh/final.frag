@@ -7,9 +7,10 @@ uniform sampler2D glow;
 varying vec2 tc;
 
 void main() {
-  gl_FragColor = texture2D( scene, tc ) +
-                 texture2D( bloom, tc )*0.5 +
-                 texture2D( glow,  tc )*0.0;//5.0;
+  vec2 c = tc;
+  gl_FragColor = texture2D( scene, c ) +
+                 texture2D( bloom, c )*0.5 +
+                 texture2D( glow,  c )*5.0;
   }
   
 #else
@@ -33,6 +34,7 @@ FS_Output main( FS_Input input,
     ret.final = texRECT( scene, c ) +
                 texRECT( bloom, c )*0.5 +
                 texRECT( glow,  c )*5.0;
+    //ret.final = float4(1.0);
 
     /*
     const float exposure = 21;

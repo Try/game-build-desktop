@@ -14,7 +14,7 @@ void main() {
   vec4 p = mvpMatrix*vec4( Position, 1.0 );
   zval = p.z/p.w;
   
-  gl_Position = p; 
+  gl_Position = vec4(p.x, -p.y, p.z, p.w); 
   }
 #else
 struct VS_Input {

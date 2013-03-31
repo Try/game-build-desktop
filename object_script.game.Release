@@ -104,4 +104,5 @@ INPUT(
 ./release\stlconf.o
 ./release\jniBind.o
 ./release\ifstream.o
+./release\tnloptimize.o
 );

@@ -33,11 +33,13 @@
   <shader vs = "data/sh/shadow_map.vert"
           fs = "data/sh/shadow_map.frag"
           name = "shadow_map">
+    <define alpha_test = "" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "main_material">
+    <define alpha_test = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert  = "" />
@@ -53,6 +55,7 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "transparent_material">
+    <define alpha_test = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert  = "" />
@@ -82,6 +85,7 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "grass_material">
+    <define alpha_test = "" />
     <define diffuseTexture = "" />
     <define lighting = "" />
     <define specular  = "" />
@@ -95,6 +99,7 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "unit_main_material">
+    <define alpha_test = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert   = "" />
@@ -112,6 +117,23 @@
           fs = "data/sh/main_material.frag"
           name = "fog_of_war">
     <define diffuseTexture = "" />
+  </shader>
+
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
+          name = "terrain_main_material">
+    <define diffuseTexture = "" />
+    <define bumpMapping    = "" />
+    <define lambert   = "" />
+    <define lighting = "" />
+
+    <define shadows         = "" />
+    <define shadowsColored  = "" />
+
+    <define gbuffer   = "" />
+    <define specular  = "" />
+    <define teamColor = "" />
+    <define terrain   = "" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"

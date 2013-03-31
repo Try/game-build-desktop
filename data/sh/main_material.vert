@@ -10,7 +10,7 @@ attribute vec2  TexCoord1;
 #endif
 
 varying vec2 tc;
-varying vec3 normal;
+varying vec3 normal, bnormal;
 varying vec4 cl;
 
 #ifdef shadows
@@ -18,6 +18,8 @@ varying vec3 shPos;
 #endif
 
 uniform mat4 mvpMatrix;
+uniform mat4 objectMatrix;
+
 #ifdef shadows
 uniform mat4 shadowMatrix;
 #endif
@@ -27,12 +29,14 @@ void main() {
   cl = Color;
 
   vec4 p = mvpMatrix*vec4( Position, 1.0 );
-  normal = normalize(mvpMatrix*vec4( Normal.x, Normal.y, Normal.z, 0.0 )).xyz;
-  normal.z *= -1.0;
+  normal  = normalize(objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
+  bnormal = normalize(objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
+  //normal.z *= -1.0;
   
 #ifdef shadows
   vec4 _shPos = shadowMatrix*vec4( Position, 1.0 );
-  shPos = _shPos.xyz/_shPos.w;
+  shPos   = _shPos.xyz/_shPos.w;
+  shPos.y = -shPos.y;
 #endif
   
   gl_Position = vec4(p.x, -p.y, p.z, p.w); 

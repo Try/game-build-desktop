@@ -104,4 +104,5 @@ INPUT(
 ./debug\stlconf.o
 ./debug\jniBind.o
 ./debug\ifstream.o
+./debug\tnloptimize.o
 );

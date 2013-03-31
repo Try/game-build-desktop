@@ -26,7 +26,7 @@ FS_Output main( FS_Input input,
     FS_Output ret;
 
     ret.z = input.pos.z;
-    ret.z.a = texture2D( texture, input.texcoord0 ).a;
+    ret.z.a = tex2D( texture, input.texcoord0 ).a;
 
     return ret;
     }
