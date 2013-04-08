@@ -7,8 +7,8 @@ varying vec2 tc;
 uniform vec2 dTexCoord;
 
 void main() {
-  tc = vec2(TexCoord.x, TexCoord.y);
-  gl_Position = vec4( Position.x, -Position.y, 0.0,  1.0 );
+  tc = vec2(TexCoord.x, 1.0-TexCoord.y);
+  gl_Position = vec4( Position.x, Position.y, 0.0,  1.0 );
   }
 
 #else

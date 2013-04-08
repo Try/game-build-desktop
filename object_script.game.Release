@@ -105,4 +105,5 @@ INPUT(
 ./release\jniBind.o
 ./release\ifstream.o
 ./release\tnloptimize.o
+./release\graphicssettingswidget.o
 );

@@ -18,6 +18,7 @@
   <shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/gauss.frag"
           name = "gauss">
+    <define NON_COMOPUTE_MACRO = "rgb" />
   </shader>
 
   <shader vs = "data/sh/blitShader.vert"
@@ -40,6 +41,7 @@
           fs = "data/sh/main_material.frag"
           name = "main_material">
     <define alpha_test = "" />
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert  = "" />
@@ -56,6 +58,7 @@
           fs = "data/sh/main_material.frag"
           name = "transparent_material">
     <define alpha_test = "" />
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert  = "" />
@@ -86,6 +89,7 @@
           fs = "data/sh/main_material.frag"
           name = "grass_material">
     <define alpha_test = "" />
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define lighting = "" />
     <define specular  = "" />
@@ -100,6 +104,7 @@
           fs = "data/sh/main_material.frag"
           name = "unit_main_material">
     <define alpha_test = "" />
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert   = "" />
@@ -121,24 +126,8 @@
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
-          name = "terrain_main_material">
-    <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
-    <define lambert   = "" />
-    <define lighting = "" />
-
-    <define shadows         = "" />
-    <define shadowsColored  = "" />
-
-    <define gbuffer   = "" />
-    <define specular  = "" />
-    <define teamColor = "" />
-    <define terrain   = "" />
-  </shader>
-
-  <shader vs = "data/sh/main_material.vert"
-          fs = "data/sh/main_material.frag"
           name = "terrain_minor_main_material">
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "" />
     <define lambert   = "" />
@@ -163,6 +152,7 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "water" >
+    <define oclusion   = "" />
     <define diffuseTexture = "" />
     <define displace = "" />
     <define lambert  = "" />
@@ -235,15 +225,21 @@
   </shader>
 
   <shader vs = "data/sh/postProcess.vert"
-          fs = "data/sh/gauss_gb.frag"
-          name = "gauss_gb" >
-    <define NON_COMOPUTE_MACRO = "ret.final.r = base.r" />
+          fs = "data/sh/gauss.frag"
+          name = "gauss_ao" >
+    <define NON_COMOPUTE_MACRO = "rgb" />
   </shader>
 
   <shader vs = "data/sh/postProcess.vert"
-          fs = "data/sh/gauss_gb.frag"
+          fs = "data/sh/gauss.frag"
+          name = "gauss_gb" >
+    <define NON_COMOPUTE_MACRO = "r = base.r" />
+  </shader>
+
+  <shader vs = "data/sh/postProcess.vert"
+          fs = "data/sh/gauss.frag"
           name = "gauss_b" >
-    <define NON_COMOPUTE_MACRO = "ret.final.rg = base.rg" />
+    <define NON_COMOPUTE_MACRO = "rg = base.rg" />
   </shader>
 
 </data>

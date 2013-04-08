@@ -15,6 +15,10 @@
   uniform sampler2D shadowMapCl;
 #endif
 
+#ifdef oclusion
+  uniform sampler2D oclusionMap;
+#endif
+
 #ifdef lighting
   uniform vec3 lightDirection;
   uniform vec3 lightColor;
@@ -51,6 +55,39 @@ varying vec4 cl;
 #ifdef shadows
 varying vec3 shPos;
 #endif
+#ifdef oclusion
+varying vec3 oclusionPos;
+#endif
+
+#ifdef oclusion
+  float inv( float x ){
+    return 1.0 - pow(1.0-x,2.0);
+    }
+    
+  float computeAO( sampler2D aoTex, vec3 pos ){
+    vec3 shPos = pos;
+
+    float z = shPos.z+0.01;//texRECT(texture, shPos.xy).r;
+    float aoVal = 0.0;//clamp(z - texRECT(texture, shPos.xy).r, 0, 1);
+
+    vec4 tex = texture2D( aoTex, shPos.xy );
+
+    float aB = ( clamp( (tex.b-z), 0.0, 1.0)  );
+    aB = 1.0-(1.0-aB-0.6)/0.4;
+    
+    aoVal += inv( clamp( (tex.r-z+0.2)*1.5, 0.2, 1.0) ) *
+             inv( clamp( (tex.g-z)*1.5, 0.4, 1.0) ) *
+             aB;
+    //aoVal = 1 - 11*aoVal;
+    aoVal = 1.0-pow(1.0-aoVal, 3.0);
+
+    vec2 mulT = shPos.xy*2.0 - 1.0;
+    float mul = max( abs(mulT.x), abs(mulT.y) );
+    mul = 1.0 - max(mul-0.9, 0.0)/0.1;
+
+    return (clamp( mix(1.0, aoVal, mul), 0.1, 1.0 ));
+    }
+#endif
 
 #ifdef bumpMapping
 vec3 norm(){
@@ -76,9 +113,15 @@ void main() {
 #endif
 
 #ifdef alpha_test
+#ifndef teamColor
   gl_FragColor = diff;
   if( diff.a<=0.5 )
     discard;
+#else
+   if( diff.a==0.0 )
+     discard;
+   diff.rgb += tmColor*(1.0-diff.a);
+#endif
 #endif
     
   float l = 1.0;
@@ -88,11 +131,16 @@ void main() {
 
 #ifdef shadows
   vec4 sh = texture2D( shadowMap, (shPos.xy+vec2(1.0))*0.5 );
-  l = min(l, 1.0 - clamp( (shPos.z-sh.z)*75.0, 0.0, 1.0 ));
+  l = min(l, float(1.0 - clamp( (shPos.z-sh.z)*75.0, 0.0, 1.0 )) );
 #endif
 
 #ifdef lighting
-  diff.rgb *= (l*lightColor + lightAblimient);
+  float ao = 1.0;
+#ifdef oclusion
+  ao = computeAO(oclusionMap, oclusionPos);
+#endif
+  diff.rgb *= (l*lightColor + lightAblimient*ao);
+  //diff.rgb = ao;
 #endif
 
   gl_FragColor = diff;
@@ -100,6 +148,7 @@ void main() {
   }
   
 #else
+
 struct FS_Input {
   float4 position  : POSITION;
   float4 color     : COLOR;
@@ -123,7 +172,11 @@ struct FS_Input {
 #ifdef water
   float4 waterDepth : TEXCOORD5;
 #endif
-    };
+
+#ifdef oclusion
+  float4 oclusionPos: TEXCOORD6;
+#endif
+  };
 
 struct FS_Output {
     float4 accum    : COLOR0;
@@ -144,31 +197,35 @@ float shadowMapValue( in sampler2D shadowMap, float4 shPosition ){
     float2 smPos = shPosition.xy*0.5+float2( 0.5 );
     smPos.y = 1.0-smPos.y;
 
-    float2 dx = float2(0.5, 0)/1024;
+    float2 dx = float2(1, 01)/settings_shadowmapres;
     float2 dy = float2(0, dx.x);
 
-    float2 dx2 = float2(1.25, 0)/1024;
+    float2 dx2 = float2(2.5, 0)/settings_shadowmapres;
     float2 dy2 = float2(0, dx2.x);
 
-    //return shadowMapValue( shadowMap, smPos, shPosition.z );
-/*
-    return(shadowMapValue( shadowMap, smPos-dx, shPosition.z ) +
-           shadowMapValue( shadowMap, smPos+dx, shPosition.z ) +
-           shadowMapValue( shadowMap, smPos+dy, shPosition.z ) +
-           shadowMapValue( shadowMap, smPos-dy, shPosition.z ))*0.25;*/
-
     float f0 =  shadowMapValue( shadowMap, smPos, shPosition.z );
+    
+    #if settings_shadowmapfilter >=1
     float fetc1 = (shadowMapValue( shadowMap, smPos-dx, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dx, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dy, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos-dy, shPosition.z ))*0.25;
+      #if settings_shadowmapfilter ==1
+      return fetc1*0.5+f0*0.5+
+             pow(shPosition.x, 8) + pow(shPosition.y, 8);
+      #endif
+    #endif
 
+    #if settings_shadowmapfilter >=2
     float fetc2 = (shadowMapValue( shadowMap, smPos-dx2, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dx2, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dy2, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos-dy2, shPosition.z ))*0.25;
+    return (f0*0.4 + fetc1*0.4 + fetc2*0.2) +
+           pow(shPosition.x, 8) + pow(shPosition.y, 8);
+    #endif
 
-    return (f0*0.25 + fetc1*0.45 + fetc2*0.3) +
+    return f0+
            pow(shPosition.x, 8) + pow(shPosition.y, 8);
     }
 
@@ -223,6 +280,36 @@ float computeWaterDepth( float3    screenPos,
 
   return waterDepth;
   }
+  
+#ifdef oclusion
+  float inv( float x ){
+    return 1 - pow(1-x,2);
+    }
+    
+  float computeAO( sampler2DRect aoTex, float4 pos ){
+    float4 shPos = pos;
+
+    float z = shPos.z+0.01;//texRECT(texture, shPos.xy).r;
+    float aoVal = 0;//clamp(z - texRECT(texture, shPos.xy).r, 0, 1);
+
+    float4 tex = texRECTlod( aoTex, float4(shPos.xy, 0, 0) );
+
+    float aB = ( clamp( (tex.b-z), 0.0, 1)  );
+    aB = 1-(1-aB-0.6)/0.4;
+    
+    aoVal += inv( clamp( (tex.r-z+0.2)*1.5, 0.2, 1) ) *
+             inv( clamp( (tex.g-z)*1.5, 0.4, 1) ) *
+             aB;
+    //aoVal = 1 - 11*aoVal;
+    aoVal = 1-pow(1-aoVal, 3);
+
+    float2 mulT = shPos.xy*2 - 1;
+    float mul = max( abs(mulT.x), abs(mulT.y) );
+    mul = 1.0 - max(mul-0.9, 0)/0.1;
+
+    return clamp( mix(1, aoVal, mul), 0.1, 1 );
+    }
+#endif
 
 float computeLambert( float3 normal,
                       float3 lightDirection,
@@ -271,6 +358,9 @@ FS_Output main( FS_Input input
 #endif
 #ifdef shadowsColored
                 ,uniform sampler2D shadowMapCl
+#endif
+#ifdef oclusion
+                ,uniform sampler2DRect oclusionMap
 #endif
 
 #ifdef lighting
@@ -373,15 +463,20 @@ FS_Output main( FS_Input input
 #endif
 
 #ifdef lighting
+    float ao = 1.0;
+#ifdef oclusion
+    ao = computeAO(oclusionMap, input.oclusionPos);
+#endif
 
 #ifdef shadowsColored
-    diffuse.rgb *= float4( ( computeLightColor( shadowMap,
+    diffuse.rgb *= float3( ( computeLightColor( shadowMap,
                                                 shadowMapCl,
                                                 input.shPosition )*lambertVal
-                             + lightAblimient ), 1 );
+                             + lightAblimient*ao ) );
 #else
-    diffuse.rgb *= float4( ( lightColor*lambertVal + lightAblimient ), 1 );
+    diffuse.rgb *= float3( ( lightColor*lambertVal + lightAblimient*ao ) );
 #endif
+    //diffuse.rgb = ao*input.color.a;
 
 #endif
 
@@ -436,10 +531,6 @@ FS_Output main( FS_Input input
 #   endif
 #endif
     //ret.accum = float4(l,l,l, 1.0);
-
-#ifdef multiplay_alpha
-    //ret.accum.rgb *= (1-ret.accum.a);
-#endif
 
 #ifdef gbuffer
     ret.diffuse     = albedo;

@@ -105,4 +105,5 @@ INPUT(
 ./debug\jniBind.o
 ./debug\ifstream.o
 ./debug\tnloptimize.o
+./debug\graphicssettingswidget.o
 );
