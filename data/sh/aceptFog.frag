@@ -5,7 +5,7 @@ uniform sampler2D scene;
 uniform sampler2D fog;
 
 void main() {
-  tc = 
+  //tc = 
   gl_FragColor = texture2D(scene, tc)*texture2D(fog, tc);
   }
   

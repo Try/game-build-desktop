@@ -67,7 +67,7 @@ varying vec3 oclusionPos;
   float computeAO( sampler2D aoTex, vec3 pos ){
     vec3 shPos = pos;
 
-    float z = shPos.z+0.01;//texRECT(texture, shPos.xy).r;
+    float z = shPos.z-0.11;//texRECT(texture, shPos.xy).r;
     float aoVal = 0.0;//clamp(z - texRECT(texture, shPos.xy).r, 0, 1);
 
     vec4 tex = texture2D( aoTex, shPos.xy );

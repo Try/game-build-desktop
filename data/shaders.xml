@@ -194,20 +194,20 @@
   </shader>
 
 
-  <shader vs = "data/sh/postProcess.vert"
+  <!--<shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/ssao_macro.frag"
           name = "ssao_macro" >
-  </shader>
+  </shader>-->
 
-  <shader vs = "data/sh/postProcess.vert"
+  <!--<shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/ssao_detail.frag"
           name = "ssao_detail" >
-  </shader>
+  </shader>-->
 
-  <shader vs = "data/sh/postProcess.vert"
+  <!--<shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/ssao_accept.frag"
           name = "ssao_accept" >
-  </shader>
+  </shader>-->
 
   <shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/gi_accept.frag"

@@ -1,3 +1,6 @@
+#ifdef opengl
+
+#else
 struct VS_Input {
     float3 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -44,3 +47,4 @@ FS_Input main( VS_Input IN,
 
     return OUT;
     }
+#endif

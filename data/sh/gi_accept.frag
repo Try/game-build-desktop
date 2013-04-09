@@ -1,3 +1,6 @@
+#ifdef opengl
+
+#else
 struct FS_Input {
     float4 position  : POSITION;
     float2 texcoord0 : TEXCOORD0;
@@ -75,3 +78,4 @@ FS_Output main( FS_Input input,
     ret.final += texRECT( diff,  c )*color/25.0;
     return ret;
     }
+#endif

@@ -51,7 +51,7 @@ void main() {
 #ifdef oclusion
   {
     vec4 _shPos = oclusionMapMatrix*objPos;
-    _shPos.xy += float2(1);
+    _shPos.xy += vec2(1.0);
     _shPos.xy /= 2.0;
     oclusionPos  = _shPos.xyz/_shPos.w;
   }
