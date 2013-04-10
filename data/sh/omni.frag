@@ -52,7 +52,7 @@ FS_Output main( FS_Input input,
     float3 diff = positionC - position;
     float zdiff = 0;//texRECT( texture, input.cenPos + dTexCoord ).r - z0;
 
-    float zCen = zAt(shadowMap, shMatrix, positionC );
+    float zCen = min( zAt(shadowMap, shMatrix, positionC )-0.25, input.cenPos.z );
     for( int i=0; i<21; ++i ){
       float localZ = zAt( shadowMap, shMatrix, position+diff*i/30.0 );
       val -= max(0, -25*( localZ - zCen ) );

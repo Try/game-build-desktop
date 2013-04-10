@@ -59,27 +59,20 @@ varying vec3 shPos;
 varying vec3 oclusionPos;
 #endif
 
-#ifdef oclusion
-  float inv( float x ){
-    return 1.0 - pow(1.0-x,2.0);
-    }
-    
+#ifdef oclusion    
   float computeAO( sampler2D aoTex, vec3 pos ){
     vec3 shPos = pos;
 
-    float z = shPos.z-0.11;//texRECT(texture, shPos.xy).r;
-    float aoVal = 0.0;//clamp(z - texRECT(texture, shPos.xy).r, 0, 1);
+    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
 
     vec4 tex = texture2D( aoTex, shPos.xy );
 
-    float aB = ( clamp( (tex.b-z), 0.0, 1.0)  );
-    aB = 1.0-(1.0-aB-0.6)/0.4;
+    float aR = max( 1.0*(tex.r-z+0.5), 0.2 );
+    float aG = max( 1.5*(tex.g-z), 0.2 );
+    float aB = max( 0.5*(tex.b-z), 0.2 );
+    //aB = 1-(1-aB-0.6)/0.4;
     
-    aoVal += inv( clamp( (tex.r-z+0.2)*1.5, 0.2, 1.0) ) *
-             inv( clamp( (tex.g-z)*1.5, 0.4, 1.0) ) *
-             aB;
-    //aoVal = 1 - 11*aoVal;
-    aoVal = 1.0-pow(1.0-aoVal, 3.0);
+    float aoVal = min( max(aG,aB), aR);
 
     vec2 mulT = shPos.xy*2.0 - 1.0;
     float mul = max( abs(mulT.x), abs(mulT.y) );
@@ -106,6 +99,8 @@ vec3 norm(){
 #endif
 
 void main() { 
+
+
 #ifdef diffuseTexture
   vec4 diff = cl*texture2D(texture, tc);
 #else
@@ -115,7 +110,7 @@ void main() {
 #ifdef alpha_test
 #ifndef teamColor
   gl_FragColor = diff;
-  if( diff.a<=0.5 )
+  if( diff.a<=0.6 )
     discard;
 #else
    if( diff.a==0.0 )
@@ -282,26 +277,20 @@ float computeWaterDepth( float3    screenPos,
   }
   
 #ifdef oclusion
-  float inv( float x ){
-    return 1 - pow(1-x,2);
-    }
     
   float computeAO( sampler2DRect aoTex, float4 pos ){
     float4 shPos = pos;
 
-    float z = shPos.z+0.01;//texRECT(texture, shPos.xy).r;
-    float aoVal = 0;//clamp(z - texRECT(texture, shPos.xy).r, 0, 1);
+    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
 
     float4 tex = texRECTlod( aoTex, float4(shPos.xy, 0, 0) );
 
-    float aB = ( clamp( (tex.b-z), 0.0, 1)  );
-    aB = 1-(1-aB-0.6)/0.4;
+    float aR = max( 1.0*(tex.r-z+0.5), 0.2 );
+    float aG = max( 1.5*(tex.g-z), 0.2 );
+    float aB = max( 0.5*(tex.b-z), 0.2 );
+    //aB = 1-(1-aB-0.6)/0.4;
     
-    aoVal += inv( clamp( (tex.r-z+0.2)*1.5, 0.2, 1) ) *
-             inv( clamp( (tex.g-z)*1.5, 0.4, 1) ) *
-             aB;
-    //aoVal = 1 - 11*aoVal;
-    aoVal = 1-pow(1-aoVal, 3);
+    float aoVal = min( max(aG,aB), aR);
 
     float2 mulT = shPos.xy*2 - 1;
     float mul = max( abs(mulT.x), abs(mulT.y) );

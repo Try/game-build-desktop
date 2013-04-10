@@ -12,11 +12,11 @@ void main() {
 
   sum += texture2D(texture, c - 4.0*blurCoord ) * 0.05;
   sum += texture2D(texture, c - 3.0*blurCoord ) * 0.09;
-  sum += texture2D(texture, c - 2.0*blurCoord ) * 0.12;
+  sum += texture2D(texture, c - 2.0*blurCoord ) * 0.13;
   sum += texture2D(texture, c -     blurCoord ) * 0.15;
   sum += base * 0.16;
   sum += texture2D(texture, c +     blurCoord ) * 0.15;
-  sum += texture2D(texture, c + 2.0*blurCoord ) * 0.12;
+  sum += texture2D(texture, c + 2.0*blurCoord ) * 0.13;
   sum += texture2D(texture, c + 3.0*blurCoord ) * 0.09;
   sum += texture2D(texture, c + 4.0*blurCoord ) * 0.05;
 
@@ -45,11 +45,11 @@ FS_Output main( FS_Input input,
 
     sum += texRECT(texture, c - 4.0*blurCoord ) * 0.05;
     sum += texRECT(texture, c - 3.0*blurCoord ) * 0.09;
-    sum += texRECT(texture, c - 2.0*blurCoord ) * 0.12;
+    sum += texRECT(texture, c - 2.0*blurCoord ) * 0.13;
     sum += texRECT(texture, c -     blurCoord ) * 0.15;
     sum += base * 0.16;
     sum += texRECT(texture, c +     blurCoord ) * 0.15;
-    sum += texRECT(texture, c + 2.0*blurCoord ) * 0.12;
+    sum += texRECT(texture, c + 2.0*blurCoord ) * 0.13;
     sum += texRECT(texture, c + 3.0*blurCoord ) * 0.09;
     sum += texRECT(texture, c + 4.0*blurCoord ) * 0.05;
 

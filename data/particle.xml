@@ -70,7 +70,7 @@
   <class name = "smoke" >
     <view src="smoke" size = "1" isParticle = "smoke" >
       <material del = "phong"          />
-      <material del = "shadow_cast"    />
+      <!--<material del = "shadow_cast"    />-->
       <material add = "transparent_no_zw"    />
     </view>
     <property isBackground = "1" />

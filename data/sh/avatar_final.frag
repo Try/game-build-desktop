@@ -8,6 +8,7 @@ varying vec2 tc;
 
 void main() {
   vec2 c = tc;
+  c.y = 1.0-c.y;
   gl_FragColor = texture2D( scene, c ) 
 #if settings_glow
                  +texture2D( glow,  c )*5.0

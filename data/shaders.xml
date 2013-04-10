@@ -48,7 +48,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define gbuffer  = "" />
     <define specular = "" />
@@ -65,7 +65,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define specular = "" />
   </shader>
@@ -79,7 +79,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define specular        = "" />
     <define multiplay_alpha = "" />
@@ -95,7 +95,7 @@
     <define specular  = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define gbuffer  = "" />
   </shader>
@@ -111,7 +111,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -134,7 +134,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -159,7 +159,7 @@
     <define lighting = "" />
 
     <define shadows         = "" />
-    <define shadowsColored  = "" />
+    <!--<define shadowsColored  = "" />-->
 
     <define water = "" />
     <define specular = "" />

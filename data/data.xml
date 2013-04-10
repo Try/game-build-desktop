@@ -12,16 +12,6 @@
   <module file = "data/pixmaps.xml" />
   <module file = "data/icons.xml" />
 
-  <texture file = "data/textures/gui/buttonFrame.png"
-           name = "gui/buttonFrame"  />           
-  <texture file = "data/textures/gui/baseFrame.png"
-           name = "gui/frame"  />
-
-  <texture file = "data/textures/gui/noTexture.png"
-           name = "gui/noTexture"  />           
-  <texture file = "data/textures/gui/test.bmp"
-           name = "gui/test"  />
-
   <texture file = "data/textures/glow/blue.png"  name="glow/blue"  />
   <texture file = "data/textures/util/blue.png"  name="util/blue"  />
   <texture file = "data/textures/glow/red.png"   name="glow/red"  />
