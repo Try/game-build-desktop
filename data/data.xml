@@ -62,8 +62,8 @@
   <model   file = "data/models/util/quad.mx"
            name="hud/selection.atkTo/model" />
 
-  <texture_with_avg file = "data/textures/land/grass1.png"  name="grass/diff"  />
-  <texture file = "data/textures/land/grass1n.png" name="grass/norm"  />
+  <texture_with_avg file = "data/textures/land/grass1.dds"  name="grass/diff"  />
+  <texture file = "data/textures/land/grass1n.dds" name="grass/norm"  />
 
   <texture_with_avg file = "data/textures/w.png"  name="white/diff"  />
 

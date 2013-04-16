@@ -111,10 +111,10 @@ void main() {
 #ifndef teamColor
   gl_FragColor = diff;
   if( diff.a<=0.6 )
-    discard;
+    ;//discard;
 #else
    if( diff.a==0.0 )
-     discard;
+     ;//discard;
    diff.rgb += tmColor*(1.0-diff.a);
 #endif
 #endif
@@ -128,7 +128,7 @@ void main() {
   vec4 sh = texture2D( shadowMap, (shPos.xy+vec2(1.0))*0.5 );
   l = min(l, float(1.0 - clamp( (shPos.z-sh.z)*75.0, 0.0, 1.0 )) );
 #endif
-
+ 
 #ifdef lighting
   float ao = 1.0;
 #ifdef oclusion

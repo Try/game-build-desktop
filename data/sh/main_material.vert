@@ -38,8 +38,8 @@ void main() {
   cl = Color;
 
   vec4 p  = mvpMatrix*vec4( Position, 1.0 );
-  normal  = normalize(objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
-  bnormal = normalize(objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
+  normal  = (objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
+  bnormal = (objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
   //normal.z *= -1.0;
   vec4 objPos = objectMatrix*vec4( Position, 1.0 );
 #ifdef shadows
