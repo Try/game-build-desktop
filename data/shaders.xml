@@ -43,7 +43,7 @@
     <define alpha_test = "" />
     <define oclusion   = "" />
     <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
+    <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
@@ -60,7 +60,7 @@
     <define alpha_test = "" />
     <define oclusion   = "" />
     <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
+    <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
@@ -74,7 +74,7 @@
           fs = "data/sh/main_material.frag"
           name = "transparent_material_shadow">
     <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
+    <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
@@ -95,6 +95,7 @@
     <define specular  = "" />
 
     <define shadows         = "" />
+    <define bumpMapping     = "0" />
     <!--<define shadowsColored  = "" />-->
 
     <define gbuffer  = "" />
@@ -106,7 +107,7 @@
     <define alpha_test = "" />
     <define oclusion   = "" />
     <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
+    <define bumpMapping    = "settings_normalMap" />
     <define lambert   = "" />
     <define lighting = "" />
 
@@ -122,6 +123,7 @@
           fs = "data/sh/main_material.frag"
           name = "fog_of_war">
     <define diffuseTexture = "" />
+    <define bumpMapping     = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -129,7 +131,7 @@
           name = "terrain_minor_main_material">
     <define oclusion   = "" />
     <define diffuseTexture = "" />
-    <define bumpMapping    = "" />
+    <define bumpMapping    = "settings_normalMap" />
     <define lambert   = "" />
     <define lighting = "" />
 
@@ -146,7 +148,7 @@
           fs = "data/sh/main_material.frag"
           name = "displace" >
     <define displace    = "" />
-    <define bumpMapping = "" />
+    <define bumpMapping = "settings_normalMap" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -154,6 +156,7 @@
           name = "water" >
     <define oclusion   = "" />
     <define diffuseTexture = "" />
+    <define bumpMapping    = "0" />
     <define displace = "" />
     <define lambert  = "" />
     <define lighting = "" />
@@ -169,6 +172,7 @@
           fs = "data/sh/main_material.frag"
           name = "blend_add" >
     <define diffuseTexture = "" />
+    <define bumpMapping     = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -176,6 +180,7 @@
           name = "glow" >
     <define diffuseTexture = "" />
     <define glow = "" />
+    <define bumpMapping     = "0" />
   </shader>
 
   <shader vs = "data/sh/omni.vert"

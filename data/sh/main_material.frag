@@ -3,7 +3,7 @@
 #ifdef diffuseTexture
   uniform sampler2D texture;
 #endif
-#ifdef bumpMapping
+#if bumpMapping
   uniform sampler2D normalMap;
 #endif
 
@@ -82,7 +82,7 @@ varying vec3 oclusionPos;
     }
 #endif
 
-#ifdef bumpMapping
+#if bumpMapping
 vec3 norm(){
   vec3 n = -normalize( normal);
   vec3 b = -normalize(bnormal);
@@ -99,8 +99,6 @@ vec3 norm(){
 #endif
 
 void main() { 
-
-
 #ifdef diffuseTexture
   vec4 diff = cl*texture2D(texture, tc);
 #else
@@ -338,7 +336,7 @@ FS_Output main( FS_Input input
 #ifdef diffuseTexture
                 ,uniform sampler2D texture
 #endif
-#ifdef bumpMapping
+#if bumpMapping
                 ,uniform sampler2D normalMap
 #endif
 
@@ -393,7 +391,7 @@ FS_Output main( FS_Input input
 #ifdef water
     float3 normal  = tex2D( normalMap, input.texcoord0+dWaterCoord*input.waterDepth.xy  ).rgb*2-float3(1.0);
 #else
-#  ifdef bumpMapping
+#  if bumpMapping
     float3 normal  = computeNormal(input, normalMap);
 #  else
     float3 normal  = normalize(input.normal.xyz).xyz;
