@@ -1,0 +1,453 @@
+<?xml version="1.0" ?>
+<data>
+  <class name = "worker" >
+    <view src="worker" size = "0.2" physic = "sphere" diameter = "0.1"
+          modelAlign = "CCC"
+          specular = "0.5" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "50" />
+    <property lim       = "1"  />
+    <property buildTime = "260" />
+
+    <atack range = "0" damage = "5" delay = "30"/>
+
+    <beavior add = "move"/>
+    <beavior add = "worker"/>
+    <beavior add = "builder"/>
+    <speed rotate = "15" move="48" />
+    <property deathAnim = "physic" />
+
+    <commands>
+      <page num = "0" >
+        <button action = "page" taget="1" x = "0" y = "3" hotkey = "b"/>
+      </page>
+
+      <page num = "1" >
+        <button action = "build" taget="castle" x = "0" y = "0" hotkey = "c"/>
+        <button action = "build" taget="house"  x = "0" y = "1" hotkey = "e"/>
+
+        <button action = "build" taget="barracks"  x = "1" y = "0"
+                hotkey = "b"/>
+
+        <button action = "build" taget="forge"  x = "2" y = "0"
+                hotkey = "f"/>
+
+        <button action = "build" taget="tower"  x = "2" y = "1"
+                hotkey = "t"/>
+
+        <button action = "build" taget="stone_cyrcle"  x = "3" y = "0"
+                hotkey = "s"/>
+
+        <button action = "build" taget="adanos_cram"  x = "4" y = "0"
+                hotkey = "a"/>
+
+        <button action = "build" taget="fire_cram"  x = "4" y = "1"
+                hotkey = "r"/>
+
+        <button action = "build" taget="magic_tower"  x = "4" y = "2"
+                hotkey = "m"/>
+
+        <button action = "page"  taget="0" x = "4" y = "3"
+                icon   = "gui/icon/cancel"  hotkey = "x" />
+      </page>
+
+    </commands>
+
+  </class>
+
+  <class name = "pikeman" >
+    <view src="pikeman" size = "0.2" physic = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "50" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "chevalier" >
+    <view src="chevalier" size = "0.2"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "balista" >
+    <view src="balista" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "200" />
+    <property lim       = "4"  />
+    <property buildTime = "500" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "8" move="44" />
+
+    <atack range = "10" damage = "25" delay = "60" bullet = "bullets/pike" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "gelion" >
+    <view src="gelion" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "2"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <property size = "2" />
+    <speed rotate = "20" move="56" />
+
+    <atack range = "6" damage = "6" delay = "10" bullet="bullets/fire_large"
+           splash = "3" slpashDamage = "3" />
+    <property maxHp = "40" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "hummer" >
+    <view src="hummer" size = "0.018" physic = "sphere" diameter = "0.2"
+          modelAlign = "CCi" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property lim       = "1"  />
+    <property buildTime = "250" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "5" delay = "20"/>
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "fire_mage" >
+    <view src="fmage" size = "0.22"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <commands>
+      <page num = "0" >
+        <button action = "castToGround"
+                taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
+                icon = "gui/icon/fire_strike"
+                hint   = "$(fire_strike)" />
+
+        <button action = "castToGround"
+                taget="blink" x = "1" y = "3" hotkey = "b"
+                icon = "gui/icon/blink"
+                hint = "$(blink)" />
+      </page>
+    </commands>
+
+    <property gold      = "200" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range  = "5" damage = "15" delay = "40" bullet="bullets/fire"
+           splash = "1" slpashDamage = "5" />
+
+    <ability name = "blink" />
+    <ability name = "fire_strike"   />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "water_mage" >
+    <view src="fmage" size = "0.22"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <commands>
+      <page num = "0" >
+        <button action = "castToGround"
+                taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
+                icon = "gui/icon/fire_strike"
+                hint   = "$(fire_strike)" />
+
+        <button action = "castToGround"
+                taget="blink" x = "1" y = "3" hotkey = "b"
+                icon = "gui/icon/blink"
+                hint = "$(blink)" />
+      </page>
+    </commands>
+
+    <property gold      = "175" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "7" damage = "5" delay = "40" bullet="bullets/fire" />
+
+    <ability name = "blink" />
+    <ability name = "heal"   />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "incvisitor" >
+    <view src="chevalier" size = "0.2"
+          physic   = "box"
+          boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
+          modelAlign = "CCC" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "85" />
+    <property lim       = "1"  />
+    <property buildTime = "350" />
+    <property maxHp = "200" />
+
+    <property armor     = "1" />
+
+    <beavior add = "move"    />
+    <beavior add = "warrior" />
+    <speed rotate = "10" move="56" />
+
+    <atack range = "0" damage = "25" delay = "20"/>
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "golem" >
+    <view src="golem" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+      <material add = "glow"/>
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property gold      = "400" />
+
+    <property maxHp = "300" />
+    <property buildTime = "400" />
+    <property armor     = "3" />
+    <speed rotate = "5" move="56" />
+
+    <atack range = "1" damage = "20" delay = "20" bullet=""
+           splash = "3" slpashDamage = "10" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "fire_element" >
+    <view src="fire_element" size = "0.2" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+      <material del = "phong"     />
+      <material add = "add"     />
+      <material add = "glow"  />
+    </view>
+    <view src="sphere" size = "1" >
+      <material del = "phong"   />
+      <material del = "shadow_cast"  />
+      <material add = "omni"  />
+    </view>
+
+    <commands>
+      <page num = "0" >
+        <button action = "castToGround"
+                taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
+                icon = "gui/icon/fire_strike"
+                hint   = "$(fire_strike)" />
+      </page>
+    </commands>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property gold      = "475" />
+
+    <property maxHp = "300" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="56" />
+
+    <atack range  = "14" damage = "10" delay = "20" bullet="bullets/fire_large"
+           splash = "3" slpashDamage = "5" />
+    <ability name = "fire_strike"   />
+
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "bear" >
+    <view src="bear" size = "0.075"
+          physic   = "box"
+          boxSizeX = "0.3" boxSizeY = "0.3" boxSizeZ = "0.15"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "500" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "2" damage = "30" delay = "30" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "polarbear" >
+    <view src="polarbear" size = "0.075" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "500" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "2" damage = "30" delay = "30" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "skeleton_mage" >
+    <view src="skeleton_mage" size = "0.015"
+          physic = "sphere" diameter = "0.04"
+          modelAlign = "CCC" >
+    </view>
+
+    <beavior add = "move"/>
+    <beavior add = "warrior" />
+    <property size = "2" />
+
+    <property maxHp = "333" />
+    <property buildTime = "400" />
+    <speed rotate = "5" move="60" />
+
+    <atack range = "6" damage = "5" delay = "30" bullet="bullets/dark_ball" />
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "castle" >
+    <view src="castle" size = "0.035" physic = "box" boxSize = "1.1" >
+    </view>
+
+    <beavior add = "building" />
+    <beavior add = "warrior" />
+    <property size      = "6"    />
+    <property limInc    = "11"   />
+
+    <property gold      = "400"  />
+    <property buildTime = "1000" />
+    <property maxHp     = "1000" />
+
+    <atack range = "13" damage = "40" delay = "10" bullet="bullets/fire_large"/>
+
+    <property deathAnim = "physic" />
+  </class>
+
+  <class name = "house" >
+    <view src="house" size = "0.35" physic = "box" boxSize = "0.21"
+          modelAlign = "CCi"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "100" />
+    <property limInc    = "10"  />
+    <property buildTime = "300" />
+
+    <beavior add = "building" />
+    <property size = "2" />
+  </class>
+
+  <class name = "tower" >
+    <view src="tower" size = "0.35" physic = "box"
+          boxSizeX = "0.21" boxSizeY = "0.21" boxSizeZ = "0.5"
+          modelAlign = "CCi"
+          specular = "0.0" >
+      <material del = "phong"      />
+      <material add = "unit"       />
+    </view>
+
+    <property gold      = "150" />
+    <property buildTime = "500" />
+    <property armor     = "4" />
+
+    <property maxHp     = "500" />
+
+    <beavior add = "building" />
+    <beavior add = "warrior" />
+    <speed rotate = "0" move="0" />
+
+    <atack range = "13" damage = "15" delay = "10" bullet = "bullets/pike"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "tower0" >
+    <view src="tower0" size = "0.04" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+    <property deathAnim = "physic" />
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "wall" >
+    <view src="wall" size = "0.02" physic = "sphere" diameter = "0.4"
+          modelAlign = "CCC" >
+    </view>
+    <property deathAnim = "physic" />
+    <beavior add = "building"/>
+    <property size = "1" />
+  </class>
+
+</data>

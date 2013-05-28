@@ -32,8 +32,8 @@ FS_Input main( VS_Input IN,
     OUT.pos      = OUT.position.xyz;
     OUT.lpos     = float3(-disp);//mul( mvpMatrix, float4(0,0,0, 1) );
 
-    float2 tc = (sc.xy + float2(1.0))*0.5;
-    tc.y = 1.0-tc.y;
+    float2 tc = sc.xy;//(sc.xy + float2(1.0))*0.5;
+    //tc.y = 1.0-tc.y;
     OUT.texcoord0  = tc;
 /*
     float4 cpos = mul( mvpMatrix, float4(cenPos, 1) );

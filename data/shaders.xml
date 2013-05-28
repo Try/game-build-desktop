@@ -41,13 +41,13 @@
           fs = "data/sh/main_material.frag"
           name = "main_material">
     <define alpha_test = "" />
-    <define oclusion   = "" />
+    <define oclusion       = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define gbuffer  = "" />
@@ -58,13 +58,13 @@
           fs = "data/sh/main_material.frag"
           name = "transparent_material">
     <define alpha_test = "" />
-    <define oclusion   = "" />
+    <define oclusion       = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define specular = "" />
@@ -73,12 +73,13 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "transparent_material_shadow">
+    <define oclusion       = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
     <define lambert  = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define specular        = "" />
@@ -89,12 +90,12 @@
           fs = "data/sh/main_material.frag"
           name = "grass_material">
     <define alpha_test = "" />
-    <define oclusion   = "" />
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define lighting = "" />
     <define specular  = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <define bumpMapping     = "0" />
     <!--<define shadowsColored  = "" />-->
 
@@ -105,13 +106,13 @@
           fs = "data/sh/main_material.frag"
           name = "unit_main_material">
     <define alpha_test = "" />
-    <define oclusion   = "" />
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
     <define lambert   = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define gbuffer   = "" />
@@ -122,20 +123,22 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "fog_of_war">
+    <define oclusion   = "0" />
     <define diffuseTexture = "" />
     <define bumpMapping     = "0" />
+    <define shadows         = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "terrain_minor_main_material">
-    <define oclusion   = "" />
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
     <define lambert   = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define gbuffer   = "" />
@@ -149,19 +152,21 @@
           name = "displace" >
     <define displace    = "" />
     <define bumpMapping = "settings_normalMap" />
+    <define oclusion    = "settings_oclusionenable" />
+    <define shadows     = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "water" >
-    <define oclusion   = "" />
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "0" />
     <define displace = "" />
     <define lambert  = "" />
     <define lighting = "" />
 
-    <define shadows         = "" />
+    <define shadows         = "settings_shadowenable" />
     <!--<define shadowsColored  = "" />-->
 
     <define water = "" />
@@ -171,16 +176,20 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "blend_add" >
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping     = "0" />
+    <define shadows         = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
-          name = "glow" >
+          name = "glow" >          
+    <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define glow = "" />
     <define bumpMapping     = "0" />
+    <define shadows         = "0" />
   </shader>
 
   <shader vs = "data/sh/omni.vert"
@@ -197,22 +206,6 @@
           fs = "data/sh/htonorm.frag"
           name = "htonorm" >
   </shader>
-
-
-  <!--<shader vs = "data/sh/postProcess.vert"
-          fs = "data/sh/ssao_macro.frag"
-          name = "ssao_macro" >
-  </shader>-->
-
-  <!--<shader vs = "data/sh/postProcess.vert"
-          fs = "data/sh/ssao_detail.frag"
-          name = "ssao_detail" >
-  </shader>-->
-
-  <!--<shader vs = "data/sh/postProcess.vert"
-          fs = "data/sh/ssao_accept.frag"
-          name = "ssao_accept" >
-  </shader>-->
 
   <shader vs = "data/sh/postProcess.vert"
           fs = "data/sh/gi_accept.frag"

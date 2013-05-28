@@ -2,9 +2,9 @@
 #ifndef oes_render
 #define lowp
 #endif
-attribute lowp vec3 Position;
-attribute lowp vec2 TexCoord;
-attribute lowp vec3 Normal;
+attribute lowp vec4 Position;
+//attribute lowp vec2 TexCoord;
+attribute lowp vec4 Normal;
 attribute lowp vec4 Color;
 attribute lowp vec4 Binormal;
 #ifdef water
@@ -16,39 +16,39 @@ varying vec2 tc;
 varying vec3 normal, bnormal;
 varying vec4 cl;
 
-#ifdef shadows
+#if shadows
 varying vec3 shPos;
 #endif
-#ifdef oclusion
+#if oclusion
 varying vec3 oclusionPos;
 #endif
 
 uniform mat4 mvpMatrix;
 uniform mat4 objectMatrix;
 
-#ifdef shadows
+#if shadows
 uniform mat4 shadowMatrix;
 #endif
-#ifdef oclusion
+#if oclusion
 uniform mat4 oclusionMapMatrix;
 #endif
 
 void main() {
-  tc = TexCoord;
+  tc = vec2(Position.w, Normal.w);
   cl = Color;
 
-  vec4 p  = mvpMatrix*vec4( Position, 1.0 );
-  normal  = (objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
-  bnormal = (objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
+  vec4 p  = mvpMatrix*vec4( Position.xyz, 1.0 );
+  normal  = -normalize(objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
+  bnormal = -normalize(objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
   //normal.z *= -1.0;
-  vec4 objPos = objectMatrix*vec4( Position, 1.0 );
-#ifdef shadows
+  vec4 objPos = objectMatrix*vec4( Position.xyz, 1.0 );
+#if shadows
   {
   vec4 _shPos = shadowMatrix*objPos;
   shPos   = _shPos.xyz/_shPos.w;
   }
 #endif
-#ifdef oclusion
+#if oclusion
   {
     vec4 _shPos = oclusionMapMatrix*objPos;
     _shPos.xy += vec2(1.0);
@@ -62,15 +62,15 @@ void main() {
   
 #else
 struct VS_Input {
-    float3 position  : POSITION;
-    float2 texcoord0 : TEXCOORD0;
-    float3 normal    : NORMAL;
+    float4 position  : POSITION;
+    //float2 texcoord0 : TEXCOORD0;
+    float4 normal    : NORMAL;
     float4 color     : COLOR;
     float4 bnormal   : BINORMAL;
 	#ifdef water
-    float depth      : DEPTH;
+    //float depth      : DEPTH;
     float2 dir       : TEXCOORD1;
-  #endif
+    #endif
     };
 
 struct FS_Input {
@@ -95,7 +95,7 @@ struct FS_Input {
 #ifdef water
   float4 waterDepth : TEXCOORD5;
 #endif
-#ifdef oclusion
+#if oclusion
   float4 oclusionPos: TEXCOORD6;
 #endif
     };
@@ -106,7 +106,7 @@ FS_Input main( VS_Input IN,
 #ifdef shadows
                ,uniform float4x4 shadowMatrix
 #endif
-#ifdef oclusion
+#if oclusion
                ,uniform mat4 oclusionMapMatrix
 #endif
                ) {
@@ -114,7 +114,7 @@ FS_Input main( VS_Input IN,
     OUT.color = IN.color;
 #ifdef water
     OUT.waterDepth.xy = IN.dir;
-    OUT.waterDepth.z  = IN.depth;
+    OUT.waterDepth.z  = IN.bnormal.w;//IN.depth;
 #endif
 
     float4 v = float4( IN.position.x,
@@ -145,7 +145,7 @@ FS_Input main( VS_Input IN,
     }
 #endif
 
-#ifdef oclusion
+#if oclusion
 {
     float4 shPos = mul( oclusionMapMatrix, objPos );
     shPos/=shPos.w;
@@ -162,7 +162,7 @@ FS_Input main( VS_Input IN,
 #endif
 
 #ifdef diffuseTexture
-    OUT.texcoord0  = IN.texcoord0;	
+    OUT.texcoord0  = float2(IN.position.w, IN.normal.w);//IN.texcoord0;	
 #endif
 
     OUT.normal.xyz  = mul( m, n ).xyz;

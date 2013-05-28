@@ -101,9 +101,9 @@ INPUT(
 ./release/material.o
 ./release/scene.o
 ./release/time.o
-./release/stlconf.o
 ./release/jniBind.o
 ./release/ifstream.o
 ./release/tnloptimize.o
 ./release/graphicssettingswidget.o
+./release/desertstrikescenario.o
 );

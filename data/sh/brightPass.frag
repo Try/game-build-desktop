@@ -8,10 +8,10 @@ void main() {
   vec4 cl = texture2D( texture, tc );
   float lum = 0.2126*cl.r+ 0.7152*cl.g + 0.0722*cl.b;
   
-  if( lum < 0.575 ){
-    lum = 0.575*pow(lum/0.575, 4.0);
+  if( lum < 0.6 ){
+    lum = 0.6*pow(lum/0.6, 4.0);
     cl.rgb *= lum;
-    cl = vec4(0.0);
+    //cl = vec4(0.0);
     }
 	
   gl_FragColor = cl;

@@ -14,7 +14,7 @@ void main() {
   sum += texture2D(texture, c - 3.0*blurCoord ) * 0.09;
   sum += texture2D(texture, c - 2.0*blurCoord ) * 0.13;
   sum += texture2D(texture, c -     blurCoord ) * 0.15;
-  sum += base * 0.16;
+  sum += base * 0.165;
   sum += texture2D(texture, c +     blurCoord ) * 0.15;
   sum += texture2D(texture, c + 2.0*blurCoord ) * 0.13;
   sum += texture2D(texture, c + 3.0*blurCoord ) * 0.09;

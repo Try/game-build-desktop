@@ -101,9 +101,9 @@ INPUT(
 ./debug/material.o
 ./debug/scene.o
 ./debug/time.o
-./debug/stlconf.o
 ./debug/jniBind.o
 ./debug/ifstream.o
 ./debug/tnloptimize.o
 ./debug/graphicssettingswidget.o
+./debug/desertstrikescenario.o
 );

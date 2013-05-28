@@ -37,7 +37,10 @@ FS_Output main( FS_Input input,
     FS_Output ret;
     float val = 1.0;
 
-    float2 tc0 = input.texcoord0 + dTexCoord;
+    float2 tc0 = (input.texcoord0+float2(1.0))*0.5;
+	tc0.y = 1.0-tc0.y;
+
+	tc0	+= 0.5*float2(dTexCoord.x, dTexCoord.y);
     float  z0  = texRECT( texture, tc0 ).r;
 
     float3 position = input.pos;

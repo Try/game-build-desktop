@@ -7,7 +7,7 @@
   uniform sampler2D normalMap;
 #endif
 
-#ifdef shadows
+#if shadows
   uniform sampler2D shadowMap;
 #endif
 
@@ -15,7 +15,7 @@
   uniform sampler2D shadowMapCl;
 #endif
 
-#ifdef oclusion
+#if oclusion
   uniform sampler2D oclusionMap;
 #endif
 
@@ -52,24 +52,24 @@
 varying vec2 tc;
 varying vec3 normal, bnormal;
 varying vec4 cl;
-#ifdef shadows
+#if shadows
 varying vec3 shPos;
 #endif
-#ifdef oclusion
+#if oclusion
 varying vec3 oclusionPos;
 #endif
 
-#ifdef oclusion    
+#if oclusion    
   float computeAO( sampler2D aoTex, vec3 pos ){
     vec3 shPos = pos;
 
-    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
+    float z = shPos.z;//texRECT(texture, shPos.xy).r;
 
     vec4 tex = texture2D( aoTex, shPos.xy );
 
-    float aR = max( 1.0*(tex.r-z+0.5), 0.2 );
-    float aG = max( 1.5*(tex.g-z), 0.2 );
-    float aB = max( 0.5*(tex.b-z), 0.2 );
+    float aR = max( 1.0 - 1.0*(z-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*(z-tex.g), 0.2 );
+    float aB = max( 1.0 - 5.0*(z-tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
     
     float aoVal = min( max(aG,aB), aR);
@@ -84,8 +84,8 @@ varying vec3 oclusionPos;
 
 #if bumpMapping
 vec3 norm(){
-  vec3 n = -normalize( normal);
-  vec3 b = -normalize(bnormal);
+  vec3 n = normal;//normalize( normal);
+  vec3 b = bnormal;//normalize(bnormal);
   vec3 t = cross(n,b);
   
   vec3 x = texture2D(normalMap, tc).xyz*2.0-vec3(1.0);
@@ -94,10 +94,52 @@ vec3 norm(){
   }
 #else
 vec3 norm(){
-  return -normalize(normal);
+  return normal;//normalize(normal);
   }
 #endif
 
+float shadowMapValue( in sampler2D shadowMap, in vec2 smPos, in  float zv ){
+  float z = texture2D( shadowMap, smPos ).z;
+
+  return 1.0 - clamp( (zv-z)*50.0, 0.0, 1.0 );
+  }
+
+float shadowMapValue( in sampler2D shadowMap, vec3 shPosition ){	
+    vec2 mulT = shPosition.xy;//*2.0 - 1.0;
+    float mul = max( abs(mulT.x), abs(mulT.y) );
+    mul = max(mul-0.9, 0.0)/0.1;
+	
+    vec2 smPos = shPosition.xy*0.5+vec2( 0.5 );
+
+    vec2 dx = vec2(1.0, 0.0)/float(settings_shadowmapres);
+    vec2 dy = vec2(0.0, dx.x);
+
+    vec2 dx2 = vec2(2.5, 0.0)/float(settings_shadowmapres);
+    vec2 dy2 = vec2(0.0, dx2.x);
+
+    float f0 =  shadowMapValue( shadowMap, smPos, shPosition.z );
+    
+    #if settings_shadowmapfilter >=1
+    float fetc1 = (shadowMapValue( shadowMap, smPos-dx, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos+dx, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos+dy, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos-dy, shPosition.z ))*0.25;
+      #if settings_shadowmapfilter ==1
+      return fetc1*0.5+f0*0.5+mul;
+      #endif
+    #endif
+
+    #if settings_shadowmapfilter >=2
+    float fetc2 = (shadowMapValue( shadowMap, smPos-dx2, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos+dx2, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos+dy2, shPosition.z ) +
+                   shadowMapValue( shadowMap, smPos-dy2, shPosition.z ))*0.25;
+    return (f0*0.4 + fetc1*0.4 + fetc2*0.2) + mul;
+    #endif
+
+    return f0 + mul;
+    }
+	
 void main() { 
 #ifdef diffuseTexture
   vec4 diff = cl*texture2D(texture, tc);
@@ -122,14 +164,13 @@ void main() {
   l = max( dot( norm(), lightDirection), 0.0 );
 #endif
 
-#ifdef shadows
-  vec4 sh = texture2D( shadowMap, (shPos.xy+vec2(1.0))*0.5 );
-  l = min(l, float(1.0 - clamp( (shPos.z-sh.z)*75.0, 0.0, 1.0 )) );
+#if shadows
+  l = min( l, shadowMapValue(shadowMap, shPos) );
 #endif
  
 #ifdef lighting
   float ao = 1.0;
-#ifdef oclusion
+#if oclusion
   ao = computeAO(oclusionMap, oclusionPos);
 #endif
   diff.rgb *= (l*lightColor + lightAblimient*ao);
@@ -155,7 +196,7 @@ struct FS_Input {
   float4 normal      : TEXCOORD1;
   float4 objPosition : TEXCOORD2;
 
-#ifdef shadows
+#if shadows
   float4 shPosition : TEXCOORD3;
 #endif
 
@@ -166,7 +207,7 @@ struct FS_Input {
   float4 waterDepth : TEXCOORD5;
 #endif
 
-#ifdef oclusion
+#if oclusion
   float4 oclusionPos: TEXCOORD6;
 #endif
   };
@@ -190,7 +231,7 @@ float shadowMapValue( in sampler2D shadowMap, float4 shPosition ){
     float2 smPos = shPosition.xy*0.5+float2( 0.5 );
     smPos.y = 1.0-smPos.y;
 
-    float2 dx = float2(1, 01)/settings_shadowmapres;
+    float2 dx = float2(1, 0)/settings_shadowmapres;
     float2 dy = float2(0, dx.x);
 
     float2 dx2 = float2(2.5, 0)/settings_shadowmapres;
@@ -218,8 +259,7 @@ float shadowMapValue( in sampler2D shadowMap, float4 shPosition ){
            pow(shPosition.x, 8) + pow(shPosition.y, 8);
     #endif
 
-    return f0+
-           pow(shPosition.x, 8) + pow(shPosition.y, 8);
+    return f0 + pow(shPosition.x, 8) + pow(shPosition.y, 8);
     }
 
 float fresnel(float VdotN, float eta) {
@@ -274,18 +314,18 @@ float computeWaterDepth( float3    screenPos,
   return waterDepth;
   }
   
-#ifdef oclusion
+#if oclusion
     
   float computeAO( sampler2DRect aoTex, float4 pos ){
     float4 shPos = pos;
 
-    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
+    float z = shPos.z;//texRECT(texture, shPos.xy).r;
 
     float4 tex = texRECTlod( aoTex, float4(shPos.xy, 0, 0) );
 
-    float aR = max( 1.0*(tex.r-z+0.5), 0.2 );
-    float aG = max( 1.5*(tex.g-z), 0.2 );
-    float aB = max( 0.5*(tex.b-z), 0.2 );
+    float aR = max( 1.0 -  1.0*(z-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*(z-tex.g), 0.2 );
+    float aB = max( 1.0 -  5.0*(z-tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
     
     float aoVal = min( max(aG,aB), aR);
@@ -298,10 +338,13 @@ float computeWaterDepth( float3    screenPos,
     }
 #endif
 
-float computeLambert( float3 normal,
-                      float3 lightDirection,
-                      sampler2D shadowMap,
-                      float4 shPosition ){
+float computeLambert( float3 normal
+                      ,float3 lightDirection
+#if shadows
+                      ,sampler2D shadowMap
+                      ,float4 shPosition
+#endif
+					  ){
     float l = 1;
 #ifdef lambert
   #ifndef water
@@ -313,14 +356,14 @@ float computeLambert( float3 normal,
     l = clamp(l, 0, 1);
 #endif//lambert
 
-#  ifdef shadows
+#if shadows
     float4 smPos = shPosition;
       #ifdef water
       smPos.xy += 15*normal.xy/1024.0;
       #endif
     float smValue = shadowMapValue( shadowMap, smPos );
     l = min( smValue, l );
-#  endif//shadows
+#endif//shadows
 
   return l;
   }
@@ -340,13 +383,13 @@ FS_Output main( FS_Input input
                 ,uniform sampler2D normalMap
 #endif
 
-#ifdef shadows
+#if shadows
                 ,uniform sampler2D shadowMap
 #endif
 #ifdef shadowsColored
                 ,uniform sampler2D shadowMapCl
 #endif
-#ifdef oclusion
+#if oclusion
                 ,uniform sampler2DRect oclusionMap
 #endif
 
@@ -435,7 +478,7 @@ FS_Output main( FS_Input input
     float4 albedo = diffuse;
     ret.accum = diffuse;
 
-#ifdef shadows
+#if shadows
     lambertVal = computeLambert( normal,
                                  lightDirection,
                                  shadowMap,
@@ -443,15 +486,13 @@ FS_Output main( FS_Input input
 #else
 #ifdef lighting
     lambertVal = computeLambert( normal,
-                                 lightDirection,
-                                 shadowMap,
-                                 float4(0.0) );
+                                 lightDirection );
 #endif
 #endif
 
 #ifdef lighting
     float ao = 1.0;
-#ifdef oclusion
+#if oclusion
     ao = computeAO(oclusionMap, input.oclusionPos);
 #endif
 

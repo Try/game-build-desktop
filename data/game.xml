@@ -349,6 +349,7 @@
 
     <atack range = "5" damage = "10" delay = "20" bullet="bullets/fire_large"/>
     <ability name = "fire_strike"   />
+
     <property deathAnim = "physic" />
   </class>
 
@@ -569,7 +570,7 @@
     <beavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
-    <atack range = "8" damage = "15" delay = "40"/>
+    <atack range = "8" damage = "15" delay = "40" bullet = "bullets/pike"/>
     <property size = "2" />
   </class>
 

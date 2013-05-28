@@ -13,4 +13,10 @@
     <info     type     = "castToUnit" />
   </spell>
 
+  <spell name = "heal" >
+    <property coolDown = "50"/>
+    <property manaCost = "0" />
+    <info     type     = "castToUnit" />
+  </spell>
+
 </data>

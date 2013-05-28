@@ -13,6 +13,9 @@
   <pixmap  src = "data/textures/gui/ckBoxFrame.png"
            name = "gui/ckBoxFrame"  />
 
+  <pixmap  src = "data/textures/gui/paper512.png"
+           name = "gui/background512"  />
+
   <pixmap  src = "data/textures/gui/paper.png"
            name = "gui/background"  />
 
