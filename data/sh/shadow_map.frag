@@ -1,12 +1,27 @@
 #ifdef opengl
-varying vec2 tc;
-varying float zval;
+#ifndef oes_render
+#define lowp
+#endif
 
+#if settings_shadowTextures
+varying lowp vec2 tc;
+#endif
+varying lowp float zval;
+
+#if settings_shadowTextures
 uniform sampler2D texture;
+#endif
 
 void main() {  
+#if settings_shadowTextures
+#ifndef teamColor
   if( texture2D(texture, tc).a<0.5 )
-    ;//discard;
+    discard;
+#else
+  if( texture2D(texture, tc).a<=0.0 )
+    discard;
+#endif
+#endif
 
   gl_FragColor = vec4(zval, zval, zval, 1.0);
   }

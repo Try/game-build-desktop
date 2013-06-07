@@ -1,4 +1,7 @@
 #ifdef opengl
+#ifndef oes_render
+#define lowp
+#endif
 
 #ifdef diffuseTexture
   uniform sampler2D texture;
@@ -49,30 +52,47 @@
   uniform float     noiseRef;
 #endif
 
-varying vec2 tc;
-varying vec3 normal, bnormal;
-varying vec4 cl;
+varying lowp vec2 tc;
+varying vec3 normal;
+#if bumpMapping
+varying vec3 bnormal, tnormal;
+#endif
+//varying lowp vec4 cl;
 #if shadows
 varying vec3 shPos;
 #endif
 #if oclusion
-varying vec3 oclusionPos;
+varying lowp vec3 oclusionPos;
+#endif
+
+#ifdef terrainCL
+varying lowp float terrainColorMul;
 #endif
 
 #if oclusion    
   float computeAO( sampler2D aoTex, vec3 pos ){
     vec3 shPos = pos;
 
+	#ifdef oes_render
+    float z = shPos.z-0.1;//texRECT(texture, shPos.xy).r;
+	#else
     float z = shPos.z;//texRECT(texture, shPos.xy).r;
+	#endif
 
     vec4 tex = texture2D( aoTex, shPos.xy );
 
-    float aR = max( 1.0 - 1.0*(z-tex.r), 0.2 );
-    float aG = max( 1.0 - 10.0*(z-tex.g), 0.2 );
-    float aB = max( 1.0 - 5.0*(z-tex.b), 0.2 );
+    float aR = max( 1.0 - 10.0*(z-0.05-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*(shPos.z-tex.g), 0.2 );
+    float aB = max( 1.1 -  5.0*(shPos.z-tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
-    
-    float aoVal = min( max(aG,aB), aR);
+	
+	//aR = aR*aR*aR;
+	aR = (aR-0.3)/0.7;
+	//aG = aG*aG;
+	//aG = (aG-0.3)/0.7;
+	    
+    float aoVal;// = max( min( max(aG,aB), aR), 0.0 );
+	aoVal = min(aB, aG);
 
     vec2 mulT = shPos.xy*2.0 - 1.0;
     float mul = max( abs(mulT.x), abs(mulT.y) );
@@ -84,13 +104,8 @@ varying vec3 oclusionPos;
 
 #if bumpMapping
 vec3 norm(){
-  vec3 n = normal;//normalize( normal);
-  vec3 b = bnormal;//normalize(bnormal);
-  vec3 t = cross(n,b);
-  
-  vec3 x = texture2D(normalMap, tc).xyz*2.0-vec3(1.0);
-  
-  return x.x*b + x.y*t + x.z*n;
+  vec3 x = texture2D(normalMap, tc).xyz*2.0-vec3(1.0);  
+  return x.x*bnormal + x.y*tnormal + x.z*normal;
   }
 #else
 vec3 norm(){
@@ -101,25 +116,29 @@ vec3 norm(){
 float shadowMapValue( in sampler2D shadowMap, in vec2 smPos, in  float zv ){
   float z = texture2D( shadowMap, smPos ).z;
 
+  #if settings_shadowmapres>=1024
+  return 1.0 - clamp( (zv-z)*75.0, 0.0, 1.0 );
+  #else
   return 1.0 - clamp( (zv-z)*50.0, 0.0, 1.0 );
+  #endif
   }
 
 float shadowMapValue( in sampler2D shadowMap, vec3 shPosition ){	
-    vec2 mulT = shPosition.xy;//*2.0 - 1.0;
+    vec2 mulT = shPosition.xy*2.0 - vec2(1.0);
     float mul = max( abs(mulT.x), abs(mulT.y) );
     mul = max(mul-0.9, 0.0)/0.1;
 	
-    vec2 smPos = shPosition.xy*0.5+vec2( 0.5 );
+    vec2 smPos = shPosition.xy;//shPosition.xy*0.5+vec2( 0.5 );
 
+    float f0 =  shadowMapValue( shadowMap, smPos, shPosition.z );
+    
+    #if settings_shadowmapfilter >=1
     vec2 dx = vec2(1.0, 0.0)/float(settings_shadowmapres);
     vec2 dy = vec2(0.0, dx.x);
 
     vec2 dx2 = vec2(2.5, 0.0)/float(settings_shadowmapres);
     vec2 dy2 = vec2(0.0, dx2.x);
-
-    float f0 =  shadowMapValue( shadowMap, smPos, shPosition.z );
-    
-    #if settings_shadowmapfilter >=1
+	
     float fetc1 = (shadowMapValue( shadowMap, smPos-dx, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dx, shPosition.z ) +
                    shadowMapValue( shadowMap, smPos+dy, shPosition.z ) +
@@ -142,18 +161,23 @@ float shadowMapValue( in sampler2D shadowMap, vec3 shPosition ){
 	
 void main() { 
 #ifdef diffuseTexture
-  vec4 diff = cl*texture2D(texture, tc);
+  vec4 diff = texture2D(texture, tc);
+  //vec4 diff = cl*texture2D(texture, tc);
 #else
-  vec4 diff = cl;
+  vec4 diff = vec4(1.0);
+  //vec4 diff = cl;
+#endif
+
+#ifdef terrainCL
+  diff*=terrainColorMul;
 #endif
 
 #ifdef alpha_test
 #ifndef teamColor
-  gl_FragColor = diff;
-  if( diff.a<=0.6 )
+  //if( diff.a<=0.6 )
     ;//discard;
 #else
-   if( diff.a==0.0 )
+   //if( diff.a==0.0 )
      ;//discard;
    diff.rgb += tmColor*(1.0-diff.a);
 #endif
@@ -185,9 +209,11 @@ void main() {
 
 struct FS_Input {
   float4 position  : POSITION;
-  float4 color     : COLOR;
-  float4 bnormal   : TEXCOORD7;
-
+  //float4 color     : COLOR;
+  float4 bnormal           : TEXCOORD7;
+#ifdef terrainCL
+  float  terrainColorMul   : TEXCOORD8;
+#endif
 
 #ifdef diffuseTexture
   float2 texcoord0 : TEXCOORD0;
@@ -319,16 +345,22 @@ float computeWaterDepth( float3    screenPos,
   float computeAO( sampler2DRect aoTex, float4 pos ){
     float4 shPos = pos;
 
-    float z = shPos.z;//texRECT(texture, shPos.xy).r;
+    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
 
     float4 tex = texRECTlod( aoTex, float4(shPos.xy, 0, 0) );
 
-    float aR = max( 1.0 -  1.0*(z-tex.r), 0.2 );
-    float aG = max( 1.0 - 10.0*(z-tex.g), 0.2 );
-    float aB = max( 1.0 -  5.0*(z-tex.b), 0.2 );
+    float aR = max( 1.0 -  5.0*(z-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*(shPos.z-tex.g), 0.2 );
+    float aB = max( 1.1 -  5.0*(shPos.z-tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
-    
-    float aoVal = min( max(aG,aB), aR);
+	
+	//aR = aR*aR*aR;
+	aR = (aR-0.3)/0.7;
+	//aG = aG*aG;
+	//aG = (aG-0.3)/0.7;
+	    
+    float aoVal;// = max( min( max(aG,aB), aR), 0.0 );
+	aoVal = min(aB,aG);
 
     float2 mulT = shPos.xy*2 - 1;
     float mul = max( abs(mulT.x), abs(mulT.y) );
@@ -424,6 +456,10 @@ FS_Output main( FS_Input input
                 ) {
     FS_Output ret;
     float3 lambertVal = float3(1);
+	float4 color = float4(1);
+#ifdef terrainCL
+    color *= input.terrainColorMul;
+#endif
 
 #ifdef perlnFade
     float n = tex2D( noise2DTex, input.texcoord0 ).r;
@@ -455,7 +491,7 @@ FS_Output main( FS_Input input
     diffuse.r *= max( 1-waterDepth*0.08,         0.0 );
     diffuse.g *= max( 1-waterDepth*0.04,         0.1 );
     diffuse.a  = min( diffuse.a+waterDepth*0.05,   1 );
-    diffuse   *= input.color;
+    diffuse   *= color;
 
     float frsn = fresnel( dot( normal, -view ), 1.6330 );
     { float3 cl = tex2D( envMap, input.texcoord0 ).rgb;
@@ -463,10 +499,11 @@ FS_Output main( FS_Input input
       diffuse = mix( diffuse, float4(cl, diffuse.a), frsn );
       }
 	#else
-    diffuse = input.color*tex2D( texture, input.texcoord0 );
+    //diffuse = input.color*tex2D( texture, input.texcoord0 );
+    diffuse = color*tex2D( texture, input.texcoord0 );
 	#endif
 #else
-    diffuse = float4(0);
+    diffuse = color;
 #endif
 
 #ifdef teamColor
@@ -569,8 +606,8 @@ FS_Output main( FS_Input input
     //ret.normal     = input.normal.a;//float4( normal, input.normal.a );
     ret.position   = float4(input.normal.a,0,0,1);
 #ifdef terrain
-    ret.normal.xyz   *= input.color.a;
-    ret.position.xyz *= input.color.a;
+    ret.normal.xyz   *= color.a;
+    ret.position.xyz *= color.a;
 #endif
 
 #endif

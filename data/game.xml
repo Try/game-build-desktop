@@ -9,6 +9,8 @@
   <class name = "bullets/pike" >
     <view src="bullets/pike" size = "0.05" >
     </view>
+    <property isDynamic    = "1" />
+    <property isBackground = "1" />
   </class>
 
   <class name = "bullets/fire" >
@@ -18,6 +20,8 @@
       <material add = "glow"  />
       <material add = "add"  />
     </view>
+    <property isDynamic = "1" />
+    <property isBackground = "1" />
   </class>
 
   <class name = "bullets/fire_large" >
@@ -33,6 +37,8 @@
       <material add = "glow"  />
       <material add = "add"  />
     </view>
+    <property isDynamic = "1" />
+    <property isBackground = "1" />
   </class>
 
   <class name = "bullets/dark_ball" >
@@ -42,6 +48,8 @@
       <material add = "glow"  />
       <material add = "add"  />
     </view>
+    <property isDynamic = "1" />
+    <property isBackground = "1" />
   </class>
 
   <class name = "pointlight" >
@@ -50,6 +58,7 @@
       <material del = "shadow_cast"  />
       <material add = "omni"  />
     </view>
+    <property isDynamic = "1" />
     <property isBackground = "1" />
   </class>
 
@@ -59,6 +68,7 @@
       <material del = "shadow_cast"  />
       <material add = "omni"  />
     </view>
+    <property isDynamic = "1" />
     <property isBackground = "1" />
   </class>
 
@@ -68,6 +78,7 @@
       <material del = "shadow_cast"  />
       <material add = "omni"  />
     </view>
+    <property isDynamic = "1" />
     <property isBackground = "1" />
   </class>
 

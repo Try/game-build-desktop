@@ -15,7 +15,7 @@
           name = "brightPass">
   </shader>
 
-  <shader vs = "data/sh/postProcess.vert"
+  <shader vs = "data/sh/gauss.vert"
           fs = "data/sh/gauss.frag"
           name = "gauss">
     <define NON_COMOPUTE_MACRO = "rgb" />
@@ -131,6 +131,24 @@
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
+          name = "terrain_main_material">
+    <define oclusion   = "settings_oclusionenable" />
+    <define diffuseTexture = "" />
+    <define bumpMapping    = "settings_normalMap" />
+    <define lambert   = "" />
+    <define lighting = "" />
+
+    <define shadows         = "settings_shadowenable" />
+    <!--<define shadowsColored  = "" />-->
+
+    <define gbuffer   = "" />
+    <define specular  = "" />
+    <define teamColor = "" />
+    <define terrain   = "" />
+  </shader>
+
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "terrain_minor_main_material">
     <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
@@ -145,6 +163,7 @@
     <define specular  = "" />
     <define teamColor = "" />
     <define terrain   = "" />
+    <define terrainCL = "" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -222,19 +241,19 @@
           name = "aceptFog" >
   </shader>
 
-  <shader vs = "data/sh/postProcess.vert"
+  <shader vs = "data/sh/gauss.vert"
           fs = "data/sh/gauss.frag"
           name = "gauss_ao" >
     <define NON_COMOPUTE_MACRO = "rgb" />
   </shader>
 
-  <shader vs = "data/sh/postProcess.vert"
+  <shader vs = "data/sh/gauss.vert"
           fs = "data/sh/gauss.frag"
           name = "gauss_gb" >
     <define NON_COMOPUTE_MACRO = "r = base.r" />
   </shader>
 
-  <shader vs = "data/sh/postProcess.vert"
+  <shader vs = "data/sh/gauss.vert"
           fs = "data/sh/gauss.frag"
           name = "gauss_b" >
     <define NON_COMOPUTE_MACRO = "rg = base.rg" />

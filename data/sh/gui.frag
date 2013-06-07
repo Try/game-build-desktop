@@ -1,7 +1,10 @@
 #ifdef opengl
+#ifndef oes_render
+#define lowp
+#endif
 
-varying vec4 cl;
-varying vec2 tc;
+varying lowp vec4 cl;
+varying lowp vec2 tc;
 
 uniform sampler2D texture;
 

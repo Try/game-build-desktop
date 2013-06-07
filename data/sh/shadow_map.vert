@@ -2,16 +2,21 @@
 #ifndef oes_render
 #define lowp
 #endif
+
 attribute lowp vec4 Position;
 attribute lowp vec4 Normal;
 
-varying vec2 tc;
-varying float zval;
+#if settings_shadowTextures
+varying lowp vec2 tc;
+#endif
+varying lowp float zval;
 
 uniform mat4 mvpMatrix;
 
 void main() {
+#if settings_shadowTextures
   tc = vec2(Position.w, Normal.w);
+#endif
 
   vec4 p = mvpMatrix*vec4( Position.xyz, 1.0 );
   zval = p.z/p.w;

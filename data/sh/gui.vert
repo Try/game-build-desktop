@@ -1,10 +1,14 @@
 #ifdef opengl
+#ifndef oes_render
+#define lowp
+#endif
+
 attribute vec2 Position;
 attribute vec2 TexCoord;
 attribute vec4 TexCoord1;
 
-varying vec4 cl;
-varying vec2 tc;
+varying lowp vec4 cl;
+varying lowp vec2 tc;
 
 uniform vec2 dTexCoord;
 
