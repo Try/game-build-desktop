@@ -105,7 +105,7 @@
       <material add = "unit"       />
     </view>
 
-    <property gold      = "200" />
+    <property gold      = "160" />
     <property lim       = "4"  />
     <property buildTime = "500" />
 
@@ -114,7 +114,7 @@
     <property size = "2" />
     <speed rotate = "8" move="50" />
 
-    <atack range = "10" damage = "25" delay = "60" bullet = "bullets/pike" />
+    <atack range = "10" damage = "35" delay = "55" bullet = "bullets/pike" />
     <property deathAnim = "physic" />
   </class>
 
@@ -134,8 +134,8 @@
     <property size = "2" />
     <speed rotate = "20" move="56" />
 
-    <atack range = "6" damage = "6" delay = "10" bullet="bullets/fire_large"
-           splash = "3" slpashDamage = "3" />
+    <atack range = "4" damage = "4" delay = "10" bullet="bullets/fire_large"
+           splash = "2" slpashDamage = "2" />
     <property maxHp = "40" />
     <property deathAnim = "physic" />
   </class>
@@ -310,7 +310,7 @@
 
     <property gold      = "475" />
 
-    <property maxHp = "300" />
+    <property maxHp = "200" />
     <property buildTime = "400" />
     <speed rotate = "5" move="56" />
 
@@ -389,8 +389,10 @@
     <property gold      = "400"  />
     <property buildTime = "1000" />
     <property maxHp     = "1000" />
+    <property armor     = "3" />
 
-    <atack range = "13" damage = "40" delay = "10" bullet="bullets/fire_large"/>
+    <atack range  = "13" damage = "40" delay = "10" bullet="bullets/fire_large"
+           splash = "2"  slpashDamage = "30" />
 
     <property deathAnim = "physic" />
   </class>
@@ -424,13 +426,13 @@
     <property buildTime = "500" />
     <property armor     = "4" />
 
-    <property maxHp     = "500" />
+    <property maxHp     = "750" />
 
     <beavior add = "building" />
     <beavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
-    <atack range = "13" damage = "15" delay = "10" bullet = "bullets/pike"/>
+    <atack range = "13" damage = "15" delay = "7" bullet = "bullets/pike"/>
     <property size = "2" />
   </class>
 

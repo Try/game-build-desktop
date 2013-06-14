@@ -114,7 +114,7 @@ vec3 norm(){
 #endif
 
 float shadowMapValue( in sampler2D shadowMap, in vec2 smPos, in  float zv ){
-  float z = texture2D( shadowMap, smPos ).z;
+  float z = texture2D( shadowMap, smPos ).b;// Hello, RGB565!
 
   #if settings_shadowmapres>=1024
   return 1.0 - clamp( (zv-z)*75.0, 0.0, 1.0 );
@@ -164,7 +164,7 @@ void main() {
   vec4 diff = texture2D(texture, tc);
   //vec4 diff = cl*texture2D(texture, tc);
 #else
-  vec4 diff = vec4(1.0);
+  vec4 diff = vec4(0.0);
   //vec4 diff = cl;
 #endif
 
@@ -248,7 +248,7 @@ struct FS_Output {
     };
 
 float shadowMapValue( in sampler2D shadowMap, float2 smPos, float zv ){
-    float z = tex2D( shadowMap, smPos ).z;
+    float z = tex2D( shadowMap, smPos ).b;
 
     return 1.0 - clamp( 75.0*(zv - z), 0.0, 1.0 );
     }
@@ -503,7 +503,7 @@ FS_Output main( FS_Input input
     diffuse = color*tex2D( texture, input.texcoord0 );
 	#endif
 #else
-    diffuse = color;
+    diffuse = float4(0.0);
 #endif
 
 #ifdef teamColor

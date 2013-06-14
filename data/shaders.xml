@@ -104,6 +104,14 @@
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
+          name = "zfill_material">
+    <define oclusion       = "0" />
+    <define bumpMapping    = "0" />
+    <define shadows        = "0" />
+  </shader>
+
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
           name = "unit_main_material">
     <define alpha_test = "" />
     <define oclusion   = "settings_oclusionenable" />
@@ -195,8 +203,8 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "blend_add" >
-    <define oclusion   = "settings_oclusionenable" />
-    <define diffuseTexture = "" />
+    <define oclusion        = "settings_oclusionenable" />
+    <define diffuseTexture  = "" />
     <define bumpMapping     = "0" />
     <define shadows         = "0" />
   </shader>
@@ -204,8 +212,8 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "glow" >          
-    <define oclusion   = "settings_oclusionenable" />
-    <define diffuseTexture = "" />
+    <define oclusion        = "0" />
+    <define diffuseTexture  = "" />
     <define glow = "" />
     <define bumpMapping     = "0" />
     <define shadows         = "0" />
