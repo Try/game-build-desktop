@@ -168,19 +168,19 @@ void main() {
   //vec4 diff = cl;
 #endif
 
+#ifdef alpha_test
+#ifndef oes_render
+  if( alpha_test )
+    discard;
+#endif
+#endif
+
 #ifdef terrainCL
   diff*=terrainColorMul;
 #endif
 
-#ifdef alpha_test
-#ifndef teamColor
-  //if( diff.a<=0.6 )
-    ;//discard;
-#else
-   //if( diff.a==0.0 )
-     ;//discard;
+#ifdef teamColor
    diff.rgb += tmColor*(1.0-diff.a);
-#endif
 #endif
     
   float l = 1.0;
@@ -504,6 +504,14 @@ FS_Output main( FS_Input input
 	#endif
 #else
     diffuse = float4(0.0);
+#endif
+
+#ifdef alpha_test
+{
+  float4 diff = diffuse;
+  if( alpha_test )
+    discard;	
+}
 #endif
 
 #ifdef teamColor

@@ -34,13 +34,11 @@
   <shader vs = "data/sh/shadow_map.vert"
           fs = "data/sh/shadow_map.frag"
           name = "shadow_map">
-    <define alpha_test = "" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "main_material">
-    <define alpha_test = "" />
     <define oclusion       = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
@@ -57,7 +55,6 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "transparent_material">
-    <define alpha_test = "" />
     <define oclusion       = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />
@@ -89,7 +86,6 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "grass_material">
-    <define alpha_test = "" />
     <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define lighting = "" />
@@ -113,7 +109,24 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "unit_main_material">
-    <define alpha_test = "" />
+    <define oclusion   = "settings_oclusionenable" />
+    <define diffuseTexture = "" />
+    <define bumpMapping    = "settings_normalMap" />
+    <define lambert   = "" />
+    <define lighting = "" />
+
+    <define shadows         = "settings_shadowenable" />
+    <!--<define shadowsColored  = "" />-->
+
+    <define gbuffer   = "" />
+    <define specular  = "" />
+    <define teamColor = "" />
+  </shader>
+
+  <shader vs = "data/sh/main_material.vert"
+          fs = "data/sh/main_material.frag"
+          name = "main_material_atest">
+    <define alpha_test = "(diff.a < 0.5)" />
     <define oclusion   = "settings_oclusionenable" />
     <define diffuseTexture = "" />
     <define bumpMapping    = "settings_normalMap" />

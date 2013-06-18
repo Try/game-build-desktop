@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <data>
   <model   file = "data/models/extra/snake.mx"      name="snake/model"  />
-  <texture file = "data/textures/envi/pyramid.jpg"
+  <texture file = "data/textures/w.png"
            name="snake/diff" />
-  <texture file = "data/textures/envi/pyramidn.png"
+  <texture file = "data/textures/norm.png"
            name="snake/norm" />
   <texture file = "data/textures/particles/fire.png"
            name="snake/glow" />
@@ -98,6 +98,9 @@
 
   <texture_with_avg file = "data/textures/land/snow2.png"  name="snow2/diff"  />
   <texture          file = "data/textures/land/snow2n.png" name="snow2/norm"  />
+
+  <texture_with_avg file = "data/textures/land/ice.png"   name="ice/diff"  />
+  <texture          file = "data/textures/land/icen.png"  name="ice/norm"  />
 
   <texture_with_avg file = "data/textures/land/snow_grass.png"
                     name="snow_grass/diff"  />
@@ -391,6 +394,18 @@
   <texture file = "data/textures/rocks/1n.png" name="rock10/norm" />
   <model   file = "data/models/rocks/4.mx"     name="rock10/model" />
 
+  <texture file = "data/textures/rocks/2.png"  name="rock11/diff" />
+  <texture file = "data/textures/rocks/2n.png" name="rock11/norm" />
+  <model   file = "data/models/rocks/6.mx"     name="rock11/model" />
+
+  <texture file = "data/textures/ice_pick/0.png"  name="ice_pick/diff" />
+  <texture file = "data/textures/ice_pick/0n.png" name="ice_pick/norm" />
+  <model   file = "data/models/ice_pick/0.mx"     name="ice_pick/model" />
+
+  <texture file = "data/textures/ice_pick/0.png"  name="ice_pick1/diff" />
+  <texture file = "data/textures/ice_pick/0n.png" name="ice_pick1/norm" />
+  <model   file = "data/models/ice_pick/1.mx"     name="ice_pick1/model" />
+
   <texture file = "data/textures/grass/0.png" name="grass0/diff" />
   <model   file = "data/models/grass/0.mx"    name="grass0/model" />
 
@@ -401,6 +416,10 @@
   <texture file = "data/textures/plants/farn1.png"  name="farn1/diff" />
   <texture file = "data/textures/plants/farn1n.png" name="farn1/norm" />
   <model   file = "data/models/plants/farn1.mx"     name="farn1/model" />
+
+  <texture file = "data/textures/plants/flowers0.png"  name="flowers0/diff" />
+  <texture file = "data/textures/plants/flowers0n.png" name="flowers0/norm" />
+  <model   file = "data/models/plants/flowers0.mx"     name="flowers0/model" />
 
   <texture file = "data/textures/plants/blush0.png" name="blush0/diff" />
   <model   file = "data/models/plants/blush0.mx"    name="blush0/model" />

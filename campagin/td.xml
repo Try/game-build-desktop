@@ -99,22 +99,23 @@
   </class>
 
   <class name = "balista" >
-    <view src="balista" size = "0.018" physic = "sphere" diameter = "0.2"
+    <view src="balista" size = "0.015" physic = "sphere" diameter = "0.2"
           modelAlign = "CCi" >
       <material del = "phong"      />
       <material add = "unit"       />
     </view>
 
-    <property gold      = "160" />
-    <property lim       = "4"  />
-    <property buildTime = "500" />
+    <property gold        = "170" />
+    <property lim         = "4"  />
+    <property buildTime   = "500" />
+    <property visionRange = "20" />
 
     <beavior add = "move"    />
     <beavior add = "warrior" />
     <property size = "2" />
     <speed rotate = "8" move="50" />
 
-    <atack range = "10" damage = "35" delay = "55" bullet = "bullets/pike" />
+    <atack range = "11" damage = "35" delay = "55" bullet = "bullets/pike" />
     <property deathAnim = "physic" />
   </class>
 
@@ -278,7 +279,7 @@
     <speed rotate = "5" move="56" />
 
     <atack range = "1" damage = "20" delay = "20" bullet=""
-           splash = "3" slpashDamage = "10" />
+           splash = "2" slpashDamage = "15" />
     <property deathAnim = "physic" />
   </class>
 
@@ -312,7 +313,7 @@
 
     <property maxHp = "200" />
     <property buildTime = "400" />
-    <speed rotate = "5" move="56" />
+    <speed rotate = "5" move="50" />
 
     <atack range  = "14" damage = "10" delay = "20" bullet="bullets/fire_large"
            splash = "3" slpashDamage = "5" />
@@ -424,15 +425,15 @@
 
     <property gold      = "150" />
     <property buildTime = "500" />
-    <property armor     = "4" />
+    <property armor     = "2" />
 
-    <property maxHp     = "750" />
+    <property maxHp     = "700" />
 
     <beavior add = "building" />
     <beavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
-    <atack range = "13" damage = "15" delay = "7" bullet = "bullets/pike"/>
+    <atack range = "13" damage = "10" delay = "7" bullet = "bullets/pike"/>
     <property size = "2" />
   </class>
 

@@ -66,6 +66,11 @@
           specular = "0.4"/>
   </class>
 
+  <class name = "land.ice" >
+    <view src="ice"
+          specular = "0.5"/>
+  </class>
+
   <class name = "land.snow_grass" >
     <view src="snow_grass"
           specular = "0.4"/>

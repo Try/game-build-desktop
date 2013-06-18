@@ -96,7 +96,6 @@ INPUT(
 ./release/richtext.o
 ./release/model_mx.o
 ./release/missiontargets.o
-./release/deatmachscenarion.o
 ./release/particlesystemdeclaration.o
 ./release/material.o
 ./release/scene.o
@@ -106,4 +105,5 @@ INPUT(
 ./release/tnloptimize.o
 ./release/graphicssettingswidget.o
 ./release/desertstrikescenario.o
+./release/deatmachscenario.o
 );

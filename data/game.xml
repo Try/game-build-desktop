@@ -704,8 +704,9 @@
           physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
           specular = "0.05"
           randRotate = "true" >
-      <material del = "phong"      />
+      <material del = "phong"       />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -721,6 +722,7 @@
           randRotate = "true" >
       <material del = "phong"     />
       <material add = "add"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -735,11 +737,11 @@
           specular = "0.05" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view src="tree1.bark" size = "0.05"
           physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
           specular = "0.05" >
-      <material del = "phong"      />
       <material add = "blush"       />
     </view>
     <view_size min = "0.8" max = "1.3"/>
@@ -756,6 +758,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -771,6 +774,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -786,6 +790,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -800,6 +805,7 @@
           specular = "0.05" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
@@ -814,6 +820,7 @@
           specular = "0.05" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view src="tree1.bark" size = "0.035"
           physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
@@ -973,6 +980,50 @@
     <property size = "2" />
   </class>
 
+  <class name = "rock11" >
+    <view src="rock11" size = "0.08"
+          modelAlign = "CCi"
+          specular = "0.05"
+          randRotate = "true" />
+
+    <view_size min = "0.5" max = "2.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "ice_pick" >
+    <view src="ice_pick" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCC"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"   />
+      <material add = "transparent"   />
+    </view>
+
+    <view_size min = "0.5" max = "1.0"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
+  <class name = "ice_pick1" >
+    <view src="ice_pick1" size = "0.08"
+          physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
+          modelAlign = "CCC"
+          specular = "0.05"
+          randRotate = "true" >
+      <material del = "phong"   />
+      <material add = "transparent"   />
+    </view>
+
+    <view_size min = "0.5" max = "1.0"/>
+    <property isBackground = "1" />
+
+    <beavior add = "building"/>
+    <property size = "2" />
+  </class>
+
   <class name = "grass0" >
     <view src="grass0" size = "0.06"
           modelAlign = "CCC"
@@ -1050,8 +1101,8 @@
           modelAlign = "CCi"
           specular = "0"
           randRotate = "true" >
-      <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
     <property isBackground = "1" />
@@ -1062,7 +1113,17 @@
           modelAlign = "CCi"
           specular = "0"
           randRotate = "true" >
-      <material del = "phong"      />
+      <material add = "blush"       />
+    </view>
+    <view_size min = "0.8" max = "1.3"/>
+    <property isBackground = "1" />
+  </class>
+
+  <class name = "flowers0" >
+    <view src="flowers0" size = "0.025"
+          modelAlign = "CCi"
+          specular = "0"
+          randRotate = "true" >
       <material add = "blush"       />
     </view>
     <view_size min = "0.8" max = "1.3"/>
@@ -1076,6 +1137,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
     <property isBackground = "1" />
@@ -1088,6 +1150,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
     <property isBackground = "1" />
@@ -1100,6 +1163,7 @@
           randRotate = "true" >
       <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
     <property isBackground = "1" />
@@ -1234,7 +1298,7 @@
   </class>
 
   <class name = "snake" >
-    <view src="snake" size = "0.02" physic = "sphere" diameter = "0.4"
+    <view src="snake" size = "0.05" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
     </view>
     <property deathAnim = "physic" />
