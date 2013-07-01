@@ -15,7 +15,7 @@ uniform mat4 mvpMatrix;
 
 void main() {
 #if settings_shadowTextures
-  tc = vec2(Position.w, Normal.w);
+  tc = vec2(Position.w, Normal.z);
 #endif
 
   vec4 p = mvpMatrix*vec4( Position.xyz, 1.0 );
@@ -49,7 +49,7 @@ FS_Input main( VS_Input IN,
 
     OUT.position    = v;
     OUT.pos         = v;
-    OUT.texcoord0   = float2(IN.position.w, IN.normal.w);//IN.texcoord0;
+    OUT.texcoord0   = float2(IN.position.w, IN.normal.z);//IN.texcoord0;
 
     return OUT;
     }

@@ -74,6 +74,8 @@
     <beavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
+    <property type = "light"/>
+
     <atack range = "0" damage = "5" delay = "20"/>
     <property deathAnim = "physic" />
   </class>
@@ -115,7 +117,13 @@
     <property size = "2" />
     <speed rotate = "8" move="50" />
 
-    <atack range = "11" damage = "35" delay = "55" bullet = "bullets/pike" />
+    <property type = "armored"/>
+
+    <atack range = "11" damage = "15" delay = "35" bullet = "bullets/pike" />
+    <atack range = "11" damage = "25" delay = "35" bullet = "bullets/pike"
+           type  = "armored" />
+
+    <property maxHp = "80" />
     <property deathAnim = "physic" />
   </class>
 
@@ -135,8 +143,13 @@
     <property size = "2" />
     <speed rotate = "20" move="56" />
 
+    <property type = "light"/>
+
     <atack range = "4" damage = "4" delay = "10" bullet="bullets/fire_large"
            splash = "2" slpashDamage = "2" />
+    <atack range = "4" damage = "8" delay = "10" bullet="bullets/fire_large"
+           splash = "2" slpashDamage = "2" type="light" />
+
     <property maxHp = "40" />
     <property deathAnim = "physic" />
   </class>
@@ -174,12 +187,12 @@
         <button action = "castToGround"
                 taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
                 icon = "gui/icon/fire_strike"
-                hint   = "$(fire_strike)" />
+                hint   = "$(spell/fire_strike)" />
 
         <button action = "castToGround"
                 taget="blink" x = "1" y = "3" hotkey = "b"
                 icon = "gui/icon/blink"
-                hint = "$(blink)" />
+                hint = "$(spell/blink)" />
       </page>
     </commands>
 
@@ -191,8 +204,10 @@
     <beavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
-    <atack range  = "5" damage = "15" delay = "40" bullet="bullets/fire"
-           splash = "1" slpashDamage = "5" />
+    <atack range  = "5" damage = "10" delay = "40" bullet="bullets/fire"
+           splash = "5" slpashDamage = "5" />
+    <atack range  = "5" damage = "17" delay = "40" bullet="bullets/fire"
+           splash = "5" slpashDamage = "6" type = "light"/>
 
     <ability name = "blink" />
     <ability name = "fire_strike"   />
@@ -200,7 +215,7 @@
   </class>
 
   <class name = "water_mage" >
-    <view src="fmage" size = "0.22"
+    <view src="wmage" size = "0.22"
           physic   = "box"
           boxSizeX = "0.05" boxSizeY = "0.05" boxSizeZ = "0.1"
           modelAlign = "CCC" >
@@ -213,12 +228,12 @@
         <button action = "castToGround"
                 taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
                 icon = "gui/icon/fire_strike"
-                hint   = "$(fire_strike)" />
+                hint   = "$(spell/fire_strike)" />
 
         <button action = "castToGround"
                 taget="blink" x = "1" y = "3" hotkey = "b"
                 icon = "gui/icon/blink"
-                hint = "$(blink)" />
+                hint = "$(spell/blink)" />
       </page>
     </commands>
 
@@ -276,7 +291,9 @@
     <property maxHp = "300" />
     <property buildTime = "400" />
     <property armor     = "3" />
-    <speed rotate = "5" move="56" />
+    <speed rotate = "5" move="60" />
+
+    <property type = "armored"/>
 
     <atack range = "1" damage = "20" delay = "20" bullet=""
            splash = "2" slpashDamage = "15" />
@@ -287,6 +304,12 @@
     <view src="fire_element" size = "0.2" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
       <material del = "phong"     />
+      <material del = "phong"     />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
+      <material add = "add"     />
+      <material add = "glow"  />
       <material add = "add"     />
       <material add = "glow"  />
     </view>
@@ -301,7 +324,7 @@
         <button action = "castToGround"
                 taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
                 icon = "gui/icon/fire_strike"
-                hint   = "$(fire_strike)" />
+                hint   = "$(spell/fire_strike)" />
       </page>
     </commands>
 
@@ -315,8 +338,10 @@
     <property buildTime = "400" />
     <speed rotate = "5" move="50" />
 
-    <atack range  = "14" damage = "10" delay = "20" bullet="bullets/fire_large"
-           splash = "3" slpashDamage = "5" />
+    <atack range  = "14" damage = "15" delay = "20" bullet="bullets/fire_large"
+           splash = "5" slpashDamage = "5" />
+    <atack range  = "14" damage = "20" delay = "20" bullet="bullets/fire_large"
+           splash = "5" slpashDamage = "8" type = "light" />
     <ability name = "fire_strike"   />
 
     <property deathAnim = "physic" />
@@ -384,13 +409,15 @@
     <beavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
+    <property type = "armored"/>
+
     <property size      = "6"    />
     <property limInc    = "11"   />
 
     <property gold      = "400"  />
     <property buildTime = "1000" />
     <property maxHp     = "1000" />
-    <property armor     = "3" />
+    <property armor     = "4" />
 
     <atack range  = "13" damage = "40" delay = "10" bullet="bullets/fire_large"
            splash = "2"  slpashDamage = "30" />
@@ -406,7 +433,7 @@
       <material add = "unit"       />
     </view>
 
-    <property gold      = "100" />
+    <property gold      = "50" />
     <property limInc    = "10"  />
     <property buildTime = "300" />
 
@@ -425,15 +452,17 @@
 
     <property gold      = "150" />
     <property buildTime = "500" />
-    <property armor     = "2" />
+    <property armor     = "4" />
 
-    <property maxHp     = "700" />
+    <property maxHp     = "250" />
 
     <beavior add = "building" />
     <beavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
-    <atack range = "13" damage = "10" delay = "7" bullet = "bullets/pike"/>
+    <property type = "armored"/>
+
+    <atack range = "13" damage = "20" delay = "8" bullet = "bullets/pike"/>
     <property size = "2" />
   </class>
 

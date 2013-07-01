@@ -17,13 +17,10 @@ void main() {
 #ifndef teamColor
   if( texture2D(texture, tc).a<0.5 )
     discard;
-#else
-  if( texture2D(texture, tc).a<=0.0 )
-    discard;
 #endif
 #endif
 
-  gl_FragColor = vec4(zval, zval, zval, 1.0);
+  gl_FragColor = vec4(zval);
   }
 #else
 struct FS_Input {
@@ -39,6 +36,13 @@ struct FS_Output {
 FS_Output main( FS_Input input,
                 uniform sampler2D texture ) {
     FS_Output ret;
+
+#if settings_shadowTextures
+#ifndef teamColor
+  if( tex2D(texture, input.texcoord0).a<0.5 )
+    discard;
+#endif
+#endif
 
     ret.z = input.pos.z;
     ret.z.a = tex2D( texture, input.texcoord0 ).a;

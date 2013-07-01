@@ -212,6 +212,14 @@
   <model   file = "data/models/units/fire_mage.mx"
            name="fmage/model" />
 
+  <texture file = "data/textures/units/water_mage.png"
+          name="wmage/diff"  />
+  <texture file = "data/textures/units/fire_magen.png"
+          name="wmage/norm"  />
+  <texture file = "data/textures/sm.png"   name="fmage/sm"  />
+  <model   file = "data/models/units/fire_mage.mx"
+          name="wmage/model" />
+
   <texture file = "data/textures/t.png"    name="incvisitor/diff"  />
   <texture file = "data/textures/sm.png"   name="incvisitor/sm"  />
   <model   file = "data/models/incvisitor.mx"

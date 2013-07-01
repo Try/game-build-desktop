@@ -14,7 +14,7 @@
   uniform sampler2D shadowMap;
 #endif
 
-#ifdef shadowsColored
+#if shadowsColored
   uniform sampler2D shadowMapCl;
 #endif
 
@@ -57,7 +57,9 @@ varying vec3 normal;
 #if bumpMapping
 varying vec3 bnormal, tnormal;
 #endif
-//varying lowp vec4 cl;
+
+varying lowp vec4 cl;
+
 #if shadows
 varying vec3 shPos;
 #endif
@@ -69,21 +71,25 @@ varying lowp vec3 oclusionPos;
 varying lowp float terrainColorMul;
 #endif
 
-#if oclusion    
+#if oclusion  
+float aoFix(float x){
+  return -x*x + x;
+  }
+  
   float computeAO( sampler2D aoTex, vec3 pos ){
     vec3 shPos = pos;
 
 	#ifdef oes_render
-    float z = shPos.z-0.1;//texRECT(texture, shPos.xy).r;
+    float z = shPos.z-0.05;//texRECT(texture, shPos.xy).r;
 	#else
     float z = shPos.z;//texRECT(texture, shPos.xy).r;
 	#endif
 
     vec4 tex = texture2D( aoTex, shPos.xy );
 
-    float aR = max( 1.0 - 10.0*(z-0.05-tex.r), 0.2 );
-    float aG = max( 1.0 - 10.0*(shPos.z-tex.g), 0.2 );
-    float aB = max( 1.1 -  5.0*(shPos.z-tex.b), 0.2 );
+    float aR = max( 1.0 -  5.0*aoFix(z-0.05-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*aoFix(z     -tex.g), 0.2 );
+    float aB = max( 1.1 -  5.0*aoFix(z     -tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
 	
 	//aR = aR*aR*aR;
@@ -113,14 +119,18 @@ vec3 norm(){
   }
 #endif
 
-float shadowMapValue( in sampler2D shadowMap, in vec2 smPos, in  float zv ){
-  float z = texture2D( shadowMap, smPos ).b;// Hello, RGB565!
-
+float smFactor( float zv, float z ){
   #if settings_shadowmapres>=1024
-  return 1.0 - clamp( (zv-z)*75.0, 0.0, 1.0 );
+  return 1.0 - smoothstep( 0.0, 1.0, (zv-z)*75.0 );
   #else
-  return 1.0 - clamp( (zv-z)*50.0, 0.0, 1.0 );
+  return 1.0 - smoothstep( 0.0, 1.0, (zv-z)*50.0 );
   #endif
+  }
+
+float shadowMapValue( in sampler2D shadowMap, in vec2 smPos, in  float zv ){
+  vec4 z4 = texture2D( shadowMap, smPos );
+  
+  return smFactor(zv,z4.r);
   }
 
 float shadowMapValue( in sampler2D shadowMap, vec3 shPosition ){	
@@ -158,14 +168,21 @@ float shadowMapValue( in sampler2D shadowMap, vec3 shPosition ){
 
     return f0 + mul;
     }
+
+vec3 computeLightColor( in sampler2D shadowMap,
+                        in sampler2D shadowMapCl,
+                        vec3 smC ){
+  //vec2 smC = shPosition.xy*0.5+vec2( 0.5 );
+  return texture2D( shadowMapCl, vec2(smC.x, 1.0-smC.y) ).rgb;
+  }
 	
 void main() { 
 #ifdef diffuseTexture
-  vec4 diff = texture2D(texture, tc);
-  //vec4 diff = cl*texture2D(texture, tc);
+  //vec4 diff = texture2D(texture, tc);
+  vec4 diff = cl*texture2D(texture, tc);
 #else
-  vec4 diff = vec4(0.0);
-  //vec4 diff = cl;
+  //vec4 diff = vec4(0.0);
+  vec4 diff = cl;
 #endif
 
 #ifdef alpha_test
@@ -197,9 +214,22 @@ void main() {
 #if oclusion
   ao = computeAO(oclusionMap, oclusionPos);
 #endif
-  diff.rgb *= (l*lightColor + lightAblimient*ao);
+	#if shadowsColored
+		diff.rgb *= ( computeLightColor( shadowMap,
+										 shadowMapCl,
+										 shPos )*l
+								 + lightAblimient*ao ); 
+	#else
+     	diff.rgb *= ( l*lightColor + lightAblimient*ao );
+		//diff.rgb = vec3(1,0,0);
+	#endif
+  //diff.rgb *= (l*lightColor + lightAblimient*ao);
   //diff.rgb = ao;
 #endif
+
+#ifdef premultAlpha
+  diff.rgb *= diff.a;
+#endif	
 
   gl_FragColor = diff;
   //gl_FragData[0] = vec4(1.0);//vec4(diff.rgb, 1.0);
@@ -209,7 +239,7 @@ void main() {
 
 struct FS_Input {
   float4 position  : POSITION;
-  //float4 color     : COLOR;
+  float4 color     : COLOR;
   float4 bnormal           : TEXCOORD7;
 #ifdef terrainCL
   float  terrainColorMul   : TEXCOORD8;
@@ -342,6 +372,10 @@ float computeWaterDepth( float3    screenPos,
   
 #if oclusion
     
+float aoFix(float x){
+  return -x*x + x;
+  }
+  
   float computeAO( sampler2DRect aoTex, float4 pos ){
     float4 shPos = pos;
 
@@ -349,9 +383,9 @@ float computeWaterDepth( float3    screenPos,
 
     float4 tex = texRECTlod( aoTex, float4(shPos.xy, 0, 0) );
 
-    float aR = max( 1.0 -  5.0*(z-tex.r), 0.2 );
-    float aG = max( 1.0 - 10.0*(shPos.z-tex.g), 0.2 );
-    float aB = max( 1.1 -  5.0*(shPos.z-tex.b), 0.2 );
+    float aR = max( 1.0 -  5.0*aoFix(z-tex.r), 0.2 );
+    float aG = max( 1.0 - 10.0*aoFix(shPos.z-tex.g), 0.2 );
+    float aB = max( 1.1 -  5.0*aoFix(shPos.z-tex.b), 0.2 );
     //aB = 1-(1-aB-0.6)/0.4;
 	
 	//aR = aR*aR*aR;
@@ -366,7 +400,7 @@ float computeWaterDepth( float3    screenPos,
     float mul = max( abs(mulT.x), abs(mulT.y) );
     mul = 1.0 - max(mul-0.9, 0)/0.1;
 
-    return clamp( mix(1, aoVal, mul), 0.1, 1 );
+    return clamp( mix(100.0, aoVal, mul), 0.1, 1 );
     }
 #endif
 
@@ -418,7 +452,7 @@ FS_Output main( FS_Input input
 #if shadows
                 ,uniform sampler2D shadowMap
 #endif
-#ifdef shadowsColored
+#if shadowsColored
                 ,uniform sampler2D shadowMapCl
 #endif
 #if oclusion
@@ -456,7 +490,7 @@ FS_Output main( FS_Input input
                 ) {
     FS_Output ret;
     float3 lambertVal = float3(1);
-	float4 color = float4(1);
+	float4 color = input.color;
 #ifdef terrainCL
     color *= input.terrainColorMul;
 #endif
@@ -541,11 +575,11 @@ FS_Output main( FS_Input input
     ao = computeAO(oclusionMap, input.oclusionPos);
 #endif
 
-#ifdef shadowsColored
+#if shadowsColored
     diffuse.rgb *= float3( ( computeLightColor( shadowMap,
                                                 shadowMapCl,
                                                 input.shPosition )*lambertVal
-                             + lightAblimient*ao ) );
+                             + lightAblimient*ao ) ); 
 #else
     diffuse.rgb *= float3( ( lightColor*lambertVal + lightAblimient*ao ) );
 #endif
@@ -604,6 +638,9 @@ FS_Output main( FS_Input input
 #   endif
 #endif
     //ret.accum = float4(l,l,l, 1.0);
+#ifdef premultAlpha
+    albedo.rgb *= albedo.a;
+#endif	
 
 #ifdef gbuffer
     ret.diffuse     = albedo;

@@ -1,0 +1,619 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  Ts/call  Ts/call  name    
+ 11.50     11.83    11.83                             Tempest::GraphicObject<Material>::bounds() const
+  8.83     20.92     9.09                             Tempest::AbstractSceneObject::isVisible() const
+  6.35     27.45     6.54                             GraphicsSystem::isVisible(Tempest::AbstractGraphicObject<Material> const&, GraphicsSystem::Frustum const&)
+  5.18     32.78     5.33                             Terrain::buildVBO(int, int, int, int, std::vector<MVertex, std::allocator<MVertex> >&, std::vector<unsigned short, std::allocator<unsigned short> >&, bool, int)
+  4.60     37.52     4.74                             GraphicsSystem::isVisible(float, float, float, float, GraphicsSystem::Frustum const&)
+  3.95     41.58     4.06                             std::vector<MVertex, std::allocator<MVertex> >::size() const
+  2.86     44.52     2.94                             Tempest::GraphicObject<Material>::ModelPtr<MVertex>::bounds() const
+  2.54     47.13     2.61                             GraphicsSystem::MaterialSort::less(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)
+  2.16     49.35     2.22                             MVertex::operator==(MVertex const&) const
+  1.69     51.09     1.74                             std::vector<MVertex, std::allocator<MVertex> >::operator[](unsigned int)
+  1.45     52.58     1.49                             std::__tuple_compare<0u, 0u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  1.08     53.69     1.11                             void Tempest::Device::drawIndexed<MVertex, unsigned short>(Tempest::AbstractAPI::PrimitiveType, Tempest::VertexShader const&, Tempest::FragmentShader const&, Tempest::VertexDeclaration const&, Tempest::VertexBuffer<MVertex> const&, Tempest::IndexBuffer<unsigned short> const&, int, int, int)
+  0.93     54.65     0.96                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::size() const
+  0.87     55.55     0.90                             std::_Tuple_impl<2u, float&, float&, float&>::_Tuple_impl(float&, float&, float&)
+  0.86     56.43     0.88                             Tempest::GraphicObject<Material>::radius() const
+  0.86     57.31     0.88                             Tempest::AbstractGraphicObject<Material>::vboHandle() const
+  0.85     58.18     0.87                             std::_Tuple_impl<0u, unsigned int&, unsigned int&, float&, float&, float&>::_Tuple_impl(unsigned int&, unsigned int&, float&, float&, float&)
+  0.74     58.94     0.76                             std::_Tuple_impl<1u, unsigned int&, float&, float&, float&>::_Tuple_impl(unsigned int&, float&, float&, float&)
+  0.73     59.69     0.75                             Tempest::GraphicObject<Material>::sizeZ() const
+  0.71     60.42     0.73                             int GraphicsSystem::draw<Tempest::Matrix4x4, Tempest::Matrix4x4 const&>(GraphicsSystem::Frustum const&, bool, Tempest::AbstractCamera const&, OcTree<Tempest::AbstractGraphicObject<Material> const*> const&, void (Material::*)(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&, Tempest::Matrix4x4 const&) const, Tempest::Matrix4x4)
+  0.70     61.14     0.72                             Tempest::Model<MVertex>::bounds() const
+  0.70     61.86     0.72                             std::_Tuple_impl<3u, float&, float&>::_Tuple_impl(float&, float&)
+  0.69     62.58     0.71                             TerrainChunk::update(Resource&)
+  0.68     63.27     0.70                             void GraphicsSystem::completeDraw<Tempest::Matrix4x4, Tempest::Matrix4x4 const&>(Tempest::Render&, Tempest::AbstractCamera const&, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*), void (Material::*)(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&, Tempest::Matrix4x4 const&) const, Tempest::Matrix4x4)
+  0.66     63.95     0.68                             int GraphicsSystem::draw<>(GraphicsSystem::Frustum const&, bool, Tempest::AbstractCamera const&, OcTree<Tempest::AbstractGraphicObject<Material> const*> const&, void (Material::*)(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const)
+  0.65     64.63     0.67                             Tempest::AbstractGraphicObject<Material>::material() const
+  0.64     65.28     0.66                             std::_Head_base<2u, float&, false>::_Head_base(float&)
+  0.63     65.94     0.65                             Tempest::Half::operator=(float)
+  0.60     66.56     0.62                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::operator*() const
+  0.58     67.16     0.60                             std::_Head_base<3u, float&, false>::_Head_base(float&)
+  0.56     67.73     0.58                             Tempest::GraphicObject<Material>::sizeX() const
+  0.56     68.31     0.58                             Material::shadow(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&, Tempest::Matrix4x4 const&) const
+  0.56     68.89     0.58                             std::_Head_base<1u, unsigned int&, false>::_Head_base(unsigned int&)
+  0.56     69.47     0.58                             std::_Tuple_impl<4u, float&>::_Tuple_impl(float&)
+  0.54     70.03     0.56                             std::__add_c_ref<std::tuple_element<0u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::type>::type std::get<0u, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.53     70.58     0.55                             Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::deleteObject(Tempest::AbstractAPI::VertexBuffer*)
+  0.53     71.14     0.55                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, Tempest::AbstractGraphicObject<Material> const*, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, Tempest::AbstractGraphicObject<Material> const* const&, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.52     71.67     0.54                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::operator[](unsigned int) const
+  0.52     72.22     0.54                             std::tuple<unsigned int&, unsigned int&, float&, float&, float&>::tuple(unsigned int&, unsigned int&, float&, float&, float&)
+  0.51     72.73     0.52                             std::_Head_base<4u, float&, false>::_Head_base(float&)
+  0.50     73.25     0.51                             void Tempest::Render::draw<MVertex>(Tempest::Model<MVertex> const&)
+  0.50     73.75     0.51                             std::tuple<unsigned int&, unsigned int&, float&, float&, float&> std::tie<unsigned int, unsigned int, float, float, float>(unsigned int&, unsigned int&, float&, float&, float&)
+  0.48     74.25     0.49                             Tempest::GraphicObject<Material>::sizeY() const
+  0.48     74.73     0.49                             std::_Head_base<0u, unsigned int&, false>::_Head_base(unsigned int&)
+  0.47     75.22     0.48                             __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<char*, int>(char*, char*, int const&)
+  0.47     75.69     0.48                             bool std::operator< <unsigned int&, unsigned int&, float&, float&, float&, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.45     76.16     0.46                             Tempest::GraphicObject<Material>::x() const
+  0.44     76.61     0.45                             Tempest::GraphicObject<Material>::render(Tempest::Render&) const
+  0.44     77.06     0.45                             Tempest::GraphicObject<Material>::ModelPtr<WaterVertex>::bounds() const
+  0.44     77.50     0.45                             std::__add_c_ref<unsigned int&>::type std::__get_helper<0u, unsigned int&, unsigned int&, float&, float&, float&>(std::_Tuple_impl<0u, unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.43     77.94     0.44                             array2d<int>::operator[](int) const
+  0.42     78.38     0.43                             Tempest::GraphicObject<Material>::y() const
+  0.42     78.81     0.43                             std::_Head_base<0u, unsigned int&, false>::_M_head(std::_Head_base<0u, unsigned int&, false> const&)
+  0.40     79.22     0.41                             Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::delRef(Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*)
+  0.39     79.61     0.40                             Tempest::Model<MVertex>::size() const
+  0.39     80.02     0.40                             Terrain::heightAt(int, int) const
+  0.37     80.39     0.38                             Terrain::buildGeometry(Tempest::VertexBufferHolder&, Tempest::IndexBufferHolder&, int, unsigned int, int, int)
+  0.36     80.77     0.37                             std::_Tuple_impl<0u, unsigned int&, unsigned int&, float&, float&, float&>::_M_head(std::_Tuple_impl<0u, unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.35     81.13     0.36                             Tempest::IndexBuffer<unsigned short>::size() const
+  0.33     81.47     0.34                             std::vector<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed, std::allocator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed> >::size() const
+  0.31     81.78     0.32                             Material::animateObjMatrix(Tempest::Matrix4x4 const&, float)
+  0.31     82.11     0.32                             Tempest::Half::operator float() const
+  0.29     82.41     0.30                             Tempest::GraphicObject<Material>::z() const
+  0.28     82.69     0.29                             std::vector<Tempest::Point, std::allocator<Tempest::Point> >::operator[](unsigned int)
+  0.28     82.98     0.29                             memcmp
+  0.27     83.27     0.28                             SmallGraphicsObject::update()
+  0.25     83.53     0.26                             void GraphicsSystem::completeDraw<>(Tempest::Render&, Tempest::AbstractCamera const&, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*), void (Material::*)(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const)
+  0.25     83.78     0.26                             Tempest::GraphicObject<Material>::updateMat() const
+  0.24     84.03     0.25                             Terrain::updatePolish()
+  0.24     84.28     0.25                             Tempest::GraphicObject<Material>::ModelPtr<MVertex>::draw(Tempest::Render&) const
+  0.24     84.53     0.25                             array2d<int>::LineRef::operator[](int) const
+  0.23     84.78     0.24                             void Tempest::UniformTable::add<Tempest::Matrix4x4>(Tempest::Matrix4x4 const&, char const*, Tempest::UniformTable::Taget)
+  0.23     85.02     0.24                             Terrain::fogGeometry(int, int) const
+  0.23     85.25     0.24                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::operator[](unsigned int)
+  0.23     85.50     0.24                             void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.22     85.72     0.23                             Tempest::Pixmap::at(int, int) const
+  0.22     85.95     0.23                             std::vector<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed, std::allocator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed> >::operator[](unsigned int)
+  0.21     86.17     0.22                             std::vector<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*> >::size() const
+  0.20     86.39     0.21                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::operator++()
+  0.20     86.59     0.21                             Material::gbuffer(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const
+  0.19     86.80     0.20                             GraphicsSystem::MaterialSort::sm(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)
+  0.19     87.00     0.20                             World::coordCast(int)
+  0.18     87.19     0.19                             array2d<Terrain::Tile>::operator[](int)
+  0.18     87.38     0.19                             _ZN9__gnu_cxx13new_allocatorIPKN7Tempest21AbstractGraphicObjectI8MaterialEEE9constructIS6_IRKS6_EEEvPT_DpOT0_
+  0.18     87.56     0.19                             Tempest::Device::shadingLang() const
+  0.17     87.75     0.18                             Terrain::at(int, int) const
+  0.17     87.92     0.18                             std::__tuple_compare<0u, 2u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.16     88.08     0.16                             void Tempest::Device::setUniform<float>(Tempest::FragmentShader&, float const*, int, char const*)
+  0.16     88.25     0.16                             array2d<TerrainChunk>::operator[](int)
+  0.16     88.41     0.16                             bool __gnu_cxx::operator!=<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&)
+  0.16     88.56     0.16                             operator new(unsigned int, void*)
+  0.15     88.72     0.15                             std::__detail::_Mod_range_hashing::operator()(unsigned int, unsigned int) const
+  0.15     88.86     0.15                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::push_back(Tempest::AbstractGraphicObject<Material> const* const&)
+  0.15     89.02     0.15                             std::remove_reference<Tempest::AbstractGraphicObject<Material> const*&>::type&& std::move<Tempest::AbstractGraphicObject<Material> const*&>(Tempest::AbstractGraphicObject<Material> const*&)
+  0.14     89.16     0.14                             Tempest::RawModel<MVertex>::computeBoundRect(std::vector<MVertex, std::allocator<MVertex> > const&)
+  0.14     89.30     0.14                             array2d<Terrain::TileInfo>::operator[](int)
+  0.14     89.44     0.14                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::operator--()
+  0.14     89.58     0.14                             GameObject::getClass() const
+  0.14     89.72     0.14                             std::vector<int, std::allocator<int> >::operator[](unsigned int) const
+  0.13     89.85     0.14                             GraphicsSystem::mkFrustum(Tempest::Matrix4x4 const&, GraphicsSystem::Frustum&)
+  0.13     89.98     0.14                             Terrain::mkVertex(int, int, int)
+  0.13     90.11     0.13                             Scenario::unProject(int, int, float)
+  0.13     90.25     0.13                             std::_Head_base<4u, float&, false>::_M_head(std::_Head_base<4u, float&, false> const&)
+  0.13     90.38     0.13                             std::__detail::_Equal_helper<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, unsigned int, true>::_S_equals(std::equal_to<WaterVertex> const&, std::_Select1st<std::pair<WaterVertex const, unsigned short> > const&, WaterVertex const&, unsigned int, std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>*)
+  0.12     90.50     0.12                             Terrain::serialize(GameSerializer&)
+  0.12     90.61     0.12                             Terrain::waterGeometry(int, int) const
+  0.12     90.73     0.12                             std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, WaterVertex const&, unsigned int) const
+  0.12     90.86     0.12                             std::__shared_ptr<TerrainChunk::PolishView, (__gnu_cxx::_Lock_policy)2>::operator->() const
+  0.12     90.97     0.12                             std::vector<Tempest::Point, std::allocator<Tempest::Point> >::size() const
+  0.12     91.09     0.12                             int const& std::max<int>(int const&, int const&)
+  0.11     91.20     0.11                             _Unwind_SjLj_Register
+  0.11     91.31     0.11                             std::vector<std::shared_ptr<TerrainChunk::PolishView>, std::allocator<std::shared_ptr<TerrainChunk::PolishView> > >::size() const
+  0.11     91.42     0.11                             std::_Tuple_impl<5u>::_Tuple_impl()
+  0.11     91.53     0.11                             std::__add_c_ref<float&>::type std::__get_helper<4u, float&>(std::_Tuple_impl<4u, float&> const&)
+  0.10     91.64     0.10                             array2d<Terrain::TileInfo>::LineRef::operator[](int)
+  0.10     91.73     0.10                             _ZN9__gnu_cxx13new_allocatorI7MVertexE9constructIS1_IRKS1_EEEvPT_DpOT0_
+  0.10     91.83     0.10                             Tempest::Detail::Ptr<Tempest::AbstractAPI::IndexBuffer*, Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip>::const_value() const
+  0.10     91.94     0.10                             Tempest::Detail::Ptr<Tempest::AbstractAPI::VertexBuffer*, Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip>::const_value() const
+  0.10     92.03     0.10                             std::vector<SmallGraphicsObject*, std::allocator<SmallGraphicsObject*> >::size() const
+  0.10     92.14     0.10                             std::_Tuple_impl<2u, float&, float&, float&>::_M_head(std::_Tuple_impl<2u, float&, float&, float&> const&)
+  0.10     92.23     0.10                             std::vector<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*> >::operator[](unsigned int)
+  0.10     92.33     0.10                             std::__add_c_ref<std::tuple_element<2u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::type>::type std::get<2u, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.10     92.44     0.10                             float const& std::min<float>(float const&, float const&)
+  0.09     92.53     0.09                             FileSerialize::fread(void*, unsigned int, unsigned int, FileSerialize::File*)
+  0.09     92.61     0.09                             Tempest::Model<MVertex>::indexes() const
+  0.09     92.70     0.09                             std::_Head_base<2u, float&, false>::_M_head(std::_Head_base<2u, float&, false> const&)
+  0.09     92.80     0.09                             std::vector<MVertex, std::allocator<MVertex> >::push_back(MVertex const&)
+  0.08     92.88     0.08                             _Unwind_SjLj_Unregister
+  0.08     92.95     0.08                             Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::delRef(Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip::Ref*)
+  0.08     93.03     0.08                             Terrain::computePlanes()
+  0.08     93.11     0.08                             array2d<Terrain::Tile>::LineRef::operator[](int)
+  0.08     93.19     0.08                             array2d<int>::LineRef::LineRef()
+  0.08     93.28     0.08                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::__normal_iterator(Tempest::AbstractGraphicObject<Material> const** const&)
+  0.08     93.36     0.08                             Tempest::Detail::Ptr<Tempest::AbstractAPI::IndexBuffer*, Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip>::isNull() const
+  0.08     93.44     0.08                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::base() const
+  0.08     93.52     0.08                             std::__detail::_Hashtable_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_equals(WaterVertex const&, unsigned int, std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>*) const
+  0.08     93.59     0.08                             std::_Head_base<3u, float&, false>::_M_head(std::_Head_base<3u, float&, false> const&)
+  0.08     93.67     0.08                             std::_Tuple_impl<1u, unsigned int&, float&, float&, float&>::_M_head(std::_Tuple_impl<1u, unsigned int&, float&, float&, float&> const&)
+  0.08     93.75     0.08                             _ZNSt16allocator_traitsISaIPKN7Tempest21AbstractGraphicObjectI8MaterialEEEE9constructIS5_IRKS5_EEEvRS6_PT_DpOT0_
+  0.08     93.83     0.08                             float* std::__copy_move_a2<false, float*, float*>(float*, float*, float*)
+  0.08     93.92     0.08                             std::__add_c_ref<std::tuple_element<1u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::type>::type std::get<1u, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.08     94.00     0.08                             std::__add_c_ref<std::tuple_element<3u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::type>::type std::get<3u, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.08     94.08     0.08                             float const& std::max<float>(float const&, float const&)
+  0.08     94.16     0.08                             int const& std::min<int>(int const&, int const&)
+  0.07     94.23     0.07                             Terrain::height() const
+  0.07     94.30     0.07                             FileSerialize::read(unsigned int&)
+  0.07     94.37     0.07                             OcTree<Tempest::AbstractGraphicObject<Material> const*>::remove(Tempest::AbstractGraphicObject<Material> const* const&, float, float, float)
+  0.07     94.44     0.07                             GUIPass::exec(MainGui&, Tempest::Texture2d*, Tempest::Texture2d*, Tempest::Device&)
+  0.07     94.51     0.07                             Tempest::Pixmap::set(int, int, Tempest::Pixmap::Pixel const&)
+  0.07     94.58     0.07                             array2d<int>::operator[](int)
+  0.07     94.65     0.07                             Tempest::GraphicObject<Material>::transform() const
+  0.07     94.72     0.07                             Tempest::Model<WaterVertex>::bounds() const
+  0.07     94.79     0.07                             Tempest::Model<MVertex>::declaration() const
+  0.07     94.86     0.07                             array2d<int>::height() const
+  0.07     94.93     0.07                             std::_Head_base<1u, unsigned int&, false>::_M_head(std::_Head_base<1u, unsigned int&, false> const&)
+  0.07     95.00     0.07                             std::__tuple_compare<0u, 4u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.07     95.07     0.07                             std::vector<Terrain::TileInfo, std::allocator<Terrain::TileInfo> >::operator[](unsigned int)
+  0.07     95.14     0.07                             std::__add_c_ref<float&>::type std::__get_helper<3u, float&, float&>(std::_Tuple_impl<3u, float&, float&> const&)
+  0.07     95.21     0.07                             std::__add_c_ref<std::tuple_element<4u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::type>::type std::get<4u, unsigned int&, unsigned int&, float&, float&, float&>(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.06     95.28     0.07                             GraphicsSystem::dipOptimizeRef()
+  0.06     95.33     0.06                             GraphicsSystem::mkFrustum(Tempest::AbstractCamera const&, GraphicsSystem::Frustum&)
+  0.06     95.39     0.06                             Scene::onObjectOp(Tempest::AbstractGraphicObject<Material> const*, Scene::Act, Tempest::Matrix4x4 const&)
+  0.06     95.45     0.06                             Tempest::Matrix4x4::~Matrix4x4()
+  0.06     95.52     0.06                             array2d<TerrainChunk>::LineRef::operator[](int)
+  0.06     95.58     0.06                             array2d<Terrain::TileInfo>::LineRef::LineRef()
+  0.06     95.64     0.06                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::difference_type __gnu_cxx::operator-<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&)
+  0.06     95.69     0.06                             Terrain::width() const
+  0.06     95.75     0.06                             Terrain::depthAt(int, int) const
+  0.06     95.81     0.06                             std::_Iter_base<float*, false>::_S_base(float*)
+  0.06     95.88     0.06                             std::__tuple_compare<0u, 3u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.06     95.94     0.06                             _ZNSt16allocator_traitsISaIPKN7Tempest21AbstractGraphicObjectI8MaterialEEEE12_S_constructIS5_IRKS5_EEENSt9enable_ifIXsrNS7_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS6_PSD_DpOSE_
+  0.06     96.00     0.06                             std::vector<Terrain::Tile, std::allocator<Terrain::Tile> >::operator[](unsigned int)
+  0.06     96.06     0.06                             void std::swap<Tempest::AbstractGraphicObject<Material> const*>(Tempest::AbstractGraphicObject<Material> const*&, Tempest::AbstractGraphicObject<Material> const*&)
+  0.05     96.11     0.06                             Terrain::atF(float, float) const
+  0.05     96.16     0.05                             MiniMapView::render()
+  0.05     96.21     0.05                             array2d<TerrainChunk>::LineRef::LineRef()
+  0.05     96.26     0.05                             array2d<int>::width() const
+  0.05     96.31     0.05                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >::operator+(int const&) const
+  0.05     96.36     0.05                             __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >::base() const
+  0.05     96.41     0.05                             std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_bucket_index(std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>*) const
+  0.05     96.46     0.05                             std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>::_M_next() const
+  0.05     96.51     0.05                             std::_Tuple_impl<3u, float&, float&>::_M_head(std::_Tuple_impl<3u, float&, float&> const&)
+  0.05     96.56     0.05                             std::__tuple_compare<0u, 1u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.05     96.61     0.05                             void std::__insertion_sort<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.05     96.66     0.05                             void std::iter_swap<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >)
+  0.04     96.70     0.04                             void TnlOptimize::index<WaterVertex>(std::vector<WaterVertex, std::allocator<WaterVertex> >&, std::vector<unsigned short, std::allocator<unsigned short> >&)
+  0.04     96.74     0.04                             GraphicsSystem::setupLight(Scene const&, Tempest::VertexShader&, Tempest::FragmentShader&, Tempest::Texture2d const&, Tempest::Texture2d const&, Tempest::Texture2d const&)
+  0.04     96.78     0.04                             GraphicsSystem::MaterialSort::terrain(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)
+  0.04     96.82     0.04                             GraphicsSystem::blurSm(Tempest::Texture2d&, Tempest::Texture2d&, Scene const&)
+  0.04     96.86     0.04                             GUIPass::setBlendMode(Tempest::BlendMode)
+  0.04     96.90     0.04                             Tempest::UniformTable::addImpl(float, char const*, Tempest::UniformTable::Taget)
+  0.04     96.94     0.04                             Tempest::LocalBufferHolder<Tempest::IndexBufferHolder>::deleteObject(Tempest::AbstractAPI::IndexBuffer*)
+  0.04     96.98     0.04                             Tempest::Detail::Atomic::begin()
+  0.04     97.02     0.04                             void Tempest::Device::drawIndexed<GUIPass::Vertex, unsigned short>(Tempest::AbstractAPI::PrimitiveType, Tempest::VertexShader const&, Tempest::FragmentShader const&, Tempest::VertexDeclaration const&, Tempest::VertexBuffer<GUIPass::Vertex> const&, Tempest::IndexBuffer<unsigned short> const&, int, int, int)
+  0.04     97.06     0.04                             Scenario::unProjectRz(int, int, float&)
+  0.04     97.10     0.04                             bool __gnu_cxx::operator< <Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&)
+  0.04     97.14     0.04                             World::unitUnderMouse(int, int, int, int) const
+  0.04     97.18     0.04                             World::zAt(float, float) const
+  0.04     97.22     0.04                             std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_node(unsigned int, WaterVertex const&, unsigned int) const
+  0.04     97.26     0.04                             std::vector<MVertex, std::allocator<MVertex> >::operator[](unsigned int) const
+  0.04     97.30     0.04                             std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> >::size() const
+  0.04     97.34     0.04                             std::vector<Tempest::LocalBufferHolder<Tempest::IndexBufferHolder>::NonFreed, std::allocator<Tempest::LocalBufferHolder<Tempest::IndexBufferHolder>::NonFreed> >::size() const
+  0.04     97.38     0.04                             std::vector<Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip::Ref*> >::size() const
+  0.04     97.42     0.04                             std::vector<TerrainChunk, std::allocator<TerrainChunk> >::operator[](unsigned int)
+  0.04     97.46     0.04                             std::vector<Tempest::LocalBufferHolder<Tempest::IndexBufferHolder>::NonFreed, std::allocator<Tempest::LocalBufferHolder<Tempest::IndexBufferHolder>::NonFreed> >::operator[](unsigned int)
+  0.04     97.50     0.04                             std::vector<int, std::allocator<int> >::operator[](unsigned int)
+  0.04     97.54     0.04                             std::__detail::_Hashtable_ebo_helper<0, std::equal_to<WaterVertex>, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<0, std::equal_to<WaterVertex>, true> const&)
+  0.04     97.58     0.04                             std::__add_c_ref<float&>::type std::__get_helper<2u, float&, float&, float&>(std::_Tuple_impl<2u, float&, float&, float&> const&)
+  0.04     97.62     0.04                             void std::__unguarded_insertion_sort<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.04     97.66     0.04                             double const& std::max<double>(double const&, double const&)
+  0.04     97.70     0.04                             Tempest::AbstractGraphicObject<Material> const* const& std::forward<Tempest::AbstractGraphicObject<Material> const* const&>(std::remove_reference<Tempest::AbstractGraphicObject<Material> const* const&>::type&)
+  0.03     97.73     0.04                             Terrain::heightAt(float, float) const
+  0.03     97.77     0.03                             PixmapsPool::TexturePtr::TexturePtr()
+  0.03     97.80     0.03                             FileSerialize::read(int&)
+  0.03     97.83     0.03                             GraphicsSystem::fillShadowMap(Tempest::Texture2d&, Tempest::Texture2d&, Scene const&, bool)
+  0.03     97.86     0.03                             GraphicsSystem::makeShadowMatrix(Scene const&, float*, float)
+  0.03     97.89     0.03                             World::coordCastD(double)
+  0.03     97.92     0.03                             Tempest::RenderState::~RenderState()
+  0.03     97.94     0.03                             void Tempest::UniformTable::add<Tempest::Texture2d>(Tempest::Texture2d const&, char const*, Tempest::UniformTable::Taget)
+  0.03     97.97     0.03                             Tempest::UniformTable::addImpl(float const*, int, char const*, Tempest::UniformTable::Taget)
+  0.03     98.00     0.03                             Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::delRef(Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*)
+  0.03     98.03     0.03                             Tempest::Detail::Ptr<Tempest::AbstractAPI::Texture*, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip>::delRef()
+  0.03     98.06     0.03                             void Tempest::Device::setUniform<Tempest::Texture2d>(Tempest::FragmentShader&, Tempest::Uniform<Tempest::Texture2d> const&)
+  0.03     98.09     0.03                             Resource::load(Resource::Box<Resource::Texture>&, std::string const&, std::string const&, bool)
+  0.03     98.13     0.03                             RichText::rText(int, int, Resource&, Tempest::Painter*, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > const&, Tempest::Size&)
+  0.03     98.16     0.03                             __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >::__normal_iterator(unsigned int* const&)
+  0.03     98.19     0.03                             array2d<TerrainChunk>::height() const
+  0.03     98.22     0.03                             std::_Hashtable<MVertex, std::pair<MVertex const, unsigned short>, std::allocator<std::pair<MVertex const, unsigned short> >, std::_Select1st<std::pair<MVertex const, unsigned short> >, std::equal_to<MVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_bucket_index(std::__detail::_Hash_node<std::pair<MVertex const, unsigned short>, true>*) const
+  0.03     98.25     0.03                             std::_Hashtable<MVertex, std::pair<MVertex const, unsigned short>, std::allocator<std::pair<MVertex const, unsigned short> >, std::_Select1st<std::pair<MVertex const, unsigned short> >, std::equal_to<MVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, MVertex const&, unsigned int) const
+  0.03     98.28     0.03                             std::unique_ptr<Terrain, std::default_delete<Terrain> >::get() const
+  0.03     98.31     0.03                             std::__detail::_Hash_code_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_bucket_index(std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true> const*, unsigned int) const
+  0.03     98.33     0.03                             std::__detail::_Hash_code_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_h2() const
+  0.03     98.36     0.03                             std::__detail::_Hash_code_base<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_bucket_index(std::__detail::_Hash_node<std::pair<MVertex const, unsigned short>, true> const*, unsigned int) const
+  0.03     98.39     0.03                             std::_Tuple_impl<0u, Terrain*, std::default_delete<Terrain> >::_M_head(std::_Tuple_impl<0u, Terrain*, std::default_delete<Terrain> > const&)
+  0.03     98.42     0.03                             std::_Tuple_impl<4u, float&>::_M_head(std::_Tuple_impl<4u, float&> const&)
+  0.03     98.45     0.03                             float* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<float>(float const*, float const*, float*)
+  0.03     98.48     0.03                             void std::__iter_swap<true>::iter_swap<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >)
+  0.03     98.52     0.03                             _ZNSt16allocator_traitsISaIN7Tempest17LocalBufferHolderINS0_18VertexBufferHolderEE8NonFreedEEE9constructIS4_IRKS4_EEEvRS5_PT_DpOT0_
+  0.03     98.55     0.03                             std::vector<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*> >::operator[](unsigned int)
+  0.03     98.58     0.03                             std::__detail::_Equal_helper<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, std::equal_to<MVertex>, unsigned int, true>::_S_equals(std::equal_to<MVertex> const&, std::_Select1st<std::pair<MVertex const, unsigned short> > const&, MVertex const&, unsigned int, std::__detail::_Hash_node<std::pair<MVertex const, unsigned short>, true>*)
+  0.03     98.61     0.03                             std::__detail::_Hashtable_ebo_helper<2, std::__detail::_Mod_range_hashing, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<2, std::__detail::_Mod_range_hashing, true> const&)
+  0.03     98.64     0.03                             std::__add_c_ref<unsigned int&>::type std::__get_helper<1u, unsigned int&, float&, float&, float&>(std::_Tuple_impl<1u, unsigned int&, float&, float&, float&> const&)
+  0.03     98.67     0.03                             std::_Miter_base<float*>::iterator_type std::__miter_base<float*>(float*)
+  0.03     98.69     0.03                             float* std::__copy_move_a<false, float const*, float*>(float const*, float const*, float*)
+  0.03     98.72     0.03                             void std::__introsort_loop<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, int, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, int, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.03     98.75     0.03                             std::remove_reference<unsigned short&>::type&& std::move<unsigned short&>(unsigned short&)
+  0.03     98.78     0.03                             void std::sort<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.03     98.81     0.03                             MVertex const& std::forward<MVertex const&>(std::remove_reference<MVertex const&>::type&)
+  0.03     98.84     0.03                             unsigned short&& std::forward<unsigned short>(std::remove_reference<unsigned short>::type&)
+  0.03     98.88     0.03                             void std::_Destroy<Tempest::AbstractGraphicObject<Material> const**, Tempest::AbstractGraphicObject<Material> const*>(Tempest::AbstractGraphicObject<Material> const**, Tempest::AbstractGraphicObject<Material> const**, std::allocator<Tempest::AbstractGraphicObject<Material> const*>&)
+  0.03     98.91     0.03                             __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a<unsigned char*, int>(unsigned char*, unsigned char*, int const&)
+  0.02     98.93     0.03                             Game::tick()
+  0.02     98.95     0.02                             PainterGUI::PainterGUI(GUIPass&, Resource&, int, int, int, int)
+  0.02     98.97     0.02                             MiniMapView::aceptFog(Tempest::Pixmap&, Tempest::Pixmap const&)
+  0.02     98.99     0.02                             MiniMapView::drawUnits(Tempest::Pixmap&, World&)
+  0.02     99.01     0.02                             GraphicsSystem::render(Scene&, ParticleSystemEngine&, Tempest::Camera, unsigned int)
+  0.02     99.03     0.02                             GraphicsSystem::fillGBuf(Tempest::Texture2d*, Tempest::Texture2d&, Tempest::Texture2d const&, Tempest::Texture2d const&, Tempest::Texture2d const&, Scene const&, Tempest::AbstractCamera const&, bool)
+  0.02     99.05     0.02                             SmallGraphicsObject::applyTransform()
+  0.02     99.07     0.02                             World::tick()
+  0.02     99.09     0.02                             GUIPass::rect(int, int, int, int, int, int, int, int)
+  0.02     99.11     0.02                             void Tempest::UniformTable::add<float>(float const&, char const*, Tempest::UniformTable::Taget)
+  0.02     99.13     0.02                             Tempest::AbstractTexture::~AbstractTexture()
+  0.02     99.15     0.02                             Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::allocBuffer(unsigned int, unsigned int, void const*)
+  0.02     99.17     0.02                             Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::createObject(Tempest::AbstractAPI::VertexBuffer*&, char const*, int, int)
+  0.02     99.19     0.02                             Tempest::Model<MVertex>::~Model()
+  0.02     99.21     0.02                             void Tempest::Device::setUniform<Tempest::Texture2d>(Tempest::FragmentShader&, Tempest::Texture2d const&, char const*)
+  0.02     99.23     0.02                             void Tempest::Device::drawPrimitive<MVertex>(Tempest::AbstractAPI::PrimitiveType, Tempest::VertexShader const&, Tempest::FragmentShader const&, Tempest::VertexDeclaration const&, Tempest::VertexBuffer<MVertex> const&, int, int)
+  0.02     99.25     0.02                             Tempest::Widget::customEvent(Tempest::CustomEvent&)
+  0.02     99.27     0.02                             Tempest::Matrix4x4::set(int, int, float)
+  0.02     99.29     0.02                             array2d<Terrain::Tile>::LineRef::LineRef()
+  0.02     99.31     0.02                             array2d<unsigned char>::operator[](int)
+  0.02     99.33     0.02                             array2d<int>::LineRef::operator[](int)
+  0.02     99.35     0.02                             Material::~Material()
+  0.02     99.37     0.02                             Scenario::uiTick()
+  0.02     99.39     0.02                             __gnu_cxx::new_allocator<Tempest::GraphicObject<Material> >::deallocate(Tempest::GraphicObject<Material>*, unsigned int)
+  0.02     99.41     0.02                             _ZN9__gnu_cxx13new_allocatorIPN7Tempest14AbstractHolderINS1_16VertexBufferBaseENS1_11AbstractAPI12VertexBufferEE9ImplManip3RefEE9constructIS9_IRKS9_EEEvPT_DpOT0_
+  0.02     99.43     0.02                             void __gnu_cxx::new_allocator<unsigned short>::construct<unsigned short, unsigned short>(unsigned short*, unsigned short&&)
+  0.02     99.45     0.02                             MVertex::hash::operator()(MVertex const&) const
+  0.02     99.47     0.02                             Tempest::Color::r() const
+  0.02     99.49     0.02                             Tempest::Detail::Ptr<Tempest::AbstractAPI::VertexBuffer*, Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip>::isNull() const
+  0.02     99.51     0.02                             Tempest::Detail::Ptr<Tempest::AbstractAPI::Texture*, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip>::isNull() const
+  0.02     99.53     0.02                             Tempest::Device::applyRs() const
+  0.02     99.55     0.02                             Tempest::Pixmap::verifyFormatEditable() const
+  0.02     99.57     0.02                             Terrain::heightAtNoDepth(int, int) const
+  0.02     99.59     0.02                             Material::terrainMinorZ(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const
+  0.02     99.61     0.02                             __gnu_cxx::__normal_iterator<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref**, std::vector<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::Ref*> > >::operator-(int const&) const
+  0.02     99.63     0.02                             std::_Hashtable<std::string, std::pair<std::string const, Resource::Texture>, std::allocator<std::pair<std::string const, Resource::Texture> >, std::_Select1st<std::pair<std::string const, Resource::Texture> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, std::string const&, unsigned int) const
+  0.02     99.65     0.02                             std::_Select1st<std::pair<WaterVertex const, unsigned short> >::operator()(std::pair<WaterVertex const, unsigned short>&) const
+  0.02     99.67     0.02                             std::vector<Tempest::signal<>::Impl, std::allocator<Tempest::signal<>::Impl> >::size() const
+  0.02     99.69     0.02                             std::vector<std::string, std::allocator<std::string> >::end() const
+  0.02     99.71     0.02                             std::vector<std::shared_ptr<GameObject>, std::allocator<std::shared_ptr<GameObject> > >::size() const
+  0.02     99.73     0.02                             std::vector<unsigned short, std::allocator<unsigned short> >::size() const
+  0.02     99.75     0.02                             std::__detail::_Hash_code_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_bucket_index(WaterVertex const&, unsigned int, unsigned int) const
+  0.02     99.77     0.02                             std::__detail::_Hash_code_base<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_h2() const
+  0.02     99.79     0.02                             std::__detail::_Hashtable_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_eq() const
+  0.02     99.81     0.02                             std::__detail::_Hashtable_base<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, std::equal_to<MVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_equals(MVertex const&, unsigned int, std::__detail::_Hash_node<std::pair<MVertex const, unsigned short>, true>*) const
+  0.02     99.83     0.02                             std::equal_to<WaterVertex>::operator()(WaterVertex const&, WaterVertex const&) const
+  0.02     99.85     0.02                             std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::end()
+  0.02     99.87     0.02                             std::_Head_base<0u, Tempest::GraphicObject<Material>*, false>::_M_head(std::_Head_base<0u, Tempest::GraphicObject<Material>*, false>&)
+  0.02     99.89     0.02                             std::_Vector_base<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::_M_get_Tp_allocator()
+  0.02     99.91     0.02                             _ZNSt16allocator_traitsISaI11WaterVertexEE9constructIS0_IRKS0_EEEvRS1_PT_DpOT0_
+  0.02     99.93     0.02                             _ZNSt16allocator_traitsISaI7MVertexEE9constructIS0_IRKS0_EEEvRS1_PT_DpOT0_
+  0.02     99.95     0.02                             std::vector<GUIPass::Layer, std::allocator<GUIPass::Layer> >::operator[](unsigned int)
+  0.02     99.97     0.02                             std::vector<Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::IndexBufferBase, Tempest::AbstractAPI::IndexBuffer>::ImplManip::Ref*> >::operator[](unsigned int)
+  0.02     99.99     0.02                             std::vector<std::shared_ptr<Player>, std::allocator<std::shared_ptr<Player> > >::operator[](unsigned int)
+  0.02    100.01     0.02                             std::vector<std::shared_ptr<TerrainChunk::PolishView>, std::allocator<std::shared_ptr<TerrainChunk::PolishView> > >::operator[](unsigned int)
+  0.02    100.03     0.02                             void std::vector<unsigned short, std::allocator<unsigned short> >::emplace_back<unsigned short>(unsigned short&&)
+  0.02    100.05     0.02                             __gnu_cxx::__enable_if<std::__is_scalar<unsigned short>::__value, unsigned short*>::__type std::__fill_n_a<unsigned short*, unsigned int, unsigned short>(unsigned short*, unsigned int, unsigned short const&)
+  0.02    100.07     0.02                             _ZSt12__get_helperILj0EP7TerrainISt14default_deleteIS0_EEENSt11__add_c_refIT0_E4typeERKSt11_Tuple_implIXT_EIS5_DpT1_EE
+  0.02    100.09     0.02                             std::_Niter_base<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > >::iterator_type std::__niter_base<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >)
+  0.02    100.11     0.02                             std::_Niter_base<double*>::iterator_type std::__niter_base<double*>(double*)
+  0.02    100.13     0.02                             std::_Niter_base<float*>::iterator_type std::__niter_base<float*>(float*)
+  0.02    100.15     0.02                             void std::__move_median_first<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.02    100.17     0.02                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.02    100.19     0.02                             void std::fill<unsigned char*, int>(unsigned char*, unsigned char*, int const&)
+  0.02    100.21     0.02                             __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > > std::__find<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int>(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&, std::random_access_iterator_tag)
+  0.02    100.23     0.02                             void std::_Destroy<std::string>(std::string*)
+  0.02    100.25     0.02                             sqrt
+  0.01    100.27     0.01                             RichText::prefix(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > const&, unsigned int, wchar_t const*)
+  0.01    100.28     0.01                             void remove_if<std::vector<BehaviorMSGQueue::MSG, std::allocator<BehaviorMSGQueue::MSG> >, bool (*)(BehaviorMSGQueue::MSG const&)>(std::vector<BehaviorMSGQueue::MSG, std::allocator<BehaviorMSGQueue::MSG> >&, bool (*)(BehaviorMSGQueue::MSG const&))
+  0.01    100.29     0.01                             PainterGUI::TextEngine::~TextEngine()
+  0.01    100.30     0.01                             MiniMapView::lineTo(Tempest::Pixmap&, int, int, int, int, Tempest::Pixmap::Pixel)
+  0.01    100.31     0.01                             FileSerialize::fwrite(void const*, unsigned int, unsigned int, FileSerialize::File*)
+  0.01    100.32     0.01                             FileSerialize& FileSerialize::operator+<int>(int&)
+  0.01    100.33     0.01                             FileSerialize& FileSerialize::operator+<unsigned int>(unsigned int&)
+  0.01    100.33     0.01                             GameObjectView::init()
+  0.01    100.35     0.01                             GameObjectView::loadView(Tempest::Model<WaterVertex> const&)
+  0.01    100.36     0.01                             void GameObjectView::serialize<SmallGraphicsObject>(GameSerializer&, SmallGraphicsObject*, bool)
+  0.01    100.36     0.01                             GameObjectView::GameObjectView(Scene&, World&, ProtoObject const&, PrototypesLoader const&)
+  0.01    100.38     0.01                             GraphicsSystem::renderScene(Scene const&, Tempest::AbstractCamera const&, Tempest::Texture2d*, Tempest::Texture2d&, int, Tempest::Texture2d*, int, bool)
+  0.01    100.39     0.01                             GraphicsSystem::drawTranscurent(Tempest::Texture2d&, Tempest::Texture2d&, Tempest::Texture2d&, Scene const&, OcTree<Tempest::AbstractGraphicObject<Material> const*> const&)
+  0.01    100.40     0.01                             GraphicsSystem::copy(Tempest::Texture2d&, Tempest::AbstractTexture::Format::Type, Tempest::Texture2d const&, int, int)
+  0.01    100.41     0.01                             GraphicsSystem::copy(Tempest::Texture2d&, Tempest::Texture2d const&)
+  0.01    100.42     0.01                             GraphicsSystem::copy(Tempest::Texture2d&, Tempest::Texture2d const&, int, int)
+  0.01    100.43     0.01                             GraphicsSystem::bloom(Tempest::Texture2d&, Tempest::Texture2d const&)
+  0.01    100.44     0.01                             GraphicsSystem::gauss(Tempest::Texture2d&, Tempest::Texture2d const&, int, int, float, float)
+  0.01    100.44     0.01                             GraphicsSystem::ssaoGMap(Scene const&, Tempest::Texture2d&, bool)
+  0.01    100.46     0.01                             GraphicsSystem::shadowMap(int, int)
+  0.01    100.47     0.01                             GraphicsSystem::smMatSize(Scene const&, float)
+  0.01    100.47     0.01                             bool AbstractXMLReader::readIf<int>(TiXmlElement*, std::string const&, int&)
+  0.01    100.49     0.01                             ParticleSystemEngine::exec(Tempest::Matrix4x4 const&, Tempest::Matrix4x4 const&, int, bool)
+  0.01    100.50     0.01                             Game::curWorld()
+  0.01    100.51     0.01                             Scene::onObjectAdded(Tempest::AbstractGraphicObject<Material> const*)
+  0.01    100.52     0.01                             World::projectUnit(GameObject&, Tempest::Matrix4x4 const&, int, int)
+  0.01    100.53     0.01                             World::paintHUD(Tempest::Painter&, int, int)
+  0.01    100.54     0.01                             GUIPass::makeRS(Tempest::BlendMode)
+  0.01    100.55     0.01                             HintSys::hint()
+  0.01    100.56     0.01                             std::string Lexical::upcast<int>(int const&)
+  0.01    100.57     0.01                             MainGui::setupMinimap(World*)
+  0.01    100.58     0.01                             MainGui::renderMinimap()
+  0.01    100.58     0.01                             Tempest::IndexBuffer<unsigned short>::IndexBuffer()
+  0.01    100.60     0.01                             Tempest::IndexBuffer<unsigned short>::~IndexBuffer()
+  0.01    100.61     0.01                             Tempest::RenderState::setZWriting(bool)
+  0.01    100.61     0.01                             Tempest::RenderState::RenderState(Tempest::RenderState::Preset)
+  0.01    100.63     0.01                             Tempest::RenderState::RenderState(Tempest::RenderState const&)
+  0.01    100.64     0.01                             Tempest::RenderState::operator=(Tempest::RenderState const&)
+  0.01    100.65     0.01                             Tempest::ShaderInput::set(char const*, float const*, int)
+  0.01    100.66     0.01                             Tempest::LinearLayout::typeV(Tempest::Widget const*)
+  0.01    100.67     0.01                             void Tempest::UniformTable::add<float>(float const*, int, std::string const&, Tempest::UniformTable::Taget)
+  0.01    100.68     0.01                             Tempest::UniformTable::addImpl(Tempest::Texture2d const&, char const*, Tempest::UniformTable::Taget)
+  0.01    100.69     0.01                             Tempest::AbstractScene<Tempest::AbstractGraphicObject<Material> >::addObject(Tempest::AbstractGraphicObject<Material>*)
+  0.01    100.69     0.01                             Tempest::GraphicObject<Material>::ModelPtr<Tempest::DefaultVertex>::~ModelPtr()
+  0.01    100.71     0.01                             Tempest::AbstractCamera::~AbstractCamera()
+  0.01    100.72     0.01                             Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip::ImplManip(Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>*)
+  0.01    100.72     0.01                             Tempest::DirectionLight::operator=(Tempest::DirectionLight const&)
+  0.01    100.74     0.01                             Tempest::AbstractTexture::operator=(Tempest::AbstractTexture const&)
+  0.01    100.75     0.01                             Tempest::VertexBufferBase::VertexBufferBase()
+  0.01    100.76     0.01                             Tempest::VertexBufferBase::operator=(Tempest::VertexBufferBase const&)
+  0.01    100.77     0.01                             Tempest::VertexBufferHolder::lockBuffer(Tempest::AbstractAPI::VertexBuffer*, int, int)
+  0.01    100.78     0.01                             Tempest::Bind::UserFont::UserFont(int)
+  0.01    100.79     0.01                             Tempest::Rect::Rect(int, int, int, int)
+  0.01    100.80     0.01                             Tempest::Model<Tempest::DefaultVertex>::Model(Tempest::Model<Tempest::DefaultVertex> const&)
+  0.01    100.81     0.01                             Tempest::Model<Tempest::DefaultVertex>::Model()
+  0.01    100.82     0.01                             Tempest::Point::Point(int, int)
+  0.01    100.83     0.01                             Tempest::Camera::Camera(Tempest::Camera const&)
+  0.01    100.83     0.01                             Tempest::Detail::Ptr<Tempest::AbstractAPI::VertexBuffer*, Tempest::AbstractHolder<Tempest::VertexBufferBase, Tempest::AbstractAPI::VertexBuffer>::ImplManip>::delRef()
+  0.01    100.85     0.01                             Tempest::Detail::Ptr<Tempest::AbstractAPI::Texture*, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip>::~Ptr()
+  0.01    100.86     0.01                             Tempest::Detail::Ptr<Tempest::AbstractAPI::Texture*, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip>::operator=(Tempest::Detail::Ptr<Tempest::AbstractAPI::Texture*, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip> const&)
+  0.01    100.86     0.01                             Tempest::Detail::Ptr<Tempest::Pixmap::Data*, Tempest::Pixmap::DbgManip>::nonConstData()
+  0.01    100.88     0.01                             Tempest::Detail::Ptr<Tempest::Pixmap::Data*, Tempest::Pixmap::DbgManip>::value()
+  0.01    100.89     0.01                             Tempest::Detail::Ptr<Tempest::Pixmap::Data*, Tempest::Pixmap::DbgManip>::~Ptr()
+  0.01    100.90     0.01                             void Tempest::Device::setUniform<float [2]>(Tempest::VertexShader&, Tempest::Uniform<float [2]> const&)
+  0.01    100.91     0.01                             void Tempest::Device::setUniform<float [3]>(Tempest::FragmentShader&, Tempest::Uniform<float [3]> const&)
+  0.01    100.92     0.01                             void Tempest::Device::drawIndexed<WaterVertex, unsigned short>(Tempest::AbstractAPI::PrimitiveType, Tempest::VertexShader const&, Tempest::FragmentShader const&, Tempest::VertexDeclaration const&, Tempest::VertexBuffer<WaterVertex> const&, Tempest::IndexBuffer<unsigned short> const&, int, int, int)
+  0.01    100.93     0.01                             Tempest::Device::bind(Tempest::VertexShader const&)
+  0.01    100.94     0.01                             Tempest::Device::bind(Tempest::VertexDeclaration const&)
+  0.01    100.94     0.01                             Tempest::Render::setRenderState(Tempest::RenderState const&)
+  0.01    100.96     0.01                             Tempest::Render::draw(Tempest::AbstractSceneObject const&)
+  0.01    100.97     0.01                             Tempest::Uniform<float [2]>::set(float, float)
+  0.01    100.97     0.01                             Tempest::Uniform<float [3]>::set(float const*)
+  0.01    100.99     0.01                             Tempest::Uniform<float [3]>::set(float, float, float)
+  0.01    101.00     0.01                             Tempest::Matrix4x4::mul(Tempest::Matrix4x4 const&)
+  0.01    101.01     0.01                             Tempest::Matrix4x4::identity()
+  0.01    101.02     0.01                             Tempest::Texture2d::~Texture2d()
+  0.01    101.03     0.01                             Tempest::Texture2d::operator=(Tempest::Texture2d const&)
+  0.01    101.04     0.01                             Terrain::buildGeometry()
+  0.01    101.05     0.01                             Terrain::computeEnableMap()
+  0.01    101.06     0.01                             array2d<unsigned char>::LineRef::LineRef()
+  0.01    101.07     0.01                             Resource::texture(std::string const&)
+  0.01    101.08     0.01                             Scenario::renderMinimap()
+  0.01    101.08     0.01                             Scenario::unProject(int, int)
+  0.01    101.10     0.01                             Serialize& Serialize::operator+<unsigned int>(unsigned int&)
+  0.01    101.11     0.01                             __gnu_cxx::new_allocator<ProtoObject::View>::new_allocator(__gnu_cxx::new_allocator<ProtoObject::View> const&)
+  0.01    101.11     0.01                             _ZN9__gnu_cxx13new_allocatorIN7GUIPass5StateEE9constructIS2_IRKS2_EEEvPT_DpOT0_
+  0.01    101.13     0.01                             _ZN9__gnu_cxx13new_allocatorIN7GUIPass6VertexEE9constructIS2_IRKS2_EEEvPT_DpOT0_
+  0.01    101.14     0.01                             _ZN9__gnu_cxx13new_allocatorIN7Tempest5PointEE9constructIS2_IRKS2_EEEvPT_DpOT0_
+  0.01    101.15     0.01                             __gnu_cxx::new_allocator<std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true> >::allocate(unsigned int, void const*)
+  0.01    101.16     0.01                             void __gnu_cxx::new_allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*>::destroy<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*>(Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref**)
+  0.01    101.17     0.01                             __gnu_cxx::new_allocator<std::string>::new_allocator()
+  0.01    101.18     0.01                             __gnu_cxx::__alloc_traits<std::allocator<std::string> >::_S_select_on_copy(std::allocator<std::string> const&)
+  0.01    101.19     0.01                             __gnu_cxx::__normal_iterator<char const*, std::string>::operator++()
+  0.01    101.19     0.01                             __gnu_cxx::__normal_iterator<GUIPass::GeometryBlock*, std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> > >::__normal_iterator(GUIPass::GeometryBlock* const&)
+  0.01    101.21     0.01                             __gnu_cxx::__normal_iterator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref**, std::vector<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*> > >::__normal_iterator(Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref** const&)
+  0.01    101.22     0.01                             __gnu_cxx::__exchange_and_add_dispatch(int*, int)
+  0.01    101.22     0.01                             bool __gnu_cxx::operator==<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > const&)
+  0.01    101.24     0.01                             __gnu_cxx::__normal_iterator<wchar_t*, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > >::difference_type __gnu_cxx::operator-<wchar_t*, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > >(__gnu_cxx::__normal_iterator<wchar_t*, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > > const&, __gnu_cxx::__normal_iterator<wchar_t*, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > > const&)
+  0.01    101.25     0.01                             bool __gnu_cxx::operator!=<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > >(__gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > > const&, __gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > > const&)
+  0.01    101.26     0.01                             GameObject::team() const
+  0.01    101.27     0.01                             Scene::mainObjects() const
+  0.01    101.28     0.01                             OcTree<Tempest::AbstractGraphicObject<Material> const*>::POcTree::operator bool() const
+  0.01    101.29     0.01                             OcTree<Tempest::AbstractGraphicObject<Material> const*>::POcTree::operator*() const
+  0.01    101.30     0.01                             Player::hasHostControl() const
+  0.01    101.31     0.01                             Player::gold() const
+  0.01    101.32     0.01                             Tempest::AbstractScene<Tempest::AbstractGraphicObject<Material> >::camera() const
+  0.01    101.33     0.01                             Tempest::GraphicObject<Material>::ModelPtr<WaterVertex>::draw(Tempest::Render&) const
+  0.01    101.33     0.01                             Tempest::DirectionLight::zDirection() const
+  0.01    101.35     0.01                             Tempest::PostProcessHelper::drawFullScreenQuad(Tempest::Device&, Tempest::VertexShader&, Tempest::FragmentShader&) const
+  0.01    101.36     0.01                             Tempest::Bind::UserFont::fetchLeter(Resource&, wchar_t) const
+  0.01    101.36     0.01                             Tempest::Bind::UserFont::LMap::find(wchar_t) const
+  0.01    101.38     0.01                             Tempest::Model<MVertex>::primitiveType() const
+  0.01    101.39     0.01                             Tempest::Model<MVertex>::vertexes() const
+  0.01    101.40     0.01                             Tempest::Detail::Ptr<Tempest::Pixmap::Data*, Tempest::Pixmap::DbgManip>::isNull() const
+  0.01    101.41     0.01                             Tempest::Pixmap::height() const
+  0.01    101.42     0.01                             Tempest::Texture2d::width() const
+  0.01    101.43     0.01                             Tempest::Texture2d::handle() const
+  0.01    101.44     0.01                             array2d<TerrainChunk>::width() const
+  0.01    101.44     0.01                             Material::terrainMain(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const
+  0.01    101.46     0.01                             Material::water(Tempest::RenderState&, Tempest::Matrix4x4 const&, Tempest::AbstractCamera const&, Tempest::UniformTable&) const
+  0.01    101.47     0.01                             __gnu_cxx::__normal_iterator<WayFindRequest::TgGroup*, std::vector<WayFindRequest::TgGroup, std::allocator<WayFindRequest::TgGroup> > >::base() const
+  0.01    101.47     0.01                             __gnu_cxx::__normal_iterator<Tempest::Rect*, std::vector<Tempest::Rect, std::allocator<Tempest::Rect> > >::operator-(int const&) const
+  0.01    101.49     0.01                             __gnu_cxx::__normal_iterator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref**, std::vector<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*, std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*> > >::operator-(int const&) const
+  0.01    101.50     0.01                             std::_Hashtable<Tempest::AbstractGraphicObject<Material> const*, std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*>, std::allocator<std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*> >, std::_Select1st<std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*> >, std::equal_to<Tempest::AbstractGraphicObject<Material> const*>, OcTree<Tempest::AbstractGraphicObject<Material> const*>::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, Tempest::AbstractGraphicObject<Material> const* const&, unsigned int) const
+  0.01    101.51     0.01                             std::_Hashtable<std::string, std::pair<std::string const, Resource::Box<Resource::Texture>::ToLoadPromision>, std::allocator<std::pair<std::string const, Resource::Box<Resource::Texture>::ToLoadPromision> >, std::_Select1st<std::pair<std::string const, Resource::Box<Resource::Texture>::ToLoadPromision> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, std::string const&, unsigned int) const
+  0.01    101.52     0.01                             std::_Hashtable<std::string, std::pair<std::string const, Resource::Texture>, std::allocator<std::pair<std::string const, Resource::Texture> >, std::_Select1st<std::pair<std::string const, Resource::Texture> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_bucket_index(std::string const&, unsigned int) const
+  0.01    101.53     0.01                             std::_Hashtable<std::string, std::pair<std::string const, std::shared_ptr<ProtoObject> >, std::allocator<std::pair<std::string const, std::shared_ptr<ProtoObject> > >, std::_Select1st<std::pair<std::string const, std::shared_ptr<ProtoObject> > >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_find_before_node(unsigned int, std::string const&, unsigned int) const
+  0.01    101.54     0.01                             std::_Select1st<std::pair<MVertex const, unsigned short> >::operator()(std::pair<MVertex const, unsigned short>&) const
+  0.01    101.55     0.01                             std::_Select1st<std::pair<std::string const, PixmapsPool::TexturePtr> >::operator()(std::pair<std::string const, PixmapsPool::TexturePtr>&) const
+  0.01    101.56     0.01                             std::unique_ptr<Terrain, std::default_delete<Terrain> >::operator->() const
+  0.01    101.57     0.01                             std::__shared_ptr<GameObject, (__gnu_cxx::_Lock_policy)2>::operator*() const
+  0.01    101.58     0.01                             std::__shared_ptr<ProtoObject, (__gnu_cxx::_Lock_policy)2>::get() const
+  0.01    101.58     0.01                             std::__shared_ptr<SpatialIndex, (__gnu_cxx::_Lock_policy)2>::operator->() const
+  0.01    101.60     0.01                             std::__shared_ptr<Player, (__gnu_cxx::_Lock_policy)2>::operator*() const
+  0.01    101.61     0.01                             std::default_delete<Tempest::GraphicObject<Material> >::operator()(Tempest::GraphicObject<Material>*) const
+  0.01    101.61     0.01                             std::vector<EnvObject, std::allocator<EnvObject> >::max_size() const
+  0.01    101.63     0.01                             std::vector<GameMessages::MSG, std::allocator<GameMessages::MSG> >::size() const
+  0.01    101.64     0.01                             std::vector<Tempest::signal<Tempest::Painter&, int, int>::Impl, std::allocator<Tempest::signal<Tempest::Painter&, int, int>::Impl> >::size() const
+  0.01    101.65     0.01                             std::vector<GameObject*, std::allocator<GameObject*> >::size() const
+  0.01    101.66     0.01                             std::vector<ParticleSystem*, std::allocator<ParticleSystem*> >::size() const
+  0.01    101.67     0.01                             std::vector<std::string, std::allocator<std::string> >::_M_check_len(unsigned int, char const*) const
+  0.01    101.68     0.01                             std::vector<std::shared_ptr<Player>, std::allocator<std::shared_ptr<Player> > >::size() const
+  0.01    101.69     0.01                             std::vector<char, std::allocator<char> >::size() const
+  0.01    101.69     0.01                             std::__detail::_Hash_code_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_extract() const
+  0.01    101.71     0.01                             std::__detail::_Hash_code_base<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_extract() const
+  0.01    101.72     0.01                             std::__detail::_Hash_code_base<MVertex, std::pair<MVertex const, unsigned short>, std::_Select1st<std::pair<MVertex const, unsigned short> >, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_hash_code(MVertex const&) const
+  0.01    101.72     0.01                             std::__detail::_Hash_code_base<std::string, std::pair<std::string const, Resource::Texture>, std::_Select1st<std::pair<std::string const, Resource::Texture> >, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_h1() const
+  0.01    101.74     0.01                             std::__detail::_Hashtable_base<std::string, std::pair<std::string const, Resource::Texture>, std::_Select1st<std::pair<std::string const, Resource::Texture> >, std::equal_to<std::string>, std::hash<std::string>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, true>::_M_equals(std::string const&, unsigned int, std::__detail::_Hash_node<std::pair<std::string const, Resource::Texture>, true>*) const
+  0.01    101.75     0.01                             std::__detail::_Prime_rehash_policy::_M_need_rehash(unsigned int, unsigned int, unsigned int) const
+  0.01    101.76     0.01                             std::equal_to<MVertex>::operator()(MVertex const&, MVertex const&) const
+  0.01    101.77     0.01                             std::allocator<ParticleSystem>::~allocator()
+  0.01    101.78     0.01                             std::allocator<Tempest::ShaderInput::Vec<3> >::~allocator()
+  0.01    101.79     0.01                             std::allocator<Tempest::signal<>::Impl>::allocator()
+  0.01    101.80     0.01                             std::allocator<std::__detail::_Hash_node_base*>::~allocator()
+  0.01    101.81     0.01                             std::allocator<unsigned short>::~allocator()
+  0.01    101.82     0.01                             std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&)
+  0.01    101.83     0.01                             std::string::operator=(char const*)
+  0.01    101.83     0.01                             std::__detail::_Node_iterator<std::pair<WaterVertex const, unsigned short>, false, true> std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_insert_bucket<std::pair<WaterVertex, unsigned short> >(std::pair<WaterVertex, unsigned short>&&, unsigned int, unsigned int)
+  0.01    101.85     0.01                             std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::find(WaterVertex const&)
+  0.01    101.86     0.01                             std::__detail::_Node_iterator<std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*>, false, true> std::_Hashtable<Tempest::AbstractGraphicObject<Material> const*, std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*>, std::allocator<std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*> >, std::_Select1st<std::pair<Tempest::AbstractGraphicObject<Material> const* const, OcTree<Tempest::AbstractGraphicObject<Material> const*>*> >, std::equal_to<Tempest::AbstractGraphicObject<Material> const*>, OcTree<Tempest::AbstractGraphicObject<Material> const*>::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true>::_M_insert_bucket<std::pair<Tempest::AbstractGraphicObject<Material> const*, OcTree<Tempest::AbstractGraphicObject<Material> const*>*> >(std::pair<Tempest::AbstractGraphicObject<Material> const*, OcTree<Tempest::AbstractGraphicObject<Material> const*>*>&&, unsigned int, unsigned int)
+  0.01    101.86     0.01                             std::_Head_base<0u, GUIPass*, false>::_M_head(std::_Head_base<0u, GUIPass*, false> const&)
+  0.01    101.88     0.01                             std::_Head_base<0u, Terrain*, false>::_M_head(std::_Head_base<0u, Terrain*, false> const&)
+  0.01    101.89     0.01                             std::_Head_base<0u, Scenario*, false>::_M_head(std::_Head_base<0u, Scenario*, false> const&)
+  0.01    101.90     0.01                             std::_Head_base<0u, Tempest::GraphicObject<Material>*, false>::_Head_base()
+  0.01    101.91     0.01                             std::_Iter_base<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, true>::_S_base(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >)
+  0.01    101.92     0.01                             std::_Iter_base<MVertex*, false>::_S_base(MVertex*)
+  0.01    101.93     0.01                             std::_Iter_base<float const*, false>::_S_base(float const*)
+  0.01    101.94     0.01                             std::_Iter_base<unsigned char*, false>::_S_base(unsigned char*)
+  0.01    101.94     0.01                             std::shared_ptr<GameObject>::~shared_ptr()
+  0.01    101.96     0.01                             std::_Tuple_impl<0u, GUIPass*, std::default_delete<GUIPass> >::_M_head(std::_Tuple_impl<0u, GUIPass*, std::default_delete<GUIPass> > const&)
+  0.01    101.97     0.01                             void std::_Destroy_aux<false>::__destroy<TerrainChunk::View*>(TerrainChunk::View*, TerrainChunk::View*)
+  0.01    101.97     0.01                             void std::_Destroy_aux<false>::__destroy<GUIPass::State*>(GUIPass::State*, GUIPass::State*)
+  0.01    101.99     0.01                             std::_Vector_base<ProtoObject::View, std::allocator<ProtoObject::View> >::_M_deallocate(ProtoObject::View*, unsigned int)
+  0.01    102.00     0.01                             std::_Vector_base<BehaviorMSGQueue::MSG, std::allocator<BehaviorMSGQueue::MSG> >::_M_get_Tp_allocator()
+  0.01    102.01     0.01                             std::_Vector_base<std::shared_ptr<SmallGraphicsObject>, std::allocator<std::shared_ptr<SmallGraphicsObject> > >::_M_get_Tp_allocator()
+  0.01    102.02     0.01                             std::_Vector_base<char, std::allocator<char> >::_M_allocate(unsigned int)
+  0.01    102.03     0.01                             std::_Vector_base<char, std::allocator<char> >::_M_deallocate(char*, unsigned int)
+  0.01    102.04     0.01                             std::move_iterator<MVertex*>::move_iterator(MVertex*)
+  0.01    102.05     0.01                             std::__tuple_compare<0u, 5u, 5u, std::tuple<unsigned int&, unsigned int&, float&, float&, float&>, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> >::__less(std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&, std::tuple<unsigned int&, unsigned int&, float&, float&, float&> const&)
+  0.01    102.06     0.01                             _ZNSt16allocator_traitsISaI7MVertexEE12_S_constructIS0_IRKS0_EEENSt9enable_ifIXsrNS2_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS1_PS8_DpOS9_
+  0.01    102.07     0.01                             void std::allocator_traits<std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::destroy<Tempest::AbstractGraphicObject<Material> const*>(std::allocator<Tempest::AbstractGraphicObject<Material> const*>&, Tempest::AbstractGraphicObject<Material> const**)
+  0.01    102.08     0.01                             std::enable_if<std::allocator_traits<std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*> >::__destroy_helper<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*>::value, void>::type std::allocator_traits<std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*> >::_S_destroy<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*>(std::allocator<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref*>&, Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref**)
+  0.01    102.08     0.01                             _ZNSt16allocator_traitsISaIPN7Tempest14AbstractHolderINS0_9Texture2dENS0_11AbstractAPI7TextureEE9ImplManip3RefEEE12_S_constructIS8_IRKS8_EEENSt9enable_ifIXsrNSA_18__construct_helperIT_IDpT0_EEE5valueEvE4typeERS9_PSG_DpOSH_
+  0.01    102.10     0.01                             std::enable_if<std::allocator_traits<std::allocator<unsigned short> >::__construct_helper<unsigned short<unsigned short> >::value, void>::type std::allocator_traits<std::allocator<unsigned short> >::_S_construct<unsigned short, unsigned short>(std::allocator<unsigned short>&, unsigned short*, unsigned short&&)
+  0.01    102.11     0.01                             void std::allocator_traits<std::allocator<unsigned short> >::construct<unsigned short, unsigned short>(std::allocator<unsigned short>&, unsigned short*, unsigned short&&)
+  0.01    102.11     0.01                             std::_Rb_tree_iterator<std::pair<Tempest::Bind::UserFont::Key const, Tempest::Bind::UserFont::LMap*> >::_Rb_tree_iterator(std::_Rb_tree_node<std::pair<Tempest::Bind::UserFont::Key const, Tempest::Bind::UserFont::LMap*> >*)
+  0.01    102.13     0.01                             Tempest::AbstractGraphicObject<Material> const** std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<Tempest::AbstractGraphicObject<Material> const*>(Tempest::AbstractGraphicObject<Material> const* const*, Tempest::AbstractGraphicObject<Material> const* const*, Tempest::AbstractGraphicObject<Material> const**)
+  0.01    102.14     0.01                             void std::__uninitialized_default_n_1<true>::__uninit_default_n<MVertex*, unsigned int>(MVertex*, unsigned int)
+  0.01    102.15     0.01                             std::pair<bool, int>::pair<bool, int, void>(bool&&, int&&)
+  0.01    102.16     0.01                             std::vector<WaterVertex, std::allocator<WaterVertex> >::push_back(WaterVertex const&)
+  0.01    102.17     0.01                             std::vector<WaterVertex, std::allocator<WaterVertex> >::operator[](unsigned int)
+  0.01    102.18     0.01                             std::vector<PixmapsPool::Page, std::allocator<PixmapsPool::Page> >::operator[](unsigned int)
+  0.01    102.19     0.01                             std::vector<SpatialIndex::VPoint, std::allocator<SpatialIndex::VPoint> >::back()
+  0.01    102.19     0.01                             std::vector<BehaviorMSGQueue::MSG, std::allocator<BehaviorMSGQueue::MSG> >::end()
+  0.01    102.21     0.01                             std::vector<BehaviorMSGQueue::MSG, std::allocator<BehaviorMSGQueue::MSG> >::resize(unsigned int)
+  0.01    102.22     0.01                             std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> >::back()
+  0.01    102.22     0.01                             std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> >::resize(unsigned int)
+  0.01    102.24     0.01                             std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> >::pop_back()
+  0.01    102.25     0.01                             std::vector<GUIPass::GeometryBlock, std::allocator<GUIPass::GeometryBlock> >::operator[](unsigned int)
+  0.01    102.26     0.01                             std::vector<GUIPass::Vertex, std::allocator<GUIPass::Vertex> >::clear()
+  0.01    102.27     0.01                             std::vector<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed, std::allocator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed> >::back()
+  0.01    102.28     0.01                             std::vector<Tempest::Point, std::allocator<Tempest::Point> >::end()
+  0.01    102.29     0.01                             std::vector<Tempest::signal<Tempest::Painter&, int, int>::Impl, std::allocator<Tempest::signal<Tempest::Painter&, int, int>::Impl> >::operator[](unsigned int)
+  0.01    102.30     0.01                             std::vector<SmallGraphicsObject*, std::allocator<SmallGraphicsObject*> >::operator[](unsigned int)
+  0.01    102.31     0.01                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::_M_erase_at_end(Tempest::AbstractGraphicObject<Material> const**)
+  0.01    102.32     0.01                             std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> >::clear()
+  0.01    102.33     0.01                             std::vector<unsigned char, std::allocator<unsigned char> >::operator[](unsigned int)
+  0.01    102.33     0.01                             std::vector<unsigned int, std::allocator<unsigned int> >::end()
+  0.01    102.35     0.01                             std::vector<unsigned short, std::allocator<unsigned short> >::push_back(unsigned short&&)
+  0.01    102.36     0.01                             std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>::_Hash_node<std::pair<WaterVertex, unsigned short> >(std::pair<WaterVertex, unsigned short>&&)
+  0.01    102.36     0.01                             std::__detail::_Hash_node_base::_Hash_node_base()
+  0.01    102.38     0.01                             std::__detail::_Node_iterator_base<std::pair<WaterVertex const, unsigned short>, true>::_M_incr()
+  0.01    102.39     0.01                             std::__detail::_Node_iterator_base<std::pair<WaterVertex const, unsigned short>, true>::_Node_iterator_base(std::__detail::_Hash_node<std::pair<WaterVertex const, unsigned short>, true>*)
+  0.01    102.40     0.01                             std::__detail::_Node_iterator_base<std::pair<std::string const, Resource::Box<Resource::Texture>::ToLoadPromision>, true>::_Node_iterator_base(std::__detail::_Hash_node<std::pair<std::string const, Resource::Box<Resource::Texture>::ToLoadPromision>, true>*)
+  0.01    102.41     0.01                             std::__detail::_Hashtable_ebo_helper<0, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<0, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, true> const&)
+  0.01    102.42     0.01                             std::__detail::_Hashtable_ebo_helper<0, std::_Select1st<std::pair<MVertex const, unsigned short> >, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<0, std::_Select1st<std::pair<MVertex const, unsigned short> >, true> const&)
+  0.01    102.43     0.01                             std::__detail::_Hashtable_ebo_helper<0, std::equal_to<std::string>, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<0, std::equal_to<std::string>, true> const&)
+  0.01    102.44     0.01                             std::__detail::_Hashtable_ebo_helper<1, MVertex::hash, true>::_S_cget(std::__detail::_Hashtable_ebo_helper<1, MVertex::hash, true> const&)
+  0.01    102.44     0.01                             std::__detail::_Map_base<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, true, std::_Hashtable<WaterVertex, std::pair<WaterVertex const, unsigned short>, std::allocator<std::pair<WaterVertex const, unsigned short> >, std::_Select1st<std::pair<WaterVertex const, unsigned short> >, std::equal_to<WaterVertex>, MVertex::hash, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, true, false, true> >::operator[](WaterVertex const&)
+  0.01    102.46     0.01                             bool std::__detail::operator!=<GameObjectView*, true>(std::__detail::_Node_iterator_base<GameObjectView*, true> const&, std::__detail::_Node_iterator_base<GameObjectView*, true> const&)
+  0.01    102.47     0.01                             bool std::__detail::operator!=<std::pair<std::string const, Resource::Box<PixmapsPool::TexturePtr>::ToLoadPromision>, true>(std::__detail::_Node_iterator_base<std::pair<std::string const, Resource::Box<PixmapsPool::TexturePtr>::ToLoadPromision>, true> const&, std::__detail::_Node_iterator_base<std::pair<std::string const, Resource::Box<PixmapsPool::TexturePtr>::ToLoadPromision>, true> const&)
+  0.01    102.47     0.01                             __gnu_cxx::__enable_if<!std::__is_scalar<MVertex>::__value, MVertex*>::__type std::__fill_n_a<MVertex*, unsigned int, MVertex>(MVertex*, unsigned int, MVertex const&)
+  0.01    102.49     0.01                             __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, int*>::__type std::__fill_n_a<int*, unsigned int, int>(int*, unsigned int, int const&)
+  0.01    102.50     0.01                             void std::__push_heap<__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, int, Tempest::AbstractGraphicObject<Material> const*, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*)>(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, int, int, Tempest::AbstractGraphicObject<Material> const*, bool (*)(Tempest::AbstractGraphicObject<Material> const*, Tempest::AbstractGraphicObject<Material> const*))
+  0.01    102.51     0.01                             std::_Miter_base<float const*>::iterator_type std::__miter_base<float const*>(float const*)
+  0.01    102.52     0.01                             std::_Miter_base<double*>::iterator_type std::__miter_base<double*>(double*)
+  0.01    102.53     0.01                             std::_Niter_base<float const*>::iterator_type std::__niter_base<float const*>(float const*)
+  0.01    102.54     0.01                             std::_Niter_base<unsigned char*>::iterator_type std::__niter_base<unsigned char*>(unsigned char*)
+  0.01    102.55     0.01                             float* std::__copy_move_a<false, float*, float*>(float*, float*, float*)
+  0.01    102.56     0.01                             float* std::__copy_move_a2<false, float const*, float*>(float const*, float const*, float*)
+  0.01    102.57     0.01                             EnvObject* std::uninitialized_copy<EnvObject*, EnvObject*>(EnvObject*, EnvObject*, EnvObject*)
+  0.01    102.58     0.01                             std::iterator_traits<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > > >::iterator_category std::__iterator_category<__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > > >(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > > const&)
+  0.01    102.58     0.01                             Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed* std::__uninitialized_copy_a<std::move_iterator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed*>, Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed*, Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed>(std::move_iterator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed*>, std::move_iterator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed*>, Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed*, std::allocator<Tempest::LocalBufferHolder<Tempest::VertexBufferHolder>::NonFreed>&)
+  0.01    102.60     0.01                             __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > std::__copy_move_backward_a2<true, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > > >(__gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >, __gnu_cxx::__normal_iterator<Tempest::AbstractGraphicObject<Material> const**, std::vector<Tempest::AbstractGraphicObject<Material> const*, std::allocator<Tempest::AbstractGraphicObject<Material> const*> > >)
+  0.01    102.61     0.01                             Pt* std::__copy_move_backward_a2<true, Pt*, Pt*>(Pt*, Pt*, Pt*)
+  0.01    102.61     0.01                             MVertex* std::__uninitialized_move_if_noexcept_a<MVertex*, MVertex*, std::allocator<MVertex> >(MVertex*, MVertex*, MVertex*, std::allocator<MVertex>&)
+  0.01    102.63     0.01                             std::__add_c_ref<std::tuple_element<0u, std::tuple<WayFindRequest*, std::default_delete<WayFindRequest> > >::type>::type std::get<0u, WayFindRequest*, std::default_delete<WayFindRequest> >(std::tuple<WayFindRequest*, std::default_delete<WayFindRequest> > const&)
+  0.01    102.64     0.01                             std::__add_c_ref<std::tuple_element<0u, std::tuple<ParticleSystemEngine*, std::default_delete<ParticleSystemEngine> > >::type>::type std::get<0u, ParticleSystemEngine*, std::default_delete<ParticleSystemEngine> >(std::tuple<ParticleSystemEngine*, std::default_delete<ParticleSystemEngine> > const&)
+  0.01    102.65     0.01                             std::__add_ref<std::tuple_element<0u, std::tuple<Tempest::GraphicObject<Material>*, std::default_delete<Tempest::GraphicObject<Material> > > >::type>::type std::get<0u, Tempest::GraphicObject<Material>*, std::default_delete<Tempest::GraphicObject<Material> > >(std::tuple<Tempest::GraphicObject<Material>*, std::default_delete<Tempest::GraphicObject<Material> > >&)
+  0.01    102.66     0.01                             unsigned int const& std::max<unsigned int>(unsigned int const&, unsigned int const&)
+  0.01    102.67     0.01                             double* std::copy<double*, double*>(double*, double*, double*)
+  0.01    102.68     0.01                             float* std::copy<float*, float*>(float*, float*, float*)
+  0.01    102.69     0.01                             std::remove_reference<GameObject*&>::type&& std::move<GameObject*&>(GameObject*&)
+  0.01    102.69     0.01                             std::remove_reference<Tempest::GraphicObject<Material>*&>::type&& std::move<Tempest::GraphicObject<Material>*&>(Tempest::GraphicObject<Material>*&)
+  0.01    102.71     0.01                             __gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > > std::remove<__gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > >, GameObject*>(__gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > >, __gnu_cxx::__normal_iterator<GameObject**, std::vector<GameObject*, std::allocator<GameObject*> > >, GameObject* const&)
+  0.01    102.72     0.01                             Tempest::Point&& std::forward<Tempest::Point>(std::remove_reference<Tempest::Point>::type&)
+  0.01    102.72     0.01                             WaterVertex const& std::forward<WaterVertex const&>(std::remove_reference<WaterVertex const&>::type&)
+  0.01    102.74     0.01                             GUIPass::State const& std::forward<GUIPass::State const&>(std::remove_reference<GUIPass::State const&>::type&)
+  0.01    102.75     0.01                             Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref* const& std::forward<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref* const&>(std::remove_reference<Tempest::AbstractHolder<Tempest::Texture2d, Tempest::AbstractAPI::Texture>::ImplManip::Ref* const&>::type&)
+  0.01    102.76     0.01                             std::pair<WaterVertex, unsigned short>&& std::forward<std::pair<WaterVertex, unsigned short> >(std::remove_reference<std::pair<WaterVertex, unsigned short> >::type&)
+  0.01    102.77     0.01                             bool&& std::forward<bool>(std::remove_reference<bool>::type&)
+  0.01    102.78     0.01                             void std::_Destroy<MVertex*>(MVertex*, MVertex*)
+  0.01    102.79     0.01                             void std::_Destroy<unsigned short*>(unsigned short*, unsigned short*)
+  0.01    102.80     0.01                             __gnu_cxx::__enable_if<std::__is_scalar<double>::__value, void>::__type std::__fill_a<float*, double>(float*, float*, double const&)
+  0.01    102.81     0.01                             std::iterator_traits<unsigned long const*>::difference_type std::distance<unsigned long const*>(unsigned long const*, unsigned long const*)
+  0.01    102.82     0.01                             std::pair<std::__decay_and_strip<Tempest::AbstractGraphicObject<Material> const* const&>::__type, std::__decay_and_strip<OcTree<Tempest::AbstractGraphicObject<Material> const*>*>::__type> std::make_pair<Tempest::AbstractGraphicObject<Material> const* const&, OcTree<Tempest::AbstractGraphicObject<Material> const*>*>(Tempest::AbstractGraphicObject<Material> const* const&, OcTree<Tempest::AbstractGraphicObject<Material> const*>*&&)
+  0.01    102.83     0.01                             bool std::operator==<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+  0.01    102.83     0.01                             bool std::operator!=<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > const&, std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > const&)
+  0.01    102.85     0.01                             __chkstk_ms
+  0.01    102.86     0.01                             __sinl_internal
+  0.00    102.86     0.01                             GameMessages::message(std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> > const&, PixmapsPool::TexturePtr)
+  0.00    102.86     0.01                             GameMessages::tickAll()
+  0.00    102.87     0.01                             TerrainChunk::TerrainChunk()
+  0.00    102.88     0.01                             Game::computePhysic(void*)
+  0.00    102.88     0.01                             World::mouseObj()
+  0.00    102.89     0.01                             Terrain::mkTexCoord(float&, float&, float, float)
+  0.00    102.89     0.01                             RichText::paintEvent(Tempest::PaintEvent&)
+  0.00    102.90     0.01                             World::mouseZ() const
+  0.00    102.90     0.01                             Terrain::viewWidth() const
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.

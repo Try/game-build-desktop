@@ -1,6 +1,5 @@
 <?xml version="1.0" ?>
 <data>
-
   <module file = "data/land.xml" />
   <module file = "data/particle.xml" />
   <module file = "data/spell.xml" />
@@ -264,12 +263,12 @@
         <button action = "castToGround"
                 taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
                 icon = "gui/icon/fire_strike"
-                hint   = "$(fire_strike)" />
+                hint   = "$(spell/fire_strike)" />
 
         <button action = "castToGround"
                 taget="blink" x = "1" y = "3" hotkey = "b"
                 icon = "gui/icon/blink"
-                hint = "$(blink)" />
+                hint = "$(spell/blink)" />
       </page>
     </commands>
 
@@ -332,6 +331,9 @@
     <view src="fire_element" size = "0.2" physic = "sphere" diameter = "0.4"
           modelAlign = "CCC" >
       <material del = "phong"     />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "add"     />
       <material add = "glow"  />
     </view>
@@ -346,7 +348,7 @@
         <button action = "castToGround"
                 taget  = "fire_strike" x = "0" y = "3" hotkey = "f"
                 icon = "gui/icon/fire_strike"
-                hint   = "$(fire_strike)" />
+                hint   = "$(spell/fire_strike)" />
       </page>
     </commands>
 
@@ -995,8 +997,12 @@
           physic = "box"  boxSizeX = "0.2" boxSizeY = "0.2" boxSizeZ = "1"
           modelAlign = "CCC"
           specular = "0.05"
-          randRotate = "true" >
+          randRotate = "true"
+          isLandDecal = "1" >
       <material del = "phong"   />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "transparent"   />
     </view>
 
@@ -1014,6 +1020,9 @@
           specular = "0.05"
           randRotate = "true" >
       <material del = "phong"   />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "transparent"   />
     </view>
 
@@ -1042,6 +1051,9 @@
           physic = "box"  boxSize = "0.1"
           randRotate = "true" >
       <material del = "phong"   />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "displace"/>
       <material add = "glow"    />
       <material add = "add"     />
@@ -1050,7 +1062,7 @@
     <property isBackground = "1" />
     <property invincible   = "1"  />
 
-    <property mouseHint = "$(gold)" />
+    <property mouseHint = "$(object/gold)" />
 
     <beavior add = "building"/>
     <beavior add = "resource"/>
@@ -1062,6 +1074,9 @@
           physic = "sphere" diameter = "0.5"
           randRotate = "true" >
       <material del = "phong"   />
+      <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "displace"/>
       <material add = "glow"    />
       <material add = "add"     />
@@ -1072,6 +1087,9 @@
     <view src="crystal.green" size = "0.3"
           physic = "box"  boxSize = "0.1" >
           <material del = "phong"   />
+          <material del = "shadow_cast" />
+
+          <material add = "shadowCastTransp" />
           <material add = "displace"/>
           <material add = "glow"    />
           <material add = "add"     />
@@ -1086,6 +1104,9 @@
     <view src="crystal.red" size = "0.3"
           physic = "box"  boxSize = "0.1" >
           <material del = "phong"   />
+          <material del = "shadow_cast" />
+
+          <material add = "shadowCastTransp" />
           <material add = "displace"/>
           <material add = "glow"    />
           <material add = "add"     />
@@ -1101,6 +1122,7 @@
           modelAlign = "CCi"
           specular = "0"
           randRotate = "true" >
+      <material del = "phong"      />
       <material add = "blush"       />
       <material add = "phong_atest" />
     </view>
@@ -1113,7 +1135,9 @@
           modelAlign = "CCi"
           specular = "0"
           randRotate = "true" >
+      <material del = "phong"      />
       <material add = "blush"       />
+      <material add = "phong_atest" />
     </view>
     <view_size min = "0.8" max = "1.3"/>
     <property isBackground = "1" />
@@ -1182,7 +1206,7 @@
     <beavior add = "bonus"/>
     <property key = "bonusAnim" val="rotate" />
     <property key = "bonusType" val="hill" />
-    <property mouseHint = "$(heal_rune)"   />
+    <property mouseHint = "$(object/heal_rune)"   />
 
     <property invincible   = "1"  />
     <property visionRange  = "16"  />
@@ -1196,7 +1220,7 @@
     </view>
 
     <beavior add = "bonus"/>
-    <property mouseHint = "$(arto_ore)" />
+    <property mouseHint = "$(object/arto_ore)" />
     <property key = "bonusType" val="event" />
 
     <property invincible   = "1"  />
@@ -1211,7 +1235,7 @@
     </view>
 
     <beavior add = "bonus"/>
-    <property mouseHint = "$(small_chest)" />
+    <property mouseHint = "$(object/small_chest)" />
     <property key = "bonusType" val="event" />
 
     <property invincible   = "1"  />
@@ -1271,6 +1295,8 @@
     <view src="racoon" size = "0.15" modelAlign = "CCC" >
       <material del = "phong"       />
       <material del = "shadow_cast" />
+
+      <material add = "shadowCastTransp" />
       <material add = "transparent" />
     </view>
 

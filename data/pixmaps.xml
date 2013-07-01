@@ -42,4 +42,10 @@
 
   <pixmap  src  = "data/textures/gui/ckBox.png"
            name = "gui/ckBox"  />
+
+  <pixmap  src  = "data/textures/gui/spark.png"
+           name = "gui/spark"  />
+
+  <pixmap  src  = "data/textures/gui/cride.png"
+           name = "gui/cride"  />
 </data>

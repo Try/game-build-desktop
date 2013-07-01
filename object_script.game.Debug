@@ -106,4 +106,8 @@ INPUT(
 ./debug/graphicssettingswidget.o
 ./debug/desertstrikescenario.o
 ./debug/deatmachscenario.o
+./debug/desertstrikescenariowidgets.o
+./debug/checkbox.o
+./debug/gamemessages.o
+./debug/netuserclient.o
 );

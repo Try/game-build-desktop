@@ -34,6 +34,12 @@
   <shader vs = "data/sh/shadow_map.vert"
           fs = "data/sh/shadow_map.frag"
           name = "shadow_map">
+    <define teamColor = ""/>
+  </shader>
+
+  <shader vs = "data/sh/shadow_map.vert"
+          fs = "data/sh/shadow_map.frag"
+          name = "shadow_map_atest">
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -46,7 +52,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define gbuffer  = "" />
     <define specular = "" />
@@ -62,7 +68,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define specular = "" />
   </shader>
@@ -70,16 +76,15 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "transparent_material_shadow">
-    <define oclusion       = "settings_oclusionenable" />
+    <define oclusion       = "0" />
     <define diffuseTexture = "" />
-    <define bumpMapping    = "settings_normalMap" />
-    <define lambert  = "" />
-    <define lighting = "" />
+    <define bumpMapping    = "0" />
+    <define lambert        = "" />
+    <define lighting       = "" />
 
-    <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadows         = "0" />
+    <define shadowsColored  = "0" />
 
-    <define specular        = "" />
     <define multiplay_alpha = "" />
   </shader>
 
@@ -92,9 +97,9 @@
     <define specular  = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <define bumpMapping     = "0" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
+    <define bumpMapping     = "0" />
     <define gbuffer  = "" />
   </shader>
 
@@ -104,6 +109,7 @@
     <define oclusion       = "0" />
     <define bumpMapping    = "0" />
     <define shadows        = "0" />
+    <define shadowsColored = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -116,7 +122,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -134,7 +140,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -148,6 +154,7 @@
     <define diffuseTexture = "" />
     <define bumpMapping     = "0" />
     <define shadows         = "0" />
+    <define shadowsColored  = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -160,7 +167,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -178,7 +185,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define gbuffer   = "" />
     <define specular  = "" />
@@ -190,10 +197,11 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "displace" >
-    <define displace    = "" />
-    <define bumpMapping = "settings_normalMap" />
-    <define oclusion    = "settings_oclusionenable" />
-    <define shadows     = "0" />
+    <define displace       = "" />
+    <define bumpMapping    = "settings_normalMap" />
+    <define oclusion       = "settings_oclusionenable" />
+    <define shadows        = "0" />
+    <define shadowsColored = "0" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -207,7 +215,7 @@
     <define lighting = "" />
 
     <define shadows         = "settings_shadowenable" />
-    <!--<define shadowsColored  = "" />-->
+    <define shadowsColored  = "settings_shadowenable_cl" />
 
     <define water = "" />
     <define specular = "" />
@@ -220,6 +228,8 @@
     <define diffuseTexture  = "" />
     <define bumpMapping     = "0" />
     <define shadows         = "0" />
+    <define shadowsColored  = "0" />
+    <define premultAlpha    = "1" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"
@@ -227,9 +237,11 @@
           name = "glow" >          
     <define oclusion        = "0" />
     <define diffuseTexture  = "" />
-    <define glow = "" />
+    <define glow            = "" />
     <define bumpMapping     = "0" />
     <define shadows         = "0" />
+    <define shadowsColored  = "0" />
+    <define premultAlpha    = "1" />
   </shader>
 
   <shader vs = "data/sh/omni.vert"

@@ -3,10 +3,10 @@
 #define lowp
 #endif
 attribute lowp vec4 Position;
-//attribute lowp vec2 TexCoord;
 attribute lowp vec4 Normal;
-//attribute lowp vec4 Color;
-attribute lowp vec4 Binormal;
+attribute lowp vec2 Binormal;
+attribute lowp vec2 TexCoord;
+attribute lowp vec4 Color;
 #ifdef water
 attribute lowp float Depth;
 attribute lowp vec2  TexCoord1;
@@ -17,7 +17,8 @@ varying vec3 normal;
 #if bumpMapping
 varying vec3 bnormal, tnormal;
 #endif
-//varying lowp vec4 cl;
+
+varying lowp vec4 cl;
 
 #if shadows
 varying vec3 shPos;
@@ -41,17 +42,18 @@ varying lowp float terrainColorMul;
 #endif
 
 void main() {
-  tc = vec2(Position.w, Normal.w);
-  //cl = Color;
+  tc = vec2(Position.w, Normal.z);
+  cl = vec4(1.0);//Color;
+  
   #ifdef terrainCL
-  terrainColorMul = Binormal.w;
+  terrainColorMul = Binormal.y;
   #endif
 
   vec4 p  = mvpMatrix*vec4( Position.xyz, 1.0 );
-  vec3 n  = -normalize(objectMatrix*vec4( Normal.x,   Normal.y,   Normal.z,   0.0 )).xyz;
+  vec3 n  = -normalize(objectMatrix*vec4( Normal.x,   Normal.y,  TexCoord.x,   0.0 )).xyz;
   normal  = n;
 #if bumpMapping
-  vec3 b = -normalize(objectMatrix*vec4( Binormal.x, Binormal.y, Binormal.z, 0.0 )).xyz;
+  vec3 b = -normalize(objectMatrix*vec4( Normal.w, Binormal.x, TexCoord.y, 0.0 )).xyz;
   bnormal = b;
   tnormal = cross(n,b);
 #endif
@@ -82,8 +84,9 @@ struct VS_Input {
     float4 position  : POSITION;
     //float2 texcoord0 : TEXCOORD0;
     float4 normal    : NORMAL;
-    //float4 color     : COLOR;
-    float4 bnormal   : BINORMAL;
+    float2 bnormal   : BINORMAL;
+    float2 texcoord0 : TEXCOORD0;
+    float4 color     : COLOR;
 	#ifdef water
     //float depth      : DEPTH;
     float2 dir       : TEXCOORD1;
@@ -92,7 +95,7 @@ struct VS_Input {
 
 struct FS_Input {
   float4 position  : POSITION;
-  //float4 color     : COLOR;
+  float4 color     : COLOR;
   float4 bnormal   : TEXCOORD7;
 #ifdef terrainCL
   float  terrainColorMul   : TEXCOORD8;
@@ -132,13 +135,17 @@ FS_Input main( VS_Input IN,
                ) {
     FS_Input OUT;
 	
-#ifdef terrainCL
-	OUT.terrainColorMul = IN.bnormal.w;
+#ifdef diffuseTexture
+    OUT.texcoord0  = float2(IN.position.w, IN.normal.z);//IN.texcoord0;	
 #endif
-    //OUT.color = IN.color;
+
+#ifdef terrainCL
+	OUT.terrainColorMul = IN.bnormal.y;
+#endif
+    OUT.color = float4(1);//IN.color.bgr, IN.color.a);
 #ifdef water
     OUT.waterDepth.xy = IN.dir;
-    OUT.waterDepth.z  = IN.bnormal.w;//IN.depth;
+    OUT.waterDepth.z  = IN.bnormal.y;//IN.depth;
 #endif
 
     float4 v = float4( IN.position.x,
@@ -149,15 +156,15 @@ FS_Input main( VS_Input IN,
 
     float4 n = float4( IN.normal.x,
                        IN.normal.y,
-                       IN.normal.z,
+                       IN.texcoord0.x,
                        0.0 );
 
     float4x4 m = objectMatrix;
 
     OUT.position   = mul( mvpMatrix, v );
-    OUT.bnormal    = mul( m, float4( IN.bnormal.x,
-                                     IN.bnormal.y,
-                                     IN.bnormal.z,
+    OUT.bnormal    = mul( m, float4( IN.normal.w,
+                                     IN.bnormal.x,
+                                     IN.texcoord0.y,
                                      0.0 ) );
     //OUT.bnormal = IN.bnormal;
 
@@ -182,11 +189,7 @@ FS_Input main( VS_Input IN,
 #endif
 
 #ifdef displace
-    OUT.screenPos  = OUT.position/OUT.position.w;	
-#endif
-
-#ifdef diffuseTexture
-    OUT.texcoord0  = float2(IN.position.w, IN.normal.w);//IN.texcoord0;	
+    OUT.screenPos  = OUT.position.xyz/OUT.position.w;	
 #endif
 
     OUT.normal.xyz  = mul( m, n ).xyz;

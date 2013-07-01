@@ -106,4 +106,8 @@ INPUT(
 ./release/graphicssettingswidget.o
 ./release/desertstrikescenario.o
 ./release/deatmachscenario.o
+./release/desertstrikescenariowidgets.o
+./release/checkbox.o
+./release/gamemessages.o
+./release/netuserclient.o
 );
