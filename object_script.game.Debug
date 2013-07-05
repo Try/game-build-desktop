@@ -110,4 +110,6 @@ INPUT(
 ./debug/checkbox.o
 ./debug/gamemessages.o
 ./debug/netuserclient.o
+./debug/decalobject.o
+./debug/packetobject.o
 );

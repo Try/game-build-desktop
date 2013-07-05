@@ -76,7 +76,8 @@
 
     <property type = "light"/>
 
-    <atack range = "0" damage = "5" delay = "20"/>
+    <atack range = "0" damage = "5" delay = "20"
+           type  = "melee" />
     <property deathAnim = "physic" />
   </class>
 
@@ -121,7 +122,7 @@
 
     <atack range = "11" damage = "15" delay = "35" bullet = "bullets/pike" />
     <atack range = "11" damage = "25" delay = "35" bullet = "bullets/pike"
-           type  = "armored" />
+           taget  = "armored" />
 
     <property maxHp = "80" />
     <property deathAnim = "physic" />
@@ -148,7 +149,8 @@
     <atack range = "4" damage = "4" delay = "10" bullet="bullets/fire_large"
            splash = "2" slpashDamage = "2" />
     <atack range = "4" damage = "8" delay = "10" bullet="bullets/fire_large"
-           splash = "2" slpashDamage = "2" type="light" />
+           splash = "2" slpashDamage = "2"
+           taget="light" />
 
     <property maxHp = "40" />
     <property deathAnim = "physic" />
@@ -207,7 +209,8 @@
     <atack range  = "5" damage = "10" delay = "40" bullet="bullets/fire"
            splash = "5" slpashDamage = "5" />
     <atack range  = "5" damage = "17" delay = "40" bullet="bullets/fire"
-           splash = "5" slpashDamage = "6" type = "light"/>
+           splash = "5" slpashDamage = "6"
+           taget = "light"/>
 
     <ability name = "blink" />
     <ability name = "fire_strike"   />
@@ -341,7 +344,8 @@
     <atack range  = "14" damage = "15" delay = "20" bullet="bullets/fire_large"
            splash = "5" slpashDamage = "5" />
     <atack range  = "14" damage = "20" delay = "20" bullet="bullets/fire_large"
-           splash = "5" slpashDamage = "8" type = "light" />
+           splash = "5" slpashDamage = "8"
+           taget = "light" />
     <ability name = "fire_strike"   />
 
     <property deathAnim = "physic" />
@@ -414,8 +418,8 @@
     <property size      = "6"    />
     <property limInc    = "11"   />
 
-    <property gold      = "400"  />
-    <property buildTime = "1000" />
+    <property gold      = "250"  />
+    <property buildTime = "200" />
     <property maxHp     = "1000" />
     <property armor     = "4" />
 
@@ -433,7 +437,7 @@
       <material add = "unit"       />
     </view>
 
-    <property gold      = "50" />
+    <property gold      = "100" />
     <property limInc    = "10"  />
     <property buildTime = "300" />
 
@@ -484,4 +488,22 @@
     <property size = "1" />
   </class>
 
+
+  <spell name = "blink" >
+    <property coolDown = "300"/>
+    <property manaCost = "0" />
+    <info     type     = "castToCoord" />
+  </spell>
+
+  <spell name = "fire_strike" >
+    <property coolDown = "4000"/>
+    <property manaCost = "0" />
+    <info     type     = "castToUnit" />
+  </spell>
+
+  <spell name = "heal" >
+    <property coolDown = "50"/>
+    <property manaCost = "0" />
+    <info     type     = "castToUnit" />
+  </spell>
 </data>

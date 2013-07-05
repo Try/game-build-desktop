@@ -406,6 +406,14 @@
   <texture file = "data/textures/rocks/2n.png" name="rock11/norm" />
   <model   file = "data/models/rocks/6.mx"     name="rock11/model" />
 
+  <texture file = "data/textures/rocks/2.png"  name="rock12/diff" />
+  <texture file = "data/textures/rocks/2n.png" name="rock12/norm" />
+  <model   file = "data/models/rocks/7.mx"     name="rock12/model" />
+
+  <texture file = "data/textures/rocks/3.png"  name="rock13/diff" />
+  <texture file = "data/textures/rocks/3n.png" name="rock13/norm" />
+  <model   file = "data/models/rocks/7.mx"     name="rock13/model" />
+
   <texture file = "data/textures/ice_pick/0.png"  name="ice_pick/diff" />
   <texture file = "data/textures/ice_pick/0n.png" name="ice_pick/norm" />
   <model   file = "data/models/ice_pick/0.mx"     name="ice_pick/model" />
@@ -413,6 +421,18 @@
   <texture file = "data/textures/ice_pick/0.png"  name="ice_pick1/diff" />
   <texture file = "data/textures/ice_pick/0n.png" name="ice_pick1/norm" />
   <model   file = "data/models/ice_pick/1.mx"     name="ice_pick1/model" />
+
+  <texture file = "data/textures/ice_pick/0.png"  name="ice_pick2/diff" />
+  <texture file = "data/textures/ice_pick/0n.png" name="ice_pick2/norm" />
+  <model   file = "data/models/ice_pick/2.mx"     name="ice_pick2/model" />
+
+  <texture file = "data/textures/ice_pick/1.png"  name="ice_pick3/diff" />
+  <texture file = "data/textures/ice_pick/0n.png" name="ice_pick3/norm" />
+  <model   file = "data/models/ice_pick/3.mx"     name="ice_pick3/model" />
+
+  <texture file = "data/textures/ice_pick/2.png"  name="ice_pick4/diff" />
+  <texture file = "data/textures/ice_pick/0n.png" name="ice_pick4/norm" />
+  <model   file = "data/models/ice_pick/4.mx"     name="ice_pick4/model" />
 
   <texture file = "data/textures/grass/0.png" name="grass0/diff" />
   <model   file = "data/models/grass/0.mx"    name="grass0/model" />

@@ -12,6 +12,8 @@
            name = "gui/icon/build"  />
   <pixmap  src  = "data/icons/actions/cancel.png"
            name = "gui/icon/cancel"  />
+  <pixmap  src  = "data/icons/camera.png"
+           name = "gui/icon/camera"  />
 
 
   <pixmap  src  = "data/icons/actions/move.png"

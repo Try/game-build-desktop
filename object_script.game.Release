@@ -110,4 +110,6 @@ INPUT(
 ./release/checkbox.o
 ./release/gamemessages.o
 ./release/netuserclient.o
+./release/decalobject.o
+./release/packetobject.o
 );
