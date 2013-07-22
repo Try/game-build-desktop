@@ -111,5 +111,8 @@ INPUT(
 ./debug/netuserclient.o
 ./debug/decalobject.o
 ./debug/packetobject.o
+<<<<<<< HEAD
 ./debug/upgrade.o
+=======
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
 );

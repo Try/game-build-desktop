@@ -3,7 +3,10 @@
   <module file = "data/game_objects/land.xml" />
   <module file = "data/game_objects/rocks.xml" />
   <module file = "data/game_objects/bush.xml" />
+<<<<<<< HEAD
   <module file = "data/game_objects/tree.xml" />
+=======
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
 
   <module file = "data/particle.xml" />
   <module file = "data/spell.xml" />

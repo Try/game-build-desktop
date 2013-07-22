@@ -12,7 +12,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "3" />
     <property isBackground = "1" />
   </class>
@@ -28,7 +32,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "3" />
     <property isBackground = "1" />
   </class>
@@ -48,7 +56,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "4" />
     <property isBackground = "1" />
   </class>
@@ -64,7 +76,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "4" />
     <property isBackground = "1" />
   </class>
@@ -80,7 +96,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "4" />
     <property isBackground = "1" />
   </class>
@@ -96,7 +116,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "1" />
     <property isBackground = "1" />
   </class>
@@ -111,7 +135,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "2" />
     <property isBackground = "1" />
   </class>
@@ -132,7 +160,11 @@
     </view>
     <view_size min = "0.8" max = "1.3"/>
 
+<<<<<<< HEAD
     <behavior add = "building"/>
+=======
+    <beavior add = "building"/>
+>>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
     <property size = "3" />
     <property isBackground = "1" />
   </class>
