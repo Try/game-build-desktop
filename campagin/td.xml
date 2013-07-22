@@ -14,9 +14,9 @@
 
     <atack range = "0" damage = "5" delay = "30"/>
 
-    <beavior add = "move"/>
-    <beavior add = "worker"/>
-    <beavior add = "builder"/>
+    <behavior add = "move"/>
+    <behavior add = "worker"/>
+    <behavior add = "builder"/>
     <speed rotate = "15" move="48" />
     <property deathAnim = "physic" />
 
@@ -70,13 +70,14 @@
     <property lim       = "1"  />
     <property buildTime = "250" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <property type = "light"/>
 
-    <atack range = "0" damage = "5" delay = "20"/>
+    <atack range = "0" damage = "5" delay = "20"
+           type  = "melee" />
     <property deathAnim = "physic" />
   </class>
 
@@ -92,8 +93,8 @@
     <property lim       = "1"  />
     <property buildTime = "250" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <atack range = "0" damage = "5" delay = "20"/>
@@ -112,8 +113,8 @@
     <property buildTime   = "500" />
     <property visionRange = "20" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <property size = "2" />
     <speed rotate = "8" move="50" />
 
@@ -121,7 +122,7 @@
 
     <atack range = "11" damage = "15" delay = "35" bullet = "bullets/pike" />
     <atack range = "11" damage = "25" delay = "35" bullet = "bullets/pike"
-           type  = "armored" />
+           taget  = "armored" />
 
     <property maxHp = "80" />
     <property deathAnim = "physic" />
@@ -138,8 +139,8 @@
     <property lim       = "2"  />
     <property buildTime = "350" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <property size = "2" />
     <speed rotate = "20" move="56" />
 
@@ -148,7 +149,8 @@
     <atack range = "4" damage = "4" delay = "10" bullet="bullets/fire_large"
            splash = "2" slpashDamage = "2" />
     <atack range = "4" damage = "8" delay = "10" bullet="bullets/fire_large"
-           splash = "2" slpashDamage = "2" type="light" />
+           splash = "2" slpashDamage = "2"
+           taget="light" />
 
     <property maxHp = "40" />
     <property deathAnim = "physic" />
@@ -165,8 +167,8 @@
     <property lim       = "1"  />
     <property buildTime = "250" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <atack range = "0" damage = "5" delay = "20"/>
@@ -200,14 +202,15 @@
     <property lim       = "1"  />
     <property buildTime = "350" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <atack range  = "5" damage = "10" delay = "40" bullet="bullets/fire"
            splash = "5" slpashDamage = "5" />
     <atack range  = "5" damage = "17" delay = "40" bullet="bullets/fire"
-           splash = "5" slpashDamage = "6" type = "light"/>
+           splash = "5" slpashDamage = "6"
+           taget = "light"/>
 
     <ability name = "blink" />
     <ability name = "fire_strike"   />
@@ -241,8 +244,8 @@
     <property lim       = "1"  />
     <property buildTime = "350" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <atack range = "7" damage = "5" delay = "40" bullet="bullets/fire" />
@@ -268,8 +271,8 @@
 
     <property armor     = "1" />
 
-    <beavior add = "move"    />
-    <beavior add = "warrior" />
+    <behavior add = "move"    />
+    <behavior add = "warrior" />
     <speed rotate = "10" move="56" />
 
     <atack range = "0" damage = "10" delay = "20"/>
@@ -282,8 +285,8 @@
       <material add = "glow"/>
     </view>
 
-    <beavior add = "move"/>
-    <beavior add = "warrior" />
+    <behavior add = "move"/>
+    <behavior add = "warrior" />
     <property size = "2" />
 
     <property gold      = "400" />
@@ -328,8 +331,8 @@
       </page>
     </commands>
 
-    <beavior add = "move"/>
-    <beavior add = "warrior" />
+    <behavior add = "move"/>
+    <behavior add = "warrior" />
     <property size = "2" />
 
     <property gold      = "475" />
@@ -341,7 +344,8 @@
     <atack range  = "14" damage = "15" delay = "20" bullet="bullets/fire_large"
            splash = "5" slpashDamage = "5" />
     <atack range  = "14" damage = "20" delay = "20" bullet="bullets/fire_large"
-           splash = "5" slpashDamage = "8" type = "light" />
+           splash = "5" slpashDamage = "8"
+           taget = "light" />
     <ability name = "fire_strike"   />
 
     <property deathAnim = "physic" />
@@ -354,8 +358,8 @@
           modelAlign = "CCC" >
     </view>
 
-    <beavior add = "move"/>
-    <beavior add = "warrior" />
+    <behavior add = "move"/>
+    <behavior add = "warrior" />
     <property size = "2" />
 
     <property maxHp = "500" />
@@ -371,8 +375,8 @@
           modelAlign = "CCC" >
     </view>
 
-    <beavior add = "move"/>
-    <beavior add = "warrior" />
+    <behavior add = "move"/>
+    <behavior add = "warrior" />
     <property size = "2" />
 
     <property maxHp = "500" />
@@ -389,8 +393,8 @@
           modelAlign = "CCC" >
     </view>
 
-    <beavior add = "move"/>
-    <beavior add = "warrior" />
+    <behavior add = "move"/>
+    <behavior add = "warrior" />
     <property size = "2" />
 
     <property maxHp = "333" />
@@ -405,8 +409,8 @@
     <view src="castle" size = "0.035" physic = "box" boxSize = "1.1" >
     </view>
 
-    <beavior add = "building" />
-    <beavior add = "warrior" />
+    <behavior add = "building" />
+    <behavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
     <property type = "armored"/>
@@ -414,12 +418,12 @@
     <property size      = "6"    />
     <property limInc    = "11"   />
 
-    <property gold      = "400"  />
-    <property buildTime = "1000" />
+    <property gold      = "250"  />
+    <property buildTime = "200" />
     <property maxHp     = "1000" />
     <property armor     = "4" />
 
-    <atack range  = "13" damage = "40" delay = "10" bullet="bullets/fire_large"
+    <atack range  = "10" damage = "40" delay = "10" bullet="bullets/fire_large"
            splash = "2"  slpashDamage = "30" />
 
     <property deathAnim = "physic" />
@@ -433,11 +437,11 @@
       <material add = "unit"       />
     </view>
 
-    <property gold      = "50" />
+    <property gold      = "100" />
     <property limInc    = "10"  />
     <property buildTime = "300" />
 
-    <beavior add = "building" />
+    <behavior add = "building" />
     <property size = "2" />
   </class>
 
@@ -456,8 +460,8 @@
 
     <property maxHp     = "250" />
 
-    <beavior add = "building" />
-    <beavior add = "warrior" />
+    <behavior add = "building" />
+    <behavior add = "warrior" />
     <speed rotate = "0" move="0" />
 
     <property type = "armored"/>
@@ -471,7 +475,7 @@
           modelAlign = "CCC" >
     </view>
     <property deathAnim = "physic" />
-    <beavior add = "building"/>
+    <behavior add = "building"/>
     <property size = "2" />
   </class>
 
@@ -480,8 +484,26 @@
           modelAlign = "CCC" >
     </view>
     <property deathAnim = "physic" />
-    <beavior add = "building"/>
+    <behavior add = "building"/>
     <property size = "1" />
   </class>
 
+
+  <spell name = "blink" >
+    <property coolDown = "300"/>
+    <property manaCost = "0" />
+    <info     type     = "castToCoord" />
+  </spell>
+
+  <spell name = "fire_strike" >
+    <property coolDown = "4000"/>
+    <property manaCost = "0" />
+    <info     type     = "castToUnit" />
+  </spell>
+
+  <spell name = "heal" >
+    <property coolDown = "50"/>
+    <property manaCost = "0" />
+    <info     type     = "castToUnit" />
+  </spell>
 </data>

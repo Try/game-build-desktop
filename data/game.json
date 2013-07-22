@@ -1,0 +1,1538 @@
+{
+    "module": [
+        { "file": "data/game_objects/land.json" },
+        { "file": "data/game_objects/rocks.json" },
+        { "file": "data/game_objects/bush.json" },
+        { "file": "data/game_objects/tree.json" },
+        { "file": "data/particle.json" },
+        { "file": "data/spell.json" },
+        { "file": "data/hud.json" },
+        { "file": "data/upgrades.json" }
+    ],
+
+    "class": [
+        {
+            "name": "bullets/pike",
+            "view": {
+                "src": "bullets/pike",
+                "size": 0.05
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "bullets/fire",
+            "view": {
+                "src": "bullets/fire",
+                "size": 0.015,
+                "material": [
+                    { "del": "shadow_cast" },
+                    { "del": "phong" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+
+        {
+            "name": "bullets/fire_large",
+            "view": [
+                {
+                    "src": "sphere",
+                    "size": 1.5,
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "omni" }
+                    ]
+                },
+                {
+                    "src": "bullets/fire",
+                    "size": 0.03,
+                    "material": [
+                        { "del": "shadow_cast" },
+                        { "del": "phong" },
+                        { "add": "glow" },
+                        { "add": "add" }
+                    ]
+                }
+            ],
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "bullets/dark_ball",
+            "view": {
+                "src": "bullets/dark_ball",
+                "size": 0.03,
+                "material": [
+                    { "del": "shadow_cast" },
+                    { "del": "phong" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "pointlight",
+            "view": {
+                "src": "sphere",
+                "size": 1,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "omni" }
+                ]
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "pointlight2",
+            "view": {
+                "src": "sphere",
+                "size": 2,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "omni" }
+                ]
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "pointlight3",
+            "view": {
+                "src": "sphere",
+                "size": 3,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "omni" }
+                ]
+            },
+            "property": {
+                "isDynamic": 1,
+                "isBackground": 1
+            }
+        },
+        {
+            "name": "water",
+            "view": {
+                "src": "water",
+                "specular": 30,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "water" }
+                ]
+            }
+        },
+        {
+            "name": "worker",
+            "view": {
+                "src": "worker",
+                "size": 0.2,
+                "physic": "sphere",
+                "diameter": 0.1,
+                "modelAlign": "CCC",
+                "specular": 0.5,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 50,
+                "lim": 1,
+                "buildTime": 260,
+                "deathAnim": "physic"
+            },
+            "atack": {
+                "range": 0,
+                "damage": 5,
+                "delay": 30
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "worker" },
+                { "add": "builder" }
+            ],
+            "speed": {
+                "rotate": 15,
+                "move": 48
+            },
+            "commands": {
+                "page": [
+                    {
+                        "num": 0,
+                        "button": {
+                            "action": "page",
+                            "taget" : "1",
+                            "x": 0,
+                            "y": 3,
+                            "hotkey": "b"
+                        }
+                    },
+                    {
+                        "num": 1,
+                        "button": [
+                            {
+                                "action": "build",
+                                "taget": "castle",
+                                "x": 0,
+                                "y": 0,
+                                "hotkey": "c"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "house",
+                                "x": 0,
+                                "y": 1,
+                                "hotkey": "e"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "barracks",
+                                "x": 1,
+                                "y": 0,
+                                "hotkey": "b"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "forge",
+                                "x": 2,
+                                "y": 0,
+                                "hotkey": "f"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "tower",
+                                "x": 2,
+                                "y": 1,
+                                "hotkey": "t"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "stone_cyrcle",
+                                "x": 3,
+                                "y": 0,
+                                "hotkey": "s"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "adanos_cram",
+                                "x": 4,
+                                "y": 0,
+                                "hotkey": "a"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "fire_cram",
+                                "x": 4,
+                                "y": 1,
+                                "hotkey": "r"
+                            },
+                            {
+                                "action": "build",
+                                "taget": "magic_tower",
+                                "x": 4,
+                                "y": 2,
+                                "hotkey": "m"
+                            },
+                            {
+                                "action": "page",
+                                "taget": "0",
+                                "x": 4,
+                                "y": 3,
+                                "icon": "gui/icon/cancel",
+                                "hotkey": "x"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "name": "pikeman",
+            "view": {
+                "src": "pikeman",
+                "size": 0.2,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "lim": 1,
+                "buildTime": 250,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 0,
+                "damage": 5,
+                "delay": 20
+            }
+        },
+        {
+            "name": "chevalier",
+            "view": {
+                "src": "chevalier",
+                "size": 0.2,
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "lim": 1,
+                "buildTime": 250,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 0,
+                "damage": 5,
+                "delay": 20
+            }
+        },
+        {
+            "name": "balista",
+            "view": {
+                "src": "balista",
+                "size": 0.018,
+                "physic": "sphere",
+                "diameter": 0.2,
+                "modelAlign": "CCi",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 200,
+                "lim": 4,
+                "buildTime": 500,
+                "size": 2,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 8,
+                "move": 44
+            },
+            "atack": {
+                "range": 10,
+                "damage": 15,
+                "delay": 40,
+                "bullet": "bullets/pike"
+            }
+        },
+        {
+            "name": "gelion",
+            "view": {
+                "src": "gelion",
+                "size": 0.018,
+                "physic": "sphere",
+                "diameter": 0.2,
+                "modelAlign": "CCi",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "lim": 2,
+                "buildTime": 350,
+                "size": 2,
+                "maxHp": 40,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 20,
+                "move": 110
+            },
+            "atack": {
+                "range": 6,
+                "damage": 6,
+                "delay": 10,
+                "bullet": "bullets/fire_large"
+            }
+        },
+        {
+            "name": "hummer",
+            "view": {
+                "src": "hummer",
+                "size": 0.018,
+                "physic": "sphere",
+                "diameter": 0.2,
+                "modelAlign": "CCi",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "lim": 1,
+                "buildTime": 250,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 0,
+                "damage": 5,
+                "delay": 20
+            }
+        },
+        {
+            "name": "fire_mage",
+            "view": {
+                "src": "fmage",
+                "size": 0.22,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": [
+                        {
+                            "action": "castToGround",
+                            "taget": "fire_strike",
+                            "x": 0,
+                            "y": 3,
+                            "hotkey": "f",
+                            "icon": "gui/icon/fire_strike",
+                            "hint": "$(spell/fire_strike)"
+                        },
+                        {
+                            "action": "castToGround",
+                            "taget": "blink",
+                            "x": 1,
+                            "y": 3,
+                            "hotkey": "b",
+                            "icon": "gui/icon/blink",
+                            "hint": "$(spell/blink)"
+                        }
+                    ]
+                }
+            },
+            "property": {
+                "gold": 200,
+                "lim": 1,
+                "buildTime": 350,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 5,
+                "damage": 15,
+                "delay": 40,
+                "bullet": "bullets/fire"
+            },
+            "ability": [
+                "blink" ,
+                "fire_strike"
+            ]
+        },
+        {
+            "name": "incvisitor",
+            "view": {
+                "src": "chevalier",
+                "size": 0.2,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 200,
+                "lim": 1,
+                "buildTime": 350,
+                "maxHp": 200,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 0,
+                "damage": 25,
+                "delay": 20
+            }
+        },
+        {
+            "name": "golem",
+            "view": {
+                "src": "golem",
+                "size": 0.2,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC",
+                "material": { "add": "glow" }
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 300,
+                "buildTime": 400,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 56
+            },
+            "atack": {
+                "range": 1,
+                "damage": 10,
+                "delay": 20
+            }
+        },
+        {
+            "name": "fire_element",
+            "view": [
+                {
+                    "src": "fire_element",
+                    "size": 0.2,
+                    "physic": "sphere",
+                    "diameter": 0.4,
+                    "modelAlign": "CCC",
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "shadowCastTransp" },
+                        { "add": "add" },
+                        { "add": "glow" }
+                    ]
+                },
+                {
+                    "src": "sphere",
+                    "size": 1,
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "omni" }
+                    ]
+                }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "castToGround",
+                        "taget": "fire_strike",
+                        "x": 0,
+                        "y": 3,
+                        "hotkey": "f",
+                        "icon": "gui/icon/fire_strike",
+                        "hint": "$(spell/fire_strike)"
+                    }
+                }
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 300,
+                "buildTime": 400,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 56
+            },
+            "atack": {
+                "range": 5,
+                "damage": 10,
+                "delay": 20,
+                "bullet": "bullets/fire_large"
+            },
+            "ability": [
+                "fire_strike"
+            ]
+        },
+        {
+            "name": "bear",
+            "view": {
+                "src": "bear",
+                "size": 0.075,
+                "physic": "box",
+                "boxSizeX": 0.3,
+                "boxSizeY": 0.3,
+                "boxSizeZ": 0.15,
+                "modelAlign": "CCC"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 500,
+                "buildTime": 400,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 60
+            },
+            "atack": {
+                "range": 2,
+                "damage": 30,
+                "delay": 30
+            }
+        },
+        {
+            "name": "polarbear",
+            "view": {
+                "src": "polarbear",
+                "size": 0.075,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 500,
+                "buildTime": 400,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 60
+            },
+            "atack": {
+                "range": 2,
+                "damage": 30,
+                "delay": 30
+            }
+        },
+        {
+            "name": "skeleton_mage",
+            "view": {
+                "src": "skeleton_mage",
+                "size": 0.015,
+                "physic": "sphere",
+                "diameter": 0.04,
+                "modelAlign": "CCC"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 333,
+                "buildTime": 400,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 60
+            },
+            "atack": {
+                "range": 6,
+                "damage": 5,
+                "delay": 30,
+                "bullet": "bullets/dark_ball"
+            }
+        },
+        {
+            "name": "golem_t",
+            "view": {
+                "src": "golem",
+                "size": 0.2,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "displace" },
+                    { "add": "glow" }
+                ]
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "maxHp": 400,
+                "buildTime": 400
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 56
+            },
+            "atack": {
+                "range": 1,
+                "damage": 10,
+                "delay": 20
+            }
+        },
+        {
+            "name": "incvisitor_t",
+            "view": {
+                "src": "chevalier",
+                "size": 0.3,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "displace" },
+                    { "add": "glow" }
+                ]
+            },
+            "property": {
+                "gold": 200,
+                "lim": 1,
+                "buildTime": 350,
+                "maxHp": 200,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range": 0,
+                "damage": 25,
+                "delay": 20
+            }
+        },
+        {
+            "name": "golem_f",
+            "view": [
+                {
+                    "src": "golem",
+                    "size": 0.2,
+                    "physic": "sphere",
+                    "diameter": 0.4,
+                    "modelAlign": "CCC",
+                    "material": [
+                        { "del": "phong" },
+                        { "add": "displace" },
+                        { "add": "glow" }
+                    ]
+                },
+                {
+                    "src": "fire",
+                    "size": 1,
+                    "isParticle": "fire",
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "add" }
+                    ]
+                },
+                {
+                    "src": "sphere",
+                    "size": 1,
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "omni" }
+                    ]
+                }
+            ],
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2
+            },
+            "speed": {
+                "rotate": 5,
+                "move": 64
+            },
+            "atack": {
+                "range": 0,
+                "damage": 10,
+                "delay": 20
+            }
+        },
+        {
+            "name": "castle",
+            "view": {
+                "src": "castle",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 1.1
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "recruter" },
+                { "add": "warehouse" }
+            ],
+            "property": {
+                "size": 6,
+                "limInc": 11,
+                "gold": 400,
+                "buildTime": 1000,
+                "maxHp": 1000,
+                "deathAnim": "physic"
+            },
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "buy",
+                        "taget": "worker",
+                        "x": 0,
+                        "y": 0,
+                        "hotkey": "e"
+                    }
+                }
+            }
+        },
+        {
+            "name": "barracks",
+            "view": {
+                "src": "barracks",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 0.31,
+                "modelAlign": "CCi"
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "recruter" }
+            ],
+            "property": {
+                "size": 4,
+                "gold": 150,
+                "buildTime": 500
+            },
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": [
+                        {
+                            "action": "buy",
+                            "taget": "pikeman",
+                            "x": 0,
+                            "y": 0,
+                            "hotkey": "e"
+                        },
+                        {
+                            "action": "buy",
+                            "taget": "hummer",
+                            "x": 1,
+                            "y": 0,
+                            "hotkey": "h"
+                        },
+                        {
+                            "action": "buy",
+                            "taget": "gelion",
+                            "x": 2,
+                            "y": 0,
+                            "hotkey": "g"
+                        },
+                        {
+                            "action": "buy",
+                            "taget": "balista",
+                            "x": 3,
+                            "y": 0,
+                            "hotkey": "b"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "house",
+            "view": {
+                "src": "house",
+                "size": 0.35,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "limInc": 10,
+                "buildTime": 300,
+                "size": 2
+            },
+            "behavior": [
+              { "add": "building" }
+            ]
+        },
+        {
+            "name": "house1",
+            "view": {
+                "src": "house1",
+                "size": 0.0006,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCC",
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 100,
+                "limInc": 10,
+                "buildTime": 300,
+                "size": 3,
+                "isBackground": 1
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "tower",
+            "view": {
+                "src": "tower",
+                "size": 0.35,
+                "physic": "box",
+                "boxSizeX": 0.21,
+                "boxSizeY": 0.21,
+                "boxSizeZ": 0.5,
+                "modelAlign": "CCi",
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "property": {
+                "gold": 150,
+                "buildTime": 500,
+                "maxHp": 150,
+                "size": 2
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 0,
+                "move": 0
+            },
+            "atack": {
+                "range": 8,
+                "damage": 15,
+                "delay": 40,
+                "bullet": "bullets/pike"
+            }
+        },
+        {
+            "name": "forge",
+            "view": {
+                "src": "forge",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "behavior": [
+                { "add": "recruter" },
+                { "add": "building" }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "upgrade",
+                        "taget": "atack",
+                        "x": 0,
+                        "y": 0,
+                        "hotkey": "a"
+                    }
+                }
+            },
+            "property": {
+                "gold": 100,
+                "buildTime": 400,
+                "size": 4
+            }
+        },
+        {
+            "name": "stone_cyrcle",
+            "view": {
+                "src": "stone_cyrcle",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.5,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" },
+                    { "add": "glow" }
+                ]
+            },
+            "behavior": [
+                { "add": "recruter" },
+                { "add": "building" }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "buy",
+                        "taget": "golem",
+                        "x": 0,
+                        "y": 0,
+                        "hotkey": "g"
+                    }
+                }
+            },
+            "property": {
+                "gold": 100,
+                "buildTime": 400,
+                "size": 4
+            }
+        },
+        {
+            "name": "adanos_cram",
+            "view": {
+                "src": "adanos_cram",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.5,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "behavior": [
+                { "add": "recruter" },
+                { "add": "building" }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "buy",
+                        "taget": "fire_mage",
+                        "x": 0,
+                        "y": 0,
+                        "hotkey": "m"
+                    }
+                }
+            },
+            "property": {
+                "gold": 100,
+                "buildTime": 700,
+                "size": 2
+            }
+        },
+        {
+            "name": "fire_cram",
+            "view": {
+                "src": "fire_cram",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.5,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "behavior": [
+                { "add": "recruter" },
+                { "add": "building" }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": [
+                        {
+                            "action": "buy",
+                            "taget": "fire_mage",
+                            "x": 0,
+                            "y": 0,
+                            "hotkey": "f"
+                        },
+                        {
+                            "action": "buy",
+                            "taget": "incvisitor",
+                            "x": 0,
+                            "y": 0,
+                            "hotkey": "i"
+                        }
+                    ]
+                }
+            },
+            "property": {
+                "gold": 100,
+                "buildTime": 700,
+                "size": 4
+            }
+        },
+        {
+            "name": "magic_tower",
+            "view": {
+                "src": "magic_tower",
+                "size": 0.02,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.5,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "unit" }
+                ]
+            },
+            "behavior": [
+                { "add": "recruter" },
+                { "add": "building" }
+            ],
+            "commands": {
+                "page": {
+                    "num": 0,
+                    "button": {
+                        "action": "buy",
+                        "taget": "golem",
+                        "x": 0,
+                        "y": 0,
+                        "hotkey": "g"
+                    }
+                }
+            },
+            "property": {
+                "gold": 100,
+                "buildTime": 800,
+                "size": 2
+            }
+        },
+        {
+            "name": "selection.green",
+            "view": {
+                "src": "quad",
+                "size": 0.1,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "add" }
+                ]
+            }
+        },
+        {
+            "name": "crystal",
+            "view": {
+                "src": "crystal",
+                "sizeX": 0.151,
+                "sizeY": 0.151,
+                "sizeZ": 0.135,
+                "physic": "box",
+                "boxSize": 0.1,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "shadowCastTransp" },
+                    { "add": "displace" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            },
+            "property": {
+                "isBackground": 1,
+                "invincible": 1,
+                "mouseHint": "$(object/gold)",
+                "size": 1
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "resource" }
+            ]
+        },
+        {
+            "name": "ore_sparks",
+            "view": {
+                "src": "ore_sparks",
+                "size": 0.04,
+                "physic": "sphere",
+                "diameter": 0.5,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "shadowCastTransp" },
+                    { "add": "displace" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            }
+        },
+        {
+            "name": "crystal.green",
+            "view": {
+                "src": "crystal.green",
+                "size": 0.3,
+                "physic": "box",
+                "boxSize": 0.1,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "shadowCastTransp" },
+                    { "add": "displace" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            },
+            "property": {
+                "isBackground": 1,
+                "size": 2
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "crystal.red",
+            "view": {
+                "src": "crystal.red",
+                "size": 0.3,
+                "physic": "box",
+                "boxSize": 0.1,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "shadowCastTransp" },
+                    { "add": "displace" },
+                    { "add": "glow" },
+                    { "add": "add" }
+                ]
+            },
+            "property": {
+                "isBackground": 1,
+                "size": 2
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "bonus",
+            "view": {
+                "src": "hill",
+                "size": 0.02,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "add" },
+                    { "add": "glow" }
+                ]
+            },
+            "behavior": [
+                { "add": "bonus" }
+            ],
+            "property": {
+                "user":{
+                    "bonusAnim" : "rotate",
+                    "bonusType" : "hill"
+                },
+                "mouseHint": "$(object/heal_rune)",
+                "invincible":  1,
+                "visionRange": 16
+            }
+        },
+        {
+            "name": "chest",
+            "view": {
+                "src": "chest",
+                "size": 0.0175,
+                "modelAlign": "CCC",
+                "specular": 0,
+                "material": { "add": "glow" }
+            },
+            "behavior": [
+                { "add": "bonus" }
+            ],
+            "property": {
+                "mouseHint": "$(object/arto_ore)",
+                "user":{
+                    "bonusType" : "event"
+                },
+                "invincible": 1,
+                "visionRange": 16
+            }
+        },
+        {
+            "name": "chest_small",
+            "view": {
+                "src": "chest",
+                "sizeX": 0.01,
+                "sizeY": 0.0175,
+                "sizeZ": 0.0175,
+                "modelAlign": "CCC",
+                "specular": 0
+            },
+            "behavior": [
+                { "add": "bonus" }
+            ],
+            "property": {
+                "mouseHint": "$(object/small_chest)",
+                "bonusType":"event",
+                "invincible": 1
+            }
+        },
+        {
+            "name": "ycube",
+            "view": {
+                "src": "ycube",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "glow" }
+                ]
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "flag",
+            "view": {
+                "src": "flag",
+                "size": 0.06,
+                "modelAlign": "CCi",
+                "specular": 0
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "palms",
+            "view": {
+                "src": "palms",
+                "size": 0.017,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "add": "displace" }
+                ]
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "frog",
+            "view": {
+                "src": "frog",
+                "size": 0.05,
+                "modelAlign": "CCC"
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "barrel",
+            "view": {
+                "src": "barrel",
+                "size": 0.05,
+                "modelAlign": "CCC"
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "pyramid",
+            "view": {
+                "src": "pyramid",
+                "size": 0.15,
+                "modelAlign": "CCC"
+            },
+            "property": {
+                "isBackground": 1,
+                "size": 10
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "racoon",
+            "view": {
+                "src": "racoon",
+                "size": 0.15,
+                "modelAlign": "CCC",
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "shadowCastTransp" },
+                    { "add": "transparent" }
+                ]
+            },
+            "property": {
+                "isBackground": 1,
+                "size": 0
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "tower0",
+            "view": {
+                "src": "tower0",
+                "size": 0.04,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC"
+            },
+            "property": {
+                "deathAnim": "physic",
+                "size": 2
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "wall",
+            "view": {
+                "src": "wall",
+                "size": 0.02,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC"
+            },
+            "property": {
+                "deathAnim": "physic",
+                "size": 1
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        },
+        {
+            "name": "snake",
+            "view": {
+                "src": "snake",
+                "size": 0.05,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC"
+            },
+            "property": {
+                "deathAnim": "physic",
+                "size": 1
+            },
+            "behavior": [
+                { "add": "building" }
+            ]
+        }
+    ]
+}

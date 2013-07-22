@@ -9,7 +9,6 @@ INPUT(
 ./debug/terrain.o
 ./debug/array2d.o
 ./debug/world.o
-./debug/abstractxmlreader.o
 ./debug/prototypesloader.o
 ./debug/lexicalcast.o
 ./debug/guipass.o
@@ -110,4 +109,7 @@ INPUT(
 ./debug/checkbox.o
 ./debug/gamemessages.o
 ./debug/netuserclient.o
+./debug/decalobject.o
+./debug/packetobject.o
+./debug/upgrade.o
 );

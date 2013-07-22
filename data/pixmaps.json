@@ -1,0 +1,74 @@
+{
+  "data": {
+    "pixmap": [
+      {
+        "src": "data/textures/gui/hp.png",
+        "name": "gui/hp"
+      },
+      {
+        "src": "data/textures/gui/grayBar.png",
+        "name": "gui/gray"
+      },
+      {
+        "src": "data/textures/gui/bar.png",
+        "name": "gui/bar"
+      },
+      {
+        "src": "data/textures/gui/hintFrame.png",
+        "name": "gui/hintFrame"
+      },
+      {
+        "src": "data/textures/gui/ckBoxFrame.png",
+        "name": "gui/ckBoxFrame"
+      },
+      {
+        "src": "data/textures/gui/paper512.png",
+        "name": "gui/background512"
+      },
+      {
+        "src": "data/textures/gui/paper.png",
+        "name": "gui/background"
+      },
+      {
+        "src": "data/textures/gui/buttonFrame.png",
+        "name": "gui/frame"
+      },
+      {
+        "src": "data/textures/gui/baseFrame.png",
+        "name": "gui/frame2"
+      },
+      {
+        "src": "data/textures/gui/scroolDown.png",
+        "name": "gui/scroolDown"
+      },
+      {
+        "src": "data/textures/gui/scroolUp.png",
+        "name": "gui/scroolUp"
+      },
+      {
+        "src": "data/textures/gui/buttonBack.png",
+        "name": "gui/buttonBack"
+      },
+      {
+        "src": "data/textures/gui/buttonBackD.png",
+        "name": "gui/buttonBackD"
+      },
+      {
+        "src": "data/textures/gui/colors.png",
+        "name": "gui/colors"
+      },
+      {
+        "src": "data/textures/gui/ckBox.png",
+        "name": "gui/ckBox"
+      },
+      {
+        "src": "data/textures/gui/spark.png",
+        "name": "gui/spark"
+      },
+      {
+        "src": "data/textures/gui/cride.png",
+        "name": "gui/cride"
+      }
+    ]
+  }
+}

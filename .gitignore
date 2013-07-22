@@ -1,4 +1,7 @@
 *.rar
+*.exe
+*.dll
+*.o
 *.pydevproject
 .project
 .metadata

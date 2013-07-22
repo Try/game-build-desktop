@@ -1,0 +1,117 @@
+{
+    "class": [
+        {
+            "name": "hud/blink",
+            "view": [
+                {
+                    "src": "hud/blink",
+                    "size": 0.1,
+                    "material": [
+                        { "del": "shadow_cast" },
+                        { "del": "phong" },
+                        { "add": "glow" },
+                        { "add": "add" }
+                    ]
+                },
+                {
+                    "src": "sphere",
+                    "size": 0.4,
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "omni" }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "hud/take",
+            "view": [
+                {
+                    "src": "hud/move",
+                    "size": 0.1,
+                    "material": [
+                        { "del": "shadow_cast" },
+                        { "del": "phong" },
+                        { "add": "glow" },
+                        { "add": "transparent_no_zw" }
+                    ]
+                },
+                {
+                    "src": "sphere",
+                    "size": 1.4,
+                    "material": [
+                        { "del": "phong" },
+                        { "del": "shadow_cast" },
+                        { "add": "omni" }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "hud/move",
+            "view": {
+                "src": "hud/move",
+                "size": 0.1,
+                "material": [
+                    { "del": "shadow_cast" },
+                    { "del": "phong" },
+                    { "add": "glow" },
+                    { "add": "transparent_no_zw" }
+                ]
+            }
+        },
+        {
+            "name": "hud/atack",
+            "view": {
+                "src": "hud/atack",
+                "size": 0.1,
+                "material": [
+                    { "del": "shadow_cast" },
+                    { "del": "phong" },
+                    { "add": "transparent_no_zw" },
+                    { "add": "glow" }
+                ]
+            }
+        },
+        {
+            "name": "selection.over",
+            "view": {
+                "src": "hud/selection.over",
+                "size": 0.1,
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "transparent_no_zw" }
+                ]
+            }
+        },
+        {
+            "name": "selection.moveTo",
+            "view": {
+                "src": "hud/selection.moveTo",
+                "size": 0.1,
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "transparent_no_zw" }
+                ]
+            }
+        },
+        {
+            "name": "selection.atkTo",
+            "view": {
+                "src": "hud/selection.atkTo",
+                "size": 0.1,
+                "specular": 0.0,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "transparent_no_zw" }
+                ]
+            }
+        }
+    ]
+}

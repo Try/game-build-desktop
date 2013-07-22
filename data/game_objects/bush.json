@@ -1,0 +1,136 @@
+{
+    "class": [
+        {
+            "name": "farn0",
+            "view": {
+                "src": "farn0",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "blush" },
+                    { "add": "phong_atest" }
+                ]
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "farn1",
+            "view": {
+                "src": "farn1",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "blush" },
+                    { "add": "phong_atest" }
+                ]
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "flowers0",
+            "view": {
+                "src": "flowers0",
+                "size": 0.025,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": { "add": "blush" }
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "blush0",
+            "view": {
+                "src": "blush0",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "blush" },
+                    { "add": "phong_atest" }
+                ]
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "blush1",
+            "view": {
+                "src": "blush1",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "blush" },
+                    { "add": "phong_atest" }
+                ]
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "blush2",
+            "view": {
+                "src": "blush2",
+                "size": 0.08,
+                "modelAlign": "CCi",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "add": "blush" },
+                    { "add": "phong_atest" }
+                ]
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "grass0",
+            "view": {
+                "src": "grass0",
+                "size": 0.06,
+                "modelAlign": "CCC",
+                "specular": 0,
+                "randRotate": true,
+                "material": [
+                    { "del": "phong" },
+                    { "del": "shadow_cast" },
+                    { "add": "grass" }
+                ]
+            },
+            "property": { "isBackground": 1 }
+        }
+    ]
+}

@@ -1,0 +1,338 @@
+{
+    "data":{
+        "shaders":[
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/final.frag",
+                "name":"final",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/bloomCombine.frag",
+                "name":"bloomCombine",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/brightPass.frag",
+                "name":"brightPass"
+            },
+            {
+                "vs":"data/sh/gauss.vert",
+                "fs":"data/sh/gauss.frag",
+                "name":"gauss",
+                "define":[
+                    { "NON_COMOPUTE_MACRO": "rgb"}
+                ]
+            },
+            {
+                "vs":"data/sh/blitShader.vert",
+                "fs":"data/sh/blitShader.frag",
+                "name":"blt",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/gui.vert",
+                "fs":"data/sh/gui.frag",
+                "name":"gui",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/shadow_map.vert",
+                "fs":"data/sh/shadow_map.frag",
+                "name":"shadow_map",
+                "define":[
+                    { "teamColor": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/shadow_map.vert",
+                "fs":"data/sh/shadow_map.frag",
+                "name":"shadow_map_atest",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"main_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "gbuffer": ""},
+                    { "specular": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"transparent_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "specular": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"transparent_material_shadow",
+                "define":[
+                    { "oclusion": "0"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "0"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"},
+                    { "transparent_shadowmap": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"grass_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "lighting": ""},
+                    { "specular": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "bumpMapping": "0"},
+                    { "gbuffer": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"zfill_material",
+                "define":[
+                    { "oclusion": "0"},
+                    { "bumpMapping": "0"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"unit_main_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "gbuffer": ""},
+                    { "specular": ""},
+                    { "teamColor": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"main_material_atest",
+                "define":[
+                    { "alpha_test": "(diff.a < 0.5)"},
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "gbuffer": ""},
+                    { "specular": ""},
+                    { "teamColor": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"fog_of_war",
+                "define":[
+                    { "oclusion": "0"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "0"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"terrain_main_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "gbuffer": ""},
+                    { "specular": ""},
+                    { "teamColor": ""},
+                    { "terrain": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"terrain_minor_main_material",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "gbuffer": ""},
+                    { "specular": ""},
+                    { "teamColor": ""},
+                    { "terrain": ""},
+                    { "terrainCL": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"displace",
+                "define":[
+                    { "displace": ""},
+                    { "bumpMapping": "settings_normalMap"},
+                    { "oclusion": "settings_oclusionenable"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"water",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "0"},
+                    { "displace": ""},
+                    { "lambert": ""},
+                    { "lighting": ""},
+                    { "shadows": "settings_shadowenable"},
+                    { "shadowsColored": "settings_shadowenable_cl"},
+                    { "water": ""},
+                    { "specular": ""}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"blend_add",
+                "define":[
+                    { "oclusion": "settings_oclusionenable"},
+                    { "diffuseTexture": ""},
+                    { "bumpMapping": "0"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"},
+                    { "premultAlpha": "1"}
+                ]
+            },
+            {
+                "vs":"data/sh/main_material.vert",
+                "fs":"data/sh/main_material.frag",
+                "name":"glow",
+                "define":[
+                    { "oclusion": "0"},
+                    { "diffuseTexture": ""},
+                    { "glow": ""},
+                    { "bumpMapping": "0"},
+                    { "shadows": "0"},
+                    { "shadowsColored": "0"},
+                    { "premultAlpha": "1"}
+                ]
+            },
+            {
+                "vs":"data/sh/omni.vert",
+                "fs":"data/sh/omni.frag",
+                "name":"omni",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/avatar_final.frag",
+                "name":"avatar_final",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/htonorm.vert",
+                "fs":"data/sh/htonorm.frag",
+                "name":"htonorm",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/gi_accept.frag",
+                "name":"gi_accept",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/volumetricLight.frag",
+                "name":"volumetricLight",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/postProcess.vert",
+                "fs":"data/sh/aceptFog.frag",
+                "name":"aceptFog",
+                "define":[
+                ]
+            },
+            {
+                "vs":"data/sh/gauss.vert",
+                "fs":"data/sh/gauss.frag",
+                "name":"gauss_ao",
+                "define":[
+                    { "NON_COMOPUTE_MACRO": "rgb"}
+                ]
+            },
+            {
+                "vs":"data/sh/gauss.vert",
+                "fs":"data/sh/gauss.frag",
+                "name":"gauss_gb",
+                "define":[
+                    { "NON_COMOPUTE_MACRO": "r = base.r"}
+                ]
+            },
+            {
+                "vs":"data/sh/gauss.vert",
+                "fs":"data/sh/gauss.frag",
+                "name":"gauss_b",
+                "define":[
+                    { "NON_COMOPUTE_MACRO": "rg = base.rg"}
+                ]
+            }
+        ]
+    }
+}

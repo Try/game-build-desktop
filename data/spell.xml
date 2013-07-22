@@ -8,9 +8,10 @@
   </spell>
 
   <spell name = "fire_strike" >
-    <property coolDown = "2000"/>
-    <property manaCost = "0" />
-    <info     type     = "castToUnit" />
+    <property coolDown    = "2000"/>
+    <property manaCost    = "0" />
+    <property bulletSpeed = "650" />
+    <info     type        = "castToUnit" />
   </spell>
 
   <spell name = "heal" >

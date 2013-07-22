@@ -9,7 +9,6 @@ INPUT(
 ./release/terrain.o
 ./release/array2d.o
 ./release/world.o
-./release/abstractxmlreader.o
 ./release/prototypesloader.o
 ./release/lexicalcast.o
 ./release/guipass.o
@@ -110,4 +109,7 @@ INPUT(
 ./release/checkbox.o
 ./release/gamemessages.o
 ./release/netuserclient.o
+./release/decalobject.o
+./release/packetobject.o
+./release/upgrade.o
 );

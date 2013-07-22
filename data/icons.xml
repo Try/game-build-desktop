@@ -1,5 +1,13 @@
 <?xml version="1.0" ?>
 <data>
+  <pixmap  src  = "data/icons/actions/atack.png"
+           name = "gui/icon/atack.melee"  />
+  <pixmap  src  = "data/icons/actions/atack.png"
+           name = "gui/icon/atack.range"  />
+  <pixmap  src  = "data/icons/actions/blink.png"
+           name = "gui/icon/atack.magic"  />
+
+
   <pixmap  src  = "data/icons/actions/fire_strike.png"
            name = "gui/icon/fire_strike"  />
   <pixmap  src  = "data/icons/actions/blink.png"
@@ -12,6 +20,8 @@
            name = "gui/icon/build"  />
   <pixmap  src  = "data/icons/actions/cancel.png"
            name = "gui/icon/cancel"  />
+  <pixmap  src  = "data/icons/camera.png"
+           name = "gui/icon/camera"  />
 
 
   <pixmap  src  = "data/icons/actions/move.png"

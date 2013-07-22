@@ -1,0 +1,170 @@
+{
+  "data": {
+    "pixmap": [
+      {
+        "src": "data/icons/actions/atack.png",
+        "name": "gui/icon/atack.melee"
+      },
+      {
+        "src": "data/icons/actions/atack.png",
+        "name": "gui/icon/atack.range"
+      },
+      {
+        "src": "data/icons/actions/blink.png",
+        "name": "gui/icon/atack.magic"
+      },
+      {
+        "src": "data/icons/actions/fire_strike.png",
+        "name": "gui/icon/fire_strike"
+      },
+      {
+        "src": "data/icons/actions/blink.png",
+        "name": "gui/icon/blink"
+      },
+      {
+        "src": "data/icons/pointlight.png",
+        "name": "gui/icon/pointlight"
+      },
+      {
+        "src": "data/icons/actions/build.png",
+        "name": "gui/icon/build"
+      },
+      {
+        "src": "data/icons/actions/cancel.png",
+        "name": "gui/icon/cancel"
+      },
+      {
+        "src": "data/icons/camera.png",
+        "name": "gui/icon/camera"
+      },
+      {
+        "src": "data/icons/actions/move.png",
+        "name": "gui/icon/move"
+      },
+      {
+        "src": "data/icons/actions/stop.png",
+        "name": "gui/icon/stop"
+      },
+      {
+        "src": "data/icons/actions/hold.png",
+        "name": "gui/icon/hold"
+      },
+      {
+        "src": "data/icons/actions/patrul.png",
+        "name": "gui/icon/patrul"
+      },
+      {
+        "src": "data/icons/actions/atack.png",
+        "name": "gui/icon/atack"
+      },
+      {
+        "src": "data/icons/items/shield.png",
+        "name": "gui/item/shield"
+      },
+      {
+        "src": "data/icons/worker.png",
+        "name": "gui/icon/worker"
+      },
+      {
+        "src": "data/icons/pikeman.png",
+        "name": "gui/icon/pikeman"
+      },
+      {
+        "src": "data/icons/hummer.png",
+        "name": "gui/icon/hummer"
+      },
+      {
+        "src": "data/icons/balista.png",
+        "name": "gui/icon/balista"
+      },
+      {
+        "src": "data/icons/gelion.png",
+        "name": "gui/icon/gelion"
+      },
+      {
+        "src": "data/icons/golem.png",
+        "name": "gui/icon/golem"
+      },
+      {
+        "src": "data/icons/golem.png",
+        "name": "gui/icon/golem_t"
+      },
+      {
+        "src": "data/icons/fire_element.png",
+        "name": "gui/icon/fire_element"
+      },
+      {
+        "src": "data/icons/mage.png",
+        "name": "gui/icon/fire_mage"
+      },
+      {
+        "src": "data/icons/incvisitor.png",
+        "name": "gui/icon/incvisitor"
+      },
+      {
+        "src": "data/icons/golem.png",
+        "name": "gui/icon/golem_t"
+      },
+      {
+        "src": "data/icons/golem.png",
+        "name": "gui/icon/golem_f"
+      },
+      {
+        "src": "data/icons/bear.png",
+        "name": "gui/icon/bear"
+      },
+      {
+        "src": "data/icons/castle.png",
+        "name": "gui/icon/castle"
+      },
+      {
+        "src": "data/icons/house.png",
+        "name": "gui/icon/house"
+      },
+      {
+        "src": "data/icons/tower.png",
+        "name": "gui/icon/tower"
+      },
+      {
+        "src": "data/icons/barracks.png",
+        "name": "gui/icon/barracks"
+      },
+      {
+        "src": "data/icons/forge.png",
+        "name": "gui/icon/forge"
+      },
+      {
+        "src": "data/icons/stone_cyrcle.png",
+        "name": "gui/icon/stone_cyrcle"
+      },
+      {
+        "src": "data/icons/adanos_cram.png",
+        "name": "gui/icon/adanos_cram"
+      },
+      {
+        "src": "data/icons/fire_cram.png",
+        "name": "gui/icon/fire_cram"
+      },
+      {
+        "src": "data/icons/magic_tower.png",
+        "name": "gui/icon/magic_tower"
+      },
+      {
+        "src": "data/icons/gold.png",
+        "name": "gui/icon/gold"
+      },
+      {
+        "src": "data/icons/crystal.png",
+        "name": "gui/icon/crystal"
+      },
+      {
+        "src": "data/icons/crystal.png",
+        "name": "gui/icon/crystal.green"
+      },
+      {
+        "src": "data/icons/crystal.png",
+        "name": "gui/icon/crystal.red"
+      }
+    ]
+  }
+}

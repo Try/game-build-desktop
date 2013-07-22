@@ -76,16 +76,13 @@
   <shader vs = "data/sh/main_material.vert"
           fs = "data/sh/main_material.frag"
           name = "transparent_material_shadow">
-    <define oclusion       = "0" />
-    <define diffuseTexture = "" />
-    <define bumpMapping    = "0" />
-    <define lambert        = "" />
-    <define lighting       = "" />
-
+    <define oclusion        = "0" />
+    <define diffuseTexture  = "" />
+    <define bumpMapping     = "0" />
     <define shadows         = "0" />
     <define shadowsColored  = "0" />
 
-    <define multiplay_alpha = "" />
+    <define transparent_shadowmap = "" />
   </shader>
 
   <shader vs = "data/sh/main_material.vert"

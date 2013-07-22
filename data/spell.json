@@ -1,0 +1,29 @@
+{
+    "spell": [
+        {
+            "name": "blink",
+            "property": {
+                "coolDown": 300,
+                "manaCost": 0
+            },
+            "info": { "type": "castToCoord" }
+        },
+        {
+            "name": "fire_strike",
+            "property": {
+                "coolDown": 2000,
+                "manaCost": 0,
+                "bulletSpeed": 650
+            },
+            "info": { "type": "castToUnit" }
+        },
+        {
+            "name": "heal",
+            "property": {
+                "coolDown": 50,
+                "manaCost": 0
+            },
+            "info": { "type": "castToUnit" }
+        }
+    ]
+}

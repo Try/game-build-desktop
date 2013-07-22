@@ -231,6 +231,11 @@ void main() {
   diff.rgb *= diff.a;
 #endif	
 
+#ifdef transparent_shadowmap
+  diff.rgb *= (0.5*(1.0-diff.a));
+  diff.a    = diff.a;
+#endif
+
   gl_FragColor = diff;
   //gl_FragData[0] = vec4(1.0);//vec4(diff.rgb, 1.0);
   }
@@ -436,9 +441,15 @@ float computeLambert( float3 normal
 
 float3 computeLightColor( sampler2D shadowMap,
                           uniform sampler2D shadowMapCl,
+						  float3 lcolor,
                           float3 shPosition ){
   float2 smC = shPosition.xy*0.5+float2( 0.5 );
-  return tex2D( shadowMapCl, smC ).rgb;
+  float4 v = tex2D( shadowMapCl, smC );
+  
+  //float z = v.a;
+
+  //float cl = 1.0 - clamp( 75.0*(shPosition.z - z + 0.4), 0.0, 1.0 );
+  return v.rgb;//mix( v.rgb, lcolor, cl );
   }
 
 FS_Output main( FS_Input input
@@ -578,6 +589,7 @@ FS_Output main( FS_Input input
 #if shadowsColored
     diffuse.rgb *= float3( ( computeLightColor( shadowMap,
                                                 shadowMapCl,
+												lightColor,
                                                 input.shPosition )*lambertVal
                              + lightAblimient*ao ) ); 
 #else
@@ -639,8 +651,14 @@ FS_Output main( FS_Input input
 #endif
     //ret.accum = float4(l,l,l, 1.0);
 #ifdef premultAlpha
-    albedo.rgb *= albedo.a;
+    albedo.rgb    *= albedo.a;
+	ret.accum.rgb *= ret.accum.a;
 #endif	
+
+#ifdef transparent_shadowmap
+    ret.accum.rgb *= (0.5*(1.0-ret.accum.a));
+    ret.accum.a    = input.normal.a;
+#endif
 
 #ifdef gbuffer
     ret.diffuse     = albedo;

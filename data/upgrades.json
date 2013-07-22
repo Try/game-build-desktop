@@ -1,0 +1,12 @@
+{
+    "upgrade": [
+        {
+            "name": "atack",
+            "property": {
+                "lvCount"  : 3,
+                "gold"     : 1,
+                "buildTime": 100
+            }
+        }
+    ]
+}
