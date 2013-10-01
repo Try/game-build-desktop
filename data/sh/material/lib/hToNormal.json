@@ -1,0 +1,483 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 827,
+                "pos_y": 131
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -144,
+                "pos_y": 27
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/water/hmap.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -530,
+                "pos_y": -37
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 666,
+                "pos_y": 26
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -513,
+                "pos_y": 147
+            },
+            "operation": "/"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -681,
+                "pos_y": 216
+            },
+            "const": [
+                1,
+                512,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -677,
+                "pos_y": 103
+            },
+            "const": [
+                0,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -505,
+                "pos_y": 327
+            },
+            "operation": "/"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -676,
+                "pos_y": 327
+            },
+            "const": [
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -676,
+                "pos_y": 441
+            },
+            "const": [
+                512,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -331,
+                "pos_y": -7
+            },
+            "operation": "+"
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -147,
+                "pos_y": 241
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/water/hmap.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -311,
+                "pos_y": 146
+            },
+            "operation": "-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 38,
+                "pos_y": 50
+            },
+            "operation": "-"
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -144,
+                "pos_y": 459
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/water/hmap.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -141,
+                "pos_y": 672
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/water/hmap.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -521,
+                "pos_y": 247
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -355,
+                "pos_y": 307
+            },
+            "operation": "+"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -344,
+                "pos_y": 433
+            },
+            "operation": "-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 69,
+                "pos_y": 420
+            },
+            "operation": "-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 193,
+                "pos_y": 134
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 40,
+                "pos_y": 169
+            },
+            "const": [
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 193,
+                "pos_y": 312
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 45,
+                "pos_y": 303
+            },
+            "const": [
+                0,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 367,
+                "pos_y": 195
+            },
+            "operation": "+"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 519,
+                "pos_y": 240
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 366,
+                "pos_y": 321
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "func1arg",
+            "edit": {
+                "pos_x": 656,
+                "pos_y": 228
+            },
+            "function": {
+                "name": "normalize"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 12,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 1
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 1
+        },
+        {
+            "port1": 17,
+            "portId1": 2,
+            "port2": 7,
+            "portId2": 3
+        },
+        {
+            "port1": 18,
+            "portId1": 2,
+            "port2": 7,
+            "portId2": 3
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 7,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 1
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 10,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 12,
+            "portId2": 3
+        },
+        {
+            "port1": 20,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 19,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 2
+        },
+        {
+            "port1": 19,
+            "portId1": 2,
+            "port2": 15,
+            "portId2": 2
+        },
+        {
+            "port1": 17,
+            "portId1": 1,
+            "port2": 16,
+            "portId2": 1
+        },
+        {
+            "port1": 18,
+            "portId1": 1,
+            "port2": 16,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 17,
+            "portId2": 3
+        },
+        {
+            "port1": 15,
+            "portId1": 1,
+            "port2": 18,
+            "portId2": 3
+        },
+        {
+            "port1": 22,
+            "portId1": 2,
+            "port2": 19,
+            "portId2": 3
+        },
+        {
+            "port1": 24,
+            "portId1": 1,
+            "port2": 20,
+            "portId2": 3
+        },
+        {
+            "port1": 20,
+            "portId1": 2,
+            "port2": 21,
+            "portId2": 1
+        },
+        {
+            "port1": 24,
+            "portId1": 2,
+            "port2": 22,
+            "portId2": 3
+        },
+        {
+            "port1": 22,
+            "portId1": 1,
+            "port2": 23,
+            "portId2": 1
+        },
+        {
+            "port1": 25,
+            "portId1": 1,
+            "port2": 24,
+            "portId2": 3
+        },
+        {
+            "port1": 27,
+            "portId1": 1,
+            "port2": 25,
+            "portId2": 3
+        },
+        {
+            "port1": 25,
+            "portId1": 2,
+            "port2": 26,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 27,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/util/cube.mx",
+        "options": []
+    }
+}

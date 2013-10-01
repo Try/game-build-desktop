@@ -1,0 +1,224 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 739,
+                "pos_y": 53
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 199,
+                "pos_y": -191
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -386,
+                "pos_y": 54
+            },
+            "input": {
+                "vcomponent": 2,
+                "connect": 0,
+                "inputName": "ss_normal"
+            }
+        },
+        {
+            "type": "func2arg",
+            "edit": {
+                "pos_x": 24,
+                "pos_y": 50
+            },
+            "function": {
+                "name": "dot"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -209,
+                "pos_y": 132
+            },
+            "const": [
+                0,
+                0,
+                -1,
+                0
+            ]
+        },
+        {
+            "type": "func1arg",
+            "edit": {
+                "pos_x": -113,
+                "pos_y": -35
+            },
+            "function": {
+                "name": "normalize"
+            }
+        },
+        {
+            "type": "func2arg",
+            "edit": {
+                "pos_x": 420,
+                "pos_y": 91
+            },
+            "function": {
+                "name": "pow"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 286,
+                "pos_y": 171
+            },
+            "const": [
+                4
+            ]
+        },
+        {
+            "type": "mvp",
+            "edit": {
+                "pos_x": -420,
+                "pos_y": -129
+            },
+            "uniform": {
+                "name": "mvpMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -250,
+                "pos_y": -120
+            },
+            "operation": "*"
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 157,
+                "pos_y": 61
+            },
+            "function": {
+                "fileName": "one_minus.json",
+                "name": "one_minus.json"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": 287,
+                "pos_y": 70
+            },
+            "swizle": "x---"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": 538,
+                "pos_y": 15
+            },
+            "swizle": "xxx-"
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 732,
+                "pos_y": 215
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 3,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 3,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 10,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 11,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 12,
+            "portId2": 2
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 12,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/golem.mx"
+    }
+}

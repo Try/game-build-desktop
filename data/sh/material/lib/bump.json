@@ -1,0 +1,437 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 457,
+                "pos_y": 44
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 140,
+                "pos_y": -96
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -472,
+                "pos_y": -11
+            },
+            "input": {
+                "vcomponent": 3,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -335,
+                "pos_y": -12
+            },
+            "function": {
+                "fileName": "normal.json",
+                "name": "normal.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -333,
+                "pos_y": 61
+            },
+            "function": {
+                "fileName": "normal.json",
+                "name": "normal.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -471,
+                "pos_y": 64
+            },
+            "input": {
+                "vcomponent": 2,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -992,
+                "pos_y": 103
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/buildings/castlen.png",
+                "textureSemantic": "Normal",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -834,
+                "pos_y": 39
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": 0,
+                "inputName": "texture"
+            }
+        },
+        {
+            "type": "func2arg",
+            "edit": {
+                "pos_x": -191,
+                "pos_y": 159
+            },
+            "function": {
+                "name": "cross"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -231,
+                "pos_y": 323
+            },
+            "swizle": "xxx-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -29,
+                "pos_y": 8
+            },
+            "operation": "*"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -230,
+                "pos_y": 382
+            },
+            "swizle": "zzz-"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -228,
+                "pos_y": 446
+            },
+            "swizle": "yyy-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -26,
+                "pos_y": 101
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -22,
+                "pos_y": 189
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 118,
+                "pos_y": 37
+            },
+            "operation": "+"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 264,
+                "pos_y": 82
+            },
+            "operation": "+"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -523,
+                "pos_y": 292
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -694,
+                "pos_y": 360
+            },
+            "const": [
+                2,
+                2,
+                2
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -395,
+                "pos_y": 335
+            },
+            "operation": "-"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -521,
+                "pos_y": 425
+            },
+            "const": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 449,
+                "pos_y": 191
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 44,
+                "pos_y": 347
+            },
+            "operation": "-"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -94,
+                "pos_y": 319
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -1162,
+                "pos_y": 31
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -534,
+                "pos_y": 212
+            },
+            "function": {
+                "fileName": "unpack_normal.json",
+                "name": "unpack_normal.json"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 3,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 1
+        },
+        {
+            "port1": 7,
+            "portId1": 2,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 17,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 25,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 15,
+            "portId1": 1,
+            "port2": 10,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 2
+        },
+        {
+            "port1": 22,
+            "portId1": 2,
+            "port2": 12,
+            "portId2": 2
+        },
+        {
+            "port1": 15,
+            "portId1": 2,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 16,
+            "portId1": 2,
+            "port2": 14,
+            "portId2": 3
+        },
+        {
+            "port1": 16,
+            "portId1": 1,
+            "port2": 15,
+            "portId2": 3
+        },
+        {
+            "port1": 21,
+            "portId1": 1,
+            "port2": 16,
+            "portId2": 3
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 16,
+            "portId2": 3
+        },
+        {
+            "port1": 19,
+            "portId1": 1,
+            "port2": 17,
+            "portId2": 3
+        },
+        {
+            "port1": 17,
+            "portId1": 2,
+            "port2": 18,
+            "portId2": 1
+        },
+        {
+            "port1": 19,
+            "portId1": 2,
+            "port2": 20,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 2,
+            "port2": 22,
+            "portId2": 3
+        },
+        {
+            "port1": 22,
+            "portId1": 1,
+            "port2": 23,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 24,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 25,
+            "portId2": 2
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 25,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 25,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": []
+    }
+}

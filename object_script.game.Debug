@@ -11,9 +11,7 @@ INPUT(
 ./debug/world.o
 ./debug/prototypesloader.o
 ./debug/lexicalcast.o
-./debug/guipass.o
 ./debug/maingui.o
-./debug/paintergui.o
 ./debug/math.o
 ./debug/scroolbar.o
 ./debug/button.o
@@ -44,7 +42,6 @@ INPUT(
 ./debug/overlaywidget.o
 ./debug/centralwidget.o
 ./debug/listbox.o
-./debug/font.o
 ./debug/formbuilder.o
 ./debug/propertyeditor.o
 ./debug/lineedit.o
@@ -99,7 +96,6 @@ INPUT(
 ./debug/material.o
 ./debug/scene.o
 ./debug/time.o
-./debug/jniBind.o
 ./debug/ifstream.o
 ./debug/tnloptimize.o
 ./debug/graphicssettingswidget.o
@@ -111,8 +107,24 @@ INPUT(
 ./debug/netuserclient.o
 ./debug/decalobject.o
 ./debug/packetobject.o
-<<<<<<< HEAD
 ./debug/upgrade.o
-=======
->>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
+./debug/graphics.o
+./debug/vertexinputassembly.o
+./debug/shadersource.o
+./debug/objectcode.o
+./debug/buildinfunction.o
+./debug/frustum.o
+./debug/mxassembly.o
+./debug/shadermaterial.o
+./debug/guiassembly.o
+./debug/materialserver.o
+./debug/gbufffer.o
+./debug/compileoptions.o
+./debug/operationdef.o
+./debug/android_dummy.o
+./debug/loadscreen.o
+./debug/mainmenu.o
+./debug/optionswidget.o
+./debug/mapselectmenu.o
+./debug/desertstriketutorialscenario.o
 );

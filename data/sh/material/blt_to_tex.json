@@ -1,0 +1,282 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 120,
+                "pos_y": 126
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -97,
+                "pos_y": 269
+            },
+            "texture_rect": {
+                "fileName": "C:/Users/Try/Home/Programming/Tempest/MaterialEdit/MaterialEdit-build/test.bmp",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -1028,
+                "pos_y": 183
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -524,
+                "pos_y": -17
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -359,
+                "pos_y": -74
+            },
+            "operation": "+"
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": -523,
+                "pos_y": -93
+            },
+            "uniform": {
+                "name": "dxScreenOffset",
+                "size0": 2,
+                "size1": 1
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -181,
+                "pos_y": -52
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -343,
+                "pos_y": 30
+            },
+            "const": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -698,
+                "pos_y": 277
+            },
+            "operation": "*"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -797,
+                "pos_y": 126
+            },
+            "swizle": "x---"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -841,
+                "pos_y": 235
+            },
+            "swizle": "yy--"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -848,
+                "pos_y": 341
+            },
+            "const": [
+                0,
+                -1
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -585,
+                "pos_y": 150
+            },
+            "operation": "+"
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": -265,
+                "pos_y": 231
+            },
+            "option": {
+                "name": "directX"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -439,
+                "pos_y": 196
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -556,
+                "pos_y": 332
+            },
+            "const": [
+                0,
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -411,
+                "pos_y": 316
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 4,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 12,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 10,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 12,
+            "portId2": 3
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 3
+        },
+        {
+            "port1": 14,
+            "portId1": 2,
+            "port2": 15,
+            "portId2": 1
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 16,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -161,
+                "pos_y": -186
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -568,
+                "pos_y": -213
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -141,
+                "pos_y": -28
+            },
+            "operation": "+"
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -519,
+                "pos_y": 97
+            },
+            "function": {
+                "fileName": "screenData.json",
+                "name": "screenData.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -405,
+                "pos_y": -112
+            },
+            "texture": {
+                "fileName": "",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 3,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

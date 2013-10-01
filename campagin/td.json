@@ -1,591 +1,578 @@
 {
     "class": [
-      {
-        "name": "pikeman",
-        "view": {
-          "src": "pikeman",
-          "size": 0.2,
-          "physic": "box",
-          "boxSizeX": 0.05,
-          "boxSizeY": 0.05,
-          "boxSizeZ": 0.1,
-          "modelAlign": "CCC",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 50 },
-          { "lim": 1 },
-          { "buildTime": 250 },
-          { "type": "light" },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 10,
-          "move": 56
-        },
-        "atack": {
-          "range" : 0,
-          "damage": 5,
-          "delay" : 20,
-          "type"  : "melee"
-        }
-      },
-      {
-        "name": "chevalier",
-        "view": {
-          "src": "chevalier",
-          "size": 0.2,
-          "boxSizeX": 0.05,
-          "boxSizeY": 0.05,
-          "boxSizeZ": 0.1,
-          "modelAlign": "CCC",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 100 },
-          { "lim": 1 },
-          { "buildTime": 250 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 10,
-          "move": 56
-        },
-        "atack": {
-          "range" : 0,
-          "damage": 5,
-          "delay" : 20
-        }
-      },
-      {
-        "name": "balista",
-        "view": {
-          "src": "balista",
-          "size": 0.015,
-          "physic": "sphere",
-          "diameter": 0.2,
-          "modelAlign": "CCi",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 170 },
-          { "lim": 4 },
-          { "buildTime": 500 },
-          { "visionRange": 20 },
-          { "size": 2 },
-          { "type": "armored" },
-          { "maxHp": 80 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 8,
-          "move": 50
-        },
-        "atack": [
-          {
-            "range" : 11,
-            "damage": 15,
-            "delay" : 35,
-            "bullet": "bullets/pike"
-          },
-          {
-            "range" : 11,
-            "damage": 25,
-            "delay" : 35,
-            "bullet": "bullets/pike",
-            "taget" : "armored"
-          }
-        ]
-      },
-      {
-        "name": "gelion",
-        "view": {
-          "src": "gelion",
-          "size": 0.018,
-          "physic": "sphere",
-          "diameter": 0.2,
-          "modelAlign": "CCi",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 100 },
-          { "lim": 2 },
-          { "buildTime": 350 },
-          { "size": 2 },
-          { "type": "light" },
-          { "maxHp": 40 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 20,
-          "move"  : 56
-        },
-        "atack": [
-          {
-            "range": 4,
-            "damage": 4,
-            "delay": 10,
-            "bullet": "bullets/fire_large",
-            "splash": 2,
-            "slpashDamage": 2
-          },
-          {
-            "range": 4,
-            "damage": 8,
-            "delay": 10,
-            "bullet": "bullets/fire_large",
-            "splash": 2,
-            "slpashDamage": 2,
-            "taget": "light"
-          }
-        ]
-      },
-      {
-        "name": "fire_mage",
-        "view": {
-          "src": "fmage",
-          "size": 0.22,
-          "physic": "box",
-          "boxSizeX": 0.05,
-          "boxSizeY": 0.05,
-          "boxSizeZ": 0.1,
-          "modelAlign": "CCC",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "commands": {
-          "page": {
-            "num": 0,
-            "button": [
-              {
-                "action": "castToGround",
-                "taget": "fire_strike",
-                "x": 0,
-                "y": 3,
-                "hotkey": "f",
-                "icon": "gui/icon/fire_strike",
-                "hint": "$(spell/fire_strike)"
-              },
-              {
-                "action": "castToGround",
-                "taget": "blink",
-                "x": 1,
-                "y": 3,
-                "hotkey": "b",
-                "icon": "gui/icon/blink",
-                "hint": "$(spell/blink)"
-              }
-            ]
-          }
-        },
-        "property": [
-          { "gold": 200 },
-          { "lim":  1 },
-          { "buildTime": 350 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 10,
-          "move"  : 56
-        },
-        "atack": [
-          {
-            "range" : 5,
-            "damage": 10,
-            "delay" : 40,
-            "bullet": "bullets/fire",
-            "splash": 5,
-            "slpashDamage": 5
-          },
-          {
-            "range": 5,
-            "damage": 17,
-            "delay": 40,
-            "bullet": "bullets/fire",
-            "splash": 5,
-            "slpashDamage": 6,
-            "taget": "light"
-          }
-        ],
-        "ability": [
-          { "name": "blink" },
-          { "name": "fire_strike" }
-        ]
-      },
-      {
-        "name": "water_mage",
-        "view": {
-          "src": "wmage",
-          "size": 0.22,
-          "physic": "box",
-          "boxSizeX": 0.05,
-          "boxSizeY": 0.05,
-          "boxSizeZ": 0.1,
-          "modelAlign": "CCC",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "commands": {
-          "page": {
-            "num": 0,
-            "button": [
-              {
-                "action": "castToGround",
-                "taget": "fire_strike",
-                "x": 0,
-                "y": 3,
-                "hotkey": "f",
-                "icon": "gui/icon/fire_strike",
-                "hint": "$(spell/fire_strike)"
-              },
-              {
-                "action": "castToGround",
-                "taget": "blink",
-                "x": 1,
-                "y": 3,
-                "hotkey": "b",
-                "icon": "gui/icon/blink",
-                "hint": "$(spell/blink)"
-              }
-            ]
-          }
-        },
-        "property": [
-          { "gold": 175 },
-          { "lim" : 1 },
-          { "buildTime": 350 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 10,
-          "move"  : 56
-        },
-        "atack": {
-          "range" : 7,
-          "damage": 5,
-          "delay" : 40,
-          "bullet": "bullets/fire"
-        },
-        "ability": [
-          { "name": "blink" },
-          { "name": "heal" }
-        ]
-      },
-      {
-        "name": "incvisitor",
-        "view": {
-          "src": "chevalier",
-          "size": 0.2,
-          "physic": "box",
-          "boxSizeX": 0.05,
-          "boxSizeY": 0.05,
-          "boxSizeZ": 0.1,
-          "modelAlign": "CCC",
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 85 },
-          { "lim": 1 },
-          { "buildTime": 350 },
-          { "maxHp": 200 },
-          { "armor": 1 },
-          { "deathAnim": "physic" }
-        ],
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 10,
-          "move": 56
-        },
-        "atack": {
-          "range" : 0,
-          "damage": 10,
-          "delay" : 20
-        }
-      },
-      {
-        "name": "golem",
-        "view": {
-          "src": "golem",
-          "size": 0.2,
-          "physic": "sphere",
-          "diameter": 0.4,
-          "modelAlign": "CCC",
-          "material": { "add": "glow" }
-        },
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "property": [
-          { "size": 2 },
-          { "gold": 400 },
-          { "maxHp": 300 },
-          { "buildTime": 400 },
-          { "armor": 3 },
-          { "type": "armored" },
-          { "deathAnim": "physic" }
-        ],
-        "speed": {
-          "rotate": 5,
-          "move"  : 60
-        },
-        "atack": {
-          "range": 1,
-          "damage": 20,
-          "delay": 20,
-          "splash": 2,
-          "slpashDamage": 15
-        }
-      },
-      {
-        "name": "fire_element",
-        "view": [
-          {
-            "src": "fire_element",
-            "size": 0.2,
-            "physic": "sphere",
-            "diameter": 0.4,
-            "modelAlign": "CCC",
-            "material": [
-              { "del": "phong" },
-              { "del": "phong" },
-              { "del": "shadow_cast" },
-              { "add": "shadowCastTransp" },
-              { "add": "add" },
-              { "add": "glow" },
-              { "add": "add" },
-              { "add": "glow" }
-            ]
-          },
-          {
-            "src": "sphere",
-            "size": 1,
-            "material": [
-              { "del": "phong" },
-              { "del": "shadow_cast" },
-              { "add": "omni" }
-            ]
-          }
-        ],
-        "commands": {
-          "page": {
-            "num": 0,
-            "button": {
-              "action": "castToGround",
-              "taget": "fire_strike",
-              "x": 0,
-              "y": 3,
-              "hotkey": "f",
-              "icon": "gui/icon/fire_strike",
-              "hint": "$(spell/fire_strike)"
-            }
-          }
-        },
-        "behavior": [
-          { "add": "move" },
-          { "add": "warrior" }
-        ],
-        "property": [
-          { "size": 2 },
-          { "gold": 475 },
-          { "maxHp": 200 },
-          { "buildTime": 400 },
-          { "deathAnim": "physic" }
-        ],
-        "speed": {
-          "rotate": 5,
-          "move"  : 50
-        },
-        "atack": [
-          {
-            "range" : 14,
-            "damage": 15,
-            "delay" : 20,
-            "bullet": "bullets/fire_large",
-            "splash": 5,
-            "slpashDamage": 5
-          },
-          {
-            "range" : 14,
-            "damage": 20,
-            "delay" : 20,
-            "bullet": "bullets/fire_large",
-            "splash": 5,
-            "slpashDamage": 8,
-            "taget": "light"
-          }
-        ],
-        "ability": { "name": "fire_strike" }
-      },
+        {
+            "name": "pikeman",
+            "extends":"unit",
 
-      {
-        "name": "castle",
-        "view": {
-          "src": "castle",
-          "size": 0.035,
-          "physic": "box",
-          "boxSize": 1.1
+            "view": {
+                "src": "pikeman",
+                "size": 0.2,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 50,
+                "lim": 1,
+                "buildTime": 250,
+                "type": "light",
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range" : 0,
+                "damage": 5,
+                "delay" : 20,
+                "type"  : "melee"
+            }
         },
-        "behavior": [
-          { "add": "building" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 0,
-          "move"  : 0
+
+        {
+            "name": "chevalier",
+            "extends":"unit",
+
+            "view": {
+                "src": "chevalier",
+                "size": 0.2,
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 100,
+                "lim": 1,
+                "buildTime": 250,
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range" : 0,
+                "damage": 5,
+                "delay" : 20,
+                "type"  : "melee"
+            }
         },
-        "property": [
-          { "type": "armored" },
-          { "size": 6 },
-          { "limInc": 11 },
-          { "gold": 250 },
-          { "buildTime": 200 },
-          { "maxHp": 1000 },
-          { "armor": 4 },
-          { "deathAnim": "physic" }
-        ],
-        "atack": {
-          "range": 10,
-          "damage": 40,
-          "delay": 10,
-          "bullet": "bullets/fire_large",
-          "splash": 2,
-          "slpashDamage": 30
+
+        {
+            "name": "balista",
+            "extends":"unit",
+
+            "view": {
+                "src": "balista",
+                "size": 0.015,
+                "physic": "sphere",
+                "diameter": 0.2,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 170,
+                "lim": 4,
+                "buildTime": 500,
+                "visionRange": 20,
+                "size": 2,
+                "type": "armored",
+                "maxHp": 80,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 8,
+                "move"  : 56,
+                "acseleration": 4
+            },
+            "atack": [
+                {
+                    "range" : 9,
+                    "damage": 15,
+                    "delay" : 35,
+                    "bullet": "bullets/pike"
+                },
+                {
+                    "range" : 11,
+                    "damage": 25,
+                    "delay" : 35,
+                    "bullet": "bullets/pike",
+                    "taget" : "armored"
+                }
+            ]
+        },
+
+        {
+            "name": "gelion",
+            "extends":"unit",
+
+            "view": {
+                "src": "gelion",
+                "size": 0.018,
+                "physic": "sphere",
+                "diameter": 0.2,
+                "modelAlign": "CCi",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 100,
+                "lim": 2,
+                "buildTime": 350,
+                "size": 2,
+                "type": "light",
+                "maxHp": 40,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 20,
+                "move"  : 56,
+                "acseleration": 6
+            },
+            "atack": [
+                {
+                    "range": 4,
+                    "damage": 4,
+                    "delay": 10,
+                    "bullet": "bullets/fire_large",
+                    "splash": 2,
+                    "slpashDamage": 2
+                },
+                {
+                    "range": 4,
+                    "damage": 8,
+                    "delay": 10,
+                    "bullet": "bullets/fire_large",
+                    "splash": 2,
+                    "slpashDamage": 2,
+                    "taget": "light"
+                }
+            ]
+        },
+
+        {
+            "name": "fire_mage",
+            "extends":"unit",
+
+            "view": {
+                "src": "fmage",
+                "size": 0.22,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 200,
+                "lim":  1,
+                "buildTime": 350,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move"  : 56,
+                "acseleration": 4
+            },
+            "atack": [
+                {
+                    "range" : 5,
+                    "damage": 10,
+                    "delay" : 40,
+                    "bullet": "bullets/fire",
+                    "splash": 5,
+                    "slpashDamage": 5
+                },
+                {
+                    "range": 5,
+                    "damage": 17,
+                    "delay": 40,
+                    "bullet": "bullets/fire",
+                    "splash": 5,
+                    "slpashDamage": 6,
+                    "taget": "light"
+                }
+            ],
+            "ability": [
+                "fire_strike"
+            ]
+        },
+
+        {
+            "name": "water_mage",
+            "extends":"unit",
+
+            "view": {
+                "src": "wmage",
+                "size": 0.22,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 175,
+                "lim" : 1,
+                "buildTime": 350,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move"  : 56,
+                "acseleration": 4
+            },
+            "atack": {
+                "range" : 7,
+                "damage": 5,
+                "delay" : 40,
+                "bullet": "bullets/fire"
+            },
+            "ability": [
+                "blink",
+                "heal"
+            ]
+        },
+
+        {
+            "name"   : "incvisitor",
+            "extends": "unit",
+
+            "view": {
+                "src": "chevalier",
+                "size": 0.2,
+                "physic": "box",
+                "boxSizeX": 0.05,
+                "boxSizeY": 0.05,
+                "boxSizeZ": 0.1,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 85,
+                "lim": 1,
+                "buildTime": 350,
+                "maxHp": 200,
+                "armor": 1,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 10,
+                "move": 56
+            },
+            "atack": {
+                "range" : 0,
+                "damage": 10,
+                "delay" : 20
+            }
+        },
+
+        {
+            "name": "golem",
+            "extends":"unit",
+
+            "view": {
+                "src": "golem",
+                "size": 0.2,
+                "physic": "sphere",
+                "diameter": 0.4,
+                "modelAlign": "CCC",
+
+                "shadedMaterial":"glow_unit",
+                "shadowType": "bias"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "gold": 400,
+                "maxHp": 300,
+                "buildTime": 400,
+                "armor": 3,
+                "type": "armored",
+                "deathAnim": "physic"
+            },
+            "speed": {
+                "rotate": 5,
+                "move"  : 56,
+                "acseleration": 16
+            },
+            "atack": {
+                "range": 1,
+                "damage": 20,
+                "delay": 20,
+                "splash": 2,
+                "slpashDamage": 15
+            }
+        },
+
+        {
+            "name": "fire_element",
+            "extends":"unit",
+
+            "view": [
+                {
+                    "src": "fire_element",
+                    "size": 0.2,
+                    "physic": "sphere",
+                    "diameter": 0.4,
+                    "modelAlign": "CCC",
+                    "shadedMaterial":"fire_element",
+                    "shadowType":"bias"
+                }
+            ],
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "property": {
+                "size": 2,
+                "gold": 475,
+                "maxHp": 200,
+                "buildTime": 400
+            },
+            "speed": {
+                "rotate": 5,
+                "move"  : 56,
+                "acseleration": 4
+            },
+            "atack": [
+                {
+                    "range" : 14,
+                    "damage": 15,
+                    "delay" : 20,
+                    "bullet": "bullets/fire_large",
+                    "splash": 5,
+                    "slpashDamage": 5
+                },
+                {
+                    "range" : 14,
+                    "damage": 20,
+                    "delay" : 20,
+                    "bullet": "bullets/fire_large",
+                    "splash": 5,
+                    "slpashDamage": 8,
+                    "taget": "light"
+                }
+            ],
+            "ability": { "name": "fire_strike" }
+        },
+
+        {
+            "name": "castle",
+            "extends":"unit",
+
+            "view": {
+                "src": "castle",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 1.1,
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 0,
+                "move"  : 0
+            },
+            "property": {
+                "type": "armored",
+                "size": 6,
+                "limInc": 11,
+                "gold": 250,
+                "buildTime": 200,
+                "maxHp": 1000,
+                "armor": 4,
+                "deathAnim": "physic"
+            },
+            "atack": {
+                "range": 13,
+                "damage": 40,
+                "delay": 10,
+                "bullet": "bullets/fire_large",
+                "splash": 2,
+                "slpashDamage": 30
+            }
+        },
+
+
+        {
+            "name": "castle_w",
+            "extends":"unit",
+
+            "view": {
+                "src": "castle",
+                "size": 0.035,
+                "physic": "box",
+                "boxSize": 1.1,
+                "shadedMaterial":"water"
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 0,
+                "move"  : 0
+            },
+            "property": {
+                "type": "armored",
+                "size": 6,
+                "limInc": 11,
+                "gold": 250,
+                "buildTime": 200,
+                "maxHp": 1000,
+                "armor": 4,
+                "deathAnim": "physic"
+            },
+            "atack": {
+                "range": 10,
+                "damage": 40,
+                "delay": 10,
+                "bullet": "bullets/fire_large",
+                "splash": 2,
+                "slpashDamage": 30
+            }
+        },
+
+        {
+            "name": "house",
+            "extends":"unit",
+
+            "view": {
+                "src": "house",
+                "size": 0.35,
+                "physic": "box",
+                "boxSize": 0.21,
+                "modelAlign": "CCi",
+                "specular": 0.0,
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold"     : 100,
+                "limInc"   : 10,
+                "buildTime": 300,
+                "size"     : 2
+            },
+            "behavior": { "add": "building" }
+        },
+
+        {
+            "name": "tower",
+            "extends":"unit",
+
+            "view": {
+                "src": "tower",
+                "size": 0.35,
+                "physic": "box",
+                "boxSizeX": 0.21,
+                "boxSizeY": 0.21,
+                "boxSizeZ": 0.5,
+                "modelAlign": "CCi",
+                "specular": 0.0,
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
+            },
+            "property": {
+                "gold": 150,
+                "buildTime": 500,
+                "armor": 4,
+                "maxHp": 250,
+                "type": "armored",
+                "size": 2,
+                "deathAnim": ""
+            },
+            "behavior": [
+                { "add": "building" },
+                { "add": "warrior" }
+            ],
+            "speed": {
+                "rotate": 0,
+                "move"  : 0
+            },
+            "atack": {
+                "range" : 10,
+                "damage": 40,
+                "delay" : 8,
+                "bullet": "bullets/pike"
+            }
         }
-      },
-      {
-        "name": "house",
-        "view": {
-          "src": "house",
-          "size": 0.35,
-          "physic": "box",
-          "boxSize": 0.21,
-          "modelAlign": "CCi",
-          "specular": 0.0,
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold"     : 100 },
-          { "limInc"   : 10  },
-          { "buildTime": 300 },
-          { "size"     : 2   }
-        ],
-        "behavior": { "add": "building" }
-      },
-      {
-        "name": "tower",
-        "view": {
-          "src": "tower",
-          "size": 0.35,
-          "physic": "box",
-          "boxSizeX": 0.21,
-          "boxSizeY": 0.21,
-          "boxSizeZ": 0.5,
-          "modelAlign": "CCi",
-          "specular": 0.0,
-          "material": [
-            { "del": "phong" },
-            { "add": "unit" }
-          ]
-        },
-        "property": [
-          { "gold": 150 },
-          { "buildTime": 500 },
-          { "armor": 4 },
-          { "maxHp": 250 },
-          { "type": "armored" },
-          { "size": 2 }
-        ],
-        "behavior": [
-          { "add": "building" },
-          { "add": "warrior" }
-        ],
-        "speed": {
-          "rotate": 0,
-          "move"  : 0
-        },
-        "atack": {
-          "range" : 13,
-          "damage": 20,
-          "delay" : 8,
-          "bullet": "bullets/pike"
-        }
-      }
     ],
 
     "spell": [
-      {
-        "name": "blink",
-        "property": {
-          "coolDown": 300,
-          "manaCost": 0
+        {
+            "name": "blink",
+            "property": {
+                "coolDown": 300,
+                "manaCost": 0
+            },
+            "info": { "type": "castToCoord" }
         },
-        "info": { "type": "castToCoord" }
-      },
-      {
-        "name": "fire_strike",
-        "property": {
-          "coolDown": 4000,
-          "manaCost": 0
+        {
+            "name": "fire_strike",
+            "property": {
+                "coolDown": 4000,
+                "manaCost": 0
+            },
+            "info": { "type": "castToUnit" }
         },
-        "info": { "type": "castToUnit" }
-      },
-      {
-        "name": "heal",
-        "property": {
-          "coolDown": 50,
-          "manaCost": 0
-        },
-        "info": { "type": "castToUnit" }
-      }
+        {
+            "name": "heal",
+            "property": {
+                "coolDown": 50,
+                "manaCost": 0
+            },
+            "info": { "type": "castToUnit" }
+        }
     ]
-  }
+}

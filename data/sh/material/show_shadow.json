@@ -1,0 +1,67 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 289,
+                "pos_y": -1
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 48,
+                "pos_y": -148
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": 40,
+                "pos_y": 32
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/Tempest/MaterialEdit/MaterialEdit-build/test.bmp",
+                "textureSemantic": "ShadowMap"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -201,
+                "pos_y": -29
+            },
+            "function": {
+                "fileName": "shadow_coord.json",
+                "name": "shadow_coord.json"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": ""
+    }
+}

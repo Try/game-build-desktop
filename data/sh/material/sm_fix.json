@@ -1,0 +1,54 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -260,
+                "pos_y": -96
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -262,
+                "pos_y": 32
+            },
+            "const": [
+                1,
+                1,
+                1,
+                1
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

@@ -4,7 +4,29 @@
       { "file": "data/shaders.json" },
       { "file": "data/pixmaps.json" },
       { "file": "data/icons.json" }
-      ],
+    ],
+
+    "pack":[
+      {
+        "name" :"pikeman",
+        "model":"data/models/units/pikeman.mx",
+        "diff" :"data/textures/units/pikeman.png",
+        "norm" :"data/textures/units/pikemann.png"
+      },
+      {
+        "name" :"chevalier",
+        "model":"data/models/units/chevalier.mx",
+        "diff" :"data/textures/units/chevalier.png",
+        "norm" :"data/textures/units/chevaliern.png",
+        "glow" :"data/textures/crystals/blue.png"
+      },
+      {
+        "name" :"balista",
+        "model":"data/models/balista.mx",
+        "diff" :"data/textures/units/balista.png",
+        "norm" :"data/textures/units/balistan.png"
+      }
+    ],
 
     "model": [
       {
@@ -60,16 +82,8 @@
         "name": "worker/model"
       },
       {
-        "file": "data/models/units/pikeman.mx",
-        "name": "pikeman/model"
-      },
-      {
-        "file": "data/models/units/chevalier.mx",
-        "name": "chevalier/model"
-      },
-      {
-        "file": "data/models/balista.mx",
-        "name": "balista/model"
+        "file": "data/models/units/pikeman1.mx",
+        "name": "pikeman1/model"
       },
       {
         "file": "data/models/gelion.mx",
@@ -283,6 +297,7 @@
         "file": "data/models/grass/0.mx",
         "name": "grass0/model"
       },
+
       {
         "file": "data/models/plants/farn0.mx",
         "name": "farn0/model"
@@ -291,6 +306,16 @@
         "file": "data/models/plants/farn1.mx",
         "name": "farn1/model"
       },
+      {
+        "file": "data/models/plants/farn2.mx",
+        "name": "farn2/model"
+      },
+
+      {
+        "file": "data/models/plants/vine0.mx",
+        "name": "vine0/model"
+      },
+
       {
         "file": "data/models/plants/flowers0.mx",
         "name": "flowers0/model"
@@ -510,17 +535,18 @@
         "name": "water/diff"
       },
       {
-        "file": "data/textures/water/hmap.png",
-        "name": "water/height"
+        "file": "data/textures/water/hmap1.png",
+        "name": "water/height0"
       },
       {
-        "file": "data/textures/water/waterNorm.png",
-        "name": "water/norm"
+        "file": "data/textures/water/hmap.png",
+        "name": "water/height1"
       },
       {
         "file": "data/textures/wood/0.jpg",
         "name": "bullets/pike/diff"
       },
+
       {
         "file": "data/textures/particles/fball.png",
         "name": "bullets/fire/diff"
@@ -529,6 +555,12 @@
         "file": "data/textures/particles/fire.png",
         "name": "bullets/fire/glow"
       },
+      {
+        "file": "data/textures/particles/fire2.png",
+        "name": "bullets/fire/emis"
+      },
+
+
       {
         "file": "data/textures/crystals/blue.png",
         "name": "bullets/dark_ball/diff"
@@ -557,41 +589,19 @@
         "file": "data/textures/sm.png",
         "name": "worker/sm"
       },
+
       {
-        "file": "data/textures/units/pikeman.png",
-        "name": "pikeman/diff"
+        "file": "data/textures/units/pikeman1.png",
+        "name": "pikeman1/diff"
       },
       {
-        "file": "data/textures/units/pikemann.png",
-        "name": "pikeman/norm"
+        "file": "data/textures/units/pikeman1n.png",
+        "name": "pikeman1/norm"
       },
+
       {
         "file": "data/textures/sm.png",
         "name": "pikeman/sm"
-      },
-      {
-        "file": "data/textures/units/chevalier.png",
-        "name": "chevalier/diff"
-      },
-      {
-        "file": "data/textures/units/chevaliern.png",
-        "name": "chevalier/norm"
-      },
-      {
-        "file": "data/textures/crystals/blue.png",
-        "name": "chevalier/glow"
-      },
-      {
-        "file": "data/textures/sm.png",
-        "name": "chevalier/sm"
-      },
-      {
-        "file": "data/textures/t.png",
-        "name": "balista/diff"
-      },
-      {
-        "file": "data/textures/sm.png",
-        "name": "balista/sm"
       },
       {
         "file": "data/textures/t.png",
@@ -644,6 +654,10 @@
       {
         "file": "data/textures/particles/fmono.png",
         "name": "fire_element/diff"
+      },
+      {
+        "file": "data/textures/particles/fire2.png",
+        "name": "fire_element/emis"
       },
       {
         "file": "data/textures/particles/fire2.png",
@@ -1013,6 +1027,25 @@
         "file": "data/textures/plants/farn1n.png",
         "name": "farn1/norm"
       },
+      {
+        "file": "data/textures/plants/farn2.png",
+        "name": "farn2/diff"
+      },
+      {
+        "file": "data/textures/plants/farn2n.png",
+        "name": "farn2/norm"
+      },
+
+      {
+        "file": "data/textures/plants/vine0.png",
+        "name": "vine0/diff"
+      },
+      {
+        "file": "data/textures/plants/vine0n.png",
+        "name": "vine0/norm"
+      },
+
+
       {
         "file": "data/textures/plants/flowers0.png",
         "name": "flowers0/diff"

@@ -1,0 +1,470 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 413,
+                "pos_y": -53
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 112,
+                "pos_y": -190
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -178,
+                "pos_y": -51
+            },
+            "function": {
+                "fileName": "phong.json",
+                "name": "phong.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1569,
+                "pos_y": -79
+            },
+            "function": {
+                "fileName": "waterNormal.json",
+                "name": "waterNormal.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1118,
+                "pos_y": -40
+            },
+            "function": {
+                "fileName": "bump.json",
+                "name": "bump.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -668,
+                "pos_y": 293
+            },
+            "function": {
+                "fileName": "shadow_val.json",
+                "name": "shadow_val.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -493,
+                "pos_y": 60
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/water/water.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -931,
+                "pos_y": -78
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -725,
+                "pos_y": -106
+            },
+            "operation": "+"
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -485,
+                "pos_y": 278
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/screens/31.PNG",
+                "textureSemantic": "ScreenData",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -217,
+                "pos_y": 98
+            },
+            "swizle": "w---"
+        },
+        {
+            "type": "func3arg",
+            "edit": {
+                "pos_x": 37,
+                "pos_y": 20
+            },
+            "function": {
+                "name": "mix"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1035,
+                "pos_y": 252
+            },
+            "function": {
+                "fileName": "screen_coord.json",
+                "name": "screen_coord.json"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -658,
+                "pos_y": 181
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -485,
+                "pos_y": -198
+            },
+            "const": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -1166,
+                "pos_y": 126
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -151,
+                "pos_y": 232
+            },
+            "function": {
+                "fileName": "main_material.json",
+                "name": "main_material.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 62,
+                "pos_y": 246
+            },
+            "function": {
+                "fileName": "alpha_blend.json",
+                "name": "alpha_blend.json"
+            }
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": 224,
+                "pos_y": -21
+            },
+            "option": {
+                "name": "oesRender"
+            }
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": -846,
+                "pos_y": 73
+            },
+            "option": {
+                "name": "oesRender"
+            }
+        },
+        {
+            "type": "time",
+            "edit": {
+                "pos_x": -1416,
+                "pos_y": 69
+            },
+            "uniform": {
+                "name": "time",
+                "size0": 1,
+                "size1": 1
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -1241,
+                "pos_y": 20
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -1644,
+                "pos_y": 126
+            },
+            "const": [
+                2048,
+                2048,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -1435,
+                "pos_y": -3
+            },
+            "operation": "/"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -1641,
+                "pos_y": 7
+            },
+            "const": [
+                0,
+                0
+            ]
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1017,
+                "pos_y": 184
+            },
+            "function": {
+                "fileName": "waterScrDisplace.json",
+                "name": "waterScrDisplace.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -940,
+                "pos_y": -167
+            },
+            "function": {
+                "fileName": "waterScrDisplace.json",
+                "name": "waterScrDisplace.json"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 5,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 17,
+            "portId1": 3,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 16,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 3,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 2,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 11,
+            "portId1": 3,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 4,
+            "port2": 10,
+            "portId2": 2
+        },
+        {
+            "port1": 18,
+            "portId1": 1,
+            "port2": 11,
+            "portId2": 2
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 12,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 2,
+            "portId1": 4,
+            "port2": 14,
+            "portId2": 1
+        },
+        {
+            "port1": 19,
+            "portId1": 2,
+            "port2": 15,
+            "portId2": 1
+        },
+        {
+            "port1": 17,
+            "portId1": 1,
+            "port2": 16,
+            "portId2": 2
+        },
+        {
+            "port1": 18,
+            "portId1": 2,
+            "port2": 17,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 18,
+            "portId2": 3
+        },
+        {
+            "port1": 5,
+            "portId1": 3,
+            "port2": 19,
+            "portId2": 3
+        },
+        {
+            "port1": 21,
+            "portId1": 2,
+            "port2": 20,
+            "portId2": 1
+        },
+        {
+            "port1": 19,
+            "portId1": 1,
+            "port2": 21,
+            "portId2": 3
+        },
+        {
+            "port1": 23,
+            "portId1": 2,
+            "port2": 22,
+            "portId2": 1
+        },
+        {
+            "port1": 21,
+            "portId1": 1,
+            "port2": 23,
+            "portId2": 3
+        },
+        {
+            "port1": 23,
+            "portId1": 1,
+            "port2": 24,
+            "portId2": 1
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 25,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 26,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": [
+            "shadow"
+        ]
+    }
+}

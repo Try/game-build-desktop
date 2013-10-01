@@ -2,6 +2,18 @@
   "data": {
     "pixmap": [
       {
+        "src": "data/icons/actions/plus.png",
+        "name": "gui/plus"
+      },
+      {
+        "src": "data/icons/actions/minus.png",
+        "name": "gui/minus"
+      },
+      {
+        "src": "data/icons/actions/triangle.png",
+        "name": "gui/triangle"
+      },
+      {
         "src": "data/textures/gui/hp.png",
         "name": "gui/hp"
       },
@@ -14,8 +26,12 @@
         "name": "gui/bar"
       },
       {
-        "src": "data/textures/gui/hintFrame.png",
+        "src":  "data/textures/gui/hintFrame.png",
         "name": "gui/hintFrame"
+      },
+      {
+        "src":  "data/textures/gui/mmenuback.png",
+        "name": "gui/mmenuback"
       },
       {
         "src": "data/textures/gui/ckBoxFrame.png",
@@ -36,6 +52,10 @@
       {
         "src": "data/textures/gui/baseFrame.png",
         "name": "gui/frame2"
+      },
+      {
+        "src":  "data/textures/gui/buttonHightlight.png",
+        "name": "gui/buttonHightlight"
       },
       {
         "src": "data/textures/gui/scroolDown.png",

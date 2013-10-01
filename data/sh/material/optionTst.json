@@ -1,0 +1,51 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -277,
+                "pos_y": 36
+            },
+            "const": [
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -272,
+                "pos_y": -119
+            },
+            "const": [
+                0,
+                -1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": -60,
+                "pos_y": -31
+            },
+            "option": {
+                "name": "directX"
+            }
+        }
+    ],
+    "connections": [],
+    "editor": {
+        "model": ""
+    }
+}

@@ -1,22 +1,7 @@
 {
     "class": [
         {
-            "name": "tree0",
-            "view": {
-                "src": "tree0",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "specular": 0.05,
-                "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
-            },
+            "name": "tree_base",
             "view_size": {
                 "min": 0.8,
                 "max": 1.3
@@ -27,8 +12,30 @@
                 { "isBackground": 1 }
             ]
         },
+
+        {
+            "name": "tree0",
+            "extends":"tree_base",
+
+            "view": {
+                "src": "tree0",
+                "size": 0.08,
+                "physic": "box",
+                "boxSizeX": 0.2,
+                "boxSizeY": 0.2,
+                "boxSizeZ": 1,
+                "specular": 0.05,
+                "randRotate": true,
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
+            }
+        },
+
         {
             "name": "tree0_dbg",
+            "extends":"tree_base",
+
             "view": {
                 "src": "tree0",
                 "size": 0.08,
@@ -38,24 +45,16 @@
                 "boxSizeZ": 1,
                 "specular": 0.05,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "add" },
-                    { "add": "phong_atest" }
-                ]
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
-            "property": [
-                { "size": 3 },
-                { "isBackground": 1 }
-            ]
+
+                "shadedMaterial":"add",
+                "shadowType": "bias"
+            }
         },
+
         {
             "name": "tree1",
+            "extends":"tree_base",
+
             "view": [
                 {
                     "src": "tree1",
@@ -65,11 +64,9 @@
                     "boxSizeY": 0.2,
                     "boxSizeZ": 1,
                     "specular": 0.05,
-                    "material": [
-                        { "del": "phong" },
-                        { "add": "blush" },
-                        { "add": "phong_atest" }
-                    ]
+
+                    "shadedMaterial":"main",
+                    "shadowType": "bias"
                 },
                 {
                     "src": "tree1.bark",
@@ -79,21 +76,17 @@
                     "boxSizeY": 0.2,
                     "boxSizeZ": 1,
                     "specular": 0.05,
-                    "material": { "add": "blush" }
+                    "shadedMaterial":"main"
                 }
             ],
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
-                { "size": 4 },
-                { "isBackground": 1 }
+                { "size": 4 }
             ]
         },
         {
             "name": "tree2",
+            "extends":"tree_base",
+
             "view": {
                 "src": "tree2",
                 "size": 0.04,
@@ -103,17 +96,10 @@
                 "boxSizeZ": 1,
                 "specular": 0.05,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
                 { "size": 4 },
                 { "isBackground": 1 }
@@ -121,6 +107,8 @@
         },
         {
             "name": "tree3",
+            "extends":"tree_base",
+
             "view": {
                 "src": "tree3",
                 "size": 0.04,
@@ -130,17 +118,10 @@
                 "boxSizeZ": 1,
                 "specular": 0.05,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
                 { "size": 4 },
                 { "isBackground": 1 }
@@ -148,6 +129,8 @@
         },
         {
             "name": "tree4",
+            "extends":"tree_base",
+
             "view": {
                 "src": "tree4",
                 "size": 0.03,
@@ -157,17 +140,10 @@
                 "boxSizeZ": 1,
                 "specular": 0.05,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
                 { "size": 1 },
                 { "isBackground": 1 }
@@ -175,6 +151,8 @@
         },
         {
             "name": "tree5",
+            "extends":"tree_base",
+
             "view": {
                 "src": "tree1.bark",
                 "size": 0.05,
@@ -183,17 +161,9 @@
                 "boxSizeY": 0.2,
                 "boxSizeZ": 1,
                 "specular": 0.05,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main"
             },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
                 { "size": 2 },
                 { "isBackground": 1 }
@@ -201,6 +171,8 @@
         },
         {
             "name": "tree6",
+            "extends":"tree_base",
+
             "view": [
                 {
                     "src": "tree1",
@@ -210,11 +182,9 @@
                     "boxSizeY": 0.2,
                     "boxSizeZ": 1,
                     "specular": 0.05,
-                    "material": [
-                        { "del": "phong" },
-                        { "add": "blush" },
-                        { "add": "phong_atest" }
-                    ]
+
+                    "shadedMaterial":"main",
+                    "shadowType": "bias"
                 },
                 {
                     "src": "tree1.bark",
@@ -230,11 +200,6 @@
                     ]
                 }
             ],
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "behavior": { "add": "building" },
             "property": [
                 { "size": 3 },
                 { "isBackground": 1 }

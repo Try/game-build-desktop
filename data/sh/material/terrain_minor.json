@@ -1,0 +1,101 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 147,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -7,
+                "pos_y": -102
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -328,
+                "pos_y": -14
+            },
+            "function": {
+                "fileName": "main_material.json",
+                "name": "main_material.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -430,
+                "pos_y": 168
+            },
+            "input": {
+                "vcomponent": 5,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -69,
+                "pos_y": 21
+            },
+            "operation": "*"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -275,
+                "pos_y": 119
+            },
+            "swizle": "xxxx"
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": [
+            "bump",
+            "shadow",
+            "unitBump"
+        ]
+    }
+}

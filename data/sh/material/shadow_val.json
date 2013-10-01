@@ -1,0 +1,161 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 286,
+                "pos_y": -4
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 48,
+                "pos_y": -148
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -386,
+                "pos_y": 78
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/Tempest/MaterialEdit/MaterialEdit-build/test.bmp",
+                "textureSemantic": "ShadowMap"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -580,
+                "pos_y": -66
+            },
+            "function": {
+                "fileName": "shadow_coord.json",
+                "name": "shadow_coord.json"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -91,
+                "pos_y": -35
+            },
+            "operation": "-"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -366,
+                "pos_y": -124
+            },
+            "swizle": "z---"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -232,
+                "pos_y": 23
+            },
+            "swizle": "x---"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -96,
+                "pos_y": -139
+            },
+            "const": [
+                1,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 46,
+                "pos_y": -61
+            },
+            "operation": "-"
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 289,
+                "pos_y": 153
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 2,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 3
+        }
+    ],
+    "editor": {
+        "model": ""
+    }
+}

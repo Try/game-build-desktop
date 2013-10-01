@@ -10,8 +10,6 @@ attribute vec4 TexCoord1;
 varying lowp vec4 cl;
 varying lowp vec2 tc;
 
-uniform vec2 dTexCoord;
-
 void main() {
   cl = TexCoord1;
   tc = TexCoord;
@@ -33,14 +31,14 @@ struct FS_Input {
     };
 
 FS_Input main( VS_Input IN,
-               uniform float2 dTexCoord ) {
+               uniform float2 dxScreenOffset ) {
     FS_Input OUT;
 
     float2 c = IN.position.xy;
 
-    OUT.position  = float4( c.x - 1*dTexCoord.x,
-                            c.y + 1*dTexCoord.y, 0.0, 1.0);
-    OUT.texcoord0 = IN.texcoord0;// + float2( dTexCoord.x, 0);
+    OUT.position  = float4( c.x - 1*dxScreenOffset.x,
+                            c.y + 1*dxScreenOffset.y, 0.0, 1.0);
+    OUT.texcoord0 = IN.texcoord0;// + float2( dxScreenOffset.x, 0);
     OUT.color     = IN.color;
 
     return OUT;

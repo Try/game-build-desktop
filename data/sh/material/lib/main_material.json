@@ -1,0 +1,262 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 537,
+                "pos_y": 13
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -148,
+                "pos_y": -64
+            },
+            "function": {
+                "fileName": "bump.json",
+                "name": "bump.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -669,
+                "pos_y": -57
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -478,
+                "pos_y": -81
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/buildings/castlen.png",
+                "textureSemantic": "Normal",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 315,
+                "pos_y": -7
+            },
+            "function": {
+                "fileName": "phong.json",
+                "name": "phong.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -480,
+                "pos_y": 215
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/buildings/castle.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -8,
+                "pos_y": 229
+            },
+            "const": [
+                0.2,
+                0.2,
+                0.2,
+                0
+            ]
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -508,
+                "pos_y": 358
+            },
+            "function": {
+                "fileName": "shadow_val.json",
+                "name": "shadow_val.json"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -89,
+                "pos_y": 373
+            },
+            "swizle": "xxx-"
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": 174,
+                "pos_y": -56
+            },
+            "option": {
+                "name": "bump"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -150,
+                "pos_y": -195
+            },
+            "function": {
+                "fileName": "normal.json",
+                "name": "normal.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -313,
+                "pos_y": -127
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 1,
+                "inputName": "bumpTexture"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -195,
+                "pos_y": 135
+            },
+            "input": {
+                "vcomponent": 4,
+                "connect": 0,
+                "inputName": "diffuse"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 315,
+                "pos_y": -89
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 529,
+                "pos_y": 160
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 9,
+            "portId1": 2,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 11,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 12,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 4,
+            "port2": 6,
+            "portId2": 1
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 5,
+            "port2": 8,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 10,
+            "portId2": 2
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 11,
+            "portId2": 1
+        },
+        {
+            "port1": 4,
+            "portId1": 3,
+            "port2": 12,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": [
+            "bump"
+        ]
+    }
+}

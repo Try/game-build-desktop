@@ -1,0 +1,117 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -506,
+                "pos_y": -132
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -508,
+                "pos_y": -69
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -154,
+                "pos_y": -114
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -697,
+                "pos_y": 96
+            },
+            "input": {
+                "vcomponent": 2,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func3arg",
+            "edit": {
+                "pos_x": -305,
+                "pos_y": -57
+            },
+            "function": {
+                "name": "mix"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -461,
+                "pos_y": 30
+            },
+            "swizle": "x---"
+        }
+    ],
+    "connections": [
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 1
+        },
+        {
+            "port1": 5,
+            "portId1": 3,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 4,
+            "port2": 6,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": ""
+    }
+}

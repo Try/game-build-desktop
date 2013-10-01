@@ -11,9 +11,7 @@ INPUT(
 ./release/world.o
 ./release/prototypesloader.o
 ./release/lexicalcast.o
-./release/guipass.o
 ./release/maingui.o
-./release/paintergui.o
 ./release/math.o
 ./release/scroolbar.o
 ./release/button.o
@@ -44,7 +42,6 @@ INPUT(
 ./release/overlaywidget.o
 ./release/centralwidget.o
 ./release/listbox.o
-./release/font.o
 ./release/formbuilder.o
 ./release/propertyeditor.o
 ./release/lineedit.o
@@ -99,7 +96,6 @@ INPUT(
 ./release/material.o
 ./release/scene.o
 ./release/time.o
-./release/jniBind.o
 ./release/ifstream.o
 ./release/tnloptimize.o
 ./release/graphicssettingswidget.o
@@ -111,8 +107,24 @@ INPUT(
 ./release/netuserclient.o
 ./release/decalobject.o
 ./release/packetobject.o
-<<<<<<< HEAD
 ./release/upgrade.o
-=======
->>>>>>> 3a5ef8bdc340d3fb6196a3de0a1623810855c05b
+./release/graphics.o
+./release/vertexinputassembly.o
+./release/shadersource.o
+./release/objectcode.o
+./release/buildinfunction.o
+./release/frustum.o
+./release/mxassembly.o
+./release/shadermaterial.o
+./release/guiassembly.o
+./release/materialserver.o
+./release/gbufffer.o
+./release/compileoptions.o
+./release/operationdef.o
+./release/android_dummy.o
+./release/loadscreen.o
+./release/mainmenu.o
+./release/optionswidget.o
+./release/mapselectmenu.o
+./release/desertstriketutorialscenario.o
 );

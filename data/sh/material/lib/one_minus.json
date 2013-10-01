@@ -1,0 +1,73 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 274,
+                "pos_y": -90
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 42,
+                "pos_y": -49
+            },
+            "operation": "-"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -285,
+                "pos_y": -81
+            },
+            "const": [
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -284,
+                "pos_y": 16
+            },
+            "input": 1
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 274,
+                "pos_y": 80
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 3
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 3
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 1,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 1
+        }
+    ]
+}

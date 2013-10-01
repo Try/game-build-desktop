@@ -27,12 +27,8 @@
             "view": {
                 "src": "bullets/fire",
                 "size": 0.015,
-                "material": [
-                    { "del": "shadow_cast" },
-                    { "del": "phong" },
-                    { "add": "glow" },
-                    { "add": "add" }
-                ]
+                "shadedMaterial":"fire",
+                "shadowType":"noShadow"
             },
             "property": {
                 "isDynamic": 1,
@@ -44,23 +40,16 @@
             "name": "bullets/fire_large",
             "view": [
                 {
-                    "src": "sphere",
-                    "size": 1.5,
-                    "material": [
-                        { "del": "phong" },
-                        { "del": "shadow_cast" },
-                        { "add": "omni" }
-                    ]
-                },
-                {
                     "src": "bullets/fire",
                     "size": 0.03,
-                    "material": [
-                        { "del": "shadow_cast" },
-                        { "del": "phong" },
-                        { "add": "glow" },
-                        { "add": "add" }
-                    ]
+                    "shadedMaterial":"fire",
+                    "shadowType":"noShadow"
+                },
+                {
+                    "src": "fire",
+                    "size": 1,
+                    "isParticle": "fire2",
+                    "shadedMaterial": "add"
                 }
             ],
             "property": {
@@ -90,6 +79,7 @@
             "view": {
                 "src": "sphere",
                 "size": 1,
+                "shadedMaterial":"addMat",
                 "material": [
                     { "del": "phong" },
                     { "del": "shadow_cast" },
@@ -106,6 +96,7 @@
             "view": {
                 "src": "sphere",
                 "size": 2,
+                "shadedMaterial":"addMat",
                 "material": [
                     { "del": "phong" },
                     { "del": "shadow_cast" },
@@ -122,6 +113,7 @@
             "view": {
                 "src": "sphere",
                 "size": 3,
+                "shadedMaterial":"addMat",
                 "material": [
                     { "del": "phong" },
                     { "del": "shadow_cast" },
@@ -138,11 +130,34 @@
             "view": {
                 "src": "water",
                 "specular": 30,
+                "shadedMaterial":"water",
                 "material": [
                     { "del": "phong" },
                     { "del": "shadow_cast" },
                     { "add": "water" }
                 ]
+            }
+        },
+        {
+            "name":"unit",
+            "speed": {
+                "rotate": 15,
+                "move": 48
+            },
+            "property": {
+                "gold": 100,
+                "lim": 1,
+                "buildTime": 250,
+                "deathAnim": "physic"
+            },
+            "behavior": [
+                { "add": "move" },
+                { "add": "warrior" }
+            ],
+            "atack": {
+                "range": 0,
+                "damage": 5,
+                "delay": 20
             }
         },
         {
@@ -346,7 +361,7 @@
                 "size": 0.018,
                 "physic": "sphere",
                 "diameter": 0.2,
-                "modelAlign": "CCi",
+                "modelAlign": "CCC",
                 "material": [
                     { "del": "phong" },
                     { "add": "unit" }
@@ -518,10 +533,7 @@
                 "boxSizeY": 0.05,
                 "boxSizeZ": 0.1,
                 "modelAlign": "CCC",
-                "material": [
-                    { "del": "phong" },
-                    { "add": "unit" }
-                ]
+                "shadedMaterial":"unit"
             },
             "property": {
                 "gold": 200,
@@ -582,23 +594,8 @@
                     "size": 0.2,
                     "physic": "sphere",
                     "diameter": 0.4,
-                    "modelAlign": "CCC",
-                    "material": [
-                        { "del": "phong" },
-                        { "del": "shadow_cast" },
-                        { "add": "shadowCastTransp" },
-                        { "add": "add" },
-                        { "add": "glow" }
-                    ]
-                },
-                {
-                    "src": "sphere",
-                    "size": 1,
-                    "material": [
-                        { "del": "phong" },
-                        { "del": "shadow_cast" },
-                        { "add": "omni" }
-                    ]
+                    "modelAlign": "CCC",                    
+                    "shadedMaterial":"fire_element"
                 }
             ],
             "commands": {
@@ -648,7 +645,8 @@
                 "boxSizeX": 0.3,
                 "boxSizeY": 0.3,
                 "boxSizeZ": 0.15,
-                "modelAlign": "CCC"
+                "modelAlign": "CCC",
+                "shadedMaterial":"alpha"
             },
             "behavior": [
                 { "add": "move" },
@@ -677,7 +675,8 @@
                 "size": 0.075,
                 "physic": "sphere",
                 "diameter": 0.4,
-                "modelAlign": "CCC"
+                "modelAlign": "CCC",
+                "shadedMaterial":"show_shadow"
             },
             "behavior": [
                 { "add": "move" },
@@ -737,6 +736,7 @@
                 "physic": "sphere",
                 "diameter": 0.4,
                 "modelAlign": "CCC",
+                "shadedMaterial":"transparent",
                 "material": [
                     { "del": "phong" },
                     { "add": "displace" },
@@ -857,7 +857,10 @@
                 "src": "castle",
                 "size": 0.035,
                 "physic": "box",
-                "boxSize": 1.1
+                "boxSize": 1.1,
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
             },
             "behavior": [
                 { "add": "building" },
@@ -999,10 +1002,9 @@
                 "boxSizeZ": 0.5,
                 "modelAlign": "CCi",
                 "specular": 0.0,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "unit" }
-                ]
+
+                "shadedMaterial":"unit",
+                "shadowType": "bias"
             },
             "property": {
                 "gold": 150,
@@ -1216,18 +1218,6 @@
             }
         },
         {
-            "name": "selection.green",
-            "view": {
-                "src": "quad",
-                "size": 0.1,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "add" }
-                ]
-            }
-        },
-        {
             "name": "crystal",
             "view": {
                 "src": "crystal",
@@ -1237,6 +1227,7 @@
                 "physic": "box",
                 "boxSize": 0.1,
                 "randRotate": true,
+                "shadedMaterial":"add",
                 "material": [
                     { "del": "phong" },
                     { "del": "shadow_cast" },
@@ -1282,14 +1273,7 @@
                 "size": 0.3,
                 "physic": "box",
                 "boxSize": 0.1,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "shadowCastTransp" },
-                    { "add": "displace" },
-                    { "add": "glow" },
-                    { "add": "add" }
-                ]
+                "shadedMaterial":"add"
             },
             "property": {
                 "isBackground": 1,
@@ -1306,14 +1290,7 @@
                 "size": 0.3,
                 "physic": "box",
                 "boxSize": 0.1,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "shadowCastTransp" },
-                    { "add": "displace" },
-                    { "add": "glow" },
-                    { "add": "add" }
-                ]
+                "shadedMaterial":"add"
             },
             "property": {
                 "isBackground": 1,
@@ -1330,6 +1307,7 @@
                 "size": 0.02,
                 "modelAlign": "CCi",
                 "specular": 0,
+                "shadedMaterial":"add",
                 "material": [
                     { "del": "phong" },
                     { "add": "add" },
@@ -1493,6 +1471,7 @@
                 "modelAlign": "CCC"
             },
             "property": {
+                "isBackground": 1,
                 "deathAnim": "physic",
                 "size": 2
             },
@@ -1510,6 +1489,7 @@
                 "modelAlign": "CCC"
             },
             "property": {
+                "isBackground": 1,
                 "deathAnim": "physic",
                 "size": 1
             },

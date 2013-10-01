@@ -1,0 +1,57 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 147,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -7,
+                "pos_y": -102
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -141,
+                "pos_y": 31
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": [
+            "bump",
+            "shadow",
+            "unitBump"
+        ]
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -374,
+                "pos_y": -22
+            },
+            "function": {
+                "fileName": "screen_coord.json",
+                "name": "screen_coord.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -134,
+                "pos_y": 62
+            },
+            "texture_rect": {
+                "fileName": "C:/Users/Try/Home/Programming/game/sky_625_732_Small.jpg",
+                "textureSemantic": "ScreenData",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -125,
+                "pos_y": -93
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 139,
+                "pos_y": 153
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

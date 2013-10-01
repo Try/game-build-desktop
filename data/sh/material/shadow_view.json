@@ -1,0 +1,87 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 336,
+                "pos_y": -3
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 78,
+                "pos_y": -147
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -10,
+                "pos_y": 103
+            },
+            "texture": {
+                "fileName": "",
+                "textureSemantic": "ShadowMap",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -509,
+                "pos_y": -6
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -297,
+                "pos_y": -41
+            },
+            "function": {
+                "fileName": "shadow_coord.json",
+                "name": "shadow_coord.json"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 1
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

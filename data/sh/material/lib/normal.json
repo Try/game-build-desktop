@@ -1,0 +1,194 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 584,
+                "pos_y": 34
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -59,
+                "pos_y": -63
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -274,
+                "pos_y": 100
+            },
+            "input": {
+                "vcomponent": 2,
+                "connect": 0,
+                "inputName": "vertexNormal"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -56,
+                "pos_y": 60
+            },
+            "operation": "*"
+        },
+        {
+            "type": "func1arg",
+            "edit": {
+                "pos_x": 223,
+                "pos_y": 83
+            },
+            "function": {
+                "name": "normalize"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": 83,
+                "pos_y": 87
+            },
+            "swizle": "xyz-"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 84,
+                "pos_y": 288
+            },
+            "const": [
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "type": "func2arg",
+            "edit": {
+                "pos_x": 368,
+                "pos_y": 108
+            },
+            "function": {
+                "name": "dot"
+            }
+        },
+        {
+            "type": "object",
+            "edit": {
+                "pos_x": -272,
+                "pos_y": 36
+            },
+            "uniform": {
+                "name": "objMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        },
+        {
+            "type": "func1arg",
+            "edit": {
+                "pos_x": 235,
+                "pos_y": 207
+            },
+            "function": {
+                "name": "normalize"
+            }
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 358,
+                "pos_y": 22
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -240,
+                "pos_y": -63
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 7,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 7,
+            "portId1": 3,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 11,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": ""
+    }
+}

@@ -1,0 +1,166 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 299,
+                "pos_y": -23
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -421,
+                "pos_y": -159
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -412,
+                "pos_y": -71
+            },
+            "const": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -165,
+                "pos_y": -166
+            },
+            "operation": "+"
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -421,
+                "pos_y": 60
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -150,
+                "pos_y": 10
+            },
+            "input": {
+                "vcomponent": 4,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 1,
+                "pos_y": 33
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 50,
+                "pos_y": -144
+            },
+            "operation": "+"
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": -171,
+                "pos_y": -73
+            },
+            "uniform": {
+                "name": "dxScreenOffset",
+                "size0": 2,
+                "size1": 1
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -214,
+                "pos_y": 183
+            },
+            "texture_rect": {
+                "fileName": "",
+                "textureSemantic": "Diffuse"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 3
+        },
+        {
+            "port1": 7,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": ""
+    }
+}

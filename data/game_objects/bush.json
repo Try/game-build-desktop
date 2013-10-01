@@ -8,11 +8,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"alpha",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -28,11 +26,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -41,6 +37,44 @@
             "property": { "isBackground": 1 }
         },
         {
+            "name": "farn2",
+            "view": {
+                "src": "farn2",
+                "size": 0.03,
+                "modelAlign": "CCC",
+                "specular": 0,
+                "randRotate": true,
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+
+        {
+            "name": "vine0",
+            "view": {
+                "src": "vine0",
+                "size": 0.05,
+                "modelAlign": "CCC",
+                "specular": 0,
+                "randRotate": true,
+
+                "shadedMaterial":"alpha",
+                "shadowType": "bias"
+            },
+            "view_size": {
+                "min": 0.8,
+                "max": 1.3
+            },
+            "property": { "isBackground": 1 }
+        },
+
+        {
             "name": "flowers0",
             "view": {
                 "src": "flowers0",
@@ -48,7 +82,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": { "add": "blush" }
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -64,11 +100,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -84,11 +118,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -104,11 +136,9 @@
                 "modelAlign": "CCi",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "blush" },
-                    { "add": "phong_atest" }
-                ]
+
+                "shadedMaterial":"main",
+                "shadowType": "bias"
             },
             "view_size": {
                 "min": 0.8,
@@ -124,11 +154,9 @@
                 "modelAlign": "CCC",
                 "specular": 0,
                 "randRotate": true,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "grass" }
-                ]
+
+                "shadedMaterial":"alpha",
+                "shadowType": "noShadow"
             },
             "property": { "isBackground": 1 }
         }

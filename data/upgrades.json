@@ -2,6 +2,8 @@
     "upgrade": [
         {
             "name": "atack",
+            "atk_target":"melee",
+
             "property": {
                 "lvCount"  : 3,
                 "gold"     : 1,

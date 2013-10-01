@@ -1,0 +1,339 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 591,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -1013,
+                "pos_y": -79
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 0,
+                "inputName": "vertex"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -374,
+                "pos_y": 40
+            },
+            "swizle": "xyz-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -242,
+                "pos_y": 94
+            },
+            "operation": "/"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -374,
+                "pos_y": 118
+            },
+            "swizle": "www-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -108,
+                "pos_y": 128
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 34,
+                "pos_y": 161
+            },
+            "operation": "+"
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 543,
+                "pos_y": 201
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -101,
+                "pos_y": 281
+            },
+            "const": [
+                0.5,
+                0.5
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 173,
+                "pos_y": 194
+            },
+            "operation": "+"
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": 26,
+                "pos_y": 242
+            },
+            "uniform": {
+                "name": "dxScreenOffset",
+                "size0": 2,
+                "size1": 1
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -346,
+                "pos_y": 284
+            },
+            "const": [
+                0.5,
+                0.5
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -857,
+                "pos_y": -121
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -1013,
+                "pos_y": -164
+            },
+            "const": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -710,
+                "pos_y": -130
+            },
+            "operation": "*"
+        },
+        {
+            "type": "matrix",
+            "edit": {
+                "pos_x": -862,
+                "pos_y": -193
+            },
+            "uniform": {
+                "name": "shMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 17,
+                "pos_y": -110
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -106,
+                "pos_y": 48
+            },
+            "swizle": "zzz-"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 368,
+                "pos_y": 126
+            },
+            "operation": "+"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 147,
+                "pos_y": 69
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -105,
+                "pos_y": -35
+            },
+            "const": [
+                0,
+                0,
+                1,
+                0
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "port1": 12,
+            "portId1": 2,
+            "port2": 1,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 17,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 3,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 18,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 2,
+            "port2": 10,
+            "portId2": 1
+        },
+        {
+            "port1": 5,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 2,
+            "port2": 12,
+            "portId2": 3
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 1
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 3
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 15,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 16,
+            "portId2": 2
+        },
+        {
+            "port1": 19,
+            "portId1": 2,
+            "port2": 17,
+            "portId2": 2
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 18,
+            "portId2": 3
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 18,
+            "portId2": 3
+        },
+        {
+            "port1": 18,
+            "portId1": 1,
+            "port2": 19,
+            "portId2": 3
+        },
+        {
+            "port1": 19,
+            "portId1": 1,
+            "port2": 20,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}

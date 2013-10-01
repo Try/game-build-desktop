@@ -1,0 +1,255 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 147,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -7,
+                "pos_y": -102
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -2,
+                "pos_y": -28
+            },
+            "function": {
+                "fileName": "main_material.json",
+                "name": "main_material.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -138,
+                "pos_y": 170
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/land/grass1.png",
+                "textureSemantic": "Diffuse"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -753,
+                "pos_y": 103
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 0,
+                "inputName": "position"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -470,
+                "pos_y": 30
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -620,
+                "pos_y": 55
+            },
+            "operation": "+"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -755,
+                "pos_y": 13
+            },
+            "const": [
+                0,
+                0,
+                0,
+                1
+            ]
+        },
+        {
+            "type": "object",
+            "edit": {
+                "pos_x": -735,
+                "pos_y": -82
+            },
+            "uniform": {
+                "name": "objMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -306,
+                "pos_y": 65
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -662,
+                "pos_y": 514
+            },
+            "const": [
+                0.1,
+                0.1
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -775,
+                "pos_y": 344
+            },
+            "const": [
+                600
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -785,
+                "pos_y": 223
+            },
+            "const": [
+                404.8,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -635,
+                "pos_y": 213
+            },
+            "operation": "/"
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -465,
+                "pos_y": 142
+            },
+            "swizle": "xxx-"
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": -156,
+                "pos_y": 27
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 3,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 3
+        },
+        {
+            "port1": 5,
+            "portId1": 2,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 15,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 1
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 12,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 2,
+            "port2": 14,
+            "portId2": 2
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": [
+            "bump",
+            "unitBump"
+        ]
+    }
+}

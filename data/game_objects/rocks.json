@@ -1,428 +1,473 @@
 {
-    "class": [
-        {
-            "name": "rock0",
-            "view": {
-                "src": "rock0",
-                "size": 0.08,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.3
-            },
-            "property": { "isBackground": 1 }
-        },
-        {
-            "name": "rock1",
-            "view": {
-                "src": "rock1",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 4 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock2",
-            "view": {
-                "src": "rock2",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock3",
-            "view": {
-                "src": "rock3",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock4",
-            "view": {
-                "src": "rock4",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock5",
-            "view": {
-                "src": "rock5",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 6 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock6",
-            "view": {
-                "src": "rock6",
-                "size": 0.08,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 2.3
-            },
-            "property": { "isBackground": 1 }
-        },
-        {
-            "name": "rock7",
-            "view": {
-                "src": "rock7",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 4 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock8",
-            "view": {
-                "src": "rock8",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock9",
-            "view": {
-                "src": "rock9",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock10",
-            "view": {
-                "src": "rock10",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.8,
-                "max": 1.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock11",
-            "view": {
-                "src": "rock11",
-                "size": 0.08,
-                "modelAlign": "CCi",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 2.3
-            },
-            "property": { "isBackground": 1 }
-        },
-        {
-            "name": "rock12",
-            "view": {
-                "src": "rock12",
-                "size": 0.02,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 2.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "rock13",
-            "view": {
-                "src": "rock13",
-                "size": 0.02,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true
-            },
-            "view_size": {
-                "min": 1.5,
-                "max": 4.3
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "ice_pick",
-            "view": {
-                "src": "ice_pick",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true,
-                "hasOverDecal": 1,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "shadowCastTransp" },
-                    { "add": "transparent" }
-                ]
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.0
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "ice_pick1",
-            "view": {
-                "src": "ice_pick1",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true,
-                "hasOverDecal": 1,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "transparent" }
-                ]
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.0
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "ice_pick2",
-            "view": {
-                "src": "ice_pick2",
-                "size": 0.03,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true,
-                "hasOverDecal": 1,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "transparent" }
-                ]
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.0
-            },
-            "property": [
-                { "isBackground": 1 },
-                { "size": 2 }
-            ],
-            "behavior": { "add": "building" }
-        },
-        {
-            "name": "ice_pick3",
-            "view": {
-                "src": "ice_pick3",
-                "size": 0.05,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true,
-                "hasOverDecal": 1,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "transparent" }
-                ]
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.0
-            },
-            "property": { "isBackground": 1 }
-        },
-        {
-            "name": "ice_pick4",
-            "view": {
-                "src": "ice_pick4",
-                "size": 0.08,
-                "physic": "box",
-                "boxSizeX": 0.2,
-                "boxSizeY": 0.2,
-                "boxSizeZ": 1,
-                "modelAlign": "CCC",
-                "specular": 0.05,
-                "randRotate": true,
-                "hasOverDecal": 1,
-                "material": [
-                    { "del": "phong" },
-                    { "add": "transparent" }
-                ]
-            },
-            "view_size": {
-                "min": 0.5,
-                "max": 1.0
-            },
-            "property": { "isBackground": 1 }
-        }
-    ]
+  "class": [
+    {
+      "name": "rock0",
+      "view": {
+        "src": "rock0",
+        "size": 0.08,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.3
+      },
+      "property": { "isBackground": 1 }
+    },
+    {
+      "name": "rock1",
+      "view": {
+        "src": "rock1",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 4 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock2",
+      "view": {
+        "src": "rock2",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock3",
+      "view": {
+        "src": "rock3",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock4",
+      "view": {
+        "src": "rock4",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock5",
+      "view": {
+        "src": "rock5",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 6 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock6",
+      "view": {
+        "src": "rock6",
+        "size": 0.08,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 2.3
+      },
+      "property": { "isBackground": 1 }
+    },
+    {
+      "name": "rock7",
+      "view": {
+        "src": "rock7",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 4 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock8",
+      "view": {
+        "src": "rock8",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock9",
+      "view": {
+        "src": "rock9",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock10",
+      "view": {
+        "src": "rock10",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.8,
+        "max": 1.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock11",
+      "view": {
+        "src": "rock11",
+        "size": 0.08,
+        "modelAlign": "CCi",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 2.3
+      },
+      "property": { "isBackground": 1 }
+    },
+    {
+      "name": "rock12",
+      "view": {
+        "src": "rock12",
+        "size": 0.02,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 2.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+    {
+      "name": "rock13",
+      "view": {
+        "src": "rock13",
+        "size": 0.02,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+
+        "shadedMaterial":"main",
+        "shadowType": "bias"
+      },
+      "view_size": {
+        "min": 1.5,
+        "max": 4.3
+      },
+      "property": [
+        { "isBackground": 1 },
+        { "size": 2 }
+      ],
+      "behavior": { "add": "building" }
+    },
+
+    {
+      "name": "ice_pick_base",
+      "property": {
+        "isBackground": 1,
+        "isLandDecal":  1,
+        "size": 2
+      },
+      "behavior": { "add": "building" }
+    },
+
+    {
+      "name": "ice_pick",
+      "extends":"ice_pick_base",
+
+      "view": {
+        "src": "ice_pick",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+        "shadedMaterial":"main",
+        "material": [
+          { "del": "phong" },
+          { "del": "shadow_cast" },
+          { "add": "shadowCastTransp" },
+          { "add": "transparent" }
+        ]
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.0
+      }
+    },
+
+    {
+      "name": "ice_pick1",
+      "extends":"ice_pick_base",
+
+      "view": {
+        "src": "ice_pick1",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+        "shadedMaterial":"land_decal",
+        "material": [
+          { "del": "phong" },
+          { "add": "transparent" }
+        ]
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.0
+      }
+    },
+
+    {
+      "name": "ice_pick2",
+      "extends":"ice_pick_base",
+
+      "view": {
+        "src": "ice_pick2",
+        "size": 0.03,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+        "shadedMaterial":"land_decal",
+        "material": [
+          { "del": "phong" },
+          { "add": "transparent" }
+        ]
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.0
+      }
+    },
+
+    {
+      "name": "ice_pick3",
+      "extends":"ice_pick_base",
+
+      "view": {
+        "src": "ice_pick3",
+        "size": 0.05,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+        "shadedMaterial":"main"
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.0
+      }
+    },
+    {
+      "name": "ice_pick4",
+      "extends":"ice_pick_base",
+
+      "view": {
+        "src": "ice_pick4",
+        "size": 0.08,
+        "physic": "box",
+        "boxSizeX": 0.2,
+        "boxSizeY": 0.2,
+        "boxSizeZ": 1,
+        "modelAlign": "CCC",
+        "specular": 0.05,
+        "randRotate": true,
+        "shadedMaterial":"land_decal",
+        "material": [
+          { "del": "phong" },
+          { "add": "transparent" }
+        ]
+      },
+      "view_size": {
+        "min": 0.5,
+        "max": 1.0
+      }
+    }
+  ]
 }

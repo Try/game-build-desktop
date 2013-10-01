@@ -187,6 +187,44 @@
                 }
             },
             "density": 15
+        },
+        {
+            "name": "fire2",
+            "init": {
+                "min": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "size": 0.05,
+                    "a": 1,
+                    "angle": 0
+                },
+                "max": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "size": 0.05,
+                    "a": 1,
+                    "angle": 360
+                }
+            },
+            "velocity": {
+                "min": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "size": -0.0015,
+                    "angle": 5
+                },
+                "max": {
+                    "x": 0,
+                    "y": 0,
+                    "z": 0,
+                    "size": -0.0015,
+                    "angle": 5
+                }
+            },
+            "density": 3
         }
     ],
     "class": [
@@ -197,20 +235,7 @@
                     "src": "fire",
                     "size": 1,
                     "isParticle": "fire",
-                    "material": [
-                        { "del": "phong" },
-                        { "del": "shadow_cast" },
-                        { "add": "add" }
-                    ]
-                },
-                {
-                    "src": "sphere",
-                    "size": 1,
-                    "material": [
-                        { "del": "phong" },
-                        { "del": "shadow_cast" },
-                        { "add": "omni" }
-                    ]
+                    "shadedMaterial": "add"
                 }
             ],
             "property": { "isBackground": 1 }
@@ -221,11 +246,17 @@
                 "src": "fire",
                 "size": 1,
                 "isParticle": "fire1",
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "add" }
-                ]
+                "shadedMaterial": "add"
+            },
+            "property": { "isBackground": 1 }
+        },
+        {
+            "name": "fire2",
+            "view": {
+                "src": "fire",
+                "size": 1,
+                "isParticle": "fire2",
+                "shadedMaterial": "add"
             },
             "property": { "isBackground": 1 }
         },
@@ -235,12 +266,7 @@
                 "src": "smoke",
                 "size": 1,
                 "isParticle": "smoke",
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "shadowCastTransp" },
-                    { "add": "transparent_no_zw" }
-                ]
+                "shadedMaterial": "alpha"
             },
             "property": { "isBackground": 1 }
         },

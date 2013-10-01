@@ -82,6 +82,10 @@
         "name": "gui/icon/gelion"
       },
       {
+        "src": "data/icons/water_mage.png",
+        "name": "gui/icon/water_mage"
+      },
+      {
         "src": "data/icons/golem.png",
         "name": "gui/icon/golem"
       },

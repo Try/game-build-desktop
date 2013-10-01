@@ -1,0 +1,167 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 819,
+                "pos_y": 25
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 648,
+                "pos_y": -78
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 480,
+                "pos_y": 49
+            },
+            "function": {
+                "fileName": "rim.json",
+                "name": "rim.json"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 623,
+                "pos_y": 74
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 444,
+                "pos_y": 165
+            },
+            "const": [
+                0,
+                0.6,
+                0.8,
+                0
+            ]
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 213,
+                "pos_y": 30
+            },
+            "function": {
+                "fileName": "bump.json",
+                "name": "bump.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": 44,
+                "pos_y": 96
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/golem/n.png",
+                "textureSemantic": "Diffuse"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -104,
+                "pos_y": 24
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 361,
+                "pos_y": 17
+            },
+            "operation": "*"
+        },
+        {
+            "type": "matrix",
+            "edit": {
+                "pos_x": 71,
+                "pos_y": -61
+            },
+            "uniform": {
+                "name": "worldMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 3
+        },
+        {
+            "port1": 3,
+            "portId1": 2,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 8,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/golem.mx"
+    }
+}

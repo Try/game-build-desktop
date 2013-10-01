@@ -1,0 +1,67 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 150,
+                "pos_y": 0
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -92,
+                "pos_y": -79
+            },
+            "function": {
+                "fileName": "./save/lib/mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -337,
+                "pos_y": -38
+            },
+            "input": 1
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -89,
+                "pos_y": 5
+            },
+            "function": {
+                "fileName": "./save/lib/screen_coord.json",
+                "name": "screen_coord.json"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 1,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 2
+        }
+    ]
+}

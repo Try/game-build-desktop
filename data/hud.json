@@ -75,16 +75,20 @@
             }
         },
         {
+            "name": "selection.green",
+            "view": {
+                "src": "quad",
+                "size": 0.1,
+                "shadedMaterial":"add"
+            }
+        },
+        {
             "name": "selection.over",
             "view": {
                 "src": "hud/selection.over",
                 "size": 0.1,
                 "specular": 0.0,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "transparent_no_zw" }
-                ]
+                "shadedMaterial":"alpha"
             }
         },
         {
@@ -93,11 +97,7 @@
                 "src": "hud/selection.moveTo",
                 "size": 0.1,
                 "specular": 0.0,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "transparent_no_zw" }
-                ]
+                "shadedMaterial":"alpha"
             }
         },
         {
@@ -106,11 +106,7 @@
                 "src": "hud/selection.atkTo",
                 "size": 0.1,
                 "specular": 0.0,
-                "material": [
-                    { "del": "phong" },
-                    { "del": "shadow_cast" },
-                    { "add": "transparent_no_zw" }
-                ]
+                "shadedMaterial":"alpha"
             }
         }
     ]

@@ -1,0 +1,195 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": -504,
+                "pos_y": -46
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -784,
+                "pos_y": -283
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1569,
+                "pos_y": -79
+            },
+            "function": {
+                "fileName": "waterNormal.json",
+                "name": "waterNormal.json"
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -1139,
+                "pos_y": -119
+            },
+            "swizle": "xy--"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -992,
+                "pos_y": -150
+            },
+            "operation": "*"
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -1264,
+                "pos_y": -234
+            },
+            "const": [
+                0.02,
+                0.02,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": -1278,
+                "pos_y": -143
+            },
+            "operation": "*"
+        },
+        {
+            "type": "object",
+            "edit": {
+                "pos_x": -1591,
+                "pos_y": -149
+            },
+            "uniform": {
+                "name": "objMatrix",
+                "size0": 4,
+                "size1": 4
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -1414,
+                "pos_y": -96
+            },
+            "function": {
+                "fileName": "unpack_normal.json",
+                "name": "unpack_normal.json"
+            }
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": -827,
+                "pos_y": -48
+            },
+            "option": {
+                "name": "oesRender"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -998,
+                "pos_y": 7
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": -501,
+                "pos_y": 104
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 4,
+            "portId1": 2,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 3
+        },
+        {
+            "port1": 4,
+            "portId1": 1,
+            "port2": 5,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 7,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 3
+        },
+        {
+            "port1": 9,
+            "portId1": 2,
+            "port2": 10,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/buildings/castle.mx",
+        "options": []
+    }
+}

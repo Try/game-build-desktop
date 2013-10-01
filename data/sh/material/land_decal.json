@@ -1,0 +1,276 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 374,
+                "pos_y": 13
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 72,
+                "pos_y": -128
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 69,
+                "pos_y": -42
+            },
+            "function": {
+                "fileName": "main_material.json",
+                "name": "main_material.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -312,
+                "pos_y": -190
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/land/grass1.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 1
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": -866,
+                "pos_y": -145
+            },
+            "function": {
+                "fileName": "terrain_tex_coord.json",
+                "name": "terrain_tex_coord.json"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -309,
+                "pos_y": 39
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/land/snown.png",
+                "textureSemantic": "Normal",
+                "textureId": 1
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -588,
+                "pos_y": 240
+            },
+            "input": {
+                "vcomponent": 1,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -314,
+                "pos_y": 274
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/rocks/0.png",
+                "textureSemantic": "Diffuse",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "math",
+            "edit": {
+                "pos_x": -676,
+                "pos_y": -57
+            },
+            "swizle": "z---"
+        },
+        {
+            "type": "func3arg",
+            "edit": {
+                "pos_x": -106,
+                "pos_y": -150
+            },
+            "function": {
+                "name": "mix"
+            }
+        },
+        {
+            "type": "texture",
+            "edit": {
+                "pos_x": -309,
+                "pos_y": 483
+            },
+            "texture": {
+                "fileName": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/textures/rocks/0n.png",
+                "textureSemantic": "Normal",
+                "textureId": 0
+            }
+        },
+        {
+            "type": "func3arg",
+            "edit": {
+                "pos_x": -86,
+                "pos_y": 62
+            },
+            "function": {
+                "name": "mix"
+            }
+        },
+        {
+            "type": "func2arg",
+            "edit": {
+                "pos_x": -475,
+                "pos_y": -80
+            },
+            "function": {
+                "name": "step"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -680,
+                "pos_y": -153
+            },
+            "const": [
+                0
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -462,
+                "pos_y": -189
+            },
+            "const": [
+                0,
+                0,
+                0,
+                0
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 2
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 2
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 1
+        },
+        {
+            "port1": 10,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 3,
+            "port2": 7,
+            "portId2": 2
+        },
+        {
+            "port1": 12,
+            "portId1": 3,
+            "port2": 8,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 3,
+            "port2": 10,
+            "portId2": 2
+        },
+        {
+            "port1": 2,
+            "portId1": 3,
+            "port2": 11,
+            "portId2": 2
+        },
+        {
+            "port1": 9,
+            "portId1": 4,
+            "port2": 12,
+            "portId2": 2
+        },
+        {
+            "port1": 11,
+            "portId1": 4,
+            "port2": 12,
+            "portId2": 2
+        },
+        {
+            "port1": 12,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 1
+        },
+        {
+            "port1": 11,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 1
+        }
+    ],
+    "editor": {
+        "model": "C:/Users/Try/Home/Programming/game/game-build-desktop/data/models/ice_pick/4.mx",
+        "options": [
+            "bump",
+            "unitBump"
+        ]
+    }
+}

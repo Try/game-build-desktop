@@ -1,0 +1,380 @@
+{
+    "blocks": [
+        {
+            "type": "output",
+            "edit": {
+                "pos_x": 993,
+                "pos_y": -22
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": 43,
+                "pos_y": -120
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": -1,
+                "inputName": ""
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 381,
+                "pos_y": -120
+            },
+            "function": {
+                "fileName": "mvp.json",
+                "name": "mvp.json"
+            }
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 310,
+                "pos_y": 17
+            },
+            "function": {
+                "fileName": "lambert1.json",
+                "name": "lambert1.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": 34,
+                "pos_y": -26
+            },
+            "input": {
+                "vcomponent": 2,
+                "connect": 0,
+                "inputName": "normal"
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 660,
+                "pos_y": 85
+            },
+            "operation": "*"
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 508,
+                "pos_y": 61
+            },
+            "operation": "+"
+        },
+        {
+            "type": "libOutput",
+            "edit": {
+                "pos_x": 982,
+                "pos_y": 136
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 810,
+                "pos_y": 15
+            },
+            "operation": "+"
+        },
+        {
+            "type": "func",
+            "edit": {
+                "pos_x": 494,
+                "pos_y": -59
+            },
+            "function": {
+                "fileName": "specular1.json",
+                "name": "specular1.json"
+            }
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": 323,
+                "pos_y": 248
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 1,
+                "inputName": "color"
+            }
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": 316,
+                "pos_y": 172
+            },
+            "uniform": {
+                "name": "lightAblimient",
+                "size0": 3,
+                "size1": 1
+            }
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": -100,
+                "pos_y": 115
+            },
+            "uniform": {
+                "name": "lightColor",
+                "size0": 3,
+                "size1": 1
+            }
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 683,
+                "pos_y": -18
+            },
+            "operation": "*"
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": 537,
+                "pos_y": -167
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 2,
+                "inputName": "specular"
+            }
+        },
+        {
+            "type": "uniform",
+            "edit": {
+                "pos_x": 39,
+                "pos_y": 43
+            },
+            "uniform": {
+                "name": "lightDir",
+                "size0": 3,
+                "size1": 1
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 161,
+                "pos_y": 305
+            },
+            "const": [
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": 326,
+                "pos_y": -223
+            },
+            "const": [
+                1,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "type": "operator",
+            "edit": {
+                "pos_x": 171,
+                "pos_y": 111
+            },
+            "operation": "*"
+        },
+        {
+            "type": "input",
+            "edit": {
+                "pos_x": -187,
+                "pos_y": 319
+            },
+            "input": {
+                "vcomponent": 0,
+                "connect": 3,
+                "inputName": "shadow_val"
+            }
+        },
+        {
+            "type": "const",
+            "edit": {
+                "pos_x": -370,
+                "pos_y": 293
+            },
+            "const": [
+                1,
+                1,
+                1,
+                0
+            ]
+        },
+        {
+            "type": "option",
+            "edit": {
+                "pos_x": -25,
+                "pos_y": 248
+            },
+            "option": {
+                "name": "shadow"
+            }
+        }
+    ],
+    "connections": [
+        {
+            "port1": 2,
+            "portId1": 1,
+            "port2": 1,
+            "portId2": 1
+        },
+        {
+            "port1": 0,
+            "portId1": 1,
+            "port2": 2,
+            "portId2": 2
+        },
+        {
+            "port1": 6,
+            "portId1": 1,
+            "port2": 3,
+            "portId2": 2
+        },
+        {
+            "port1": 3,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 9,
+            "portId1": 1,
+            "port2": 4,
+            "portId2": 1
+        },
+        {
+            "port1": 8,
+            "portId1": 2,
+            "port2": 5,
+            "portId2": 3
+        },
+        {
+            "port1": 5,
+            "portId1": 1,
+            "port2": 6,
+            "portId2": 3
+        },
+        {
+            "port1": 0,
+            "portId1": 2,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 7,
+            "portId1": 1,
+            "port2": 8,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 2,
+            "port2": 9,
+            "portId2": 2
+        },
+        {
+            "port1": 5,
+            "portId1": 2,
+            "port2": 10,
+            "portId2": 1
+        },
+        {
+            "port1": 6,
+            "portId1": 2,
+            "port2": 11,
+            "portId2": 1
+        },
+        {
+            "port1": 18,
+            "portId1": 1,
+            "port2": 12,
+            "portId2": 1
+        },
+        {
+            "port1": 8,
+            "portId1": 1,
+            "port2": 13,
+            "portId2": 3
+        },
+        {
+            "port1": 13,
+            "portId1": 1,
+            "port2": 14,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 3,
+            "port2": 15,
+            "portId2": 1
+        },
+        {
+            "port1": 10,
+            "portId1": 2,
+            "port2": 16,
+            "portId2": 1
+        },
+        {
+            "port1": 14,
+            "portId1": 2,
+            "port2": 17,
+            "portId2": 1
+        },
+        {
+            "port1": 3,
+            "portId1": 4,
+            "port2": 18,
+            "portId2": 3
+        },
+        {
+            "port1": 21,
+            "portId1": 2,
+            "port2": 19,
+            "portId2": 1
+        },
+        {
+            "port1": 21,
+            "portId1": 1,
+            "port2": 20,
+            "portId2": 1
+        },
+        {
+            "port1": 19,
+            "portId1": 2,
+            "port2": 20,
+            "portId2": 1
+        },
+        {
+            "port1": 18,
+            "portId1": 2,
+            "port2": 21,
+            "portId2": 3
+        }
+    ],
+    "editor": {
+        "model": "",
+        "options": []
+    }
+}
